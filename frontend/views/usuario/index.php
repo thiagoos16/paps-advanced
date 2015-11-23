@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\UsuarioSearch */
+/* @var $searchModel frontend\models\UsuarioSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Usuarios';
@@ -19,24 +19,28 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Novo Usuario', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+    <div class="box">
+        <div class="box-body">
+        <?= GridView::widget([
+            'dataProvider' => $dataProvider,
+            'filterModel' => $searchModel,
+            'columns' => [
+                ['class' => 'yii\grid\SerialColumn'],
 
-            //'id',
-            'nome',
-            'email:email',
-            //'senha',
-            //'confirma_senha',
-            'nome_usuario',
-            // 'tipo',
-            // 'descricao',
-            // 'id_departamento',
+                //'id',
+                'nome',
+                'email:email',
+                //'senha',
+                //'confirma_senha',
+                'nome_usuario',
+                // 'tipo',
+                // 'descricao',
+                // 'id_departamento',
 
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
+                ['class' => 'yii\grid\ActionColumn'],
+            ],
+        ]); ?>
+        </div>
+    </div>
 
 </div>

@@ -41,7 +41,7 @@
               </li>
 
               <li>
-                  <a href="#">
+                  <a href="index.php?r=motorista/index">
                       <i class="fa fa-calendar"></i> <span>Motorista</span>
                   </a>
               </li>
@@ -53,7 +53,7 @@
               </li>
 
               <li>
-                  <a href="#">
+                  <a href="index.php?r=posto-abastecimento/index">
                       <i class="fa fa-calendar"></i> <span>Posto de Abastecimento</span>
                   </a>
               </li>
@@ -77,7 +77,7 @@
               </li>
 
               <li>
-                  <a href="#">
+                  <a href="index.php?r=usuario/index">
                       <i class="fa fa-calendar"></i> <span>Usuário</span>
                   </a>
               </li>
@@ -89,7 +89,7 @@
               </li>
 
               <li>
-                  <a href="#">
+                  <a href="index.php?r=manutencao/index">
                       <i class="fa fa-calendar"></i> <span>Manutenção</span>
                   </a>
               </li>

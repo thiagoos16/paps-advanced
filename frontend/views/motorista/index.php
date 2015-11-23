@@ -20,29 +20,33 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Novo Motorista', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-            'nome',
-            'cnh',
-            'categoria_cnh',
-            /*[
-                'attribute' => 'categoria_cnh',
-                'filter' => Html::activeDropDownList($searchModel, 'categoria_cnh', Motorista::getCategoria(),['class'=>'form-control','prompt'=>'Filtrar'  ]),
-            ],*/
-            //'tipo',
-            //'status',
-            [
-                'attribute' => 'tipo',
-                'filter' => Html::activeDropDownList($searchModel, 'tipo', Motorista::getTipo(),['class'=>'form-control','prompt'=>'Filtrar']),
+    <div class="box">
+        <div class="box-body">
+        <?= GridView::widget([
+            'dataProvider' => $dataProvider,
+            'filterModel' => $searchModel,
+            'columns' => [
+                ['class' => 'yii\grid\SerialColumn'],
+                'nome',
+                'cnh',
+                'categoria_cnh',
+                /*[
+                    'attribute' => 'categoria_cnh',
+                    'filter' => Html::activeDropDownList($searchModel, 'categoria_cnh', Motorista::getCategoria(),['class'=>'form-control','prompt'=>'Filtrar'  ]),
+                ],*/
+                //'tipo',
+                //'status',
+                [
+                    'attribute' => 'tipo',
+                    'filter' => Html::activeDropDownList($searchModel, 'tipo', Motorista::getTipo(),['class'=>'form-control','prompt'=>'Filtrar']),
+                ],
+                // 'telefone',
+
+                ['class' => 'yii\grid\ActionColumn'],
             ],
-            // 'telefone',
 
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-
-    ]); ?>
+        ]); ?>
+        </div>
+    </div>
 
 </div>
