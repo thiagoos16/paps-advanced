@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Usuario */
+/* @var $model frontend\models\Usuario */
 
 $this->title =  "Visualizar Usuario";
 $this->params['breadcrumbs'][] = ['label' => 'Usuarios', 'url' => ['index']];
@@ -25,18 +25,22 @@ $this->params['breadcrumbs'][] = $this->title;
         ]) ?>
     </p>
 
-    <?= DetailView::widget([
-        'model' => $model,
-        'attributes' => [
-            //'id',
-            'nome',
-            'email',
-            //'senha',
-            //'confirma_senha',
-            'nome_usuario',
-            'descricao',
-            'id_departamento',
-        ],
-    ]) ?>
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            <?= DetailView::widget([
+                'model' => $model,
+                'attributes' => [
+                    //'id',
+                    'nome',
+                    'email',
+                    //'senha',
+                    //'confirma_senha',
+                    'nome_usuario',
+                    'descricao',
+                    'id_departamento',
+                ],
+            ]) ?>
+        </div>
+    </div>
 
 </div>
