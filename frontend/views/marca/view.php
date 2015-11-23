@@ -25,13 +25,17 @@ $this->params['breadcrumbs'][] = $this->title;
         ]) ?>
     </p>
 
-    <?= DetailView::widget([
-        'model' => $model,
-        'options' => ['table table-bordered table-striped'],
-        'attributes' => [
-            //'id',
-            'nome',
-        ],
-    ]) ?>
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            <?= DetailView::widget([
+                'model' => $model,
+                'options' => ['table table-bordered table-striped'],
+                'attributes' => [
+                    //'id',
+                    'nome',
+                ],
+            ]) ?>
+        </div>
+    </div>
 
 </div>

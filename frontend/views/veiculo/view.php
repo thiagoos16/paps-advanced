@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Veiculo */
+/* @var $model frontend\models\Veiculo */
 
 $this->title = $model->placa_atual;
 $this->params['breadcrumbs'][] = ['label' => 'Veículos', 'url' => ['index']];
@@ -25,28 +25,32 @@ $this->params['breadcrumbs'][] = $this->title;
         ]) ?>
     </p>
 
-    <?= DetailView::widget([
-        'model' => $model,
-        'attributes' => [
-            'renavam',
-            'cidade',
-            'chassi',
-            'num_patrimonio',
-            'lotacao',
-            'status',
-            'observacao',
-            'adquirido_de',
-            'uf_atual',
-            'uf_anterior',
-            'placa_atual',
-            'placa_anterior',
-            'potencia',
-            'id_modelo',
-            'id_cor',
-            'id_tipo_combustivel',
-            'ano_fabricacao',
-            'ano_modelo',
-        ],
-    ]) ?>
+<div class="box box-primary">
+    <div class="box-header with-border">
+        <?= DetailView::widget([
+            'model' => $model,
+            'attributes' => [
+                'renavam',
+                'cidade',
+                'chassi',
+                'num_patrimonio',
+                'lotacao',
+                'status',
+                'observacao',
+                'adquirido_de',
+                'uf_atual',
+                'uf_anterior',
+                'placa_atual',
+                'placa_anterior',
+                'potencia',
+                'id_modelo',
+                'id_cor',
+                'id_tipo_combustivel',
+                'ano_fabricacao',
+                'ano_modelo',
+            ],
+        ]) ?>
+    </div>
+</div>
 
 </div>
