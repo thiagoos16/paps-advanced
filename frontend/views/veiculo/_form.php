@@ -1,8 +1,8 @@
 <?php
 
-use app\models\Modelo;
-use app\models\TipoCombustivel;
-use app\models\Cor;
+use frontend\models\Modelo;
+use frontend\models\TipoCombustivel;
+use frontend\models\Cor;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
