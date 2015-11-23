@@ -4,7 +4,7 @@ use yii\helpers\Html;
 
 
 /* @var $this yii\web\View */
-/* @var $model app\models\PostoAbastecimento */
+/* @var $model frontend\models\PostoAbastecimento */
 
 $this->title = 'Novo Posto de Abastecimento';
 $this->params['breadcrumbs'][] = ['label' => 'Postos de Abastecimentos', 'url' => ['index']];

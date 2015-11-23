@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\AbastecimentoSearch */
+/* @var $searchModel frontend\models\AbastecimentoSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Abastecimentos';
@@ -27,11 +27,11 @@ $this->params['breadcrumbs'][] = $this->title;
                 'columns' => [
                     ['class' => 'yii\grid\SerialColumn'],
 
-                    'id',
+
                     'preco_litro',
                     'id_posto',
                     'id_veiculo',
-                    'km',
+
                     // 'data_lancamento',
                     // 'id_motorista',
                     // 'data_abastecimento',

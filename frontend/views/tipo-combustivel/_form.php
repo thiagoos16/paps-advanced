@@ -4,20 +4,25 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\TipoCombustivel */
+/* @var $model frontend\models\TipoCombustivel */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
 <div class="tipo-combustivel-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <div class="box box-primary">
+        <div class="box-header with-border">
 
-    <?= $form->field($model, 'nome')->textInput() ?>
+            <?php $form = ActiveForm::begin(); ?>
 
-    <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Novo' : 'Atualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+            <?= $form->field($model, 'nome')->textInput() ?>
+
+            <div class="form-group">
+                <?= Html::submitButton($model->isNewRecord ? 'Novo' : 'Atualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+            </div>
+
+            <?php ActiveForm::end(); ?>
+        </div>
     </div>
-
-    <?php ActiveForm::end(); ?>
 
 </div>
