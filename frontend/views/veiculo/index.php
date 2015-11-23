@@ -18,6 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         <?= Html::a('Novo Veículo', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
+
     <div class="box">
         <div class="box-body">
         <?= GridView::widget([
@@ -50,5 +51,4 @@ $this->params['breadcrumbs'][] = $this->title;
         ]); ?>
         </div>
     </div>
-
 </div>

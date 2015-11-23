@@ -4,20 +4,25 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Marca */
+/* @var $model frontend\models\Marca */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
 <div class="marca-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <div class="box box-primary">
+        <div class="box-header with-border">
 
-    <?= $form->field($model, 'nome')->textInput(['maxlength' => true]) ?>
+            <?php $form = ActiveForm::begin(); ?>
 
-    <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Novo' : 'Atualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+            <?= $form->field($model, 'nome')->textInput(['maxlength' => true]) ?>
+
+            <div class="form-group">
+                <?= Html::submitButton($model->isNewRecord ? 'Novo' : 'Atualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+            </div>
+
+            <?php ActiveForm::end(); ?>
+        </div>
     </div>
-
-    <?php ActiveForm::end(); ?>
 
 </div>
