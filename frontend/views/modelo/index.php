@@ -6,7 +6,7 @@ use yii\helpers\ArrayHelper;
 use frontend\models\Modelo;
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\ModeloSearch */
+/* @var $searchModel frontend\models\ModeloSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Modelos';
@@ -21,27 +21,31 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Novo Modelo', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+    <div class="box">
+        <div class="box-body">
+            <?= GridView::widget([
+                'dataProvider' => $dataProvider,
+                'filterModel' => $searchModel,
+                'columns' => [
+                    ['class' => 'yii\grid\SerialColumn'],
 
-            //'id',
-            'nome',
-            //'ano',
-            [
-                'attribute' => 'id_marca',
-                'filter' => Html::activeDropDownList(
-                    $searchModel,
-                    'id_marca',
-                    ArrayHelper::map(Modelo::find()->asArray()->all(), 'id', 'nome'),
-                    ['class'=>'form-control','prompt'=>'Filtrar'  ]),
-            ],
-            //'id_marca',
+                    //'id',
+                    'nome',
+                    //'ano',
+                    [
+                        'attribute' => 'id_marca',
+                        'filter' => Html::activeDropDownList(
+                            $searchModel,
+                            'id_marca',
+                            ArrayHelper::map(Modelo::find()->asArray()->all(), 'id', 'nome'),
+                            ['class'=>'form-control','prompt'=>'Filtrar'  ]),
+                    ],
+                    //'id_marca',
 
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
+                    ['class' => 'yii\grid\ActionColumn'],
+                ],
+            ]); ?>
+        </div>
+    </div>
 
 </div>

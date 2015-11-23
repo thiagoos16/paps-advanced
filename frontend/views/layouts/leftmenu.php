@@ -35,7 +35,7 @@
               </li>
 
               <li>
-                  <a href="#">
+                  <a href="index.php?r=modelo/index">
                       <i class="fa fa-calendar"></i> <span>Modelo</span>
                   </a>
               </li>
@@ -47,7 +47,7 @@
               </li>
 
               <li>
-                  <a href="#">
+                  <a href="index.php?r=tipo-combustivel/index">
                       <i class="fa fa-calendar"></i> <span>Tipo de Combustível</span>
                   </a>
               </li>
@@ -59,7 +59,7 @@
               </li>
 
               <li>
-                  <a href="#">
+                  <a href="index.php?r=cor/index">
                       <i class="fa fa-calendar"></i> <span>Cor</span>
                   </a>
               </li>
@@ -71,7 +71,7 @@
               </li>
 
               <li>
-                  <a href="#">
+                  <a href="index.php?r=departamento/index">
                       <i class="fa fa-calendar"></i> <span>Departamento</span>
                   </a>
               </li>
@@ -83,7 +83,7 @@
               </li>
 
               <li>
-                  <a href="#">
+                  <a href="index.php?r=categoria-veiculo/index">
                       <i class="fa fa-calendar"></i> <span>Categoria de Veículo</span>
                   </a>
               </li>
@@ -95,7 +95,7 @@
               </li>
 
               <li>
-                  <a href="#">
+                  <a href="index.php?r=abastecimento/index">
                       <i class="fa fa-calendar"></i> <span>Abastecimento</span>
                   </a>
               </li>
