@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Abastecimento */
+/* @var $model frontend\models\Abastecimento */
 
 $this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Abastecimentos', 'url' => ['index']];
@@ -24,19 +24,21 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ]) ?>
     </p>
-
-    <?= DetailView::widget([
-        'model' => $model,
-        'attributes' => [
-            'id',
-            'preco_litro',
-            'id_posto',
-            'id_veiculo',
-            'km',
-            'data_lancamento',
-            'id_motorista',
-            'data_abastecimento',
-        ],
-    ]) ?>
-
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            <?= DetailView::widget([
+                'model' => $model,
+                'attributes' => [
+                    'id',
+                    'preco_litro',
+                    'id_posto',
+                    'id_veiculo',
+                    'km',
+                    'data_lancamento',
+                    'id_motorista',
+                    'data_abastecimento',
+                ],
+            ]) ?>
+        </div>
+    </div>
 </div>

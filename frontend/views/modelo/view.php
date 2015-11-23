@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Modelo */
+/* @var $model frontend\models\Modelo */
 
 $this->title = "Visualizar Modelo";
 $this->params['breadcrumbs'][] = ['label' => 'Modelos', 'url' => ['index']];
@@ -25,13 +25,17 @@ $this->params['breadcrumbs'][] = $this->title;
         ]) ?>
     </p>
 
-    <?= DetailView::widget([
-        'model' => $model,
-        'attributes' => [
-            //'id',
-            'nome',
-            'id_marca',
-        ],
-    ]) ?>
+    <div class="box box-primary">
+        <div class="box-header with-border">
 
+            <?= DetailView::widget([
+                'model' => $model,
+                'attributes' => [
+                    //'id',
+                    'nome',
+                    'id_marca',
+                ],
+            ]) ?>
+        </div>
+    </div>
 </div>
