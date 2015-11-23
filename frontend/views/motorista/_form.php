@@ -11,9 +11,9 @@ use yii\widgets\MaskedInput;
 ?>
 
 <div class="motorista-form">
+
     <div class="box box-primary">
         <div class="box-header with-border">
-
             <?php $form = ActiveForm::begin(); ?>
 
             <?= $form->field($model, 'nome')->textInput(['maxlength' => true]) ?>
@@ -51,6 +51,7 @@ use yii\widgets\MaskedInput;
             </div>
 
             <?php ActiveForm::end(); ?>
-            </div>
+        </div>
     </div>
+
 </div>

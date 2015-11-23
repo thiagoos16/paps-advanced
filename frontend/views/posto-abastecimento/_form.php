@@ -8,9 +8,9 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="posto-abastecimento-form">
-    <div class="box box-primary">
-        <div class="box-header with-border">
+<div class="box box-primary">
+    <div class="box-header with-border">
+        <div class="posto-abastecimento-form">
 
             <?php $form = ActiveForm::begin(); ?>
 
@@ -23,6 +23,8 @@ use yii\widgets\ActiveForm;
             </div>
 
             <?php ActiveForm::end(); ?>
+
         </div>
     </div>
+
 </div>
