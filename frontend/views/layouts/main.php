@@ -19,7 +19,7 @@ $baseUrl = $asset->baseUrl
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
-<body>
+<body class="skin-blue fixed">
 <?php $this->beginBody() ?>
 
 <div class="wrap">
