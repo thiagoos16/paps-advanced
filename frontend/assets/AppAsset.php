@@ -31,6 +31,7 @@ class AppAsset extends AssetBundle
         'plugins/datepicker/datepicker3.css',
         'plugins/daterangepicker/daterangepicker-bs3.css',
         'plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css',
+        //'plugins/datatables/dataTables.bootstrap.css',
     ];
     public $js = [
         'plugins/jQuery/jQuery-2.1.4.min.js',
@@ -52,6 +53,8 @@ class AppAsset extends AssetBundle
         'dist/js/app.min.js',
         //'dist/js/pages/dashboard.js',
         'dist/js/demo.js',
+        //'plugins/datatables/jquery.dataTables.min.js',
+        //'plugins/datatables/dataTables.bootstrap.min.js'
     ];
 
     public $depends = [

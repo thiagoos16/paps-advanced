@@ -29,73 +29,73 @@
           <ul class="sidebar-menu">
             <li class="header">MENU</li>
               <li>
-                  <a href="pages/calendar.html">
+                  <a href="index.php?r=marca/index">
                       <i class="fa fa-calendar"></i> <span>Marca</span>
                   </a>
               </li>
 
               <li>
-                  <a href="pages/calendar.html">
+                  <a href="#">
                       <i class="fa fa-calendar"></i> <span>Modelo</span>
                   </a>
               </li>
 
               <li>
-                  <a href="pages/calendar.html">
+                  <a href="#">
                       <i class="fa fa-calendar"></i> <span>Motorista</span>
                   </a>
               </li>
 
               <li>
-                  <a href="pages/calendar.html">
+                  <a href="#">
                       <i class="fa fa-calendar"></i> <span>Tipo de Combustível</span>
                   </a>
               </li>
 
               <li>
-                  <a href="pages/calendar.html">
+                  <a href="#">
                       <i class="fa fa-calendar"></i> <span>Posto de Abastecimento</span>
                   </a>
               </li>
 
               <li>
-                  <a href="pages/calendar.html">
+                  <a href="#">
                       <i class="fa fa-calendar"></i> <span>Cor</span>
                   </a>
               </li>
 
               <li>
-                  <a href="pages/calendar.html">
+                  <a href="index.php?r=veiculo/index">
                       <i class="fa fa-calendar"></i> <span>Veículo</span>
                   </a>
               </li>
 
               <li>
-                  <a href="pages/calendar.html">
+                  <a href="#">
                       <i class="fa fa-calendar"></i> <span>Departamento</span>
                   </a>
               </li>
 
               <li>
-                  <a href="pages/calendar.html">
+                  <a href="#">
                       <i class="fa fa-calendar"></i> <span>Usuário</span>
                   </a>
               </li>
 
               <li>
-                  <a href="pages/calendar.html">
+                  <a href="#">
                       <i class="fa fa-calendar"></i> <span>Categoria de Veículo</span>
                   </a>
               </li>
 
               <li>
-                  <a href="pages/calendar.html">
+                  <a href="#">
                       <i class="fa fa-calendar"></i> <span>Manutenção</span>
                   </a>
               </li>
 
               <li>
-                  <a href="pages/calendar.html">
+                  <a href="#">
                       <i class="fa fa-calendar"></i> <span>Abastecimento</span>
                   </a>
               </li>
