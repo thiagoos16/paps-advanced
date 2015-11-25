@@ -11,7 +11,15 @@ use yii\helpers\Html;
               <img src="<?=$baseUrl?>/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-              <p>Admin</p>
+              <p>
+                  <?php
+                  if(Yii::$app->user->isGuest){
+                      echo "Visitante ";
+                  }else{
+                      echo Yii::$app->user->identity->username;
+                  }
+                  ?>
+              </p>
               <a href="#">Icomp</a>
             </div>
           </div>

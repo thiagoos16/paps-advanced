@@ -144,4 +144,25 @@ class Veiculo extends \yii\db\ActiveRecord
     {
         return $this->hasOne(TipoCombustivel::className(), ['id' => 'id_tipo_combustivel']);
     }
+
+    public  function afterFind(){
+        $this->id_cor = Cor::findOne($this->id_cor)->nome;
+        $this->id_tipo_combustivel = TipoCombustivel::findOne($this->id_tipo_combustivel)->nome;
+        $this->id_modelo = Modelo::findOne($this->id_modelo)->nome;
+
+        switch ($this->status){
+            case '1':
+                $this->status = 'Leiloado';
+                break;
+
+            case '2':
+                $this->status = 'Disponível';
+                break;
+
+            case '3':
+                $this->status = 'Alocado';
+                break;
+
+        }
+    }
 }

@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Veiculo */
+/* @var $model frontend\models\Veiculo */
 
 $this->title = 'Atualizar Veículo: ' . ' ' . $model->placa_atual;
 $this->params['breadcrumbs'][] = ['label' => 'Veículos', 'url' => ['index']];

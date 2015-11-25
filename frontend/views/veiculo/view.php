@@ -19,38 +19,37 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Deletar', ['delete', 'id' => $model->renavam], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Você tem certesa que Are you sure you want to delete this item?',
+                'confirm' => 'Você tem certeza que deseja deletar esse item?',
                 'method' => 'post',
             ],
         ]) ?>
     </p>
 
-<div class="box box-primary">
-    <div class="box-header with-border">
-        <?= DetailView::widget([
-            'model' => $model,
-            'attributes' => [
-                'renavam',
-                'cidade',
-                'chassi',
-                'num_patrimonio',
-                'lotacao',
-                'status',
-                'observacao',
-                'adquirido_de',
-                'uf_atual',
-                'uf_anterior',
-                'placa_atual',
-                'placa_anterior',
-                'potencia',
-                'id_modelo',
-                'id_cor',
-                'id_tipo_combustivel',
-                'ano_fabricacao',
-                'ano_modelo',
-            ],
-        ]) ?>
-    </div>
-</div>
-
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            <?= DetailView::widget([
+                'model' => $model,
+                'attributes' => [
+                    'renavam',
+                    'cidade',
+                    'chassi',
+                    'num_patrimonio',
+                    'lotacao',
+                    'status',
+                    'observacao',
+                    'adquirido_de',
+                    'uf_atual',
+                    'uf_anterior',
+                    'placa_atual',
+                    'placa_anterior',
+                    'potencia',
+                    'id_modelo',
+                    'id_cor',
+                    'id_tipo_combustivel',
+                    'ano_fabricacao',
+                    'ano_modelo',
+                ],
+            ]) ?>
+            </div>
+        </div>
 </div>
