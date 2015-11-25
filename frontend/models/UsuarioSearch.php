@@ -18,8 +18,8 @@ class UsuarioSearch extends Usuario
     public function rules()
     {
         return [
-            [['id', 'id_departamento'], 'integer'],
-            [['nome', 'email', 'senha', 'confirma_senha', 'nome_usuario', 'descricao'], 'safe'],
+            [['id', 'status', 'created_at', 'updated_at', 'id_departamento'], 'integer'],
+            [['username', 'auth_key', 'password_hash', 'password_reset_token', 'email', 'nome', 'observacao', 'confirma_senha'], 'safe'],
         ];
     }
 
@@ -57,15 +57,20 @@ class UsuarioSearch extends Usuario
 
         $query->andFilterWhere([
             'id' => $this->id,
+            'status' => $this->status,
+            'created_at' => $this->created_at,
+            'updated_at' => $this->updated_at,
             'id_departamento' => $this->id_departamento,
         ]);
 
-        $query->andFilterWhere(['like', 'nome', $this->nome])
+        $query->andFilterWhere(['like', 'username', $this->username])
+            ->andFilterWhere(['like', 'auth_key', $this->auth_key])
+            ->andFilterWhere(['like', 'password_hash', $this->password_hash])
+            ->andFilterWhere(['like', 'password_reset_token', $this->password_reset_token])
             ->andFilterWhere(['like', 'email', $this->email])
-            ->andFilterWhere(['like', 'senha', $this->senha])
-            ->andFilterWhere(['like', 'confirma_senha', $this->confirma_senha])
-            ->andFilterWhere(['like', 'nome_usuario', $this->nome_usuario])
-            ->andFilterWhere(['like', 'descricao', $this->descricao]);
+            ->andFilterWhere(['like', 'nome', $this->nome])
+            ->andFilterWhere(['like', 'observacao', $this->observacao])
+            ->andFilterWhere(['like', 'confirma_senha', $this->confirma_senha]);
 
         return $dataProvider;
     }

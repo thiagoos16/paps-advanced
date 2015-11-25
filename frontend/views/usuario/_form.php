@@ -8,25 +8,35 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="box box-primary">
-    <div class="box-header with-border">
-        <div class="usuario-form">
+<div class="usuario-form">
+    <div class="box box-primary">
+        <div class="box-header with-border">
 
             <?php $form = ActiveForm::begin(); ?>
 
-            <?= $form->field($model, 'nome')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'username')->textInput(['maxlength' => true]) ?>
+
+            <?= $form->field($model, 'auth_key')->textInput(['maxlength' => true]) ?>
+
+            <?= $form->field($model, 'password_hash')->textInput(['maxlength' => true]) ?>
+
+            <?= $form->field($model, 'password_reset_token')->textInput(['maxlength' => true]) ?>
 
             <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
 
-            <?= $form->field($model, 'senha')->passwordInput() ?>
+            <?= $form->field($model, 'status')->textInput() ?>
 
-            <?= $form->field($model, 'confirma_senha')->passwordInput() ?>
+            <?= $form->field($model, 'created_at')->textInput() ?>
 
-            <?= $form->field($model, 'nome_usuario')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'updated_at')->textInput() ?>
 
-            <?= $form->field($model, 'descricao')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'nome')->textInput(['maxlength' => true]) ?>
 
-            <?= $form->field($model, 'id_departamento')->dropDownList($departamento_lista, $model->getPrompt()) ?>
+            <?= $form->field($model, 'observacao')->textInput(['maxlength' => true]) ?>
+
+            <?= $form->field($model, 'confirma_senha')->textInput(['maxlength' => true]) ?>
+
+            <?= $form->field($model, 'id_departamento')->textInput() ?>
 
             <div class="form-group">
                 <?= Html::submitButton($model->isNewRecord ? 'Novo' : 'Atualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

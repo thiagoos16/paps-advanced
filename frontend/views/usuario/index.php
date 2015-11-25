@@ -16,31 +16,32 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Novo Usuario', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Novo Usuário', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
-
     <div class="box">
         <div class="box-body">
-        <?= GridView::widget([
-            'dataProvider' => $dataProvider,
-            'filterModel' => $searchModel,
-            'columns' => [
-                ['class' => 'yii\grid\SerialColumn'],
 
-                //'id',
-                'nome',
-                'email:email',
-                //'senha',
-                //'confirma_senha',
-                'nome_usuario',
-                // 'tipo',
-                // 'descricao',
-                // 'id_departamento',
+            <?= GridView::widget([
+                'dataProvider' => $dataProvider,
+                'filterModel' => $searchModel,
+                'columns' => [
+                    ['class' => 'yii\grid\SerialColumn'],
+                    'nome',
+                    'username',
+                    'email:email',
+                    // 'status',
+                    // 'created_at',
+                    // 'updated_at',
 
-                ['class' => 'yii\grid\ActionColumn'],
-            ],
-        ]); ?>
+                    // 'observacao',
+                    // 'confirma_senha',
+                    // 'id_departamento',
+
+                    ['class' => 'yii\grid\ActionColumn'],
+                ],
+
+            ]); ?>
+            </div>
         </div>
-    </div>
 
 </div>

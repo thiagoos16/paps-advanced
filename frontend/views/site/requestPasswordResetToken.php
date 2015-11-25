@@ -10,25 +10,31 @@ use yii\bootstrap\ActiveForm;
 $this->title = 'Request password reset';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-request-password-reset">
-    <h1>Esqueci minha senha</h1>
+<div class="login-box">
+    <div class="login-logo">
+        <a href="../../index2.html"><b>SGF</b>UFAM</a>
+    </div><!-- /.login-logo -->
 
-    <p>Informe seu email. Um link para resetar a sua senha será enviado para ele.</p>
+    <div class="login-box-body">
+        <div class="site-request-password-reset">
+        <h2>Esqueci minha senha</h2>
 
-    <div class="row">
-        <div class="col-lg-5">
-            <div class="box box-primary">
-                <div class="box-header with-border">
-                    <?php $form = ActiveForm::begin(['id' => 'request-password-reset-form']); ?>
+        <p>Informe seu email. Um link para resetar a sua senha será enviado para ele.</p>
 
-                    <?= $form->field($model, 'email') ?>
+        <div class="row">
+            <div class="col-lg-12">
 
-                    <div class="form-group">
-                        <?= Html::submitButton('Send', ['class' => 'btn btn-primary']) ?>
-                    </div>
-                </div>
+                        <?php $form = ActiveForm::begin(['id' => 'request-password-reset-form']); ?>
+
+                        <?= $form->field($model, 'email') ?>
+
+                        <div class="form-group">
+                            <?= Html::submitButton('Enviar', ['class' => 'btn btn-primary btn-block btn-flat']) ?>
+                        </div>
+
+                <?php ActiveForm::end(); ?>
             </div>
-            <?php ActiveForm::end(); ?>
+        </div>
         </div>
     </div>
 </div>

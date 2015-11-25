@@ -84,6 +84,7 @@ use yii\helpers\Html;
               </li>
 
               <li>
+
                   <a href="index.php?r=usuario/index">
                       <i class="fa fa-dashboard"></i> <span>Usuário</span>
                   </a>

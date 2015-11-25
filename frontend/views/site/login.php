@@ -45,6 +45,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?php ActiveForm::end(); ?>
 
         <?= Html::a('Esqueci minha senha', ['site/request-password-reset']) ?> <br>
+
     </div>
 
 </div>
