@@ -37,13 +37,14 @@ class Manutencao extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'servico', 'custo', 'tipo', 'data_lancamento', 'id_veiculo', 'km', 'id_motorista'], 'required'],
+            [['servico', 'custo', 'tipo', 'id_veiculo', 'km', 'id_motorista'], 'required'],
             [['id', 'id_veiculo', 'km'], 'integer'],
             [['data_entrada', 'data_saida', 'data_lancamento'], 'safe'],
             [['custo'], 'number'],
             [['servico'], 'string', 'max' => 45],
             [['tipo'], 'string', 'max' => 25],
-            [['id_motorista'], 'string', 'max' => 11]
+            [['id_motorista'], 'string', 'max' => 11],
+            ['data_saida','compare','compareAttribute'=>'data_entrada','operator'=>'>=',"message"=>'Start Date must be less than End Date']
         ];
     }
 
@@ -60,9 +61,9 @@ class Manutencao extends \yii\db\ActiveRecord
             'data_saida' => 'Data de Saída',
             'tipo' => 'Tipo',
             'data_lancamento' => 'Data de Lançamento',
-            'id_veiculo' => 'Id Veículo',
-            'km' => 'Kilometragem do Veículo',
-            'id_motorista' => 'Id Motorista',
+            'id_veiculo' => 'Veículo',
+            'km' => 'Quilometragem do Veículo',
+            'id_motorista' => 'Motorista',
         ];
     }
 
@@ -80,5 +81,14 @@ class Manutencao extends \yii\db\ActiveRecord
     public function getIdVeiculo()
     {
         return $this->hasOne(Veiculo::className(), ['renavam' => 'id_veiculo']);
+    }
+
+    public static function getTipo(){
+        return ["Preventiva" => "Preventiva",
+            "Corretiva" => "Corretiva"];
+    }
+
+    public static function getPrompt(){
+        return ['prompt'=>'Selecione uma opção'];
     }
 }

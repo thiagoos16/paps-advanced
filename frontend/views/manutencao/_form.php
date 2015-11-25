@@ -3,6 +3,9 @@
 use dosamigos\datepicker\DatePicker;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
+use frontend\models\Veiculo;
+use frontend\models\Motorista;
 
 /* @var $this yii\web\View */
 /* @var $model frontend\models\Manutencao */
@@ -28,7 +31,7 @@ use yii\widgets\ActiveForm;
                     ]
                 ]);?>
 
-            <?= $form->field($model, 'servico')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'servico')->textarea(['rows'=>'3'])?>
 
             <?= $form->field($model, 'custo')->textInput() ?>
 
@@ -45,7 +48,7 @@ use yii\widgets\ActiveForm;
                     ]
                 ]);?>
 
-            <?= $form->field($model, 'tipo')->textInput(['maxlength' => true]) ?>
+             <?= $form->field($model, 'tipo')->dropDownList($model->getTipo(), $model->getPrompt()) ?>
 
             <?= $form->field($model, 'data_lancamento')->widget(
                 DatePicker::className(), [
@@ -60,11 +63,11 @@ use yii\widgets\ActiveForm;
                     ]
                 ]);?>
 
-            <?= $form->field($model, 'id_veiculo')->textInput() ?>
+            <?= $form->field($model, 'id_veiculo')->dropDownList(ArrayHelper::map(Veiculo::find()->all(), 'renavam', 'placa_atual'), ['prompt'=>'Selecione uma opção']) ?>
 
             <?= $form->field($model, 'km')->textInput() ?>
 
-            <?= $form->field($model, 'id_motorista')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'id_motorista')->dropDownList(ArrayHelper::map(Motorista::find()->all(), 'cnh', 'nome'), ['prompt'=>'Selecione uma opção']) ?>
 
             <div class="form-group">
                 <?= Html::submitButton($model->isNewRecord ? 'Nova' : 'Atualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

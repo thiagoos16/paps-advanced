@@ -3,9 +3,9 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Manutencao */
+/* @var $model frontend\models\Manutencao */
 
-$this->title = 'Atualizar Manutenção: ' . ' ' . $model->nome;
+$this->title = 'Atualizar Manutenção: ' . ' ' . $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Manutenções', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->nome, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Atualizar';
