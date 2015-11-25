@@ -12,7 +12,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="login-box">
     <div class="login-logo">
-        <a href="../../index2.html"><b>STP</b>CU</a>
+        <a href="../../index2.html"><b>SGF</b>UFAM</a>
     </div><!-- /.login-logo -->
 
     <div class="login-box-body">
@@ -21,7 +21,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             <div class="form-group has-feedback">
                 <?= $form->field($model, 'username') ?>
-                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
             </div>
 
             <div class="form-group has-feedback">
@@ -38,17 +38,11 @@ $this->params['breadcrumbs'][] = $this->title;
                     </div>
                 </div><!-- /.col -->
                 <div class="col-xs-4">
-                    <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
+                    <?= Html::submitButton('Login', ['class' => 'btn btn-primary btn-block btn-flat', 'name' => 'login-button']) ?>
                 </div><!-- /.col -->
             </div>
 
         <?php ActiveForm::end(); ?>
-
-        <div class="social-auth-links text-center">
-            <p>- OR -</p>
-            <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in using Facebook</a>
-            <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign in using Google+</a>
-        </div><!-- /.social-auth-links -->
 
         <?= Html::a('Esqueci minha senha', ['site/request-password-reset']) ?> <br>
         <?= Html::a('Registrar novo membro', ['site/signup']) ?> <br>

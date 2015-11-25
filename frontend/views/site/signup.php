@@ -10,26 +10,39 @@ use yii\bootstrap\ActiveForm;
 $this->title = 'Signup';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-signup">
-    <h1><?= Html::encode($this->title) ?></h1>
+<div class="register-box">
 
-    <p>Please fill out the following fields to signup:</p>
+    <div class="register-logo">
+        <a href="../../index2.html"><b>SGF</b>UFAM</a>
+    </div>
 
-    <div class="row">
-        <div class="col-lg-5">
-            <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
+    <div class="register-box-body">
+        <p class="login-box-msg">Registrar um novo usuário</p>
+        <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
 
+            <div class="form-group has-feedback">
                 <?= $form->field($model, 'username') ?>
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+            </div>
 
+            <div class="form-group has-feedback">
                 <?= $form->field($model, 'email') ?>
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
 
+            <div class="form-group has-feedback">
                 <?= $form->field($model, 'password')->passwordInput() ?>
-
-                <div class="form-group">
-                    <?= Html::submitButton('Signup', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
-                </div>
-
-            <?php ActiveForm::end(); ?>
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+        <div class="col-xs-8">
+            <!--Faz o botão de Registrar ficar no lugar certo-->
         </div>
+            <div class="col-xs-4">
+                <?= Html::submitButton('Registrar', ['class' => 'btn btn-primary btn-block btn-flat', 'name' => 'signup-button']) ?>
+            </div>
+
+        <?php ActiveForm::end(); ?>
+
+        <?= Html::a('Voltar à tela de Login', ['site/login']) ?> <br>
     </div>
 </div>

@@ -9,7 +9,7 @@ $this->title = 'Sistema de Transporte da PCU';
     <div class="jumbotron">
         <h1>Sejam bem-vindos!</h1>
 
-        <p class="lead">Você está acessando o Sistema de Transporte da PCU - UFAM.</p>
+        <p class="lead">Você está acessando o Sistema de Gerenciamento de Frotas da UFAM.</p>
 
     </div>
 </div>
