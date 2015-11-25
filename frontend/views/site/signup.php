@@ -20,6 +20,8 @@ $this->params['breadcrumbs'][] = $this->title;
         <p class="login-box-msg">Registrar um novo usuário</p>
         <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
 
+        <?= $form->field($model, 'nome')->textInput(['maxlength' => true]) ?>
+
             <div class="form-group has-feedback">
                 <?= $form->field($model, 'username') ?>
                 <span class="glyphicon glyphicon-user form-control-feedback"></span>
@@ -37,9 +39,16 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="col-xs-8">
             <!--Faz o botão de Registrar ficar no lugar certo-->
         </div>
-            <div class="col-xs-4">
-                <?= Html::submitButton('Registrar', ['class' => 'btn btn-primary btn-block btn-flat', 'name' => 'signup-button']) ?>
-            </div>
+
+        <?= $form->field($model, 'confirma_senha')->passwordInput() ?>
+
+        <?= $form->field($model, 'id_departamento')->dropDownList($departamento_lista, $model->getPrompt()) ?>
+
+        <?= $form->field($model, 'observacao')->textarea(['rows'=>'5'])?>
+
+        <div class="col-xs-4">
+            <?= Html::submitButton('Registrar', ['class' => 'btn btn-primary btn-block btn-flat', 'name' => 'signup-button']) ?>
+        </div>
 
         <?php ActiveForm::end(); ?>
 

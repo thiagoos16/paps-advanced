@@ -12,6 +12,8 @@ use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use yii\helpers\ArrayHelper;
+use frontend\models\Departamento;
 
 /**
  * Site controller
@@ -149,6 +151,8 @@ class SiteController extends Controller
      */
     public function actionSignup()
     {
+        $departamento = ArrayHelper::map(Departamento::find()->all(), 'id', 'nome');
+
         $model = new SignupForm();
         if ($model->load(Yii::$app->request->post())) {
             if ($user = $model->signup()) {
@@ -159,7 +163,7 @@ class SiteController extends Controller
         }
 
         return $this->render('signup', [
-            'model' => $model,
+            'model' => $model, 'departamento_lista'=>$departamento,
         ]);
     }
 
