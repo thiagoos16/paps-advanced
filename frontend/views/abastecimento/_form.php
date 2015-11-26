@@ -2,6 +2,7 @@
 
 use dosamigos\datepicker\DatePicker;
 use frontend\models\Motorista;
+use frontend\models\TipoCombustivel;
 use frontend\models\PostoAbastecimento;
 use frontend\models\Veiculo;
 use yii\helpers\ArrayHelper;
@@ -19,9 +20,13 @@ use yii\widgets\ActiveForm;
         <div class="box-header with-border">
             <?php $form = ActiveForm::begin(); ?>
 
-            <?= $form->field($model, 'preco_litro')->textInput() ?>
-
             <?= $form->field($model, 'id_posto')->dropDownList(ArrayHelper::map(PostoAbastecimento::find()->all(), 'id', 'nome'), ['prompt'=>'Selecione uma opção']) ?>
+
+            <?= $form->field($model, 'id_combustivel')->dropDownList(ArrayHelper::map(TipoCombustivel::find()->all(), 'id', 'nome'), ['prompt'=>'Selecione uma opção']) ?>
+
+            <?= $form->field($model, 'valor_abastecido')->textInput() ?>
+
+            <?= $form->field($model, 'qty_litro')->textInput() ?>
 
             <?= $form->field($model, 'id_veiculo')->dropDownList(ArrayHelper::map(Veiculo::find()->all(), 'renavam', 'placa_atual'), ['prompt'=>'Selecione uma opção']) ?>
 

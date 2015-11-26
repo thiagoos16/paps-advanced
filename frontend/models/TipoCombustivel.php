@@ -28,8 +28,9 @@ class TipoCombustivel extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['preco_litro'], 'number'],
             [['nome'], 'unique', "message"=>"Combustível existente no sistema"],
-            [['nome'], 'required', "message"=>"Este campo é obrigatório"],
+            [['nome', 'preco_litro'], 'required', "message"=>"Este campo é obrigatório"],
             [['nome'], 'string', 'max' => 50]
         ];
     }
@@ -42,6 +43,7 @@ class TipoCombustivel extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'nome' => 'Nome',
+            'preco_litro' => 'Preço Por Litro',
         ];
     }
 

@@ -19,8 +19,7 @@ class AbastecimentoSearch extends Abastecimento
     {
         return [
             [['id', 'id_posto', 'id_veiculo', 'km'], 'integer'],
-            [['preco_litro'], 'number'],
-            [['data_lancamento', 'id_motorista', 'data_abastecimento'], 'safe'],
+            [['data_lancamento', 'id_motorista', 'data_abastecimento', 'qty_litro', 'id_combustivel'], 'safe'],
         ];
     }
 
@@ -58,12 +57,13 @@ class AbastecimentoSearch extends Abastecimento
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'preco_litro' => $this->preco_litro,
             'id_posto' => $this->id_posto,
             'id_veiculo' => $this->id_veiculo,
             'km' => $this->km,
             'data_lancamento' => $this->data_lancamento,
             'data_abastecimento' => $this->data_abastecimento,
+            'id_combustivel' => $this->id_combustivel,
+            'qty_litro' => $this->qty_litro,
         ]);
 
         $query->andFilterWhere(['like', 'id_motorista', $this->id_motorista]);

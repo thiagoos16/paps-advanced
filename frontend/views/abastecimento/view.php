@@ -1,5 +1,7 @@
 <?php
 
+use frontend\models\PostoAbastecimento;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 
@@ -29,9 +31,10 @@ $this->params['breadcrumbs'][] = $this->title;
             <?= DetailView::widget([
                 'model' => $model,
                 'attributes' => [
-                    'id',
-                    'preco_litro',
                     'id_posto',
+                    'id_combustivel',
+                    'valor_abastecido',
+                    'qty_litro',
                     'id_veiculo',
                     'km',
                     'data_lancamento',

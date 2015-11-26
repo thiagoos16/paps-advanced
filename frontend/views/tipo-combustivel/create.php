@@ -4,7 +4,7 @@ use yii\helpers\Html;
 
 
 /* @var $this yii\web\View */
-/* @var $model app\models\TipoCombustivel */
+/* @var $model frontend\models\TipoCombustivel */
 
 $this->title = 'Novo Tipo Combustível';
 $this->params['breadcrumbs'][] = ['label' => 'Tipo Combustível', 'url' => ['index']];

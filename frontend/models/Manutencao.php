@@ -91,4 +91,9 @@ class Manutencao extends \yii\db\ActiveRecord
     public static function getPrompt(){
         return ['prompt'=>'Selecione uma opção'];
     }
+
+    public function afterSave($insert)
+    {
+        Veiculo::updateAll(array('status' => 4), "'id_veiculo' = $this->id_veiculo");
+    }
 }

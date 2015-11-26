@@ -19,6 +19,7 @@ use Yii;
  * @property Motorista $idMotorista
  * @property PostoAbastecimento $idPosto
  * @property Veiculo $idVeiculo
+ * @property TipoCombustivel $id_combustivel
  */
 class Abastecimento extends \yii\db\ActiveRecord
 {
@@ -36,9 +37,8 @@ class Abastecimento extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['preco_litro'], 'number'],
-            [['id_posto', 'id_veiculo', 'km', 'id_motorista'], 'required'],
-            [['id_posto', 'id_veiculo', 'km'], 'integer'],
+            [['id_posto', 'id_veiculo', 'km', 'id_motorista', 'id_combustivel', 'valor_abastecido'], 'required', 'message' => 'Este campo é obrigatório'],
+            [['id_posto', 'id_veiculo', 'km', 'qty_litro'], 'integer'],
             [['data_lancamento', 'data_abastecimento'], 'safe'],
             [['id_motorista'], 'string', 'max' => 11]
         ];
@@ -51,13 +51,15 @@ class Abastecimento extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'preco_litro' => 'Preço Por Litro',
             'id_posto' => 'Posto',
             'id_veiculo' => 'Veículo',
             'km' => 'Quilometragem',
             'data_lancamento' => 'Data de Lançamento',
             'id_motorista' => 'Motorista',
             'data_abastecimento' => 'Data de Abastecimento',
+            'id_combustivel' => 'Combustível',
+            'qty_litro' => 'Quantidade de litros',
+            'valor_abastecido' => 'Valor Abastecido'
         ];
     }
 
@@ -83,5 +85,20 @@ class Abastecimento extends \yii\db\ActiveRecord
     public function getIdVeiculo()
     {
         return $this->hasOne(Veiculo::className(), ['renavam' => 'id_veiculo']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getIdCombustivel()
+    {
+        return $this->hasOne(TipoCombustivel::className(), ['id' => 'id_combustivel']);
+    }
+
+    public function afterFind()
+    {
+        $this->id_combustivel = TipoCombustivel::findOne($this->id_combustivel)->nome;
+        $this->id_posto = PostoAbastecimento::findOne($this->id_posto)->nome;
+        $this->id_veiculo = Veiculo::findOne($this->id_veiculo)->placa_atual;
     }
 }

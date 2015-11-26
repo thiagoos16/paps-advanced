@@ -1,5 +1,7 @@
 <?php
 
+use frontend\models\TipoCombustivel;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\grid\GridView;
 
@@ -26,12 +28,19 @@ $this->params['breadcrumbs'][] = $this->title;
                 'filterModel' => $searchModel,
                 'columns' => [
                     ['class' => 'yii\grid\SerialColumn'],
-
-
-                    'preco_litro',
                     'id_posto',
                     'id_veiculo',
 
+                    [
+                        'attribute' => 'id_combustivel',
+                        'filter' => Html::activeDropDownList(
+                            $searchModel,
+                            'id_combustivel',
+                            ArrayHelper::map(TipoCombustivel::find()->asArray()->all(), 'id', 'nome'),
+                            ['class'=>'form-control','prompt'=>'Filtrar'  ]),
+                    ],
+
+                    'qty_litro',
                     // 'data_lancamento',
                     // 'id_motorista',
                     // 'data_abastecimento',
