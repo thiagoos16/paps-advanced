@@ -42,7 +42,7 @@ class Motorista extends \yii\db\ActiveRecord
             [['categoria_cnh'], 'string', 'max' => 2],
             [['tipo', 'status'], 'string', 'max' => 15],
             [['cnh'], 'unique', "message"=>"CNH existente no sistema"],
-            ['nome', 'match', 'pattern'=>'/^[a-z\s]{6,20}$/'],
+            //['nome', 'match', 'pattern'=>'/^[a-z\s]{6,20}$/'],
             ['categoria_cnh', 'match', 'pattern'=>'/^[a-zA_Z]/'],
 
         ];
@@ -97,8 +97,9 @@ class Motorista extends \yii\db\ActiveRecord
     }
 
     public static function getTipo(){
-        return ["T" => "Terceirizado",
-                "NT" => "Não Terceirizado"];
+        return ["S" => "Servidor",
+                "T" => "Terceirizado",
+                "A" => "Autorizado"];
     }
 
     public static function getStatus(){
@@ -116,11 +117,14 @@ class Motorista extends \yii\db\ActiveRecord
 
     public function afterFind()
     {
+        if(strcmp($this->tipo,"S") == 0){
+            $this->tipo = "Servidor";
+        }
         if(strcmp($this->tipo,"T") == 0){
             $this->tipo = "Terceirizado";
         }
-        if(strcmp($this->tipo,"NT") == 0){
-            $this->tipo = "Não Terceirizado";
+        if(strcmp($this->tipo,"A") == 0){
+            $this->tipo = "Autorizado";
         }
 
         if (strcmp($this->status,"D") == 0){

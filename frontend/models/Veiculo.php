@@ -49,7 +49,7 @@ class Veiculo extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['renavam', 'cidade', 'chassi', 'num_patrimonio', 'status', 'adquirido_de', 'uf_atual', 'uf_anterior', 'placa_atual', 'placa_anterior', 'potencia', 'id_modelo', 'id_cor', 'id_tipo_combustivel', 'ano_fabricacao', 'ano_modelo'], 'required'],
+            [['renavam', 'cidade', 'chassi', 'status', 'uf_atual', 'placa_atual', 'id_modelo', 'id_cor', 'id_tipo_combustivel', 'ano_fabricacao', 'ano_modelo'], 'required'],
             [['renavam', 'num_patrimonio', 'id_modelo', 'id_cor', 'id_tipo_combustivel', 'ano_fabricacao', 'ano_modelo'], 'integer'],
             [['cidade'], 'string', 'max' => 35],
             [['potencia'], 'string', 'max' => 5],
@@ -93,7 +93,8 @@ class Veiculo extends \yii\db\ActiveRecord
         return [
             '1' => 'Leiloado',
             '2' => 'Disponível',
-            '3' => 'Alocado'
+            '3' => 'Alocado',
+            '4' => 'Manutenção'
         ];
     }
 
@@ -161,6 +162,10 @@ class Veiculo extends \yii\db\ActiveRecord
 
             case '3':
                 $this->status = 'Alocado';
+                break;
+
+            case '4':
+                $this->status = 'Manutenção';
                 break;
 
         }
