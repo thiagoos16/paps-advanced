@@ -22,17 +22,37 @@ use yii\widgets\ActiveForm;
 
             <?= $form->field($model, 'id_posto')->dropDownList(ArrayHelper::map(PostoAbastecimento::find()->all(), 'id', 'nome'), ['prompt'=>'Selecione uma opção']) ?>
 
-            <?= $form->field($model, 'id_combustivel')->dropDownList(ArrayHelper::map(TipoCombustivel::find()->all(), 'id', 'nome'), ['prompt'=>'Selecione uma opção']) ?>
+            <?= $form->field($model, 'id_combustivel')->dropDownList(ArrayHelper::map(TipoCombustivel::find()->all(), 'id', 'nome'),
+                ['prompt'=>'Selecione uma opção',
+                'onchange' =>'
+                var valor_abastecimento = document.getElementById("abastecimento-valor_abastecido").value;
 
-            <?= $form->field($model, 'valor_abastecido')->textInput() ?>
+                $.get("index.php?r=abastecimento/calculo&id='.'" + $(this).val()+"&valor_abastecido="+valor_abastecimento, function(data){
+                    //console.log("res: "+data);
+                    document.getElementById("abastecimento-qty_litro").value = data;
 
-            <?= $form->field($model, 'qty_litro')->textInput() ?>
+                });',
+
+                ]) ?>
+
+            <?= $form->field($model, 'valor_abastecido')->textInput([
+                'onkeyup' =>'
+                    var id_combustivel = document.getElementById("abastecimento-id_combustivel").value;
+
+                    $.get("index.php?r=abastecimento/calculo&valor_abastecido='.'" + $(this).val()+"&id="+id_combustivel, function(data){
+                        //console.log("res: "+data);
+                        document.getElementById("abastecimento-qty_litro").value = data;
+
+                    });',
+            ]) ?>
+
+            <?= $form->field($model, 'qty_litro')->textInput(['readonly' => !$model->isNewRecord]) ?>
 
             <?= $form->field($model, 'id_veiculo')->dropDownList(ArrayHelper::map(Veiculo::find()->all(), 'renavam', 'placa_atual'), ['prompt'=>'Selecione uma opção']) ?>
 
             <?= $form->field($model, 'km')->textInput() ?>
 
-            <?= $form->field($model, 'data_lancamento')->textInput(['value'=>date('Y-m-d'), 'disabled'=>'true'])  ?>
+            <?= $form->field($model, 'data_lancamento')->textInput(['value'=>date('Y-m-d'), 'readonly' => !$model->isNewRecord])  ?>
 
             <?= $form->field($model, 'id_motorista')->dropDownList(ArrayHelper::map(Motorista::find()->all(), 'cnh', 'nome'), ['prompt'=>'Selecione uma opção']) ?>
 

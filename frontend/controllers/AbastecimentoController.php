@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use frontend\models\TipoCombustivel;
 use Yii;
 use frontend\models\Abastecimento;
 use frontend\models\AbastecimentoSearch;
@@ -101,6 +102,13 @@ class AbastecimentoController extends Controller
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
+    }
+
+    public function actionCalculo($id, $valor_abastecido){
+        //$this->id_combustivel = TipoCombustivel::findOne($this->id_combustivel)->nome;
+        echo $valor_abastecido /TipoCombustivel::findOne($id)->preco_litro;
+        //echo "Valor: $valor_abastecido ID: .$id";
+
     }
 
     /**

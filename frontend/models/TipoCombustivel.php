@@ -9,6 +9,7 @@ use Yii;
  *
  * @property integer $id
  * @property integer $nome
+ * @property integer $preco_litro
  *
  * @property Veiculo[] $veiculos
  */
