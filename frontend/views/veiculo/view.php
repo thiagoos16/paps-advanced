@@ -36,6 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'num_patrimonio',
                     'lotacao',
                     'status',
+                    'capacidade_passageiros',
                     'observacao',
                     'adquirido_de',
                     'uf_atual',

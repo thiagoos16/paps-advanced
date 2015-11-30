@@ -30,6 +30,8 @@ use yii\widgets\ActiveForm;
 
             <?= $form->field($model, 'status')->dropDownList($model->getStatus(), ['prompt'=>'Selecione uma opção']) ?>
 
+            <?= $form->field($model, 'capacidade_passageiros')->textInput() ?>
+
             <?= $form->field($model, 'observacao')->textarea(['rows'=>'10'])?>
 
             <?= $form->field($model, 'adquirido_de')->textInput(['maxlength' => true]) ?>

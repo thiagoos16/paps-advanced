@@ -25,6 +25,7 @@ use Yii;
  * @property integer $id_tipo_combustivel
  * @property integer $ano_fabricacao
  * @property integer $ano_modelo
+ * @property integer $capacidade_passageiros
  *
  * @property Abastecimento[] $abastecimentos
  * @property Manutencao[] $manutencaos
@@ -49,8 +50,8 @@ class Veiculo extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['renavam', 'cidade', 'chassi', 'status', 'uf_atual', 'placa_atual', 'id_modelo', 'id_cor', 'id_tipo_combustivel', 'ano_fabricacao', 'ano_modelo'], 'required'],
-            [['renavam', 'num_patrimonio', 'id_modelo', 'id_cor', 'id_tipo_combustivel', 'ano_fabricacao', 'ano_modelo'], 'integer'],
+            [['renavam', 'cidade', 'chassi', 'status', 'uf_atual', 'placa_atual', 'id_modelo', 'id_cor', 'id_tipo_combustivel', 'ano_fabricacao', 'ano_modelo', 'capacidade_passageiros'], 'required'],
+            [['renavam', 'num_patrimonio', 'id_modelo', 'id_cor', 'id_tipo_combustivel', 'ano_fabricacao', 'ano_modelo', 'capacidade_passageiros'], 'integer'],
             [['cidade'], 'string', 'max' => 35],
             [['potencia'], 'string', 'max' => 5],
             [['chassi'], 'string', 'max' => 18],
@@ -86,6 +87,7 @@ class Veiculo extends \yii\db\ActiveRecord
             'id_tipo_combustivel' => 'Tipo de Combustível',
             'ano_fabricacao' => 'Ano de Fabricação',
             'ano_modelo' => 'Ano do Modelo',
+            'capacidade_passageiros' => 'Capacidade de Passageiros'
         ];
     }
 
