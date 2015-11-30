@@ -46,13 +46,13 @@ use yii\widgets\ActiveForm;
                     });',
             ]) ?>
 
-            <?= $form->field($model, 'qty_litro')->textInput(['readonly' => !$model->isNewRecord]) ?>
+            <?= $form->field($model, 'qty_litro')->textInput(['readonly' => 'true']) ?>
 
             <?= $form->field($model, 'id_veiculo')->dropDownList(ArrayHelper::map(Veiculo::find()->all(), 'renavam', 'placa_atual'), ['prompt'=>'Selecione uma opção']) ?>
 
             <?= $form->field($model, 'km')->textInput() ?>
 
-            <?= $form->field($model, 'data_lancamento')->textInput(['value'=>date('Y-m-d'), 'readonly' => !$model->isNewRecord])  ?>
+            <?= $form->field($model, 'data_lancamento')->textInput(['value'=>date('Y-m-d'), 'readonly' => 'true'])  ?>
 
             <?= $form->field($model, 'id_motorista')->dropDownList(ArrayHelper::map(Motorista::find()->all(), 'cnh', 'nome'), ['prompt'=>'Selecione uma opção']) ?>
 
