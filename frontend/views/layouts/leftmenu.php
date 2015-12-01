@@ -108,6 +108,18 @@ use yii\helpers\Html;
                   </a>
               </li>
 
+              <li>
+                  <a href="index.php?r=solicitacao/index">
+                      <i class="fa fa-dashboard"></i> <span>Solicitação</span>
+                  </a>
+              </li>
+
+              <li>
+                  <a href="index.php?r=resposta-solicitacao/index">
+                      <i class="fa fa-dashboard"></i> <span>Responder Solicitação</span>
+                  </a>
+              </li>
+
           </ul>
         </section>
         <!-- /.sidebar -->
