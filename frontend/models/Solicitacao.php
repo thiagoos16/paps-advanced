@@ -2,6 +2,7 @@
 
 namespace frontend\models;
 
+use common\models\User;
 use Yii;
 
 /**
@@ -49,14 +50,14 @@ class Solicitacao extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
+            'id' => 'N° da Solicitação',
             'destino' => 'Destino',
-            'hora_saida' => 'Hora Saida',
-            'data_hora' => 'Data Hora',
-            'observacao' => 'Observacao',
+            'hora_saida' => 'Hora de Saida',
+            'data_hora' => 'Data de Lançamento no sistema',
+            'observacao' => 'Observação',
             'status' => 'Status',
-            'id_usuario' => 'Id Usuario',
-            'capacidade_passageiros' => 'Capacidade Passageiros',
+            'id_usuario' => 'Usuário',
+            'capacidade_passageiros' => 'Número de Passageiros',
         ];
     }
 
@@ -74,5 +75,10 @@ class Solicitacao extends \yii\db\ActiveRecord
     public function getIdUsuario()
     {
         return $this->hasOne(Usuario::className(), ['id' => 'id_usuario']);
+    }
+
+    public function afterFind()
+    {
+        $this->id_usuario = User::findOne($this->id_usuario)->nome;
     }
 }

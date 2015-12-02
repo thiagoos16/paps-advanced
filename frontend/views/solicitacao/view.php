@@ -15,28 +15,32 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
+        <?= Html::a('Editar', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Deletar', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => 'Você tem certeza que deseja apagar essa Solicitação?',
                 'method' => 'post',
             ],
         ]) ?>
     </p>
 
-    <?= DetailView::widget([
-        'model' => $model,
-        'attributes' => [
-            'id',
-            'destino',
-            'hora_saida',
-            'data_hora',
-            'observacao',
-            'status',
-            'id_usuario',
-            'capacidade_passageiros',
-        ],
-    ]) ?>
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            <?= DetailView::widget([
+                'model' => $model,
+                'attributes' => [
+                    'id',
+                    'destino',
+                    'hora_saida',
+                    'id_usuario',
+                    'capacidade_passageiros',
+                    'observacao',
+                    'status',
+                    'data_hora',
+                ],
+            ]) ?>
+        </div>
+    </div>
 
 </div>

@@ -35,92 +35,109 @@ use yii\helpers\Html;
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
             <li class="header">MENU</li>
-              <li>
-                  <a href="index.php?r=marca/index">
-                      <i class="fa fa-dashboard"></i> <span>Marca</span>
-                  </a>
-              </li>
-
-              <li>
-                  <a href="index.php?r=modelo/index">
-                      <i class="fa fa-dashboard"></i> <span>Modelo</span>
-                  </a>
-              </li>
-
-              <li>
-                  <a href="index.php?r=motorista/index">
-                      <i class="fa fa-dashboard"></i> <span>Motorista</span>
-                  </a>
-              </li>
-
-              <li>
-                  <a href="index.php?r=tipo-combustivel/index">
-                      <i class="fa fa-dashboard"></i> <span>Tipo de Combustível</span>
-                  </a>
-              </li>
-
-              <li>
-                  <a href="index.php?r=posto-abastecimento/index">
-                      <i class="fa fa-dashboard"></i> <span>Posto de Abastecimento</span>
-                  </a>
-              </li>
-
-              <li>
-                  <a href="index.php?r=cor/index">
-                      <i class="fa fa-dashboard"></i> <span>Cor</span>
-                  </a>
-              </li>
-
-              <li>
-                  <a href="index.php?r=veiculo/index">
-                      <i class="fa fa-dashboard"></i> <span>Veículo</span>
-                  </a>
-              </li>
-
-              <li>
-                  <a href="index.php?r=departamento/index">
-                      <i class="fa fa-dashboard"></i> <span>Departamento</span>
-                  </a>
-              </li>
-
-              <li>
-
-                  <a href="index.php?r=usuario/index">
-                      <i class="fa fa-dashboard"></i> <span>Usuário</span>
-                  </a>
-              </li>
-
-              <li>
-                  <a href="index.php?r=categoria-veiculo/index">
-                      <i class="fa fa-dashboard"></i> <span>Categoria de Veículo</span>
-                  </a>
-              </li>
-
-              <li>
-                  <a href="index.php?r=manutencao/index">
-                      <i class="fa fa-dashboard"></i> <span>Manutenção</span>
-                  </a>
-              </li>
-
-              <li>
-                  <a href="index.php?r=abastecimento/index">
-                      <i class="fa fa-dashboard"></i> <span>Abastecimento</span>
-                  </a>
-              </li>
 
               <li>
                   <a href="index.php?r=solicitacao/index">
-                      <i class="fa fa-dashboard"></i> <span>Solicitação</span>
+                      <i class="fa fa-comment"></i> <span>Solicitações</span>
                   </a>
               </li>
 
               <li>
                   <a href="index.php?r=resposta-solicitacao/index">
-                      <i class="fa fa-dashboard"></i> <span>Responder Solicitação</span>
+                      <i class="fa fa-comments"></i> <span>Responder Solicitação</span>
+                  </a>
+              </li>
+
+              <li class="treeview">
+                  <a href="#">
+                      <i class="fa fa-money"></i> <span>Gastos</span> <i class="fa fa-angle-left pull-right"></i>
+                  </a>
+                  <ul class="treeview-menu">
+
+                      <li>
+                          <a href="index.php?r=abastecimento/index">
+                              <i class="fa fa-dashboard"></i> <span>Abastecimentos</span>
+                          </a>
+                      </li>
+
+                      <li>
+                          <a href="index.php?r=manutencao/index">
+                              <i class="fa fa-wrench"></i> <span>Manutenções</span>
+                          </a>
+                      </li>
+                  </ul>
+              </li>
+
+              <li class="treeview">
+                  <a href="#">
+                      <i class="fa fa-car"></i> <span>Veículos</span> <i class="fa fa-angle-left pull-right"></i>
+                  </a>
+                  <ul class="treeview-menu">
+
+                      <li>
+                          <a href="index.php?r=cor/index">
+                              <i class="fa fa-dashboard"></i> <span>Cores</span>
+                          </a>
+                      </li>
+
+                      <li>
+                          <a href="index.php?r=marca/index">
+                              <i class="fa fa-bus"></i> <span>Marcas</span>
+                          </a>
+                      </li>
+
+                      <li>
+                          <a href="index.php?r=modelo/index">
+                              <i class="fa fa-truck"></i> <span>Modelos</span>
+                          </a>
+                      </li>
+
+                      <li>
+                          <a href="index.php?r=tipo-combustivel/index">
+                              <i class="fa fa-motorcycle"></i> <span>Tipos de Combustível</span>
+                          </a>
+                      </li>
+
+                      <li>
+                          <a href="index.php?r=veiculo/index">
+                              <i class="fa fa-car"></i> <span>Veículos</span>
+                          </a>
+                      </li>
+                  </ul>
+              </li>
+
+              <li>
+                  <a href="index.php?r=motorista/index">
+                      <i class="fa fa-user"></i> <span>Motoristas</span>
+                  </a>
+              </li>
+
+              <li>
+                  <a href="index.php?r=posto-abastecimento/index">
+                      <i class="fa fa-dashboard"></i> <span>Postos de Abastecimento</span>
+                  </a>
+              </li>
+
+              <li>
+                  <a href="index.php?r=departamento/index">
+                      <i class="fa fa-briefcase"></i> <span>Departamentos</span>
+                  </a>
+              </li>
+
+              <li>
+                  <a href="index.php?r=usuario/index">
+                      <i class="fa fa-users"></i> <span>Usuários</span>
+                  </a>
+              </li>
+
+              <li>
+                  <a href="#">
+                      <i class="fa fa-newspaper-o"></i> <span>Relatório Anual</span>
                   </a>
               </li>
 
           </ul>
+
         </section>
         <!-- /.sidebar -->
       </aside>

@@ -14,28 +14,33 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
+    <?php ?>
     <p>
         <?= Html::a('Nova Solicitação', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+    <div class="box">
+        <div class="box-body">
 
-            'id',
-            'destino',
-            'hora_saida',
-            'data_hora',
-            'observacao',
-            // 'status',
-            // 'id_usuario',
-            // 'capacidade_passageiros',
+            <?= GridView::widget([
+                'dataProvider' => $dataProvider,
+                'filterModel' => $searchModel,
+                'columns' => [
+                    ['class' => 'yii\grid\SerialColumn'],
 
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
+                    'id',
+                    'destino',
+                    'hora_saida',
+                    //'data_hora',
+                    //'observacao',
+                    'id_usuario',
+                    'status',
+                    // 'capacidade_passageiros',
+
+                    ['class' => 'yii\grid\ActionColumn'],
+                ],
+            ]); ?>
+        </div>
+    </div>
 
 </div>

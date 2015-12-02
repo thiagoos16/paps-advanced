@@ -47,10 +47,10 @@ class RespostaSolicitacao extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id_solicitacao' => 'Id Solicitacao',
-            'hora_chegada' => 'Hora Chegada',
-            'id_motorista' => 'Id Motorista',
-            'id_veiculo' => 'Id Veiculo',
+            'id_solicitacao' => 'N° da Solicitação',
+            'hora_chegada' => 'Hora da Chegada',
+            'id_motorista' => 'Motorista',
+            'id_veiculo' => 'Veiculo',
             'Seguro' => 'Seguro',
         ];
     }
@@ -77,5 +77,11 @@ class RespostaSolicitacao extends \yii\db\ActiveRecord
     public function getIdVeiculo()
     {
         return $this->hasOne(Veiculo::className(), ['renavam' => 'id_veiculo']);
+    }
+
+    public function afterFind()
+    {
+        $this->id_motorista = Motorista::findOne($this->id_motorista)->nome;
+        $this->id_veiculo = Veiculo::findOne($this->id_veiculo)->placa_atual;
     }
 }
