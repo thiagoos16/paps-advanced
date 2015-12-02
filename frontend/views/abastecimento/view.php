@@ -8,7 +8,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model frontend\models\Abastecimento */
 
-$this->title = $model->data_abastecimento;
+$this->title = 'Visualizar Abastecimento';
 $this->params['breadcrumbs'][] = ['label' => 'Abastecimentos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

@@ -26,6 +26,9 @@ class Manutencao extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
+
+
+
     public static function tableName()
     {
         return 'manutencao';
@@ -45,6 +48,8 @@ class Manutencao extends \yii\db\ActiveRecord
             [['tipo'], 'string', 'max' => 25],
             [['id_motorista'], 'string', 'max' => 11],
             ['data_saida','compare','compareAttribute'=>'data_entrada','operator'=>'>=',"message"=>'A data de entrada não pode ser maior que a data de saída']
+
+
         ];
     }
 
@@ -66,7 +71,6 @@ class Manutencao extends \yii\db\ActiveRecord
             'id_motorista' => 'Motorista',
         ];
     }
-
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -96,4 +100,10 @@ class Manutencao extends \yii\db\ActiveRecord
     {
         Veiculo::updateAll(array('status' => 4), "'id_veiculo' = $this->id_veiculo");
     }
+
+
+
+
 }
+
+
