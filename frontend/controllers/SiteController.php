@@ -15,6 +15,8 @@ use yii\filters\AccessControl;
 use yii\helpers\ArrayHelper;
 use frontend\models\Departamento;
 
+#We will include the pdf library installed by composer
+use mPDF;
 /**
  * Site controller
  */
@@ -211,5 +213,13 @@ class SiteController extends Controller
         return $this->render('resetPassword', [
             'model' => $model,
         ]);
+    }
+
+    public function actionPdf() {
+
+        $mpdf = new mPDF;
+        $mpdf->WriteHTML('<p>Hallo World</p>');
+        $mpdf->Output();
+        exit;
     }
 }

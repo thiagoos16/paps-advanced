@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "bb51ef05da8929556abc4475efba4566",
-    "content-hash": "37f871f5f13fc6b74c331778c1920b9b",
+    "hash": "d2756036cbbeb3690ab3a2dab8c90243",
+    "content-hash": "6b101493e9fafb3525de181e29c2e40f",
     "packages": [
         {
             "name": "2amigos/yii2-date-picker-widget",
@@ -408,6 +408,53 @@
                 "html"
             ],
             "time": "2013-11-30 08:25:19"
+        },
+        {
+            "name": "mpdf/mpdf",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mpdf/mpdf.git",
+                "reference": "9f2d761e7ac1d89a6752a18036a597fa9ce2d8c7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mpdf/mpdf/zipball/9f2d761e7ac1d89a6752a18036a597fa9ce2d8c7",
+                "reference": "9f2d761e7ac1d89a6752a18036a597fa9ce2d8c7",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "php": ">=4.3.10"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "mpdf.php",
+                    "classes"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Ian Back",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A PHP class to generate PDF files from HTML with Unicode/UTF-8 and CJK support",
+            "homepage": "http://www.mpdf1.com/mpdf/index.php",
+            "keywords": [
+                "pdf",
+                "php",
+                "utf-8"
+            ],
+            "time": "2015-06-17 07:26:51"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -1007,7 +1054,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "mpdf/mpdf": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
