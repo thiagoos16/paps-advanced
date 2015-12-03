@@ -5,7 +5,7 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\MotoristaSearch */
+/* @var $searchModel frontend\models\MotoristaSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Motoristas';
@@ -18,6 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <?= Html::a('Novo Motorista', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a ('Gerar PDF', ['pdf'], ['class' => 'btn btn-warning', 'target' => '_blank']) ?>
     </p>
 
     <div class="box">
