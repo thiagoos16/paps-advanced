@@ -1,4 +1,5 @@
 <?php
+use frontend\models\Departamento;
 use yii\helpers\Html;
 ?>
       <!-- Left side column. contains the logo and sidebar -->
@@ -11,16 +12,30 @@ use yii\helpers\Html;
               <img src="<?=$baseUrl?>/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-              <p>
-                  <?php
-                  if(Yii::$app->user->isGuest){
-                      echo "Visitante ";
-                  }else{
-                      echo Yii::$app->user->identity->username;
-                  }
-                  ?>
-              </p>
-              <a href="#">Icomp</a>
+
+                <!-- USUÁRIO -->
+                <p>
+                    <?php
+                    if(Yii::$app->user->isGuest){
+                        echo "Visitante";
+                    }else{
+                        echo Yii::$app->user->identity->username;
+                    }
+                    ?>
+                </p>
+
+                <!-- DEPARTAMENTO -->
+                <a>
+                    <?php
+                    $departamento = Yii::$app->user->identity->id_departamento;
+                    if(Yii::$app->user->isGuest){
+                        echo "Visitante";
+                    }else{
+                        echo $departamento = Departamento::findOne($departamento)->nome;
+                    }
+                ?>
+                </a>
+
             </div>
           </div>
           <!-- search form -->

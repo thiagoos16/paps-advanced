@@ -16,18 +16,16 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'hora_saida')->textInput() ?>
 
-    <?= $form->field($model, 'data_hora')->textInput() ?>
-
-    <?= $form->field($model, 'observacao')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'status')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'id_usuario')->textInput() ?>
-
     <?= $form->field($model, 'capacidade_passageiros')->textInput() ?>
 
+    <?= $form->field($model, 'observacao')->textarea(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'status')->textInput(['value' => 1, 'readonly' => true]) ?>
+
+    <?= $form->field($model, 'id_usuario')->textInput(['value' => Yii::$app->user->identity->getId(), 'readonly' => true]) ?>
+
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? 'Salvar' : 'Salvar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

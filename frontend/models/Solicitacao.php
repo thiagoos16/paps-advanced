@@ -38,7 +38,7 @@ class Solicitacao extends \yii\db\ActiveRecord
         return [
             [['destino', 'hora_saida', 'status', 'id_usuario', 'capacidade_passageiros'], 'required'],
             [['hora_saida', 'data_hora'], 'safe'],
-            [['id_usuario', 'capacidade_passageiros'], 'integer'],
+            [['capacidade_passageiros'], 'integer'],
             [['destino', 'observacao'], 'string', 'max' => 45],
             [['status'], 'string', 'max' => 15]
         ];
@@ -77,8 +77,30 @@ class Solicitacao extends \yii\db\ActiveRecord
         return $this->hasOne(Usuario::className(), ['id' => 'id_usuario']);
     }
 
+    public function getStatus(){
+        return [
+            '1' => 'Em análise',
+            '2' => 'Aceita',
+            '3' => 'Rejeitada'
+        ];
+    }
+
     public function afterFind()
     {
         $this->id_usuario = User::findOne($this->id_usuario)->nome;
+
+        switch ($this->status){
+            case '1':
+                $this->status = 'Em análise';
+                break;
+
+            case '2':
+                $this->status = 'Aceita';
+                break;
+
+            case '3':
+                $this->status = 'Rejeitada';
+                break;
+        }
     }
 }

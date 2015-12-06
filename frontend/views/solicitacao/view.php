@@ -43,4 +43,8 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
 
+    <p align="right">
+    <?= Html::a('Aceitar Solicitação', ['resposta-solicitacao/create', 'id' => $model->id], ['class' => 'btn btn-success btn-lg']) ?>
+    <?= Html::a('Recusar Solicitação', ['resposta-solicitacao/view', 'id' => $model->id], ['class' => 'btn btn-danger btn-lg']) ?>
+    </p>
 </div>
