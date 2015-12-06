@@ -17,6 +17,20 @@ class MarcaController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['create','index','update','view','delete'],
+                'rules' => [
+                    'actions' => ['create','index','update','view','delete'],
+                    'allow' => true,
+                    'matchCallback' => function($rule,$action) {
+                        if (!Yii::$app->user->isGuest) {
+                            return Yii::$app->user->identity->id_departamento == '2';
+                        }
+                    }
+                ],
+
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
