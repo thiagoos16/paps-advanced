@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'hora_saida',
                     //'data_hora',
                     //'observacao',
-                    'id_usuario',
+                    //'id_usuario',
                     'status',
                     // 'capacidade_passageiros',
 
