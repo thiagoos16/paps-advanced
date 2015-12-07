@@ -39,29 +39,6 @@ class AbastecimentoController extends Controller
 
             ],
         ];
-
-        /*return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'only' => ['create','index','update','view','delete'],
-                'rules' => [
-                    'actions' => ['create','update','view','delete'],
-                    'rules' => [
-                        [
-                            'allow' => true,
-                            'roles' => ['@'],
-                        ]
-                        ]
-                    /*'matchCallback' => function($rule,$action) {
-                        if (!Yii::$app->user->isGuest) {
-                            return Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == '2';
-                        }
-                    }
-                    ,
-                ],
-            ],
-
-        ];*/
     }
 
     /**
@@ -145,8 +122,8 @@ class AbastecimentoController extends Controller
         //$this->id_combustivel = TipoCombustivel::findOne($this->id_combustivel)->nome;
         echo $valor_abastecido /TipoCombustivel::findOne($id)->preco_litro;
         //echo "Valor: $valor_abastecido ID: .$id";
-
     }
+
 
     /**
      * Finds the Abastecimento model based on its primary key value.

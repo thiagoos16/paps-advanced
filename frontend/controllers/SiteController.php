@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use common\models\LockscreenForm;
 use Yii;
 use common\models\LoginForm;
 use frontend\models\PasswordResetRequestForm;
@@ -165,7 +166,22 @@ class SiteController extends Controller
         ]);
     }
 
-    /**
+    public function actionLockscreen()
+    {
+        $this->layout = 'guest';
+
+        $model = new LockscreenForm();
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            $this->layout = 'main';
+            return $this->render('index');
+        } else {
+            $model->password = '';
+            return $this->render('lockscreen', ['model' => $model]);
+        }
+    }
+
+
+        /**
      * Requests password reset.
      *
      * @return mixed

@@ -149,3 +149,30 @@ h2{
     color: red;
     font-weight: bold;
 }
+
+/* User name [optional] */
+.lockscreen-name {
+    text-align: center;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.input-group-mod {
+
+    display: block;
+    width: 219px;
+    height: 35px;
+}
+
+.input-group-btn-mod {
+    position: absolute;
+    top: 6px;
+    left: 258px;
+    font-size: 0;
+    white-space: nowrap;
+}
+#teste{
+    position: relative;
+    top: 36px;
+    left: 0px;
+}

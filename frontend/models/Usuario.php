@@ -77,6 +77,7 @@ class Usuario extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
+
     public function getIdDepartamento()
     {
         return $this->hasOne(Departamento::className(), ['id' => 'id_departamento']);

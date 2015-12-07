@@ -21,6 +21,7 @@ class AppAsset extends AssetBundle
     public $sourcePath = '@web/backend/';
 
     public $css = [
+        'bootstrap/css/bootstrap.min.css',
         '../css/site.css',
         'dist/css/skins/_all-skins.min.css',
         '//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css',
