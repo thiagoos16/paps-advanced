@@ -25,7 +25,7 @@ class AbastecimentoController extends Controller
                 'class' => AccessControl::className(),
                 'only' => ['create','index','update','view','delete'],
                 'rules' => [
-                    [
+                    array(
                         'allow' => true,
                         'actions' => ['create','index','update','view','delete'],
                         'matchCallback' => function($rule,$action) {
@@ -34,11 +34,12 @@ class AbastecimentoController extends Controller
 
                             }
                         }
-                    ],
+                    ),
                 ],
 
             ],
         ];
+
     }
 
     /**
@@ -122,6 +123,7 @@ class AbastecimentoController extends Controller
         //$this->id_combustivel = TipoCombustivel::findOne($this->id_combustivel)->nome;
         echo $valor_abastecido /TipoCombustivel::findOne($id)->preco_litro;
         //echo "Valor: $valor_abastecido ID: .$id";
+
     }
 
 

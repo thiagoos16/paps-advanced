@@ -6,6 +6,8 @@
 
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
+use yii\helpers\ArrayHelper;
+use frontend\models\Departamento;
 
 $this->title = 'Signup';
 $this->params['breadcrumbs'][] = $this->title;
@@ -32,7 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             <?= $form->field($model, 'confirma_senha')->passwordInput() ?>
 
-            <?= $form->field($model, 'id_departamento')->dropDownList($departamento_lista, $model->getPrompt()) ?>
+            <?= $form->field($model, 'id_departamento')->dropDownList(ArrayHelper::map(Departamento::find()->all(),'id','nome'),['prompt'=>'Selecione uma opção']) ?>
 
             <?= $form->field($model, 'observacao')->textarea(['rows'=>'5'])?>
 
