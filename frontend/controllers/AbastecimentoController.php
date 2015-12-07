@@ -3,6 +3,7 @@
 namespace frontend\controllers;
 
 use frontend\models\TipoCombustivel;
+use frontend\models\Usuario;
 use Yii;
 use frontend\models\Abastecimento;
 use frontend\models\AbastecimentoSearch;
@@ -24,23 +25,43 @@ class AbastecimentoController extends Controller
                 'class' => AccessControl::className(),
                 'only' => ['create','index','update','view','delete'],
                 'rules' => [
-                    'actions' => ['create','index','update','view','delete'],
-                    'allow' => true,
-                    'matchCallback' => function($rule,$action) {
-                        if (!Yii::$app->user->isGuest) {
-                            return Yii::$app->user->identity->id_departamento == '2';
+                    [
+                        'allow' => true,
+                        'actions' => ['create','index','update','view','delete'],
+                        'matchCallback' => function($rule,$action) {
+                            if (!Yii::$app->user->isGuest) {
+                                return Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1";
+
+                            }
                         }
-                    }
+                    ],
                 ],
 
             ],
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['post'],
+        ];
+
+        /*return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['create','index','update','view','delete'],
+                'rules' => [
+                    'actions' => ['create','update','view','delete'],
+                    'rules' => [
+                        [
+                            'allow' => true,
+                            'roles' => ['@'],
+                        ]
+                        ]
+                    /*'matchCallback' => function($rule,$action) {
+                        if (!Yii::$app->user->isGuest) {
+                            return Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == '2';
+                        }
+                    }
+                    ,
                 ],
             ],
-        ];
+
+        ];*/
     }
 
     /**

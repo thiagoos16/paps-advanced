@@ -36,12 +36,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
             <?= $form->field($model, 'observacao')->textarea(['rows'=>'5'])?>
 
-            <div class="form-group">
-                <?= Html::submitButton($model->isNewRecord ? 'Novo' : 'Atualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
-            </div>
-
             <div class="col-xs-4">
-                <?= Html::submitButton('Registrar', ['class' => 'btn btn-primary btn-block btn-flat', 'name' => 'signup-button']) ?>
+                <?= Html::submitButton('Novo', ['class' => 'btn btn-primary btn-block btn-flat', 'name' => 'signup-button']) ?>
             </div>
 
             <?php ActiveForm::end(); ?>

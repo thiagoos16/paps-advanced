@@ -1,6 +1,7 @@
 <?php
 namespace common\models;
 
+use frontend\models\Usuario;
 use Yii;
 use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
@@ -31,7 +32,7 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public static function tableName()
     {
-        return '{{%user}}';
+        return 'user';
     }
 
     /**
@@ -185,4 +186,9 @@ class User extends ActiveRecord implements IdentityInterface
     {
         $this->password_reset_token = null;
     }
+
+    public function isManager(){
+        return Usuario::findOne($this->id)->id_departamento == "2";
+    }
+
 }

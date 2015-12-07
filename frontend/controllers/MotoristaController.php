@@ -132,11 +132,8 @@ class MotoristaController extends Controller
         15,    // margin_left
  15,    // margin right
  16,     // margin top
-
  16,    // margin bottom
-
  9,     // margin header
-
  9,     // margin footer
 
  'L');
