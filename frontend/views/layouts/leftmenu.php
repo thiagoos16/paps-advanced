@@ -1,6 +1,8 @@
 <?php
 use frontend\models\Departamento;
 use yii\helpers\Html;
+use frontend\models\user;
+use frontend\models\Usuario;
 ?>
       <!-- Left side column. contains the logo and sidebar -->
       <aside class="main-sidebar">
@@ -70,15 +72,19 @@ use yii\helpers\Html;
                   <ul class="treeview-menu">
 
                       <li>
-                          <a href="index.php?r=abastecimento/index">
-                              <i class="fa fa-dashboard"></i> <span>Abastecimentos</span>
-                          </a>
+                          <?php
+                          if (Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1")
+                              echo Html::a("Abastecimentos",['abastecimento/index']);
+
+                          ?>
                       </li>
 
                       <li>
-                          <a href="index.php?r=manutencao/index">
-                              <i class="fa fa-wrench"></i> <span>Manutenções</span>
-                          </a>
+                          <?php
+                          if (Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1")
+                              echo Html::a("Manutenções",['manutencao/index']);
+
+                          ?>
                       </li>
                   </ul>
               </li>
@@ -90,66 +96,79 @@ use yii\helpers\Html;
                   <ul class="treeview-menu">
 
                       <li>
+                          <?php
+                          if (Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1")
+                              echo Html::a("Cores",['cor/index']);
 
-                          <a href="index.php?r=cor/index">
-                              <i class="fa fa-dashboard"></i> <span>Cores</span>
-                          </a>
+                          ?>
                       </li>
-
                       <li>
-                          <a href="index.php?r=marca/index">
-                              <i class="fa fa-bus"></i> <span>Marcas</span>
-                          </a>
+                          <?php
+                          if (Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1")
+                              echo Html::a("Marcas",['marca/index']);
+
+                          ?>
                       </li>
-
                       <li>
-                          <a href="index.php?r=modelo/index">
-                              <i class="fa fa-truck"></i> <span>Modelos</span>
-                          </a>
+                          <?php
+                          if (Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1")
+                              echo Html::a("Modelos",['modelo/index']);
+
+                          ?>
                       </li>
-
                       <li>
-                          <a href="index.php?r=tipo-combustivel/index">
-                              <i class="fa fa-motorcycle"></i> <span>Tipos de Combustível</span>
-                          </a>
+                          <?php
+                          if (Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1")
+                              echo Html::a("Tipos de Combustível",['tipo-combustivel/index']);
+
+                          ?>
                       </li>
-
                       <li>
-                          <a href="index.php?r=veiculo/index">
-                              <i class="fa fa-car"></i> <span>Veículos</span>
-                          </a>
+                          <?php
+                          if (Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1")
+                              echo Html::a("Veículos",['veiculo/index']);
+
+                          ?>
                       </li>
                   </ul>
               </li>
 
               <li>
-                  <a href="index.php?r=motorista/index">
-                      <i class="fa fa-user"></i> <span>Motoristas</span>
-                  </a>
+                  <?php
+                  if (Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1")
+                      echo Html::a("Motoristas",['motorista/index']);
+
+                  ?>
               </li>
 
               <li>
-                  <a href="index.php?r=posto-abastecimento/index">
-                      <i class="fa fa-dashboard"></i> <span>Postos de Abastecimento</span>
-                  </a>
+                  <?php
+                  if (Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1")
+                      echo Html::a("Postos de Abastecimento",['posto-abastecimento/index']);
+
+                  ?>
               </li>
 
               <li>
-                  <a href="index.php?r=departamento/index">
-                      <i class="fa fa-briefcase"></i> <span>Departamentos</span>
-                  </a>
+                  <?php
+                  if (Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1")
+                      echo Html::a("Departamentos",['departamento/index']);
+
+                  ?>
               </li>
 
               <li>
-                  <a href="index.php?r=usuario/index">
-                      <i class="fa fa-users"></i> <span>Usuários</span>
-                  </a>
+                  <?php
+                  if (Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1")
+                      echo Html::a("Usuários",['usuario/index']);
+                  ?>
               </li>
 
               <li>
-                  <a href="#">
-                      <i class="fa fa-newspaper-o"></i> <span>Relatório Anual</span>
-                  </a>
+                  <?php
+                  if (Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1")
+                      echo Html::a("Relatório Anual",['#']);
+                  ?>
               </li>
 
           </ul>

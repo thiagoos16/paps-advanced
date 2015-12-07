@@ -45,6 +45,26 @@ class CorController extends Controller
         ];
     }
 
+    public function filters()
+    {
+        return array(
+            'accessControl', // perform access control for CRUD operations
+        );
+    }
+
+    public function accessRules()
+    {
+        return array(
+            array('allow',
+                'actions'=>array('admin'),
+                'roles'=>array('staff', 'devel'),
+            ),
+            array('deny',  // deny all users
+                'users'=>array('*'),
+            ),
+        );
+    }
+
     /**
      * Lists all Cor models.
      * @return mixed
