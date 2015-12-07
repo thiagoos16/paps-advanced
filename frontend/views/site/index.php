@@ -15,12 +15,6 @@ $this->title = 'Sistema de Transporte da PCU';
 
     </div>
 
-    <?= yii2fullcalendar\yii2fullcalendar::widget([
-        'options' => [
-            'language' => 'de',
-            //... more options to be defined here!
-        ],
-        'ajaxEvents' => Url::to(['/timetrack/default/jsoncalendar'])
-    ]);
+
     ?>
 </div>

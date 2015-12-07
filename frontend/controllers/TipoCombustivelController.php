@@ -8,6 +8,9 @@ use Yii;
 use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
+use yii\filters\AccessControl;
+use frontend\models\user;
+use frontend\models\Usuario;
 
 /**
  * TipoCombustivelController implements the CRUD actions for TipoCombustivel model.
@@ -17,6 +20,21 @@ class TipoCombustivelController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['create','index','update','view','delete'],
+                'rules' => [
+                    array(
+                        'allow' => true,
+                        'actions' => ['create','index','update','view','delete'],
+                        'matchCallback' => function($rule,$action) {
+                            if (!Yii::$app->user->isGuest) {
+                                return Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1";
+                            }
+                        }
+                    ),
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

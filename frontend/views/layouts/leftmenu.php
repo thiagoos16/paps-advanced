@@ -90,6 +90,7 @@ use yii\helpers\Html;
                   <ul class="treeview-menu">
 
                       <li>
+
                           <a href="index.php?r=cor/index">
                               <i class="fa fa-dashboard"></i> <span>Cores</span>
                           </a>

@@ -10,6 +10,9 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\helpers\ArrayHelper;
+use yii\filters\AccessControl;
+use frontend\models\user;
+use frontend\models\Usuario;
 
 /**
  * ModeloController implements the CRUD actions for Modelo model.
@@ -23,15 +26,16 @@ class ModeloController extends Controller
                 'class' => AccessControl::className(),
                 'only' => ['create','index','update','view','delete'],
                 'rules' => [
-                    'actions' => ['create','index','update','view','delete'],
-                    'allow' => true,
-                    'matchCallback' => function($rule,$action) {
-                        if (!Yii::$app->user->isGuest) {
-                            return Yii::$app->user->identity->id_departamento == '2';
+                    array(
+                        'allow' => true,
+                        'actions' => ['create','index','update','view','delete'],
+                        'matchCallback' => function($rule,$action) {
+                            if (!Yii::$app->user->isGuest) {
+                                return Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1";
+                            }
                         }
-                    }
+                    ),
                 ],
-
             ],
             'verbs' => [
                 'class' => VerbFilter::className(),

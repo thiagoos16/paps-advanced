@@ -8,6 +8,9 @@ use frontend\models\DepartamentoSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
+use frontend\models\user;
+use frontend\models\Usuario;
 
 /**
  * DepartamentoController implements the CRUD actions for Departamento model.
@@ -21,15 +24,16 @@ class DepartamentoController extends Controller
                 'class' => AccessControl::className(),
                 'only' => ['create','index','update','view','delete'],
                 'rules' => [
-                    'actions' => ['create','index','update','view','delete'],
-                    'allow' => true,
-                    'matchCallback' => function($rule,$action) {
-                        if (!Yii::$app->user->isGuest) {
-                            return Yii::$app->user->identity->id_departamento == '2';
+                    array(
+                        'allow' => true,
+                        'actions' => ['create','index','update','view'],
+                        'matchCallback' => function($rule,$action) {
+                            if (!Yii::$app->user->isGuest) {
+                                return Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1";
+                            }
                         }
-                    }
+                    ),
                 ],
-
             ],
             'verbs' => [
                 'class' => VerbFilter::className(),

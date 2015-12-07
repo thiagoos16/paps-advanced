@@ -2,6 +2,8 @@
 
 namespace frontend\controllers;
 
+use frontend\models\Departamento;
+use frontend\models\Marca;
 use frontend\models\TipoCombustivel;
 use frontend\models\Usuario;
 use Yii;
@@ -12,6 +14,8 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use frontend\models\user;
+
+
 
 /**
  * AbastecimentoController implements the CRUD actions for Abastecimento model.
@@ -25,43 +29,20 @@ class AbastecimentoController extends Controller
                 'class' => AccessControl::className(),
                 'only' => ['create','index','update','view','delete'],
                 'rules' => [
-                    [
+                    array(
                         'allow' => true,
                         'actions' => ['create','index','update','view','delete'],
                         'matchCallback' => function($rule,$action) {
                             if (!Yii::$app->user->isGuest) {
                                 return Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1";
-
                             }
                         }
-                    ],
+                    ),
                 ],
 
             ],
         ];
 
-        /*return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'only' => ['create','index','update','view','delete'],
-                'rules' => [
-                    'actions' => ['create','update','view','delete'],
-                    'rules' => [
-                        [
-                            'allow' => true,
-                            'roles' => ['@'],
-                        ]
-                        ]
-                    /*'matchCallback' => function($rule,$action) {
-                        if (!Yii::$app->user->isGuest) {
-                            return Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == '2';
-                        }
-                    }
-                    ,
-                ],
-            ],
-
-        ];*/
     }
 
     /**
