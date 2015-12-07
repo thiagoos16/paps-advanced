@@ -2,8 +2,6 @@
 
 namespace frontend\controllers;
 
-use frontend\models\Departamento;
-use frontend\models\Marca;
 use frontend\models\TipoCombustivel;
 use frontend\models\Usuario;
 use Yii;
@@ -14,8 +12,6 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use frontend\models\user;
-
-
 
 /**
  * AbastecimentoController implements the CRUD actions for Abastecimento model.
@@ -35,6 +31,7 @@ class AbastecimentoController extends Controller
                         'matchCallback' => function($rule,$action) {
                             if (!Yii::$app->user->isGuest) {
                                 return Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1";
+
                             }
                         }
                     ),
@@ -128,6 +125,7 @@ class AbastecimentoController extends Controller
         //echo "Valor: $valor_abastecido ID: .$id";
 
     }
+
 
     /**
      * Finds the Abastecimento model based on its primary key value.

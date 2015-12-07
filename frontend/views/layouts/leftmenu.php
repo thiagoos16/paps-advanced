@@ -46,6 +46,7 @@ use frontend\models\Usuario;
                 echo Html::a('Login', ['/site/login'], ['class' => 'btn btn-block btn-danger', 'data-method' => 'post']);
             }else{
                 echo Html::a('Logout', ['/site/logout'], ['class' => 'btn btn-block btn-danger', 'data-method' => 'post']);
+                echo Html::a('Bloquear Tela', ['/site/lockscreen'], ['class' => 'btn btn-block btn-danger', 'data-method' => 'post']);
             }
             ?>
           <!-- /.search form -->
