@@ -19,17 +19,29 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'destino') ?>
 
+    <?= $form->field($model, 'data_saida') ?>
+
     <?= $form->field($model, 'hora_saida') ?>
 
-    <?= $form->field($model, 'data_hora') ?>
+    <?= $form->field($model, 'data_lancamento') ?>
 
-    <?= $form->field($model, 'observacao') ?>
+    <?php // echo $form->field($model, 'observacao') ?>
 
     <?php // echo $form->field($model, 'status') ?>
 
     <?php // echo $form->field($model, 'id_usuario') ?>
 
     <?php // echo $form->field($model, 'capacidade_passageiros') ?>
+
+    <?php // echo $form->field($model, 'endeeco_destino') ?>
+
+    <?php // echo $form->field($model, 'hora_chegada') ?>
+
+    <?php // echo $form->field($model, 'id_motorista') ?>
+
+    <?php // echo $form->field($model, 'id_veiculo') ?>
+
+    <?php // echo $form->field($model, 'seguro') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

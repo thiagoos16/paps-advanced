@@ -18,8 +18,8 @@ class SolicitacaoSearch extends Solicitacao
     public function rules()
     {
         return [
-            [['id', 'id_usuario', 'capacidade_passageiros'], 'integer'],
-            [['destino', 'hora_saida', 'data_hora', 'observacao', 'status'], 'safe'],
+            [['id', 'id_usuario', 'capacidade_passageiros', 'id_veiculo'], 'integer'],
+            [['destino', 'data_saida', 'hora_saida', 'data_lancamento', 'observacao', 'status', 'endeeco_destino', 'hora_chegada', 'id_motorista', 'seguro'], 'safe'],
         ];
     }
 
@@ -57,15 +57,21 @@ class SolicitacaoSearch extends Solicitacao
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'hora_saida' => $this->hora_saida,
-            'data_hora' => $this->data_hora,
+            'data_saida' => $this->data_saida,
+            'data_lancamento' => $this->data_lancamento,
             'id_usuario' => $this->id_usuario,
             'capacidade_passageiros' => $this->capacidade_passageiros,
+            'id_veiculo' => $this->id_veiculo,
         ]);
 
         $query->andFilterWhere(['like', 'destino', $this->destino])
+            ->andFilterWhere(['like', 'hora_saida', $this->hora_saida])
             ->andFilterWhere(['like', 'observacao', $this->observacao])
-            ->andFilterWhere(['like', 'status', $this->status]);
+            ->andFilterWhere(['like', 'status', $this->status])
+            ->andFilterWhere(['like', 'endeeco_destino', $this->endeeco_destino])
+            ->andFilterWhere(['like', 'hora_chegada', $this->hora_chegada])
+            ->andFilterWhere(['like', 'id_motorista', $this->id_motorista])
+            ->andFilterWhere(['like', 'seguro', $this->seguro]);
 
         return $dataProvider;
     }

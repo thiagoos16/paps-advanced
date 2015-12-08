@@ -2,7 +2,6 @@
 
 namespace frontend\models;
 
-use common\models\User;
 use Yii;
 
 /**
@@ -10,15 +9,22 @@ use Yii;
  *
  * @property integer $id
  * @property string $destino
+ * @property string $data_saida
  * @property string $hora_saida
- * @property string $data_hora
+ * @property string $data_lancamento
  * @property string $observacao
  * @property string $status
  * @property integer $id_usuario
  * @property integer $capacidade_passageiros
+ * @property string $endeeco_destino
+ * @property string $hora_chegada
+ * @property string $id_motorista
+ * @property integer $id_veiculo
+ * @property string $seguro
  *
- * @property RespostaSolicitacao $respostaSolicitacao
+ * @property Motorista $idMotorista
  * @property Usuario $idUsuario
+ * @property Veiculo $idVeiculo
  */
 class Solicitacao extends \yii\db\ActiveRecord
 {
@@ -36,11 +42,14 @@ class Solicitacao extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['destino', 'hora_saida', 'status', 'id_usuario', 'capacidade_passageiros'], 'required'],
-            [['hora_saida', 'data_hora'], 'safe'],
-            [['capacidade_passageiros'], 'integer'],
-            [['destino', 'observacao'], 'string', 'max' => 45],
-            [['status'], 'string', 'max' => 15]
+            [['destino', 'data_saida', 'hora_saida', 'status', 'id_usuario', 'capacidade_passageiros'], 'required'],
+            [['data_saida', 'data_lancamento'], 'safe'],
+            [['id_usuario', 'capacidade_passageiros', 'id_veiculo'], 'integer'],
+            [['destino', 'endeeco_destino'], 'string', 'max' => 45],
+            [['hora_saida', 'status', 'hora_chegada'], 'string', 'max' => 15],
+            [['observacao'], 'string', 'max' => 100],
+            [['id_motorista'], 'string', 'max' => 11],
+            [['seguro'], 'string', 'max' => 25]
         ];
     }
 
@@ -52,21 +61,27 @@ class Solicitacao extends \yii\db\ActiveRecord
         return [
             'id' => 'N° da Solicitação',
             'destino' => 'Destino',
-            'hora_saida' => 'Hora de Saida',
-            'data_hora' => 'Data de Lançamento no sistema',
+            'data_saida' => 'Data da Saida',
+            'hora_saida' => 'Hora da Saida',
+            'data_lancamento' => 'Data de Lancamento',
             'observacao' => 'Observação',
             'status' => 'Status',
             'id_usuario' => 'Usuário',
             'capacidade_passageiros' => 'Número de Passageiros',
+            'endeeco_destino' => 'Endereço do Destino',
+            'hora_chegada' => 'Hora da Chegada',
+            'id_motorista' => 'Motorista',
+            'id_veiculo' => 'Veiculo',
+            'seguro' => 'Seguro',
         ];
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getRespostaSolicitacao()
+    public function getIdMotorista()
     {
-        return $this->hasOne(RespostaSolicitacao::className(), ['id_solicitacao' => 'id']);
+        return $this->hasOne(Motorista::className(), ['cnh' => 'id_motorista']);
     }
 
     /**
@@ -77,30 +92,21 @@ class Solicitacao extends \yii\db\ActiveRecord
         return $this->hasOne(Usuario::className(), ['id' => 'id_usuario']);
     }
 
-    public function getStatus(){
-        return [
-            '1' => 'Em análise',
-            '2' => 'Aceita',
-            '3' => 'Rejeitada'
-        ];
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getIdVeiculo()
+    {
+        return $this->hasOne(Veiculo::className(), ['renavam' => 'id_veiculo']);
     }
 
-    public function afterFind()
-    {
-        $this->id_usuario = User::findOne($this->id_usuario)->nome;
+    public static function getStatus(){
+        return ["Em análise" => "Em análise",
+            "Aceita" => "Aceita",
+            "Rejeitada" => "Rejeitada"];
+    }
 
-        switch ($this->status){
-            case '1':
-                $this->status = 'Em análise';
-                break;
-
-            case '2':
-                $this->status = 'Aceita';
-                break;
-
-            case '3':
-                $this->status = 'Rejeitada';
-                break;
-        }
+    public static function getPrompt(){
+        return ['prompt'=>'Selecione uma opção'];
     }
 }

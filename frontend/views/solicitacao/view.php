@@ -12,39 +12,42 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="solicitacao-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1>Solicitação n° <?= Html::encode($this->title) ?></h1>
 
     <p>
         <?= Html::a('Editar', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
         <?= Html::a('Deletar', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Você tem certeza que deseja apagar essa Solicitação?',
+                'confirm' => 'Você deseja realmente deletar esta solicitação?',
                 'method' => 'post',
             ],
         ]) ?>
     </p>
 
-    <div class="box box-primary">
-        <div class="box-header with-border">
-            <?= DetailView::widget([
-                'model' => $model,
-                'attributes' => [
-                    'id',
-                    'destino',
-                    'hora_saida',
-                    'id_usuario',
-                    'capacidade_passageiros',
-                    'observacao',
-                    'status',
-                    'data_hora',
-                ],
-            ]) ?>
-        </div>
+    <?= DetailView::widget([
+        'model' => $model,
+        'attributes' => [
+            'id',
+            'destino',
+            'data_saida',
+            'hora_saida',
+            'data_lancamento',
+            'observacao',
+            'status',
+            'id_usuario',
+            'capacidade_passageiros',
+            'endeeco_destino',
+            'hora_chegada',
+            'id_motorista',
+            'id_veiculo',
+            'seguro',
+        ],
+    ]) ?>
+
+    <div align="right">
+        <?= Html::a('Aceitar Solicitação', ['update', 'id' => $model->id], ['class' => 'btn btn-success btn-lg']) ?>
+        <?= Html::a('Rejeitar Solicitação', ['update', 'id' => $model->id], ['class' => 'btn btn-danger btn-lg']) ?>
     </div>
 
-    <p align="right">
-    <?= Html::a('Aceitar Solicitação', ['resposta-solicitacao/create', 'id' => $model->id], ['class' => 'btn btn-success btn-lg']) ?>
-    <?= Html::a('Recusar Solicitação', ['resposta-solicitacao/view', 'id' => $model->id], ['class' => 'btn btn-danger btn-lg']) ?>
-    </p>
 </div>

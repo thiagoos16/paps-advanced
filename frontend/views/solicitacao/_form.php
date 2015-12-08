@@ -1,5 +1,6 @@
 <?php
 
+use dosamigos\datepicker\DatePicker;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -10,24 +11,45 @@ use yii\widgets\ActiveForm;
 
 <div class="solicitacao-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <div class="box box-primary">
+        <div class="box-header with-border">
 
-    <?= $form->field($model, 'destino')->textInput(['maxlength' => true]) ?>
+            <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'hora_saida')->textInput() ?>
+            <?= $form->field($model, 'destino')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'capacidade_passageiros')->textInput() ?>
+            <?= $form->field($model, 'endeeco_destino')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'observacao')->textarea(['maxlength' => true]) ?>
+            <?= $form->field($model, 'data_saida')->widget(
+                DatePicker::className(), [
+                    // inline too, not bad
+                    'inline' => false,
+                    'language' => 'pt',
+                    // modify template for custom rendering
+                    //'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>',
+                    'clientOptions' => [
+                        'autoclose' => true,
+                        'format' => 'yyyy-mm-dd'
+                    ]
+                ]);?>
 
-    <?= $form->field($model, 'status')->textInput(['value' => 1, 'readonly' => true]) ?>
+            <?= $form->field($model, 'hora_saida')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'id_usuario')->textInput(['value' => Yii::$app->user->identity->getId(), 'readonly' => true]) ?>
+            <?= $form->field($model, 'capacidade_passageiros')->textInput() ?>
 
-    <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Salvar' : 'Salvar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+            <?= $form->field($model, 'observacao')->textarea(['maxlength' => true]) ?>
+
+            <?= $form->field($model, 'status')->textInput(['maxlength' => true, 'value' => "Em análise", "readonly" => "true"]) ?>
+
+            <?= $form->field($model, 'id_usuario')->textInput(['value' => Yii::$app->user->identity->getId(), "readonly" => "true"]) ?>
+
+
+            <div class="form-group">
+                <?= Html::submitButton($model->isNewRecord ? 'Salvar' : 'Salvar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+            </div>
+
+            <?php ActiveForm::end(); ?>
+        </div>
     </div>
-
-    <?php ActiveForm::end(); ?>
 
 </div>
