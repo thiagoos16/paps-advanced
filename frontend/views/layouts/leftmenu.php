@@ -60,12 +60,6 @@ use frontend\models\Usuario;
                   </a>
               </li>
 
-              <li>
-                  <a href="index.php?r=resposta-solicitacao/index">
-                      <i class="fa fa-comments"></i> <span>Responder Solicitação</span>
-                  </a>
-              </li>
-
               <li class="treeview">
                   <a href="#">
                       <i class="fa fa-money"></i> <span>Gastos</span> <i class="fa fa-angle-left pull-right"></i>

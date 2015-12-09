@@ -109,4 +109,12 @@ class Solicitacao extends \yii\db\ActiveRecord
     public static function getPrompt(){
         return ['prompt'=>'Selecione uma opção'];
     }
+
+    public  function afterFind(){
+        $this->id_usuario = Usuario::findOne($this->id_usuario)->nome;
+        if($this->status == "Aceita") {
+            $this->id_motorista = Motorista::findOne($this->id_motorista)->nome;
+            $this->id_veiculo = Veiculo::findOne($this->id_veiculo)->placa_atual;
+        }
+    }
 }

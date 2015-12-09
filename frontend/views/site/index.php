@@ -15,6 +15,4 @@ $this->title = 'Sistema de Transporte da PCU';
 
     </div>
 
-
-    ?>
 </div>
