@@ -82,4 +82,9 @@ class Usuario extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Departamento::className(), ['id' => 'id_departamento']);
     }
+
+    public function afterFind()
+    {
+
+    }
 }

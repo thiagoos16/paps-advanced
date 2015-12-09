@@ -1,5 +1,7 @@
 <?php
 
+use frontend\models\Departamento;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -16,27 +18,13 @@ use yii\widgets\ActiveForm;
 
             <?= $form->field($model, 'username')->textInput(['maxlength' => true]) ?>
 
-            <?= $form->field($model, 'auth_key')->textInput(['maxlength' => true]) ?>
-
-            <?= $form->field($model, 'password_hash')->textInput(['maxlength' => true]) ?>
-
-            <?= $form->field($model, 'password_reset_token')->textInput(['maxlength' => true]) ?>
-
             <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
-
-            <?= $form->field($model, 'status')->textInput() ?>
-
-            <?= $form->field($model, 'created_at')->textInput() ?>
-
-            <?= $form->field($model, 'updated_at')->textInput() ?>
 
             <?= $form->field($model, 'nome')->textInput(['maxlength' => true]) ?>
 
-            <?= $form->field($model, 'observacao')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'observacao')->textarea(['rows'=>'5'])?>
 
-            <?= $form->field($model, 'confirma_senha')->textInput(['maxlength' => true]) ?>
-
-            <?= $form->field($model, 'id_departamento')->textInput() ?>
+            <?= $form->field($model, 'id_departamento')->dropDownList(ArrayHelper::map(Departamento::find()->all(),'id','nome'),['prompt'=>'Selecione uma opção']) ?>
 
             <div class="form-group">
                 <?= Html::submitButton($model->isNewRecord ? 'Novo' : 'Atualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

@@ -9,42 +9,45 @@ use yii\bootstrap\ActiveForm;
 use yii\helpers\ArrayHelper;
 use frontend\models\Departamento;
 
-$this->title = 'Signup';
+$this->title = 'Novo Usuário';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="box box-primary">
-    <div class="box-header with-border">
-        <div class="usuario-form">
-            <p class="login-box-msg">Registrar um novo usuário</p>
-            <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
 
-            <?= $form->field($model, 'nome')->textInput(['maxlength' => true]) ?>
+<div class="usuario-create">
+    <h1><?= Html::encode($this->title) ?></h1>
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <div class="usuario-form">
+                    <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
 
-                <div class="form-group has-feedback">
-                    <?= $form->field($model, 'username') ?>
+                    <?= $form->field($model, 'nome')->textInput(['maxlength' => true]) ?>
+
+                        <div class="form-group has-feedback">
+                            <?= $form->field($model, 'username') ?>
+                        </div>
+
+                        <div class="form-group has-feedback">
+                            <?= $form->field($model, 'email') ?>
+                        </div>
+
+                        <div class="form-group has-feedback">
+                            <?= $form->field($model, 'password')->passwordInput() ?>
+                        </div>
+
+                    <?= $form->field($model, 'confirma_senha')->passwordInput() ?>
+
+                    <?= $form->field($model, 'id_departamento')->dropDownList(ArrayHelper::map(Departamento::find()->all(),'id','nome'),['prompt'=>'Selecione uma opção']) ?>
+
+                    <?= $form->field($model, 'observacao')->textarea(['rows'=>'5'])?>
+
+                    <div class="col-xs-4">
+                        <?= Html::submitButton('Novo', ['class' => 'btn btn-primary btn-block btn-flat', 'name' => 'signup-button']) ?>
+                    </div>
+
+                    <?php ActiveForm::end(); ?>
+
                 </div>
-
-                <div class="form-group has-feedback">
-                    <?= $form->field($model, 'email') ?>
                 </div>
-
-                <div class="form-group has-feedback">
-                    <?= $form->field($model, 'password')->passwordInput() ?>
-                </div>
-
-            <?= $form->field($model, 'confirma_senha')->passwordInput() ?>
-
-            <?= $form->field($model, 'id_departamento')->dropDownList(ArrayHelper::map(Departamento::find()->all(),'id','nome'),['prompt'=>'Selecione uma opção']) ?>
-
-            <?= $form->field($model, 'observacao')->textarea(['rows'=>'5'])?>
-
-            <div class="col-xs-4">
-                <?= Html::submitButton('Novo', ['class' => 'btn btn-primary btn-block btn-flat', 'name' => 'signup-button']) ?>
             </div>
-
-            <?php ActiveForm::end(); ?>
-
         </div>
-        </div>
-    </div>
 </div>
