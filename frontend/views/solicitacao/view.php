@@ -50,7 +50,7 @@ $this->params['breadcrumbs'][] = $this->title;
     if(Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == 1) {
         echo "<div align='right'>";
         echo Html::a('Aceitar Solicitação', ['resposta', 'id' => $model->id], ['class' => 'btn btn-success btn-lg']);
-        echo Html::a('Rejeitar Solicitação', ['update', 'id' => $model->id], ['class' => 'btn btn-danger btn-lg']);
+        echo Html::a('Rejeitar Solicitação', ['rejeitar', 'id' => $model->id], ['class' => 'btn btn-danger btn-lg']);
         echo "</div>";
     }
     ?>

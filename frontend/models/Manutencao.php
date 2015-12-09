@@ -98,7 +98,7 @@ class Manutencao extends \yii\db\ActiveRecord
 
     public function afterSave($insert)
     {
-        Veiculo::updateAll(array('status' => 4), "'id_veiculo' = $this->id_veiculo");
+        Veiculo::updateAll(array('status' => 4), ['id_veiculo' => $this->id_veiculo]);
     }
 
 

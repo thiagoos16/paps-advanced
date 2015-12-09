@@ -103,6 +103,19 @@ class SolicitacaoController extends Controller
         }
     }
 
+    public function actionRejeitar($id)
+    {
+        Solicitacao::updateAll(array('status' => 'Rejeitada'), ['id'=> $id]);
+
+        $searchModel = new SolicitacaoSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('index', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
     /**
      * Deletes an existing Solicitacao model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
