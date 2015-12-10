@@ -3,12 +3,12 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\PostoAbastecimento */
+/* @var $model frontend\models\PostoAbastecimento */
 
-$this->title = 'Atualizar Posto de Abastecimento: ' . ' ' . $model->nome;
+$this->title = 'Editar Posto de Abastecimento';
 $this->params['breadcrumbs'][] = ['label' => 'Postos de Abastecimentos', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Atualizar';
+$this->params['breadcrumbs'][] = ['label' => $model->nome, 'url' => ['view', 'id' => $model->id]];
+$this->params['breadcrumbs'][] = 'Editar';
 ?>
 <div class="posto-abastecimento-update">
 

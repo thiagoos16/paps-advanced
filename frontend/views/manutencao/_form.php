@@ -13,52 +13,56 @@ use frontend\models\Motorista;
 ?>
 
 <div class="manutencao-form">
+    <div class="box box-primary">
+        <div class="box-header with-border">
 
-    <?php $form = ActiveForm::begin(); ?>
+            <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'servico')->textarea(['rows'=>'3'])?>
+            <?= $form->field($model, 'servico')->textarea(['rows'=>'3'])?>
 
-    <?= $form->field($model, 'custo')->textInput() ?>
+            <?= $form->field($model, 'custo')->textInput() ?>
 
-    <?= $form->field($model, 'tipo')->dropDownList($model->getTipo(), $model->getPrompt()) ?>
+            <?= $form->field($model, 'tipo')->dropDownList($model->getTipo(), $model->getPrompt()) ?>
 
-    <?= $form->field($model, 'data_entrada')->widget(
-        DatePicker::className(), [
-            // inline too, not bad
-            'inline' => false,
-            'language' => 'pt',
-            //'size' => 'xs',
-            // modify template for custom rendering
-            //'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>',
-            'clientOptions' => [
-                'autoclose' => true,
-                'format' => 'yyyy-mm-dd'
-            ]
-        ]);?>
+            <?= $form->field($model, 'data_entrada')->widget(
+                DatePicker::className(), [
+                    // inline too, not bad
+                    'inline' => false,
+                    'language' => 'pt',
+                    //'size' => 'xs',
+                    // modify template for custom rendering
+                    //'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>',
+                    'clientOptions' => [
+                        'autoclose' => true,
+                        'format' => 'yyyy-mm-dd'
+                    ]
+                ]);?>
 
-    <?= $form->field($model, 'data_saida')->widget(
-        DatePicker::className(), [
-            // inline too, not bad
-            'inline' => false,
-            'language' => 'pt',
-            // modify template for custom rendering
-            //'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>',
-            'clientOptions' => [
-                'autoclose' => true,
-                'format' => 'yyyy-mm-dd'
-            ]
-        ]);?>
+            <?= $form->field($model, 'data_saida')->widget(
+                DatePicker::className(), [
+                    // inline too, not bad
+                    'inline' => false,
+                    'language' => 'pt',
+                    // modify template for custom rendering
+                    //'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>',
+                    'clientOptions' => [
+                        'autoclose' => true,
+                        'format' => 'yyyy-mm-dd'
+                    ]
+                ]);?>
 
-    <?= $form->field($model, 'id_veiculo')->dropDownList(ArrayHelper::map(Veiculo::find()->all(), 'renavam', 'placa_atual'), ['prompt'=>'Selecione a placa do veículo']) ?>
+            <?= $form->field($model, 'id_veiculo')->dropDownList(ArrayHelper::map(Veiculo::find()->all(), 'renavam', 'placa_atual'), ['prompt'=>'Selecione a placa do veículo']) ?>
 
-    <?= $form->field($model, 'km')->textInput() ?>
+            <?= $form->field($model, 'km')->textInput() ?>
 
-    <?= $form->field($model, 'id_motorista')->dropDownList(ArrayHelper::map(Motorista::find()->all(), 'cnh', 'nome'), ['prompt'=>'Selecione o nome do motorista']) ?>
+            <?= $form->field($model, 'id_motorista')->dropDownList(ArrayHelper::map(Motorista::find()->all(), 'cnh', 'nome'), ['prompt'=>'Selecione o nome do motorista']) ?>
 
-    <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Nova' : 'Atualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+            <div class="form-group">
+                <?= Html::submitButton($model->isNewRecord ? 'Salvar' : 'Salvar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+            </div>
+
+            <?php ActiveForm::end(); ?>
+
+        </div>
     </div>
-
-    <?php ActiveForm::end(); ?>
-
 </div>

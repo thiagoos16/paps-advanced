@@ -11,7 +11,7 @@ use frontend\models\Usuario;
           <!-- Sidebar user panel -->
           <div class="user-panel">
             <div class="pull-left image">
-              <img src="<?=$baseUrl?>/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+              <img src="<?=$baseUrl?>/dist/img/ufam.png" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
 
@@ -54,7 +54,7 @@ use frontend\models\Usuario;
           <!-- /.search form -->
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
-            <li class="header">MENU</li>
+            <li class="header">MENU PRINCIPAL</li>
 
               <li>
                   <a href="index.php?r=solicitacao/index">

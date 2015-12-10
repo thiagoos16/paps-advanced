@@ -3,12 +3,12 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Modelo */
+/* @var $model frontend\models\Modelo */
 
-$this->title = 'Atualizar Modelo: ' . ' ' . $model->nome;
+$this->title = 'Editar Modelo';
 $this->params['breadcrumbs'][] = ['label' => 'Modelos', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Atualizar';
+$this->params['breadcrumbs'][] = ['label' => $model->nome, 'url' => ['view', 'id' => $model->id]];
+$this->params['breadcrumbs'][] = 'Editar';
 ?>
 <div class="modelo-update">
 

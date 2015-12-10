@@ -119,7 +119,7 @@ use frontend\models\Motorista;
                         <!--<li>
                         <a href="#">
                           <div class="pull-left">
-                            <img src="<?=$baseUrl?>/dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                            <img src="<?=$baseUrl?>/dist/img/ufam.png" class="img-circle" alt="User Image">
                           </div>
                           <h4>
                             AdminLTE Design Team
@@ -131,7 +131,7 @@ use frontend\models\Motorista;
                         <!--<li>
                         <a href="#">
                           <div class="pull-left">
-                            <img src="<?=$baseUrl?>/dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                            <img src="<?=$baseUrl?>/dist/img/ufam.png" class="img-circle" alt="User Image">
                           </div>
                           <h4>
                             Developers
@@ -155,7 +155,7 @@ use frontend\models\Motorista;
                         <!--<li>
                         <a href="#">
                           <div class="pull-left">
-                            <img src="<?=$baseUrl?>/dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                            <img src="<?=$baseUrl?>/dist/img/ufam.png" class="img-circle" alt="User Image">
                           </div>
                           <h4>
                             Reviewers
@@ -240,7 +240,7 @@ use frontend\models\Motorista;
                             $dias = (int)floor( $diferenca / (60 * 60 * 24));
 
                             echo "<li>";
-                            echo "<a href='index.php?r=motorista%2Fupdate&id=$cnh'>";
+                            echo "<a href='index.php?r=motorista%2Fview&id=$cnh'>";
                             echo " <i class='fa fa-user text-yellow'></i> ";
                             if($dias==1) {
                                 echo "A carteira do(a) motorista <br> <strong> $nome </strong> vencerá em $dias dia";
@@ -273,7 +273,7 @@ use frontend\models\Motorista;
               <!-- User Account: style can be found in dropdown.less -->
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <img src="<?=$baseUrl?>/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                  <img src="<?=$baseUrl?>/dist/img/ufam.png" class="user-image" alt="User Image">
                   <span class="hidden-xs">
                       <?php
                             if(Yii::$app->user->isGuest){
@@ -288,7 +288,7 @@ use frontend\models\Motorista;
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">
-                    <img src="<?=$baseUrl?>/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                    <img src="<?=$baseUrl?>/dist/img/ufam.png" class="img-circle" alt="User Image">
                     <p>
                         <?php
                             echo Usuario::findOne(Yii::$app->getUser()->id)->nome;
@@ -320,10 +320,10 @@ use frontend\models\Motorista;
                   <!-- Menu Footer -->
                   <li class="user-footer">
                     <div class="pull-left">
-                      <a href="index.php?r=site%2Flockscreen" class="btn btn-default btn-danger">Bloquear Tela</a>
+                      <a href="index.php?r=site%2Flockscreen" class="btn btn-primary">Bloquear Tela</a>
                     </div>
                     <div class="pull-right">
-                      <a href="index.php?r=site%2Flogout" class="btn btn-default btn-danger">Logout</a>
+                      <a href="index.php?r=site%2Flogout" class="btn btn-primary">Logout</a>
                     </div>
                   </li>
                 </ul>

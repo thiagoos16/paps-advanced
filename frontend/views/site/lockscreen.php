@@ -15,6 +15,14 @@ $baseUrl = $asset->baseUrl;
 $this->title = 'Bloqueio de Tela';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+
+<script>
+    window.history.forward(1);
+
+</Script>
+<script type = "text/javascript" >
+</script>
+
 <div class="lockscreen-wrapper">
     <div class="lockscreen-logo">
         <b>SGF</b>UFAM
@@ -28,7 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="lockscreen-item">
         <!-- lockscreen image -->
         <div class="lockscreen-image">
-            <img src="<?=$baseUrl."/dist/img/user1-128x128.jpg"?>" alt="User Image">
+            <img src="<?=$baseUrl."/dist/img/ufam.png"?>" alt="User Image">
         </div>
         <!-- /.lockscreen-image -->
 

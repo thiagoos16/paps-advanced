@@ -3,12 +3,12 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Cor */
+/* @var $model frontend\models\Cor */
 
-$this->title = 'Atualizar Cor: ' . ' ' . $model->nome;
+$this->title = 'Editar Cor';
 $this->params['breadcrumbs'][] = ['label' => 'Cores', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = ['label' => $model->nome, 'url' => ['view', 'id' => $model->id]];
+$this->params['breadcrumbs'][] = 'Editar';
 ?>
 <div class="cor-update">
 
