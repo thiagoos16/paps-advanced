@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model frontend\models\Abastecimento */
 
-$this->title = 'Atualizar Abastecimento: ' . ' ' . $model->data_abastecimento;
+$this->title = 'Editar Abastecimento';
 $this->params['breadcrumbs'][] = ['label' => 'Abastecimentos', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Atualizar';
+$this->params['breadcrumbs'][] = ['label' => $model->id_veiculo, 'url' => ['view', 'id' => $model->id]];
+$this->params['breadcrumbs'][] = 'Editar';
 ?>
 <div class="abastecimento-update">
 

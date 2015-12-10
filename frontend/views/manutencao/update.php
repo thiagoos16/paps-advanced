@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model frontend\models\Manutencao */
 
-$this->title = 'Atualizar Manutenção: ' . ' ' . $model->id;
+$this->title = 'Editar Manutenção';
 $this->params['breadcrumbs'][] = ['label' => 'Manutenções', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->data_entrada, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Atualizar';
+$this->params['breadcrumbs'][] = ['label' => $model->id_veiculo, 'url' => ['view', 'id' => $model->id]];
+$this->params['breadcrumbs'][] = 'Editar';
 ?>
 <div class="manutencao-update">
 

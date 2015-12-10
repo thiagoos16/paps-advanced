@@ -10,7 +10,6 @@ use yii\widgets\ActiveForm;
 ?>
 
 <div class="solicitacao-form">
-
     <div class="box box-primary">
         <div class="box-header with-border">
 

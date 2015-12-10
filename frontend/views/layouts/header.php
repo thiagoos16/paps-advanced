@@ -164,7 +164,7 @@ use frontend\models\Motorista;
                             $dias = (int)floor( $diferenca / (60 * 60 * 24));
 
                             echo "<li>";
-                            echo "<a href='index.php?r=motorista%2Fupdate&id=$cnh'>";
+                            echo "<a href='index.php?r=motorista%2Fview&id=$cnh'>";
                             echo " <i class='fa fa-user text-yellow'></i> ";
                             echo "A carteira do(a) motorista <br> <strong> $nome </strong> vencerá em $dias dias";
                             echo "</a>";
@@ -239,10 +239,10 @@ use frontend\models\Motorista;
                   <!-- Menu Footer -->
                   <li class="user-footer">
                     <div class="pull-left">
-                      <a href="index.php?r=site%2Flockscreen" class="btn btn-default btn-danger">Bloquear Tela</a>
+                      <a href="index.php?r=site%2Flockscreen" class="btn btn-primary">Bloquear Tela</a>
                     </div>
                     <div class="pull-right">
-                      <a href="index.php?r=site%2Flogout" class="btn btn-default btn-danger">Logout</a>
+                      <a href="index.php?r=site%2Flogout" class="btn btn-primary">Logout</a>
                     </div>
                   </li>
                 </ul>
