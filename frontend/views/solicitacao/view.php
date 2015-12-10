@@ -7,15 +7,15 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model frontend\models\Solicitacao */
 
-$this->title = $model->id;
+$this->title = "Visualizar Solicitação";
 $this->params['breadcrumbs'][] = ['label' => 'Solicitações', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="solicitacao-view">
 
-    <h1>Solicitação n° <?= Html::encode($this->title) ?></h1>
+    <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>
+    <p align="right">
         <?= Html::a('Editar', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
         <?= Html::a('Deletar', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
@@ -26,32 +26,37 @@ $this->params['breadcrumbs'][] = $this->title;
         ]) ?>
     </p>
 
-    <?= DetailView::widget([
-        'model' => $model,
-        'attributes' => [
-            'id',
-            'destino',
-            'data_saida',
-            'hora_saida',
-            'data_lancamento',
-            'observacao',
-            'status',
-            'id_usuario',
-            'capacidade_passageiros',
-            'endeeco_destino',
-            'hora_chegada',
-            'id_motorista',
-            'id_veiculo',
-            'seguro',
-        ],
-    ]) ?>
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            <?= DetailView::widget([
+                'model' => $model,
+                'attributes' => [
+                    'id',
+                    'destino',
+                    'data_saida',
+                    'hora_saida',
+                    'data_lancamento',
+                    'observacao',
+                    'status',
+                    'id_usuario',
+                    'capacidade_passageiros',
+                    'endeeco_destino',
+                    'hora_chegada',
+                    'id_motorista',
+                    'id_veiculo',
+                    'seguro',
+                ],
+            ]) ?>
 
     <?php
     if(Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == 1) {
         echo "<div align='right'>";
-        echo Html::a('Aceitar Solicitação', ['resposta', 'id' => $model->id], ['class' => 'btn btn-success btn-lg']);
-        echo Html::a('Rejeitar Solicitação', ['rejeitar', 'id' => $model->id], ['class' => 'btn btn-danger btn-lg']);
+        echo Html::a('Aceitar Solicitação', ['resposta', 'id' => $model->id], ['class' => 'btn btn-success']);
+        echo " ";
+        echo Html::a('Rejeitar Solicitação', ['rejeitar', 'id' => $model->id], ['class' => 'btn btn-danger']);
         echo "</div>";
     }
     ?>
+        </div>
+    </div>
 </div>

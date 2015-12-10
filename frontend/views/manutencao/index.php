@@ -15,29 +15,33 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-    <p>
+    <p align="right">
         <?= Html::a('Nova Manutenção', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+    <div class="box">
+        <div class="box-body">
+            <?= GridView::widget([
+                'dataProvider' => $dataProvider,
+                'filterModel' => $searchModel,
+                'columns' => [
+                    ['class' => 'yii\grid\SerialColumn'],
 
-            //'id',
-            'data_entrada',
-            'servico',
-            'custo',
-            'data_saida',
-            // 'tipo',
-            // 'data_lancamento',
-            // 'id_veiculo',
-            // 'km',
-            // 'id_motorista',
+                    //'id',
+                    'data_entrada',
+                    'servico',
+                    'custo',
+                    'data_saida',
+                    // 'tipo',
+                    // 'data_lancamento',
+                    // 'id_veiculo',
+                    // 'km',
+                    // 'id_motorista',
 
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
+                    ['class' => 'yii\grid\ActionColumn'],
+                ],
+            ]); ?>
 
+        </div>
+    </div>
 </div>
