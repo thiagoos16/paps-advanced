@@ -19,8 +19,8 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Nova Cor', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <div class="box">
-        <div class="box-body">
+    <div class="box box-primary">
+        <div class="box-header with-border">
             <?= GridView::widget([
                 'dataProvider' => $dataProvider,
                 'filterModel' => $searchModel,

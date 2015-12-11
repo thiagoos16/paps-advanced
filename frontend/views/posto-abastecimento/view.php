@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model frontend\models\PostoAbastecimento */
 
 $this->title =  "Visualizar Posto de Abastecimento";
-$this->params['breadcrumbs'][] = ['label' => 'Posto Abastecimentos', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Posto de Abastecimento', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="posto-abastecimento-view">

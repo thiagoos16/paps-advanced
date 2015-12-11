@@ -133,7 +133,9 @@ use frontend\models\Usuario;
               <li>
                   <?php
                   if (Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1")
-                      echo Html::a("Motoristas",['motorista/index']);
+                      echo "<a href='index.php?r=motorista/index'>";
+                      echo "<i class='fa fa-user''></i> <span>Motoristas</span>";
+                      echo "</a>";
 
                   ?>
               </li>
@@ -141,7 +143,9 @@ use frontend\models\Usuario;
               <li>
                   <?php
                   if (Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1")
-                      echo Html::a("Postos de Abastecimento",['posto-abastecimento/index']);
+                      echo "<a href='index.php?r=posto-abastecimento/index'>";
+                      echo "<i class='fa fa-dashboard''></i> <span>Postos de Abasteciemento</span>";
+                      echo "</a>";
 
                   ?>
               </li>
@@ -149,7 +153,9 @@ use frontend\models\Usuario;
               <li>
                   <?php
                   if (Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1")
-                      echo Html::a("Departamentos",['departamento/index']);
+                      echo "<a href='index.php?r=departamento/index'>";
+                      echo "<i class='fa fa-briefcase''></i> <span>Departamentos</span>";
+                      echo "</a>";
 
                   ?>
               </li>
@@ -157,14 +163,18 @@ use frontend\models\Usuario;
               <li>
                   <?php
                   if (Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1")
-                      echo Html::a("Usuários",['usuario/index']);
+                      echo "<a href='index.php?r=usuario/index'>";
+                      echo "<i class='fa fa-users''></i> <span>Usuários</span>";
+                      echo "</a>";
                   ?>
               </li>
 
               <li>
                   <?php
                   if (Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1")
-                      echo Html::a("Relatório Anual",['#']);
+                      echo "<a href='#'>";
+                      echo "<i class='fa fa-newspaper-o''></i> <span>Relatório Anual</span>";
+                      echo "</a>";
                   ?>
               </li>
 

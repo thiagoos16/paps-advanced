@@ -39,7 +39,7 @@ use frontend\models\Motorista;
                   if (Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1") {
                       echo " <li class='dropdown messages-menu'>";
                       echo"<a href='#' class='dropdown-toggle' data-toggle='dropdown'>";
-                      echo"<i class='fa fa-envelope-o'></i>";
+                      echo"<i class='fa fa-calendar'></i>";
                       echo "<span class='label label-success'>$num</span>";
                   }
 
@@ -49,13 +49,13 @@ use frontend\models\Motorista;
                         echo "<ul class='dropdown-menu'>";
 
                         if($num==0) {
-                            echo "<li class='header'>Não existem novas mensagens</li>";
+                            echo "<li class='header'>Não existem novas solicitações</li>";
                         }
                         elseif ($num==1) {
-                            echo "<li class='header'>Você possui $num mensagem</li>";
+                            echo "<li class='header'>Você possui $num nova solicitação</li>";
                         }
                         else {
-                            echo "<li class='header'>Você possui $num mensagens</li>";
+                            echo "<li class='header'>Você possui $num novas solicitações</li>";
                         }
 
                         echo "<li>";

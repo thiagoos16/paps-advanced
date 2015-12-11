@@ -4,10 +4,10 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\PostoAbastecimentoSearch */
+/* @var $searchModel frontend\models\PostoAbastecimentoSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Postos de Abastecimentos';
+$this->title = 'Postos de Abastecimento';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="posto-abastecimento-index">
@@ -19,8 +19,8 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Novo Posto de Abastecimento', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <div class="box">
-        <div class="box-body">
+    <div class="box box-primary">
+        <div class="box-header with-border">
         <?= GridView::widget([
             'dataProvider' => $dataProvider,
             'filterModel' => $searchModel,

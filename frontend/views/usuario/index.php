@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel frontend\models\UsuarioSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Usuarios';
+$this->title = 'Usuários';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="usuario-index">
@@ -19,8 +19,8 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Novo Usuário', ['/site/signup'], ['class' => 'btn btn-success']); ?>
 
     </p>
-    <div class="box">
-        <div class="box-body">
+    <div class="box box-primary">
+        <div class="box-header with-border">
 
             <?= GridView::widget([
                 'dataProvider' => $dataProvider,
