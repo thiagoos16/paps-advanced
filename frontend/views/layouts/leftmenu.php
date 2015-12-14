@@ -92,9 +92,14 @@ use frontend\models\Usuario;
               </li>
 
               <li class="treeview">
-                  <a href="#">
-                      <i class="fa fa-car"></i> <span>Veículos</span> <i class="fa fa-angle-left pull-right"></i>
-                  </a>
+                  <?php
+                  if (Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1") {
+                      echo "<a href='#'>";
+                      echo "<i class='fa fa-car'></i> <span>Veículos</span> <i class='fa fa-angle-left pull-right'></i>";
+                      echo "</a>";
+                  }
+                  ?>
+
                   <ul class="treeview-menu">
 
                       <li>
@@ -137,49 +142,51 @@ use frontend\models\Usuario;
 
               <li>
                   <?php
-                  if (Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1")
+                  if (Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1") {
                       echo "<a href='index.php?r=motorista/index'>";
                       echo "<i class='fa fa-user''></i> <span>Motoristas</span>";
                       echo "</a>";
-
+                  }
                   ?>
               </li>
 
               <li>
                   <?php
-                  if (Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1")
+                  if (Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1") {
                       echo "<a href='index.php?r=posto-abastecimento/index'>";
                       echo "<i class='fa fa-dashboard''></i> <span>Postos de Abasteciemento</span>";
                       echo "</a>";
-
+                  }
                   ?>
               </li>
 
               <li>
                   <?php
-                  if (Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1")
+                  if (Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1") {
                       echo "<a href='index.php?r=departamento/index'>";
                       echo "<i class='fa fa-briefcase''></i> <span>Departamentos</span>";
                       echo "</a>";
-
+                  }
                   ?>
               </li>
 
               <li>
                   <?php
-                  if (Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1")
+                  if (Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1") {
                       echo "<a href='index.php?r=usuario/index'>";
                       echo "<i class='fa fa-users''></i> <span>Usuários</span>";
                       echo "</a>";
+                  }
                   ?>
               </li>
 
               <li>
                   <?php
-                  if (Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1")
+                  if (Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1") {
                       echo "<a href='#'>";
                       echo "<i class='fa fa-newspaper-o''></i> <span>Relatório Anual</span>";
                       echo "</a>";
+                  }
                   ?>
               </li>
 
