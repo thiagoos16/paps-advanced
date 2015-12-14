@@ -71,13 +71,13 @@ use frontend\models\Motorista;
                       echo "<ul class='dropdown-menu'>";
 
                       if($num==0) {
-                          echo "<li class='header'>Não existem novas solicitações</li>";
+                          echo "<li class='header'>Não existem novos agendamentos</li>";
                       }
                       elseif ($num==1) {
-                          echo "<li class='header'>Você possui $num nova solicitação</li>";
+                          echo "<li class='header'>Você possui $num novo agendamento</li>";
                       }
                       else {
-                          echo "<li class='header'>Você possui $num novas solicitações</li>";
+                          echo "<li class='header'>Você possui $num novos agendamentos</li>";
                       }
 
                       echo "<li>";
@@ -115,91 +115,54 @@ use frontend\models\Motorista;
 
                           echo "<li>"; //<!-- start message -->
                           echo "<a href='index.php?r=solicitacao%2Fview&id=$id'>";
-                          echo "<h4>";
-                          echo "$nome_dep";
-                          if ($dias==0) {
+                          echo "Solicitação de $nome, <br> do(a) $nome_dep <br>";
+                          if ($dias==0)
                               echo "<small><i class='fa fa-clock-o'></i> hoje</small>";
-                          }
-                          elseif ($dias==1) {
+                          elseif ($dias==1)
                               echo "<small><i class='fa fa-clock-o'></i> ontem </small>";
-                          }
-                          else {
+                          else
                               echo "<small><i class='fa fa-clock-o'></i> $dias dias</small>";
-                          }
-                          echo "</h4>";
-                          echo "<p>Uma nova solicitação de <br> $nome </p>";
                           echo "</a>";
                           echo "</li>"; //<!-- end message -->
                       endforeach;
-                      foreach ($aceitas as $reg):
-                          //$nome = "{$reg['nome']}";
-                          $id_aceita= "{$reg['id']}";
-                          echo "<li>";
-                          echo "<a href='index.php?r=solicitacao/visualiza&id=$id_aceita'>";
-                          //echo " <i class='fa fa-user text-yellow'></i> ";
-                          echo "Sua solicitação foi aceita.";
-                          echo "</a>";
-                          echo " </li>";
-                      endforeach;
-                      foreach ($rejeitadas as $reg):
-                          //$nome = "{$reg['nome']}";
-                          $id_rejeitada= "{$reg['id']}";
-                          echo "<li>";
-                          echo "<a href='index.php?r=solicitacao/visualiza&id=$id_rejeitada'>";
-                          //echo " <i class='fa fa-user text-yellow'></i> ";
-                          echo "Sua solicitação foi rejeitada.";
-                          echo "</a>";
-                          echo " </li>";
-                      endforeach;
                   }
                   else {
-                      //OUTROS DEPARTAMENTOS
+                      //outros departamentos
                       echo " <li class='dropdown messages-menu'>";
                       echo"<a href='#' class='dropdown-toggle' data-toggle='dropdown'>";
                       echo"<i class='fa fa-calendar'></i>";
                       echo "<span class='label label-success'>$num2</span>";
-
                       echo "</a>";
                       echo "<ul class='dropdown-menu'>";
 
-                      if($num2==0) {
+                      if($num2==0)
                           echo "<li class='header'>Não existem novas respostas</li>";
-                      }
-                      elseif ($num2==1) {
+                      elseif ($num2==1)
                           echo "<li class='header'>Você possui $num2 solicitação respondida</li>";
-                      }
-                      else {
+                      else
                           echo "<li class='header'>Você possui $num2 solicitações respondidas</li>";
-                      }
 
                       echo "<li>";
                       // inner menu: contains the actual data
                       echo "<ul class='menu'>";
-
-                      foreach ($aceitas as $reg):
-                          //$nome = "{$reg['nome']}";
-                          $id_aceita= "{$reg['id']}";
-                          echo "<li>";
-                          echo "<a href='index.php?r=solicitacao/visualiza&id=$id_aceita'>";
-                          //echo " <i class='fa fa-user text-yellow'></i> ";
-                          echo "Sua solicitação foi aceita.";
-                          echo "</a>";
-                          echo " </li>";
-                      endforeach;
-                      foreach ($rejeitadas as $reg):
-                          //$nome = "{$reg['nome']}";
-                          $id_rejeitada= "{$reg['id']}";
-                          echo "<li>";
-                          echo "<a href='index.php?r=solicitacao/visualiza&id=$id_rejeitada'>";
-                          //echo " <i class='fa fa-user text-yellow'></i> ";
-                          echo "Sua solicitação foi rejeitada.";
-                          echo "</a>";
-                          echo " </li>";
-                      endforeach;
-
                   }
 
-
+                  foreach ($aceitas as $reg):
+                      $id_aceita= "{$reg['id']}";
+                      echo "<li>";
+                      echo " <i class='fa fa-user text-yellow'></i> ";
+                      echo "Sua solicitação foi aceita.";
+                      echo "</a>";
+                      echo " </li>";
+                  endforeach;
+                  foreach ($rejeitadas as $reg):
+                      $id_rejeitada= "{$reg['id']}";
+                      echo "<li>";
+                      echo "<a href='index.php?r=solicitacao/visualiza&id=$id_rejeitada'>";
+                      echo "Sua solicitação foi rejeitada.";
+                      echo "</a>";
+                      echo " </li>";
+                  endforeach;
 
                     ?>
                         <!--<li>
