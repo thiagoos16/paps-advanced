@@ -8416,3 +8416,562 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1449757473.399
     'REQUEST_TIME' => 1449757473
 ]
+2015-12-14 19:29:22 [::1][3][5dfomjp01kel00g1n2j66bitp4][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Call to undefined function geraTimestamp()' in C:\xampp\htdocs\paps\paps-advanced\frontend\views\layouts\header.php:94
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2015-12-14 19:29:22 [::1][3][5dfomjp01kel00g1n2j66bitp4][info][application] $_COOKIE = [
+    '_csrf' => '5d5426fcc71500844399293442f80102a450c82ec5e7b6c0bea9798a25b64a58a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"IxZ85T-1SK6FIq5IfwpH3-YcQRSP6E1A\";}'
+    'PHPSESSID' => '5dfomjp01kel00g1n2j66bitp4'
+    '_identity' => '8861cc3afabde0ca621c1e52fd8ee94de5911e644b30ccdeac0c41343d91c2c9a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[3,\"RHboMpNfb-NTJlbxIuBmhoX3z6UoJsMV\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/paps/paps-advanced/frontend/web/index.php'
+    '__id' => 3
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.80 Safari/537.36'
+    'HTTP_REFERER' => 'http://localhost/paps/paps-advanced/frontend/web/index.php?r=site%2Flogin'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=5d5426fcc71500844399293442f80102a450c82ec5e7b6c0bea9798a25b64a58a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22IxZ85T-1SK6FIq5IfwpH3-YcQRSP6E1A%22%3B%7D; PHPSESSID=5dfomjp01kel00g1n2j66bitp4; _identity=8861cc3afabde0ca621c1e52fd8ee94de5911e644b30ccdeac0c41343d91c2c9a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B3%2C%22RHboMpNfb-NTJlbxIuBmhoX3z6UoJsMV%22%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x64;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SDKs\\TypeScript\\1.0\\;C:\\Program Files\\Microsoft SQL Server\\120\\Tools\\Binn\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Java\\jdk1.8.0_05;C:\\Program Files (x86)\\Common Files\\Acronis\\SnapAPI\\'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.12 (Win32) OpenSSL/1.0.1l PHP/5.6.8 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Win32) OpenSSL/1.0.1l PHP/5.6.8'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/paps/paps-advanced/frontend/web/index.php'
+    'REMOTE_PORT' => '61326'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/paps/paps-advanced/frontend/web/index.php'
+    'SCRIPT_NAME' => '/paps/paps-advanced/frontend/web/index.php'
+    'PHP_SELF' => '/paps/paps-advanced/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1450117762.61
+    'REQUEST_TIME' => 1450117762
+]
+2015-12-14 19:52:43 [::1][3][5dfomjp01kel00g1n2j66bitp4][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined index: nome' in C:\xampp\htdocs\paps\paps-advanced\frontend\views\layouts\header.php:156
+Stack trace:
+#0 C:\xampp\htdocs\paps\paps-advanced\frontend\views\layouts\header.php(156): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 156, Array)
+#1 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\View.php(325): require('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#3 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, NULL)
+#4 C:\xampp\htdocs\paps\paps-advanced\frontend\views\layouts\main.php(26): yii\base\View->render('header.php', Array)
+#5 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\View.php(325): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#7 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Controller.php(386): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(frontend\controllers\SolicitacaoController))
+#8 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Controller.php(372): yii\base\Controller->renderContent('<div class="sol...')
+#9 C:\xampp\htdocs\paps\paps-advanced\frontend\controllers\SolicitacaoController.php(41): yii\base\Controller->render('index', Array)
+#10 [internal function]: frontend\controllers\SolicitacaoController->actionIndex()
+#11 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#12 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('index', Array)
+#14 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('solicitacao/ind...', Array)
+#15 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#16 C:\xampp\htdocs\paps\paps-advanced\frontend\web\index.php(18): yii\base\Application->run()
+#17 {main}
+2015-12-14 19:52:40 [::1][3][5dfomjp01kel00g1n2j66bitp4][info][application] $_GET = [
+    'r' => 'solicitacao/index'
+]
+
+$_COOKIE = [
+    '_csrf' => '5d5426fcc71500844399293442f80102a450c82ec5e7b6c0bea9798a25b64a58a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"IxZ85T-1SK6FIq5IfwpH3-YcQRSP6E1A\";}'
+    'PHPSESSID' => '5dfomjp01kel00g1n2j66bitp4'
+    '_identity' => '8861cc3afabde0ca621c1e52fd8ee94de5911e644b30ccdeac0c41343d91c2c9a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[3,\"RHboMpNfb-NTJlbxIuBmhoX3z6UoJsMV\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/paps/paps-advanced/frontend/web/index.php'
+    '__id' => 3
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.80 Safari/537.36'
+    'HTTP_REFERER' => 'http://localhost/paps/paps-advanced/frontend/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=5d5426fcc71500844399293442f80102a450c82ec5e7b6c0bea9798a25b64a58a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22IxZ85T-1SK6FIq5IfwpH3-YcQRSP6E1A%22%3B%7D; PHPSESSID=5dfomjp01kel00g1n2j66bitp4; _identity=8861cc3afabde0ca621c1e52fd8ee94de5911e644b30ccdeac0c41343d91c2c9a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B3%2C%22RHboMpNfb-NTJlbxIuBmhoX3z6UoJsMV%22%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x64;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SDKs\\TypeScript\\1.0\\;C:\\Program Files\\Microsoft SQL Server\\120\\Tools\\Binn\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Java\\jdk1.8.0_05;C:\\Program Files (x86)\\Common Files\\Acronis\\SnapAPI\\'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.12 (Win32) OpenSSL/1.0.1l PHP/5.6.8 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Win32) OpenSSL/1.0.1l PHP/5.6.8'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/paps/paps-advanced/frontend/web/index.php'
+    'REMOTE_PORT' => '62478'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=solicitacao/index'
+    'REQUEST_URI' => '/paps/paps-advanced/frontend/web/index.php?r=solicitacao/index'
+    'SCRIPT_NAME' => '/paps/paps-advanced/frontend/web/index.php'
+    'PHP_SELF' => '/paps/paps-advanced/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1450119159.782
+    'REQUEST_TIME' => 1450119159
+]
+2015-12-14 20:13:01 [::1][3][5dfomjp01kel00g1n2j66bitp4][error][yii\base\UnknownPropertyException] exception 'yii\base\UnknownPropertyException' with message 'Getting unknown property: common\models\User::id_usuario' in C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Component.php:143
+Stack trace:
+#0 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\db\BaseActiveRecord.php(247): yii\base\Component->__get('id_usuario')
+#1 C:\xampp\htdocs\paps\paps-advanced\frontend\views\layouts\header.php(33): yii\db\BaseActiveRecord->__get('id_usuario')
+#2 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\View.php(325): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#4 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, NULL)
+#5 C:\xampp\htdocs\paps\paps-advanced\frontend\views\layouts\main.php(26): yii\base\View->render('header.php', Array)
+#6 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\View.php(325): require('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#8 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Controller.php(386): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(frontend\controllers\SolicitacaoController))
+#9 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Controller.php(372): yii\base\Controller->renderContent('<div class="sol...')
+#10 C:\xampp\htdocs\paps\paps-advanced\frontend\controllers\SolicitacaoController.php(41): yii\base\Controller->render('index', Array)
+#11 [internal function]: frontend\controllers\SolicitacaoController->actionIndex()
+#12 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#13 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#14 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('index', Array)
+#15 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('solicitacao/ind...', Array)
+#16 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#17 C:\xampp\htdocs\paps\paps-advanced\frontend\web\index.php(18): yii\base\Application->run()
+#18 {main}
+2015-12-14 20:12:58 [::1][3][5dfomjp01kel00g1n2j66bitp4][info][application] $_GET = [
+    'r' => 'solicitacao/index'
+]
+
+$_COOKIE = [
+    '_csrf' => '5d5426fcc71500844399293442f80102a450c82ec5e7b6c0bea9798a25b64a58a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"IxZ85T-1SK6FIq5IfwpH3-YcQRSP6E1A\";}'
+    'PHPSESSID' => '5dfomjp01kel00g1n2j66bitp4'
+    '_identity' => '8861cc3afabde0ca621c1e52fd8ee94de5911e644b30ccdeac0c41343d91c2c9a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[3,\"RHboMpNfb-NTJlbxIuBmhoX3z6UoJsMV\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/paps/paps-advanced/frontend/web/index.php'
+    '__id' => 3
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.80 Safari/537.36'
+    'HTTP_REFERER' => 'http://localhost/paps/paps-advanced/frontend/web/index.php?r=solicitacao%2Fview&id=1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=5d5426fcc71500844399293442f80102a450c82ec5e7b6c0bea9798a25b64a58a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22IxZ85T-1SK6FIq5IfwpH3-YcQRSP6E1A%22%3B%7D; PHPSESSID=5dfomjp01kel00g1n2j66bitp4; _identity=8861cc3afabde0ca621c1e52fd8ee94de5911e644b30ccdeac0c41343d91c2c9a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B3%2C%22RHboMpNfb-NTJlbxIuBmhoX3z6UoJsMV%22%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x64;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SDKs\\TypeScript\\1.0\\;C:\\Program Files\\Microsoft SQL Server\\120\\Tools\\Binn\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Java\\jdk1.8.0_05;C:\\Program Files (x86)\\Common Files\\Acronis\\SnapAPI\\'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.12 (Win32) OpenSSL/1.0.1l PHP/5.6.8 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Win32) OpenSSL/1.0.1l PHP/5.6.8'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/paps/paps-advanced/frontend/web/index.php'
+    'REMOTE_PORT' => '62719'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=solicitacao/index'
+    'REQUEST_URI' => '/paps/paps-advanced/frontend/web/index.php?r=solicitacao/index'
+    'SCRIPT_NAME' => '/paps/paps-advanced/frontend/web/index.php'
+    'PHP_SELF' => '/paps/paps-advanced/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1450120378.344
+    'REQUEST_TIME' => 1450120378
+]
+2015-12-14 20:15:41 [::1][3][5dfomjp01kel00g1n2j66bitp4][error][yii\base\UnknownPropertyException] exception 'yii\base\UnknownPropertyException' with message 'Getting unknown property: frontend\models\Usuario::id_usuario' in C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Component.php:143
+Stack trace:
+#0 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\db\BaseActiveRecord.php(247): yii\base\Component->__get('id_usuario')
+#1 C:\xampp\htdocs\paps\paps-advanced\frontend\views\layouts\header.php(34): yii\db\BaseActiveRecord->__get('id_usuario')
+#2 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\View.php(325): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#4 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, NULL)
+#5 C:\xampp\htdocs\paps\paps-advanced\frontend\views\layouts\main.php(26): yii\base\View->render('header.php', Array)
+#6 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\View.php(325): require('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#8 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Controller.php(386): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(frontend\controllers\SolicitacaoController))
+#9 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Controller.php(372): yii\base\Controller->renderContent('<div class="sol...')
+#10 C:\xampp\htdocs\paps\paps-advanced\frontend\controllers\SolicitacaoController.php(41): yii\base\Controller->render('index', Array)
+#11 [internal function]: frontend\controllers\SolicitacaoController->actionIndex()
+#12 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#13 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#14 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('index', Array)
+#15 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('solicitacao/ind...', Array)
+#16 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#17 C:\xampp\htdocs\paps\paps-advanced\frontend\web\index.php(18): yii\base\Application->run()
+#18 {main}
+2015-12-14 20:15:38 [::1][3][5dfomjp01kel00g1n2j66bitp4][info][application] $_GET = [
+    'r' => 'solicitacao/index'
+]
+
+$_COOKIE = [
+    '_csrf' => '5d5426fcc71500844399293442f80102a450c82ec5e7b6c0bea9798a25b64a58a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"IxZ85T-1SK6FIq5IfwpH3-YcQRSP6E1A\";}'
+    'PHPSESSID' => '5dfomjp01kel00g1n2j66bitp4'
+    '_identity' => '8861cc3afabde0ca621c1e52fd8ee94de5911e644b30ccdeac0c41343d91c2c9a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[3,\"RHboMpNfb-NTJlbxIuBmhoX3z6UoJsMV\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/paps/paps-advanced/frontend/web/index.php'
+    '__id' => 3
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.80 Safari/537.36'
+    'HTTP_REFERER' => 'http://localhost/paps/paps-advanced/frontend/web/index.php?r=solicitacao%2Fview&id=1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=5d5426fcc71500844399293442f80102a450c82ec5e7b6c0bea9798a25b64a58a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22IxZ85T-1SK6FIq5IfwpH3-YcQRSP6E1A%22%3B%7D; PHPSESSID=5dfomjp01kel00g1n2j66bitp4; _identity=8861cc3afabde0ca621c1e52fd8ee94de5911e644b30ccdeac0c41343d91c2c9a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B3%2C%22RHboMpNfb-NTJlbxIuBmhoX3z6UoJsMV%22%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x64;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SDKs\\TypeScript\\1.0\\;C:\\Program Files\\Microsoft SQL Server\\120\\Tools\\Binn\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Java\\jdk1.8.0_05;C:\\Program Files (x86)\\Common Files\\Acronis\\SnapAPI\\'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.12 (Win32) OpenSSL/1.0.1l PHP/5.6.8 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Win32) OpenSSL/1.0.1l PHP/5.6.8'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/paps/paps-advanced/frontend/web/index.php'
+    'REMOTE_PORT' => '62727'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=solicitacao/index'
+    'REQUEST_URI' => '/paps/paps-advanced/frontend/web/index.php?r=solicitacao/index'
+    'SCRIPT_NAME' => '/paps/paps-advanced/frontend/web/index.php'
+    'PHP_SELF' => '/paps/paps-advanced/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1450120538.563
+    'REQUEST_TIME' => 1450120538
+]
+2015-12-14 20:16:33 [::1][3][5dfomjp01kel00g1n2j66bitp4][error][yii\base\UnknownPropertyException] exception 'yii\base\UnknownPropertyException' with message 'Getting unknown property: frontend\models\Usuario::id_usuario' in C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Component.php:143
+Stack trace:
+#0 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\db\BaseActiveRecord.php(247): yii\base\Component->__get('id_usuario')
+#1 C:\xampp\htdocs\paps\paps-advanced\frontend\views\layouts\header.php(34): yii\db\BaseActiveRecord->__get('id_usuario')
+#2 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\View.php(325): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#4 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, NULL)
+#5 C:\xampp\htdocs\paps\paps-advanced\frontend\views\layouts\main.php(26): yii\base\View->render('header.php', Array)
+#6 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\View.php(325): require('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#8 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Controller.php(386): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(frontend\controllers\SolicitacaoController))
+#9 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Controller.php(372): yii\base\Controller->renderContent('<div class="sol...')
+#10 C:\xampp\htdocs\paps\paps-advanced\frontend\controllers\SolicitacaoController.php(41): yii\base\Controller->render('index', Array)
+#11 [internal function]: frontend\controllers\SolicitacaoController->actionIndex()
+#12 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#13 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#14 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('index', Array)
+#15 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('solicitacao/ind...', Array)
+#16 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#17 C:\xampp\htdocs\paps\paps-advanced\frontend\web\index.php(18): yii\base\Application->run()
+#18 {main}
+2015-12-14 20:16:33 [::1][3][5dfomjp01kel00g1n2j66bitp4][info][application] $_GET = [
+    'r' => 'solicitacao/index'
+]
+
+$_COOKIE = [
+    '_csrf' => '5d5426fcc71500844399293442f80102a450c82ec5e7b6c0bea9798a25b64a58a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"IxZ85T-1SK6FIq5IfwpH3-YcQRSP6E1A\";}'
+    'PHPSESSID' => '5dfomjp01kel00g1n2j66bitp4'
+    '_identity' => '8861cc3afabde0ca621c1e52fd8ee94de5911e644b30ccdeac0c41343d91c2c9a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[3,\"RHboMpNfb-NTJlbxIuBmhoX3z6UoJsMV\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/paps/paps-advanced/frontend/web/index.php'
+    '__id' => 3
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.80 Safari/537.36'
+    'HTTP_REFERER' => 'http://localhost/paps/paps-advanced/frontend/web/index.php?r=solicitacao%2Fview&id=1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=5d5426fcc71500844399293442f80102a450c82ec5e7b6c0bea9798a25b64a58a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22IxZ85T-1SK6FIq5IfwpH3-YcQRSP6E1A%22%3B%7D; PHPSESSID=5dfomjp01kel00g1n2j66bitp4; _identity=8861cc3afabde0ca621c1e52fd8ee94de5911e644b30ccdeac0c41343d91c2c9a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B3%2C%22RHboMpNfb-NTJlbxIuBmhoX3z6UoJsMV%22%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x64;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SDKs\\TypeScript\\1.0\\;C:\\Program Files\\Microsoft SQL Server\\120\\Tools\\Binn\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Java\\jdk1.8.0_05;C:\\Program Files (x86)\\Common Files\\Acronis\\SnapAPI\\'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.12 (Win32) OpenSSL/1.0.1l PHP/5.6.8 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Win32) OpenSSL/1.0.1l PHP/5.6.8'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/paps/paps-advanced/frontend/web/index.php'
+    'REMOTE_PORT' => '62741'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=solicitacao/index'
+    'REQUEST_URI' => '/paps/paps-advanced/frontend/web/index.php?r=solicitacao/index'
+    'SCRIPT_NAME' => '/paps/paps-advanced/frontend/web/index.php'
+    'PHP_SELF' => '/paps/paps-advanced/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1450120593.641
+    'REQUEST_TIME' => 1450120593
+]
+2015-12-14 20:17:57 [::1][3][5dfomjp01kel00g1n2j66bitp4][error][yii\base\UnknownPropertyException] exception 'yii\base\UnknownPropertyException' with message 'Getting unknown property: common\models\User::id_usuario' in C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Component.php:143
+Stack trace:
+#0 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\db\BaseActiveRecord.php(247): yii\base\Component->__get('id_usuario')
+#1 C:\xampp\htdocs\paps\paps-advanced\frontend\views\layouts\header.php(35): yii\db\BaseActiveRecord->__get('id_usuario')
+#2 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\View.php(325): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#4 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, NULL)
+#5 C:\xampp\htdocs\paps\paps-advanced\frontend\views\layouts\main.php(26): yii\base\View->render('header.php', Array)
+#6 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\View.php(325): require('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#8 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Controller.php(386): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(frontend\controllers\SolicitacaoController))
+#9 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Controller.php(372): yii\base\Controller->renderContent('<div class="sol...')
+#10 C:\xampp\htdocs\paps\paps-advanced\frontend\controllers\SolicitacaoController.php(41): yii\base\Controller->render('index', Array)
+#11 [internal function]: frontend\controllers\SolicitacaoController->actionIndex()
+#12 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#13 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#14 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('index', Array)
+#15 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('solicitacao/ind...', Array)
+#16 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#17 C:\xampp\htdocs\paps\paps-advanced\frontend\web\index.php(18): yii\base\Application->run()
+#18 {main}
+2015-12-14 20:17:57 [::1][3][5dfomjp01kel00g1n2j66bitp4][info][application] $_GET = [
+    'r' => 'solicitacao/index'
+]
+
+$_COOKIE = [
+    '_csrf' => '5d5426fcc71500844399293442f80102a450c82ec5e7b6c0bea9798a25b64a58a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"IxZ85T-1SK6FIq5IfwpH3-YcQRSP6E1A\";}'
+    'PHPSESSID' => '5dfomjp01kel00g1n2j66bitp4'
+    '_identity' => '8861cc3afabde0ca621c1e52fd8ee94de5911e644b30ccdeac0c41343d91c2c9a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[3,\"RHboMpNfb-NTJlbxIuBmhoX3z6UoJsMV\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/paps/paps-advanced/frontend/web/index.php'
+    '__id' => 3
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.80 Safari/537.36'
+    'HTTP_REFERER' => 'http://localhost/paps/paps-advanced/frontend/web/index.php?r=solicitacao%2Fview&id=1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=5d5426fcc71500844399293442f80102a450c82ec5e7b6c0bea9798a25b64a58a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22IxZ85T-1SK6FIq5IfwpH3-YcQRSP6E1A%22%3B%7D; PHPSESSID=5dfomjp01kel00g1n2j66bitp4; _identity=8861cc3afabde0ca621c1e52fd8ee94de5911e644b30ccdeac0c41343d91c2c9a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B3%2C%22RHboMpNfb-NTJlbxIuBmhoX3z6UoJsMV%22%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x64;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SDKs\\TypeScript\\1.0\\;C:\\Program Files\\Microsoft SQL Server\\120\\Tools\\Binn\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Java\\jdk1.8.0_05;C:\\Program Files (x86)\\Common Files\\Acronis\\SnapAPI\\'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.12 (Win32) OpenSSL/1.0.1l PHP/5.6.8 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Win32) OpenSSL/1.0.1l PHP/5.6.8'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/paps/paps-advanced/frontend/web/index.php'
+    'REMOTE_PORT' => '62748'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=solicitacao/index'
+    'REQUEST_URI' => '/paps/paps-advanced/frontend/web/index.php?r=solicitacao/index'
+    'SCRIPT_NAME' => '/paps/paps-advanced/frontend/web/index.php'
+    'PHP_SELF' => '/paps/paps-advanced/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1450120677.582
+    'REQUEST_TIME' => 1450120677
+]
+2015-12-14 20:19:07 [::1][3][5dfomjp01kel00g1n2j66bitp4][error][yii\base\UnknownPropertyException] exception 'yii\base\UnknownPropertyException' with message 'Getting unknown property: frontend\models\Usuario::id_usuario' in C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Component.php:143
+Stack trace:
+#0 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\db\BaseActiveRecord.php(247): yii\base\Component->__get('id_usuario')
+#1 C:\xampp\htdocs\paps\paps-advanced\frontend\views\layouts\header.php(61): yii\db\BaseActiveRecord->__get('id_usuario')
+#2 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\View.php(325): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#4 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, NULL)
+#5 C:\xampp\htdocs\paps\paps-advanced\frontend\views\layouts\main.php(26): yii\base\View->render('header.php', Array)
+#6 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\View.php(325): require('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#8 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Controller.php(386): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(frontend\controllers\SolicitacaoController))
+#9 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Controller.php(372): yii\base\Controller->renderContent('<div class="sol...')
+#10 C:\xampp\htdocs\paps\paps-advanced\frontend\controllers\SolicitacaoController.php(41): yii\base\Controller->render('index', Array)
+#11 [internal function]: frontend\controllers\SolicitacaoController->actionIndex()
+#12 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#13 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#14 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('index', Array)
+#15 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('solicitacao/ind...', Array)
+#16 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#17 C:\xampp\htdocs\paps\paps-advanced\frontend\web\index.php(18): yii\base\Application->run()
+#18 {main}
+2015-12-14 20:19:07 [::1][3][5dfomjp01kel00g1n2j66bitp4][info][application] $_GET = [
+    'r' => 'solicitacao/index'
+]
+
+$_COOKIE = [
+    '_csrf' => '5d5426fcc71500844399293442f80102a450c82ec5e7b6c0bea9798a25b64a58a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"IxZ85T-1SK6FIq5IfwpH3-YcQRSP6E1A\";}'
+    'PHPSESSID' => '5dfomjp01kel00g1n2j66bitp4'
+    '_identity' => '8861cc3afabde0ca621c1e52fd8ee94de5911e644b30ccdeac0c41343d91c2c9a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[3,\"RHboMpNfb-NTJlbxIuBmhoX3z6UoJsMV\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/paps/paps-advanced/frontend/web/index.php'
+    '__id' => 3
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.80 Safari/537.36'
+    'HTTP_REFERER' => 'http://localhost/paps/paps-advanced/frontend/web/index.php?r=solicitacao%2Fview&id=1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=5d5426fcc71500844399293442f80102a450c82ec5e7b6c0bea9798a25b64a58a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22IxZ85T-1SK6FIq5IfwpH3-YcQRSP6E1A%22%3B%7D; PHPSESSID=5dfomjp01kel00g1n2j66bitp4; _identity=8861cc3afabde0ca621c1e52fd8ee94de5911e644b30ccdeac0c41343d91c2c9a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B3%2C%22RHboMpNfb-NTJlbxIuBmhoX3z6UoJsMV%22%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x64;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SDKs\\TypeScript\\1.0\\;C:\\Program Files\\Microsoft SQL Server\\120\\Tools\\Binn\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Java\\jdk1.8.0_05;C:\\Program Files (x86)\\Common Files\\Acronis\\SnapAPI\\'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.12 (Win32) OpenSSL/1.0.1l PHP/5.6.8 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Win32) OpenSSL/1.0.1l PHP/5.6.8'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/paps/paps-advanced/frontend/web/index.php'
+    'REMOTE_PORT' => '62755'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=solicitacao/index'
+    'REQUEST_URI' => '/paps/paps-advanced/frontend/web/index.php?r=solicitacao/index'
+    'SCRIPT_NAME' => '/paps/paps-advanced/frontend/web/index.php'
+    'PHP_SELF' => '/paps/paps-advanced/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1450120747.27
+    'REQUEST_TIME' => 1450120747
+]

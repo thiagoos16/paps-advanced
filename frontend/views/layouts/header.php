@@ -27,94 +27,158 @@ use frontend\models\Motorista;
 
                   global $num;
                   $num=0;
+                  global $num2;
+                  $num2=0;
+
+                  //$id_user = Yii::$app->user->identity->id_usuario;
 
                   $connection = \Yii::$app->db;
                   $model = $connection->createCommand("SELECT * FROM solicitacao WHERE solicitacao.status='Em análise'");
                   $solicitacoes=$model->queryAll();
+                  $model = $connection->createCommand("SELECT * FROM solicitacao WHERE solicitacao.status='Aceita' AND solicitacao.id_usuario=1");
+                  $aceitas = $model->queryAll();
+                  $model = $connection->createCommand("SELECT * FROM solicitacao WHERE solicitacao.status='Rejeitada' AND solicitacao.id_usuario=1");
+                  $rejeitadas = $model->queryAll();
 
                   foreach ($solicitacoes as $reg):
                       $num++;
                   endforeach;
 
+                  foreach ($aceitas as $reg):
+                    $num2++;
+                  endforeach;
+
+                  foreach ($rejeitadas as $reg):
+                      $num2++;
+                  endforeach;
+
+                  // Cria uma função que retorna o timestamp de uma data no formato DD/MM/AAAA
+                  function geraTimestamp($data) {
+                      $partes = explode('/', $data);
+                      return mktime(0, 0, 0, $partes[1], $partes[0], $partes[2]);
+                  }
+
                   if (Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1") {
+                      //coordenação de transporte
                       echo " <li class='dropdown messages-menu'>";
                       echo"<a href='#' class='dropdown-toggle' data-toggle='dropdown'>";
                       echo"<i class='fa fa-calendar'></i>";
                       echo "<span class='label label-success'>$num</span>";
+
+                      echo "</a>";
+                      echo "<ul class='dropdown-menu'>";
+
+                      if($num==0) {
+                          echo "<li class='header'>Não existem novas solicitações</li>";
+                      }
+                      elseif ($num==1) {
+                          echo "<li class='header'>Você possui $num nova solicitação</li>";
+                      }
+                      else {
+                          echo "<li class='header'>Você possui $num novas solicitações</li>";
+                      }
+
+                      echo "<li>";
+                      // inner menu: contains the actual data
+                      echo "<ul class='menu'>";
+
+                      $hoje = date("d/m/Y");
+
+                      foreach ($solicitacoes as $reg):
+                          $id_usuario = "{$reg['id_usuario']}";
+                          $data_lancamento = "{$reg['data_lancamento']}";
+                          $lancamento=date('d/m/Y',strtotime($data_lancamento));
+                          $id = "{$reg['id']}";
+
+                          $time_inicial = geraTimestamp($lancamento);
+                          $time_final = geraTimestamp($hoje);
+
+                          $diferenca = $time_final - $time_inicial;
+
+                          $dias = (int)floor( $diferenca / (60 * 60 * 24));
+
+                          $model = $connection->createCommand("SELECT * FROM user WHERE user.id='$id_usuario'");
+                          $usuario = $model->queryAll();
+                          foreach ($usuario as $reg):
+                              $nome = "{$reg['nome']}";
+                              $id_departamento = "{$reg['id_departamento']}";
+                          endforeach;
+
+                          $model = $connection->createCommand("SELECT * FROM departamento WHERE id='$id_departamento'");
+                          $dep = $model->queryAll();
+
+                          foreach($dep as $reg):
+                              $nome_dep =  "{$reg['nome']}";
+                          endforeach;
+
+                          echo "<li>"; //<!-- start message -->
+                          echo "<a href='index.php?r=solicitacao%2Fview&id=$id'>";
+                          echo "<h4>";
+                          echo "$nome_dep";
+                          if ($dias==0) {
+                              echo "<small><i class='fa fa-clock-o'></i> hoje</small>";
+                          }
+                          elseif ($dias==1) {
+                              echo "<small><i class='fa fa-clock-o'></i> ontem </small>";
+                          }
+                          else {
+                              echo "<small><i class='fa fa-clock-o'></i> $dias dias</small>";
+                          }
+                          echo "</h4>";
+                          echo "<p>Uma nova solicitação de <br> $nome </p>";
+                          echo "</a>";
+                          echo "</li>"; //<!-- end message -->
+                      endforeach;
+                  }
+                  else {
+                      //OUTROS DEPARTAMENTOS
+                      echo " <li class='dropdown messages-menu'>";
+                      echo"<a href='#' class='dropdown-toggle' data-toggle='dropdown'>";
+                      echo"<i class='fa fa-calendar'></i>";
+                      echo "<span class='label label-success'>$num2</span>";
+
+                      echo "</a>";
+                      echo "<ul class='dropdown-menu'>";
+
+                      if($num2==0) {
+                          echo "<li class='header'>Não existem novas respostas</li>";
+                      }
+                      elseif ($num2==1) {
+                          echo "<li class='header'>Você possui $num2 solicitação respondida</li>";
+                      }
+                      else {
+                          echo "<li class='header'>Você possui $num2 solicitações respondidas</li>";
+                      }
+
+                      echo "<li>";
+                      // inner menu: contains the actual data
+                      echo "<ul class='menu'>";
+
+                      foreach ($aceitas as $reg):
+                          //$nome = "{$reg['nome']}";
+                          $id_aceita= "{$reg['id']}";
+                          echo "<li>";
+                          echo "<a href='index.php?r=solicitacao%2Fview&id=$id_aceita'>";
+                          //echo " <i class='fa fa-user text-yellow'></i> ";
+                          echo "Sua solicitação foi aceita.";
+                          echo "</a>";
+                          echo " </li>";
+                      endforeach;
+                      foreach ($rejeitadas as $reg):
+                          //$nome = "{$reg['nome']}";
+                          $id_rejeitada= "{$reg['id']}";
+                          echo "<li>";
+                          echo "<a href='index.php?r=solicitacao%2Fview&id=$id_rejeitada'>";
+                          //echo " <i class='fa fa-user text-yellow'></i> ";
+                          echo "Sua solicitação foi rejeitada.";
+                          echo "</a>";
+                          echo " </li>";
+                      endforeach;
+
                   }
 
 
 
-                        echo "</a>";
-                        echo "<ul class='dropdown-menu'>";
-
-                        if($num==0) {
-                            echo "<li class='header'>Não existem novas solicitações</li>";
-                        }
-                        elseif ($num==1) {
-                            echo "<li class='header'>Você possui $num nova solicitação</li>";
-                        }
-                        else {
-                            echo "<li class='header'>Você possui $num novas solicitações</li>";
-                        }
-
-                        echo "<li>";
-                        // inner menu: contains the actual data
-                        echo "<ul class='menu'>";
-
-                        $hoje = date("d/m/Y");
-
-                        // Cria uma função que retorna o timestamp de uma data no formato DD/MM/AAAA
-                        function geraTimestamp($data) {
-                            $partes = explode('/', $data);
-                            return mktime(0, 0, 0, $partes[1], $partes[0], $partes[2]);
-                        }
-
-                        foreach ($solicitacoes as $reg):
-                            $id_usuario = "{$reg['id_usuario']}";
-                            $data_lancamento = "{$reg['data_lancamento']}";
-                            $lancamento=date('d/m/Y',strtotime($data_lancamento));
-                            $id = "{$reg['id']}";
-
-                            $time_inicial = geraTimestamp($lancamento);
-                            $time_final = geraTimestamp($hoje);
-
-                            $diferenca = $time_final - $time_inicial;
-
-                            $dias = (int)floor( $diferenca / (60 * 60 * 24));
-
-                            $model = $connection->createCommand("SELECT * FROM user WHERE user.id='$id_usuario'");
-                            $usuario = $model->queryAll();
-                            foreach ($usuario as $reg):
-                                $nome = "{$reg['nome']}";
-                                $id_departamento = "{$reg['id_departamento']}";
-                            endforeach;
-
-                            $model = $connection->createCommand("SELECT * FROM departamento WHERE id='$id_departamento'");
-                            $dep = $model->queryAll();
-
-                            foreach($dep as $reg):
-                                $nome_dep =  "{$reg['nome']}";
-                            endforeach;
-
-                            echo "<li>"; //<!-- start message -->
-                            echo "<a href='index.php?r=solicitacao%2Fview&id=$id'>";
-                            echo "<h4>";
-                            echo "$nome_dep";
-                            if ($dias==0) {
-                                echo "<small><i class='fa fa-clock-o'></i> hoje</small>";
-                            }
-                            elseif ($dias==1) {
-                                echo "<small><i class='fa fa-clock-o'></i> ontem </small>";
-                            }
-                            else {
-                                echo "<small><i class='fa fa-clock-o'></i> $dias dias</small>";
-                            }
-                            echo "</h4>";
-                            echo "<p>Uma nova solicitação de <br> $nome </p>";
-                            echo "</a>";
-                            echo "</li>"; //<!-- end message -->
-                        endforeach;
                     ?>
                         <!--<li>
                         <a href="#">

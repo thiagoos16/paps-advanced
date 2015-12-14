@@ -63,9 +63,14 @@ use frontend\models\Usuario;
               </li>
 
               <li class="treeview">
-                  <a href="#">
-                      <i class="fa fa-money"></i> <span>Gastos</span> <i class="fa fa-angle-left pull-right"></i>
-                  </a>
+                  <?php
+                  if (Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1") {
+                      echo "<a href=''#'>";
+                      echo "<i class='fa fa-money'></i> <span>Gastos</span> <i class='fa fa-angle-left pull-right'></i>";
+                      echo "</a>";
+                  }
+                  ?>
+
                   <ul class="treeview-menu">
 
                       <li>
