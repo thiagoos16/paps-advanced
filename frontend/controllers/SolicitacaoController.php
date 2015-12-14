@@ -129,6 +129,13 @@ class SolicitacaoController extends Controller
         return $this->redirect(['index']);
     }
 
+    public function actionVisualiza($id){
+
+        Solicitacao::updateAll(array('notification' => 1), ['id' => $id]);
+        return $this->redirect(['view', 'id' => $id]);
+
+    }
+
     /**
      * Finds the Solicitacao model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.

@@ -30,14 +30,14 @@ use frontend\models\Motorista;
                   global $num2;
                   $num2=0;
 
-                  //$id_user = Yii::$app->user->identity->id_usuario;
+                  $id_user = Yii::$app->user->identity->id;
 
                   $connection = \Yii::$app->db;
                   $model = $connection->createCommand("SELECT * FROM solicitacao WHERE solicitacao.status='Em análise'");
                   $solicitacoes=$model->queryAll();
-                  $model = $connection->createCommand("SELECT * FROM solicitacao WHERE solicitacao.status='Aceita' AND solicitacao.id_usuario=1");
+                  $model = $connection->createCommand("SELECT * FROM solicitacao WHERE solicitacao.status='Aceita' AND solicitacao.id_usuario=$id_user AND solicitacao.notification IS NULL");
                   $aceitas = $model->queryAll();
-                  $model = $connection->createCommand("SELECT * FROM solicitacao WHERE solicitacao.status='Rejeitada' AND solicitacao.id_usuario=1");
+                  $model = $connection->createCommand("SELECT * FROM solicitacao WHERE solicitacao.status='Rejeitada' AND solicitacao.id_usuario=$id_user AND solicitacao.notification IS NULL");
                   $rejeitadas = $model->queryAll();
 
                   foreach ($solicitacoes as $reg):
@@ -45,11 +45,13 @@ use frontend\models\Motorista;
                   endforeach;
 
                   foreach ($aceitas as $reg):
-                    $num2++;
+                      $num2++;
+                      $num++;
                   endforeach;
 
                   foreach ($rejeitadas as $reg):
                       $num2++;
+                      $num++;
                   endforeach;
 
                   // Cria uma função que retorna o timestamp de uma data no formato DD/MM/AAAA
@@ -60,9 +62,9 @@ use frontend\models\Motorista;
 
                   if (Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1") {
                       //coordenação de transporte
-                      echo " <li class='dropdown messages-menu'>";
-                      echo"<a href='#' class='dropdown-toggle' data-toggle='dropdown'>";
-                      echo"<i class='fa fa-calendar'></i>";
+                      echo "<li class='dropdown messages-menu'>";
+                      echo "<a href='#' class='dropdown-toggle' data-toggle='dropdown'>";
+                      echo "<i class='fa fa-calendar'></i>";
                       echo "<span class='label label-success'>$num</span>";
 
                       echo "</a>";
@@ -129,6 +131,26 @@ use frontend\models\Motorista;
                           echo "</a>";
                           echo "</li>"; //<!-- end message -->
                       endforeach;
+                      foreach ($aceitas as $reg):
+                          //$nome = "{$reg['nome']}";
+                          $id_aceita= "{$reg['id']}";
+                          echo "<li>";
+                          echo "<a href='index.php?r=solicitacao/visualiza&id=$id_aceita'>";
+                          //echo " <i class='fa fa-user text-yellow'></i> ";
+                          echo "Sua solicitação foi aceita.";
+                          echo "</a>";
+                          echo " </li>";
+                      endforeach;
+                      foreach ($rejeitadas as $reg):
+                          //$nome = "{$reg['nome']}";
+                          $id_rejeitada= "{$reg['id']}";
+                          echo "<li>";
+                          echo "<a href='index.php?r=solicitacao/visualiza&id=$id_rejeitada'>";
+                          //echo " <i class='fa fa-user text-yellow'></i> ";
+                          echo "Sua solicitação foi rejeitada.";
+                          echo "</a>";
+                          echo " </li>";
+                      endforeach;
                   }
                   else {
                       //OUTROS DEPARTAMENTOS
@@ -158,7 +180,7 @@ use frontend\models\Motorista;
                           //$nome = "{$reg['nome']}";
                           $id_aceita= "{$reg['id']}";
                           echo "<li>";
-                          echo "<a href='index.php?r=solicitacao%2Fview&id=$id_aceita'>";
+                          echo "<a href='index.php?r=solicitacao/visualiza&id=$id_aceita'>";
                           //echo " <i class='fa fa-user text-yellow'></i> ";
                           echo "Sua solicitação foi aceita.";
                           echo "</a>";
@@ -168,7 +190,7 @@ use frontend\models\Motorista;
                           //$nome = "{$reg['nome']}";
                           $id_rejeitada= "{$reg['id']}";
                           echo "<li>";
-                          echo "<a href='index.php?r=solicitacao%2Fview&id=$id_rejeitada'>";
+                          echo "<a href='index.php?r=solicitacao/visualiza&id=$id_rejeitada'>";
                           //echo " <i class='fa fa-user text-yellow'></i> ";
                           echo "Sua solicitação foi rejeitada.";
                           echo "</a>";
