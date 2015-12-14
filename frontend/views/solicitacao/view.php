@@ -38,7 +38,10 @@ $this->params['breadcrumbs'][] = $this->title;
                     'data_lancamento',
                     'observacao',
                     'status',
-                    'id_usuario',
+                    [
+                    'attribute' => 'id_usuario',
+                        'value' => Usuario::findOne($model->id_usuario)->nome
+                    ],
                     'capacidade_passageiros',
                     'endeeco_destino',
                     'hora_chegada',

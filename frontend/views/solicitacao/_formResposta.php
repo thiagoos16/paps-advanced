@@ -2,6 +2,7 @@
 
 use dosamigos\datepicker\DatePicker;
 use frontend\models\Motorista;
+use frontend\models\Solicitacao;
 use frontend\models\Veiculo;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
@@ -18,6 +19,7 @@ use yii\widgets\ActiveForm;
         <div class="box-header with-border">
 
             <?php $form = ActiveForm::begin(); ?>
+
 
             <?= $form->field($model, 'id_motorista')->dropDownList(ArrayHelper::map(Motorista::find()->all(), 'cnh', 'nome'), $model->getPrompt()) ?>
 

@@ -43,8 +43,8 @@ class Solicitacao extends \yii\db\ActiveRecord
     {
         return [
             [['destino', 'data_saida', 'hora_saida', 'status', 'id_usuario', 'capacidade_passageiros'], 'required'],
-            [['data_saida', 'data_lancamento'], 'safe'],
-            [['id_usuario', 'capacidade_passageiros', 'id_veiculo'], 'integer'],
+            [['data_saida', 'data_lancamento','id_usuario'], 'safe'],
+            [['capacidade_passageiros', 'id_veiculo'], 'integer'],
             [['destino', 'endeeco_destino'], 'string', 'max' => 45],
             [['hora_saida', 'status', 'hora_chegada'], 'string', 'max' => 15],
             [['observacao'], 'string', 'max' => 100],
@@ -111,7 +111,7 @@ class Solicitacao extends \yii\db\ActiveRecord
     }
 
     public  function afterFind(){
-        $this->id_usuario = Usuario::findOne($this->id_usuario)->nome;
+       // $this->id_usuario = Usuario::findOne($this->id_usuario)->nome;
         if($this->status == "Aceita") {
             $this->id_motorista = Motorista::findOne($this->id_motorista)->nome;
             $this->id_veiculo = Veiculo::findOne($this->id_veiculo)->placa_atual;
