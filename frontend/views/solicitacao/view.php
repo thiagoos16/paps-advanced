@@ -52,7 +52,9 @@ $this->params['breadcrumbs'][] = $this->title;
             ]) ?>
 
     <?php
-    if(Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == 1) {
+    $departamento = Usuario::findOne(Yii::$app->getUser()->id)->id_departamento;
+    $status = $model->status;
+    if($departamento == 1 && $status == 'Em análise') {
         echo "<div align='right'>";
         echo Html::a('Aceitar Solicitação', ['resposta', 'id' => $model->id], ['class' => 'btn btn-success']);
         echo " ";
