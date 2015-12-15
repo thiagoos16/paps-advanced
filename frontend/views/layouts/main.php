@@ -19,7 +19,8 @@ $baseUrl = $asset->baseUrl
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
-<body class="skin-blue fixed">
+<body class="sidebar-mini skin-blue fixed">
+<!-- <body class = "sidebar-mini skin-blue-light"> -->
 <?php $this->beginBody() ?>
 
 <div class="wrap">
