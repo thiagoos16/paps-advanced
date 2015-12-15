@@ -1,5 +1,6 @@
 <?php
 
+use frontend\models\Solicitacao;
 use yii\helpers\Html;
 use yii\grid\GridView;
 
@@ -32,7 +33,10 @@ $this->params['breadcrumbs'][] = $this->title;
                     //'hora_saida',
                     //'data_lancamento',
                     // 'observacao',
-                    'status',
+                    [
+                        'attribute' => 'status',
+                        'filter' => Html::activeDropDownList($searchModel, 'status', Solicitacao::getStatus(),['class'=>'form-control','prompt'=>'Filtrar']),
+                    ],
                     // 'id_usuario',
                     // 'capacidade_passageiros',
                     // 'endeeco_destino',
