@@ -117,4 +117,10 @@ class Solicitacao extends \yii\db\ActiveRecord
             $this->id_veiculo = Veiculo::findOne($this->id_veiculo)->placa_atual;
         }
     }
+
+    public  function beforeValidate()
+    {
+        $this->id_usuario = Yii::$app->user->identity->getId();
+        return parent::beforeValidate();
+    }
 }

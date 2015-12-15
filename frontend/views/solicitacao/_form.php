@@ -15,6 +15,8 @@ use yii\widgets\ActiveForm;
 
             <?php $form = ActiveForm::begin(); ?>
 
+            <?= $form->errorSummary($model) ?>
+
             <?= $form->field($model, 'destino')->textInput(['maxlength' => true]) ?>
 
             <?= $form->field($model, 'endeeco_destino')->textInput(['maxlength' => true]) ?>
@@ -40,7 +42,7 @@ use yii\widgets\ActiveForm;
 
             <?= $form->field($model, 'status')->textInput(['maxlength' => true, 'value' => "Em análise", "readonly" => "true"]) ?>
 
-            <?= $form->field($model, 'id_usuario')->textInput(['value' => Yii::$app->user->identity->getId(), "readonly" => "true"]) ?>
+
 
 
             <div class="form-group">
