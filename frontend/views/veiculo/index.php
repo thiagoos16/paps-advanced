@@ -1,5 +1,6 @@
 <?php
 
+use frontend\models\Veiculo;
 use yii\helpers\Html;
 use yii\grid\GridView;
 
@@ -40,7 +41,10 @@ $this->params['breadcrumbs'][] = $this->title;
                     // 'placa_anterior',
                     // 'potencia',
                     'id_modelo',
-                    'status',
+                    [
+                        'attribute' => 'status',
+                        'filter' => Html::activeDropDownList($searchModel, 'status', Veiculo::getStatus(),['class'=>'form-control','prompt'=>'Filtrar']),
+                    ],
                     // 'id_cor',
                     // 'id_tipo_combustivel',
                     // 'ano_fabricacao',

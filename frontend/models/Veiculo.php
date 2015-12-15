@@ -91,7 +91,7 @@ class Veiculo extends \yii\db\ActiveRecord
         ];
     }
 
-    public function getStatus(){
+    public static function getStatus(){
         return [
             '1' => 'Leiloado',
             '2' => 'Disponível',
