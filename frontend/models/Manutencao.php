@@ -47,7 +47,7 @@ class Manutencao extends \yii\db\ActiveRecord
             [['servico'], 'string', 'max' => 45],
             [['tipo'], 'string', 'max' => 25],
             [['id_motorista'], 'string', 'max' => 11],
-            ['data_saida','compare','compareAttribute'=>'data_entrada','operator'=>'>=',"message"=>'A data de entrada não pode ser maior que a data de saída']
+            ['data_saida','compare','compareAttribute'=>'data_entrada','operator'=>'>=',"message"=>'A data de entrada deve ser igual ou anterior à data de saída']
 
 
         ];
