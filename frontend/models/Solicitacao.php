@@ -42,7 +42,7 @@ class Solicitacao extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['destino', 'data_saida', 'hora_saida', 'status', 'id_usuario', 'capacidade_passageiros'], 'required'],
+            [['destino', 'data_saida', 'hora_saida', 'id_usuario', 'capacidade_passageiros'], 'required'],
             [['data_saida', 'data_lancamento','id_usuario'], 'safe'],
             [['capacidade_passageiros', 'id_veiculo'], 'integer'],
             [['destino', 'endeeco_destino'], 'string', 'max' => 45],
@@ -61,9 +61,9 @@ class Solicitacao extends \yii\db\ActiveRecord
         return [
             'id' => 'N° da Solicitação',
             'destino' => 'Destino',
-            'data_saida' => 'Data da Saida',
-            'hora_saida' => 'Hora da Saida',
-            'data_lancamento' => 'Data de Lancamento',
+            'data_saida' => 'Data da Saída',
+            'hora_saida' => 'Hora da Saída',
+            'data_lancamento' => 'Data de Lançamento',
             'observacao' => 'Observação',
             'status' => 'Status',
             'id_usuario' => 'Usuário',

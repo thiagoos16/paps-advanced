@@ -28,9 +28,17 @@ use yii\widgets\MaskedInput;
 
             <?= $form->field($model, 'cidade')->textInput(['maxlength' => true]) ?>
 
-            <?= $form->field($model, 'chassi')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'chassi')->textInput()
+                ->hint('Letras e números')
+                ->widget(MaskedInput::className(), [
+                    'mask' => '*****************',
+                ]) ?>
 
-            <?= $form->field($model, 'num_patrimonio')->textInput() ?>
+            <?= $form->field($model, 'num_patrimonio')->textInput()
+                ->hint('Somente números')
+                ->widget(MaskedInput::className(), [
+                    'mask' => '999999',
+                ]) ?>
 
             <?= $form->field($model, 'lotacao')->textInput(['maxlength' => true]) ?>
 

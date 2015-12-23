@@ -7,6 +7,7 @@ use frontend\models\Veiculo;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\widgets\MaskedInput;
 
 /* @var $this yii\web\View */
 /* @var $model frontend\models\Solicitacao */
@@ -27,9 +28,15 @@ use yii\widgets\ActiveForm;
 
             <?= $form->field($model, 'seguro')->textInput(['maxlength' => true]) ?>
 
-            <?= $form->field($model, 'hora_chegada')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'hora_chegada')->textInput(['maxlength' => true])
+                ->widget(MaskedInput::className(), [
+                    'mask' => '99:99',
+                ])
+            ?>
 
-            <?= $form->field($model, 'status')->textInput(['maxlength' => true, 'value' => "Aceita", "readonly" => "true"]) ?>
+            <?= $form->field($model, 'status')->hiddenInput(['maxlength' => true, 'value' => "Aceita", "readonly" => "true"])
+            ->label('')
+            ?>
 
             <div class="form-group">
                 <?= Html::submitButton($model->isNewRecord ? 'Salvar' : 'Salvar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

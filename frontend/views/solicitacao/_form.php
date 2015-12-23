@@ -27,11 +27,16 @@ use yii\widgets\MaskedInput;
                     // inline too, not bad
                     'inline' => false,
                     'language' => 'pt',
+
+                    //'dateFormat' => 'dd-mm-yyyy',
                     // modify template for custom rendering
                     //'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>',
                     'clientOptions' => [
+                        //'convertFormat'=> true,
+                        //'value' => 'dd-mm-yyyy',
                         'autoclose' => true,
                         'format' => 'yyyy-mm-dd'
+
                     ]
                 ]);?>
 
@@ -55,7 +60,11 @@ use yii\widgets\MaskedInput;
             ?>
 
             <?=
-            $form->field($model, 'status')->textInput(['maxlength' => true, 'value' => $status, "readonly" => "true"]) ?>
+            $model->isNewRecord?
+                $form->field($model, 'status')->hiddenInput(['value' => $status])
+                    ->label('') :
+                $form->field($model, 'status')->textInput(['maxlength' => true, 'value' => $status, "readonly" => "true"])
+            ?>
 
 
 
@@ -63,6 +72,9 @@ use yii\widgets\MaskedInput;
             <div class="form-group">
                 <!-- nova solicitação: botão verde
                 edição de solicitação: botão azul-->
+                <?php
+                //Yii::$app->user->setFlash('success', 'Salvo com sucesso.');
+                ?>
                 <?= Html::submitButton($model->isNewRecord ? 'Salvar' : 'Salvar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
             </div>
 

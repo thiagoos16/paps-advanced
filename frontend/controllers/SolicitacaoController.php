@@ -62,7 +62,10 @@ class SolicitacaoController extends Controller
     {
         $model = new Solicitacao();
 
+        Yii::$app->session->setFlash('success', 'Salvo com sucesso.');
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
