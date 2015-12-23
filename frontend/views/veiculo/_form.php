@@ -6,6 +6,7 @@ use frontend\models\Cor;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\widgets\MaskedInput;
 
 /* @var $this yii\web\View */
 /* @var $model frontend\models\Veiculo */
@@ -18,7 +19,12 @@ use yii\widgets\ActiveForm;
 
             <?php $form = ActiveForm::begin(); ?>
 
-            <?= $form->field($model, 'renavam')->textInput() ?>
+            <?= $form->field($model, 'renavam')->textInput(['maxlength'=>10,'style'=>'width:200px'])
+                ->hint('Somente números')
+                ->widget(MaskedInput::className(), [
+                    'mask' => '99999999999',
+                ])
+            ?>
 
             <?= $form->field($model, 'cidade')->textInput(['maxlength' => true]) ?>
 

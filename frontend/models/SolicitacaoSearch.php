@@ -54,15 +54,30 @@ class SolicitacaoSearch extends Solicitacao
             // $query->where('0=1');
             return $dataProvider;
         }
+        $departamento = Yii::$app->user->identity->id_departamento;
 
-        $query->andFilterWhere([
-            'id' => $this->id,
-            'data_saida' => $this->data_saida,
-            'data_lancamento' => $this->data_lancamento,
-            'id_usuario' => $this->id_usuario,
-            'capacidade_passageiros' => $this->capacidade_passageiros,
-            'id_veiculo' => $this->id_veiculo,
-        ]);
+        if ($departamento!=1) {
+            $query->andFilterWhere([
+                'id' => $this->id,
+                'data_saida' => $this->data_saida,
+                'data_lancamento' => $this->data_lancamento,
+                'id_usuario' => $this->id_usuario,
+                'capacidade_passageiros' => $this->capacidade_passageiros,
+                'id_veiculo' => $this->id_veiculo,
+            ]);
+        }
+        else {
+            $query->andFilterWhere([
+                'id' => $this->id,
+                'data_saida' => $this->data_saida,
+                'data_lancamento' => $this->data_lancamento,
+                //'id_usuario' => $this->id_usuario,
+                'capacidade_passageiros' => $this->capacidade_passageiros,
+                'id_veiculo' => $this->id_veiculo,
+            ]);
+        }
+
+
 
         $query->andFilterWhere(['like', 'destino', $this->destino])
             ->andFilterWhere(['like', 'hora_saida', $this->hora_saida])

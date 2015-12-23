@@ -3,6 +3,7 @@
 use dosamigos\datepicker\DatePicker;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\widgets\MaskedInput;
 
 /* @var $this yii\web\View */
 /* @var $model frontend\models\Solicitacao */
@@ -34,18 +35,34 @@ use yii\widgets\ActiveForm;
                     ]
                 ]);?>
 
-            <?= $form->field($model, 'hora_saida')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'hora_saida')->textInput(['maxlength' => true])
+                ->widget(MaskedInput::className(), [
+                    'mask' => '99:99',
+                ])
+            ?>
 
             <?= $form->field($model, 'capacidade_passageiros')->textInput() ?>
 
             <?= $form->field($model, 'observacao')->textarea(['maxlength' => true]) ?>
 
-            <?= $form->field($model, 'status')->textInput(['maxlength' => true, 'value' => "Em análise", "readonly" => "true"]) ?>
+            <?php
+            if($model->isNewRecord) {
+                $status="Em análise";
+            }
+            else {
+                $status=$model->status;
+            }
+            ?>
+
+            <?=
+            $form->field($model, 'status')->textInput(['maxlength' => true, 'value' => $status, "readonly" => "true"]) ?>
 
 
 
 
             <div class="form-group">
+                <!-- nova solicitação: botão verde
+                edição de solicitação: botão azul-->
                 <?= Html::submitButton($model->isNewRecord ? 'Salvar' : 'Salvar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
             </div>
 

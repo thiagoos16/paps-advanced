@@ -150,6 +150,7 @@ use frontend\models\Motorista;
                   foreach ($aceitas as $reg):
                       $id_aceita= "{$reg['id']}";
                       echo "<li>";
+                      echo "<a href='index.php?r=solicitacao/visualiza&id=$id_aceita'>";
                       echo " <i class='fa fa-user text-yellow'></i> ";
                       echo "Sua solicitação foi aceita.";
                       echo "</a>";

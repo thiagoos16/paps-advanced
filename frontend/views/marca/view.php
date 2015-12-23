@@ -29,7 +29,6 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="box-header with-border">
             <?= DetailView::widget([
                 'model' => $model,
-                'options' => ['table table-bordered table-striped'],
                 'attributes' => [
                     //'id',
                     'nome',

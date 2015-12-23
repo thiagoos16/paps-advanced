@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
     <!-- User name -->
     <div class="lockscreen-name">
-        <h3><?= Usuario::findOne(Yii::$app->getUser()->id)->nome ?></h3>
+        <h3><?= Usuario::findOne(Yii::$app->getUser()->id)->nome ?></h3><br>
     </div>
 
     <!-- START LOCK SCREEN ITEM -->
