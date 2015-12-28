@@ -81,6 +81,7 @@ class VeiculoController extends Controller
         $model = new Veiculo();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            Yii::$app->session->setFlash('success', 'Veículo salvo com sucesso.');
             return $this->redirect(['view', 'id' => $model->renavam]);
         } else {
             return $this->render('create', [

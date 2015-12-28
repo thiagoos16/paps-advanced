@@ -85,6 +85,7 @@ class MotoristaController extends Controller
         $model = new Motorista();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            Yii::$app->session->setFlash('success', 'Motorista salvo(a) com sucesso.');
             return $this->redirect(['view', 'id' => $model->cnh]);
         } else {
             return $this->render('create', [

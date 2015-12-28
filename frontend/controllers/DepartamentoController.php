@@ -81,6 +81,7 @@ class DepartamentoController extends Controller
         $model = new Departamento();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            Yii::$app->session->setFlash('success', 'Departamento salvo com sucesso.');
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [

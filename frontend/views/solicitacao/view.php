@@ -13,16 +13,18 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="solicitacao-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-
     <?php
     if(Yii::$app->session->hasFlash('success')) {
-        echo "<div class='flash-success' role='alert'>";
+        echo '<br>';
+        echo "<div class='alert alert-success' data-dismiss='alert'>";
+        //echo "<div class='alert alert-success close' data-dismiss='alert' aria-hidden='true'>";
         echo Yii::$app->session->getFlash('success');
         echo "</div>";
     }
 
     ?>
+
+    <h1><?= Html::encode($this->title) ?></h1>
 
     <p align="right">
         <?= Html::a('Editar', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>

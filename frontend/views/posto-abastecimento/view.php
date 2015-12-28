@@ -12,6 +12,16 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="posto-abastecimento-view">
 
+    <?php
+    if(Yii::$app->session->hasFlash('success')) {
+        echo '<br>';
+        echo "<div class='alert alert-success' data-dismiss='alert'>";
+        //echo "<div class='alert alert-success close' data-dismiss='alert' aria-hidden='true'>";
+        echo Yii::$app->session->getFlash('success');
+        echo "</div>";
+    }
+    ?>
+
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p align="right">

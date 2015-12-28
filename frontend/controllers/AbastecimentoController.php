@@ -79,6 +79,7 @@ class AbastecimentoController extends Controller
         $model = new Abastecimento();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            Yii::$app->session->setFlash('success', 'Abastecimento salvo com sucesso.');
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [

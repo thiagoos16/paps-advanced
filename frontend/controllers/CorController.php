@@ -102,6 +102,7 @@ class CorController extends Controller
         $model = new Cor();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            Yii::$app->session->setFlash('success', 'Cor salva com sucesso.');
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [

@@ -84,6 +84,7 @@ class ModeloController extends Controller
         $model = new Modelo();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            Yii::$app->session->setFlash('success', 'Modelo salvo com sucesso.');
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
