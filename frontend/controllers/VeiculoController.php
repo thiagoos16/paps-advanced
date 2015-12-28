@@ -101,6 +101,7 @@ class VeiculoController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            Yii::$app->session->setFlash('success', 'Veículo alterado com sucesso.');
             return $this->redirect(['view', 'id' => $model->renavam]);
         } else {
             return $this->render('update', [

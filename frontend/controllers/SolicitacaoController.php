@@ -83,6 +83,7 @@ class SolicitacaoController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            Yii::$app->session->setFlash('success', 'Solicitação alterada com sucesso.');
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [

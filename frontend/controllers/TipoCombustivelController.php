@@ -101,6 +101,7 @@ class TipoCombustivelController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            Yii::$app->session->setFlash('success', 'Tipo de Combustível alterado com sucesso.');
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
