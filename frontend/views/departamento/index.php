@@ -31,7 +31,33 @@ $this->params['breadcrumbs'][] = $this->title;
                     //'id',
                     'nome',
 
-                    ['class' => 'yii\grid\ActionColumn'],
+                    ['class' => 'yii\grid\ActionColumn',
+                        'template' => '{visualizar}  {editar}',
+                        'buttons' => [
+                            'visualizar' => function($url,$model) {
+                                return Html::a(
+                                    '<span class="fa fa-eye"></span>',
+                                    ['view', 'id' => $model->id],
+                                    [
+                                        //'class' => 'btn btn-default',
+                                        'title' => 'Exibir',
+                                        'data-pjax' => '0',
+                                    ]
+                                );
+                            },
+                            'editar' => function($url,$model) {
+                                return Html::a(
+                                    '<span class="fa fa-pencil"></span>',
+                                    ['update', 'id' => $model->id],
+                                    [
+                                        //'class' => 'btn btn-default',
+                                        'title' => 'Alterar',
+                                        'data-pjax' => '0',
+                                    ]
+                                );
+                            },
+                        ],
+                    ],
                 ],
             ]); ?>
         </div>
