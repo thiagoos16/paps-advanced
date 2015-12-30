@@ -38,9 +38,9 @@ class Abastecimento extends \yii\db\ActiveRecord
     {
         return [
             [['id_posto', 'id_veiculo', 'km', 'id_motorista', 'id_combustivel', 'valor_abastecido', 'qty_litro'], 'required', 'message' => 'Este campo é obrigatório'],
-            [['id_posto', 'id_veiculo', 'km'], 'integer'],
+            [['id_posto', 'id_veiculo', 'km', 'valor_abastecido'], 'integer'],
             [['data_lancamento', 'data_abastecimento'], 'safe'],
-            [['id_motorista'], 'string', 'max' => 11]
+            [['id_motorista'], 'string', 'max' => 11],
         ];
     }
 

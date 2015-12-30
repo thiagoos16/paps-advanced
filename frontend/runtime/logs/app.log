@@ -14386,3 +14386,417 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1451503071.73
     'REQUEST_TIME' => 1451503071
 ]
+2015-12-30 20:29:25 [::1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Trying to get property of non-object' in C:\xampp\htdocs\paps\paps-advanced\frontend\controllers\AbastecimentoController.php:126
+Stack trace:
+#0 C:\xampp\htdocs\paps\paps-advanced\frontend\controllers\AbastecimentoController.php(126): yii\base\ErrorHandler->handleError(8, 'Trying to get p...', 'C:\\xampp\\htdocs...', 126, Array)
+#1 [internal function]: frontend\controllers\AbastecimentoController->actionCalculo('', 'l')
+#2 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('calculo', Array)
+#5 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('abastecimento/c...', Array)
+#6 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 C:\xampp\htdocs\paps\paps-advanced\frontend\web\index.php(18): yii\base\Application->run()
+#8 {main}
+2015-12-30 20:29:25 [::1][-][-][info][application] $_GET = [
+    'r' => 'abastecimento/calculo'
+    'valor_abastecido' => 'l'
+    'id' => ''
+]
+
+$_COOKIE = [
+    '_csrf' => 'dcd1f7c1d17fd3b0711757442e850829a523445311b587b8939afb44b75f5307a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"URBDcgYHUa_mZaOdtWpVgr5VEzKr7O6z\";}'
+    'PHPSESSID' => '6omgm252gf22ujdnpmasl48q55'
+    '_identity' => 'dcde32b01dc62df61a8ddde6f4570067d8f7eedde27b4fce24b22e858dcefb14a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[6,\"MNpP8SwJzydrMhSHoq0SB4Hc8ALyvbal\",2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'dE1DYUJ0Nk8hHwElIRNvByEsHAwYFXkrABozNyUGAxkxNwgTdTsANQ=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36'
+    'HTTP_REFERER' => 'http://localhost/paps/paps-advanced/frontend/web/index.php?r=abastecimento%2Fcreate'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=dcd1f7c1d17fd3b0711757442e850829a523445311b587b8939afb44b75f5307a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22URBDcgYHUa_mZaOdtWpVgr5VEzKr7O6z%22%3B%7D; PHPSESSID=6omgm252gf22ujdnpmasl48q55; _identity=dcde32b01dc62df61a8ddde6f4570067d8f7eedde27b4fce24b22e858dcefb14a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B6%2C%22MNpP8SwJzydrMhSHoq0SB4Hc8ALyvbal%22%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x64;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SDKs\\TypeScript\\1.0\\;C:\\Program Files\\Microsoft SQL Server\\120\\Tools\\Binn\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Java\\jdk1.8.0_05;C:\\Program Files (x86)\\Common Files\\Acronis\\SnapAPI\\'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.12 (Win32) OpenSSL/1.0.1l PHP/5.6.8 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Win32) OpenSSL/1.0.1l PHP/5.6.8'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/paps/paps-advanced/frontend/web/index.php'
+    'REMOTE_PORT' => '57537'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=abastecimento/calculo&valor_abastecido=l&id='
+    'REQUEST_URI' => '/paps/paps-advanced/frontend/web/index.php?r=abastecimento/calculo&valor_abastecido=l&id='
+    'SCRIPT_NAME' => '/paps/paps-advanced/frontend/web/index.php'
+    'PHP_SELF' => '/paps/paps-advanced/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1451503765.808
+    'REQUEST_TIME' => 1451503765
+]
+2015-12-30 20:29:26 [::1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Trying to get property of non-object' in C:\xampp\htdocs\paps\paps-advanced\frontend\controllers\AbastecimentoController.php:126
+Stack trace:
+#0 C:\xampp\htdocs\paps\paps-advanced\frontend\controllers\AbastecimentoController.php(126): yii\base\ErrorHandler->handleError(8, 'Trying to get p...', 'C:\\xampp\\htdocs...', 126, Array)
+#1 [internal function]: frontend\controllers\AbastecimentoController->actionCalculo('', 'la')
+#2 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('calculo', Array)
+#5 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('abastecimento/c...', Array)
+#6 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 C:\xampp\htdocs\paps\paps-advanced\frontend\web\index.php(18): yii\base\Application->run()
+#8 {main}
+2015-12-30 20:29:26 [::1][-][-][info][application] $_GET = [
+    'r' => 'abastecimento/calculo'
+    'valor_abastecido' => 'la'
+    'id' => ''
+]
+
+$_COOKIE = [
+    '_csrf' => 'dcd1f7c1d17fd3b0711757442e850829a523445311b587b8939afb44b75f5307a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"URBDcgYHUa_mZaOdtWpVgr5VEzKr7O6z\";}'
+    'PHPSESSID' => '6omgm252gf22ujdnpmasl48q55'
+    '_identity' => 'dcde32b01dc62df61a8ddde6f4570067d8f7eedde27b4fce24b22e858dcefb14a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[6,\"MNpP8SwJzydrMhSHoq0SB4Hc8ALyvbal\",2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'dE1DYUJ0Nk8hHwElIRNvByEsHAwYFXkrABozNyUGAxkxNwgTdTsANQ=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36'
+    'HTTP_REFERER' => 'http://localhost/paps/paps-advanced/frontend/web/index.php?r=abastecimento%2Fcreate'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=dcd1f7c1d17fd3b0711757442e850829a523445311b587b8939afb44b75f5307a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22URBDcgYHUa_mZaOdtWpVgr5VEzKr7O6z%22%3B%7D; PHPSESSID=6omgm252gf22ujdnpmasl48q55; _identity=dcde32b01dc62df61a8ddde6f4570067d8f7eedde27b4fce24b22e858dcefb14a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B6%2C%22MNpP8SwJzydrMhSHoq0SB4Hc8ALyvbal%22%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x64;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SDKs\\TypeScript\\1.0\\;C:\\Program Files\\Microsoft SQL Server\\120\\Tools\\Binn\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Java\\jdk1.8.0_05;C:\\Program Files (x86)\\Common Files\\Acronis\\SnapAPI\\'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.12 (Win32) OpenSSL/1.0.1l PHP/5.6.8 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Win32) OpenSSL/1.0.1l PHP/5.6.8'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/paps/paps-advanced/frontend/web/index.php'
+    'REMOTE_PORT' => '57646'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=abastecimento/calculo&valor_abastecido=la&id='
+    'REQUEST_URI' => '/paps/paps-advanced/frontend/web/index.php?r=abastecimento/calculo&valor_abastecido=la&id='
+    'SCRIPT_NAME' => '/paps/paps-advanced/frontend/web/index.php'
+    'PHP_SELF' => '/paps/paps-advanced/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1451503766.109
+    'REQUEST_TIME' => 1451503766
+]
+2015-12-30 20:33:52 [::1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Trying to get property of non-object' in C:\xampp\htdocs\paps\paps-advanced\frontend\controllers\AbastecimentoController.php:126
+Stack trace:
+#0 C:\xampp\htdocs\paps\paps-advanced\frontend\controllers\AbastecimentoController.php(126): yii\base\ErrorHandler->handleError(8, 'Trying to get p...', 'C:\\xampp\\htdocs...', 126, Array)
+#1 [internal function]: frontend\controllers\AbastecimentoController->actionCalculo('', 'a')
+#2 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('calculo', Array)
+#5 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('abastecimento/c...', Array)
+#6 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 C:\xampp\htdocs\paps\paps-advanced\frontend\web\index.php(18): yii\base\Application->run()
+#8 {main}
+2015-12-30 20:33:52 [::1][-][-][info][application] $_GET = [
+    'r' => 'abastecimento/calculo'
+    'valor_abastecido' => 'a'
+    'id' => ''
+]
+
+$_COOKIE = [
+    '_csrf' => 'dcd1f7c1d17fd3b0711757442e850829a523445311b587b8939afb44b75f5307a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"URBDcgYHUa_mZaOdtWpVgr5VEzKr7O6z\";}'
+    'PHPSESSID' => '6omgm252gf22ujdnpmasl48q55'
+    '_identity' => 'dcde32b01dc62df61a8ddde6f4570067d8f7eedde27b4fce24b22e858dcefb14a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[6,\"MNpP8SwJzydrMhSHoq0SB4Hc8ALyvbal\",2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'VWYxWW00d1cANHMdDlMuHwAHbjQ3VTgzITFBDwpGQgEQHHorWntBLQ=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36'
+    'HTTP_REFERER' => 'http://localhost/paps/paps-advanced/frontend/web/index.php?r=abastecimento%2Fcreate'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=dcd1f7c1d17fd3b0711757442e850829a523445311b587b8939afb44b75f5307a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22URBDcgYHUa_mZaOdtWpVgr5VEzKr7O6z%22%3B%7D; PHPSESSID=6omgm252gf22ujdnpmasl48q55; _identity=dcde32b01dc62df61a8ddde6f4570067d8f7eedde27b4fce24b22e858dcefb14a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B6%2C%22MNpP8SwJzydrMhSHoq0SB4Hc8ALyvbal%22%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x64;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SDKs\\TypeScript\\1.0\\;C:\\Program Files\\Microsoft SQL Server\\120\\Tools\\Binn\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Java\\jdk1.8.0_05;C:\\Program Files (x86)\\Common Files\\Acronis\\SnapAPI\\'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.12 (Win32) OpenSSL/1.0.1l PHP/5.6.8 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Win32) OpenSSL/1.0.1l PHP/5.6.8'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/paps/paps-advanced/frontend/web/index.php'
+    'REMOTE_PORT' => '57648'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=abastecimento/calculo&valor_abastecido=a&id='
+    'REQUEST_URI' => '/paps/paps-advanced/frontend/web/index.php?r=abastecimento/calculo&valor_abastecido=a&id='
+    'SCRIPT_NAME' => '/paps/paps-advanced/frontend/web/index.php'
+    'PHP_SELF' => '/paps/paps-advanced/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1451504032.788
+    'REQUEST_TIME' => 1451504032
+]
+2015-12-30 20:33:56 [::1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Trying to get property of non-object' in C:\xampp\htdocs\paps\paps-advanced\frontend\controllers\AbastecimentoController.php:126
+Stack trace:
+#0 C:\xampp\htdocs\paps\paps-advanced\frontend\controllers\AbastecimentoController.php(126): yii\base\ErrorHandler->handleError(8, 'Trying to get p...', 'C:\\xampp\\htdocs...', 126, Array)
+#1 [internal function]: frontend\controllers\AbastecimentoController->actionCalculo('', '')
+#2 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('calculo', Array)
+#5 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('abastecimento/c...', Array)
+#6 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 C:\xampp\htdocs\paps\paps-advanced\frontend\web\index.php(18): yii\base\Application->run()
+#8 {main}
+2015-12-30 20:33:56 [::1][-][-][info][application] $_GET = [
+    'r' => 'abastecimento/calculo'
+    'valor_abastecido' => ''
+    'id' => ''
+]
+
+$_COOKIE = [
+    '_csrf' => 'dcd1f7c1d17fd3b0711757442e850829a523445311b587b8939afb44b75f5307a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"URBDcgYHUa_mZaOdtWpVgr5VEzKr7O6z\";}'
+    'PHPSESSID' => '6omgm252gf22ujdnpmasl48q55'
+    '_identity' => 'dcde32b01dc62df61a8ddde6f4570067d8f7eedde27b4fce24b22e858dcefb14a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[6,\"MNpP8SwJzydrMhSHoq0SB4Hc8ALyvbal\",2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'VWYxWW00d1cANHMdDlMuHwAHbjQ3VTgzITFBDwpGQgEQHHorWntBLQ=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36'
+    'HTTP_REFERER' => 'http://localhost/paps/paps-advanced/frontend/web/index.php?r=abastecimento%2Fcreate'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=dcd1f7c1d17fd3b0711757442e850829a523445311b587b8939afb44b75f5307a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22URBDcgYHUa_mZaOdtWpVgr5VEzKr7O6z%22%3B%7D; PHPSESSID=6omgm252gf22ujdnpmasl48q55; _identity=dcde32b01dc62df61a8ddde6f4570067d8f7eedde27b4fce24b22e858dcefb14a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B6%2C%22MNpP8SwJzydrMhSHoq0SB4Hc8ALyvbal%22%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x64;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SDKs\\TypeScript\\1.0\\;C:\\Program Files\\Microsoft SQL Server\\120\\Tools\\Binn\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Java\\jdk1.8.0_05;C:\\Program Files (x86)\\Common Files\\Acronis\\SnapAPI\\'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.12 (Win32) OpenSSL/1.0.1l PHP/5.6.8 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Win32) OpenSSL/1.0.1l PHP/5.6.8'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/paps/paps-advanced/frontend/web/index.php'
+    'REMOTE_PORT' => '57873'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=abastecimento/calculo&valor_abastecido=&id='
+    'REQUEST_URI' => '/paps/paps-advanced/frontend/web/index.php?r=abastecimento/calculo&valor_abastecido=&id='
+    'SCRIPT_NAME' => '/paps/paps-advanced/frontend/web/index.php'
+    'PHP_SELF' => '/paps/paps-advanced/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1451504036.666
+    'REQUEST_TIME' => 1451504036
+]
+2015-12-30 20:33:58 [::1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Trying to get property of non-object' in C:\xampp\htdocs\paps\paps-advanced\frontend\controllers\AbastecimentoController.php:126
+Stack trace:
+#0 C:\xampp\htdocs\paps\paps-advanced\frontend\controllers\AbastecimentoController.php(126): yii\base\ErrorHandler->handleError(8, 'Trying to get p...', 'C:\\xampp\\htdocs...', 126, Array)
+#1 [internal function]: frontend\controllers\AbastecimentoController->actionCalculo('', '0')
+#2 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('calculo', Array)
+#5 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('abastecimento/c...', Array)
+#6 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 C:\xampp\htdocs\paps\paps-advanced\frontend\web\index.php(18): yii\base\Application->run()
+#8 {main}
+2015-12-30 20:33:57 [::1][-][-][info][application] $_GET = [
+    'r' => 'abastecimento/calculo'
+    'valor_abastecido' => '0'
+    'id' => ''
+]
+
+$_COOKIE = [
+    '_csrf' => 'dcd1f7c1d17fd3b0711757442e850829a523445311b587b8939afb44b75f5307a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"URBDcgYHUa_mZaOdtWpVgr5VEzKr7O6z\";}'
+    'PHPSESSID' => '6omgm252gf22ujdnpmasl48q55'
+    '_identity' => 'dcde32b01dc62df61a8ddde6f4570067d8f7eedde27b4fce24b22e858dcefb14a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[6,\"MNpP8SwJzydrMhSHoq0SB4Hc8ALyvbal\",2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'VWYxWW00d1cANHMdDlMuHwAHbjQ3VTgzITFBDwpGQgEQHHorWntBLQ=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36'
+    'HTTP_REFERER' => 'http://localhost/paps/paps-advanced/frontend/web/index.php?r=abastecimento%2Fcreate'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=dcd1f7c1d17fd3b0711757442e850829a523445311b587b8939afb44b75f5307a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22URBDcgYHUa_mZaOdtWpVgr5VEzKr7O6z%22%3B%7D; PHPSESSID=6omgm252gf22ujdnpmasl48q55; _identity=dcde32b01dc62df61a8ddde6f4570067d8f7eedde27b4fce24b22e858dcefb14a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B6%2C%22MNpP8SwJzydrMhSHoq0SB4Hc8ALyvbal%22%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x64;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SDKs\\TypeScript\\1.0\\;C:\\Program Files\\Microsoft SQL Server\\120\\Tools\\Binn\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Java\\jdk1.8.0_05;C:\\Program Files (x86)\\Common Files\\Acronis\\SnapAPI\\'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.12 (Win32) OpenSSL/1.0.1l PHP/5.6.8 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Win32) OpenSSL/1.0.1l PHP/5.6.8'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/paps/paps-advanced/frontend/web/index.php'
+    'REMOTE_PORT' => '57877'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=abastecimento/calculo&valor_abastecido=0&id='
+    'REQUEST_URI' => '/paps/paps-advanced/frontend/web/index.php?r=abastecimento/calculo&valor_abastecido=0&id='
+    'SCRIPT_NAME' => '/paps/paps-advanced/frontend/web/index.php'
+    'PHP_SELF' => '/paps/paps-advanced/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1451504037.967
+    'REQUEST_TIME' => 1451504037
+]
+2015-12-30 20:34:01 [::1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Trying to get property of non-object' in C:\xampp\htdocs\paps\paps-advanced\frontend\controllers\AbastecimentoController.php:126
+Stack trace:
+#0 C:\xampp\htdocs\paps\paps-advanced\frontend\controllers\AbastecimentoController.php(126): yii\base\ErrorHandler->handleError(8, 'Trying to get p...', 'C:\\xampp\\htdocs...', 126, Array)
+#1 [internal function]: frontend\controllers\AbastecimentoController->actionCalculo('', '')
+#2 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('calculo', Array)
+#5 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('abastecimento/c...', Array)
+#6 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 C:\xampp\htdocs\paps\paps-advanced\frontend\web\index.php(18): yii\base\Application->run()
+#8 {main}
+2015-12-30 20:34:01 [::1][-][-][info][application] $_GET = [
+    'r' => 'abastecimento/calculo'
+    'valor_abastecido' => ''
+    'id' => ''
+]
+
+$_COOKIE = [
+    '_csrf' => 'dcd1f7c1d17fd3b0711757442e850829a523445311b587b8939afb44b75f5307a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"URBDcgYHUa_mZaOdtWpVgr5VEzKr7O6z\";}'
+    'PHPSESSID' => '6omgm252gf22ujdnpmasl48q55'
+    '_identity' => 'dcde32b01dc62df61a8ddde6f4570067d8f7eedde27b4fce24b22e858dcefb14a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[6,\"MNpP8SwJzydrMhSHoq0SB4Hc8ALyvbal\",2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'VWYxWW00d1cANHMdDlMuHwAHbjQ3VTgzITFBDwpGQgEQHHorWntBLQ=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36'
+    'HTTP_REFERER' => 'http://localhost/paps/paps-advanced/frontend/web/index.php?r=abastecimento%2Fcreate'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=dcd1f7c1d17fd3b0711757442e850829a523445311b587b8939afb44b75f5307a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22URBDcgYHUa_mZaOdtWpVgr5VEzKr7O6z%22%3B%7D; PHPSESSID=6omgm252gf22ujdnpmasl48q55; _identity=dcde32b01dc62df61a8ddde6f4570067d8f7eedde27b4fce24b22e858dcefb14a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B6%2C%22MNpP8SwJzydrMhSHoq0SB4Hc8ALyvbal%22%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x64;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SDKs\\TypeScript\\1.0\\;C:\\Program Files\\Microsoft SQL Server\\120\\Tools\\Binn\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Java\\jdk1.8.0_05;C:\\Program Files (x86)\\Common Files\\Acronis\\SnapAPI\\'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.12 (Win32) OpenSSL/1.0.1l PHP/5.6.8 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Win32) OpenSSL/1.0.1l PHP/5.6.8'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/paps/paps-advanced/frontend/web/index.php'
+    'REMOTE_PORT' => '57881'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=abastecimento/calculo&valor_abastecido=&id='
+    'REQUEST_URI' => '/paps/paps-advanced/frontend/web/index.php?r=abastecimento/calculo&valor_abastecido=&id='
+    'SCRIPT_NAME' => '/paps/paps-advanced/frontend/web/index.php'
+    'PHP_SELF' => '/paps/paps-advanced/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1451504041.59
+    'REQUEST_TIME' => 1451504041
+]
