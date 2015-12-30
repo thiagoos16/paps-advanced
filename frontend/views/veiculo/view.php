@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model frontend\models\Veiculo */
 
-$this->title = $model->placa_atual;
+$this->title = "Exibir Veículo";
 $this->params['breadcrumbs'][] = ['label' => 'Veículos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

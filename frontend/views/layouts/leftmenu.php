@@ -154,7 +154,7 @@ use frontend\models\Usuario;
                   <?php
                   if (Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1") {
                       echo "<a href='index.php?r=posto-abastecimento/index'>";
-                      echo "<i class='fa fa-dashboard''></i> <span>Postos de Abasteciemento</span>";
+                      echo "<i class='fa fa-dashboard''></i> <span>Postos de Abastecimento</span>";
                       echo "</a>";
                   }
                   ?>

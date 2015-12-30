@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model frontend\models\Cor */
 
-$this->title = "Visualizar Cor";
+$this->title = "Exibir Cor";
 $this->params['breadcrumbs'][] = ['label' => 'Cores', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

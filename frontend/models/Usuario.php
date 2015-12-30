@@ -59,7 +59,7 @@ class Usuario extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'username' => 'Nome de Usuario',
+            'username' => 'Nome de Usuário',
             'auth_key' => 'Chave do Autor',
             'password_hash' => 'Senha',
             'password_reset_token' => 'Password Reset Token',

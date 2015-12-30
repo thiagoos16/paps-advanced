@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model frontend\models\Solicitacao */
 
-$this->title = "Visualizar Solicitação";
+$this->title = "Exibir Solicitação";
 $this->params['breadcrumbs'][] = ['label' => 'Solicitações', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

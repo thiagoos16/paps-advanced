@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model frontend\models\Motorista */
 
-$this->title = "Visualizar Motorista";
+$this->title = "Exibir Motorista";
 $this->params['breadcrumbs'][] = ['label' => 'Motoristas', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

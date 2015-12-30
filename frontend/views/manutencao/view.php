@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model frontend\models\Manutencao */
 
-$this->title = 'Visualizar Manutenção';
+$this->title = 'Exibir Manutenção';
 $this->params['breadcrumbs'][] = ['label' => 'Manutenções', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
