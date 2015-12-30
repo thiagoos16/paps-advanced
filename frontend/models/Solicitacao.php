@@ -116,6 +116,8 @@ class Solicitacao extends \yii\db\ActiveRecord
             $this->id_motorista = Motorista::findOne($this->id_motorista)->nome;
             $this->id_veiculo = Veiculo::findOne($this->id_veiculo)->placa_atual;
         }
+        $this->data_saida = date('d/m/Y', strtotime($this->data_saida));
+        $this->data_lancamento = date('d/m/Y h:i:s', strtotime($this->data_lancamento));
     }
 
     public  function beforeValidate()

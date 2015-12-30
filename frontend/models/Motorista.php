@@ -135,6 +135,7 @@ class Motorista extends \yii\db\ActiveRecord
         }
 
         $this->categoria_cnh = "Categoria ".$this->categoria_cnh;
+        $this->data_validade_cnh = date('d/m/Y', strtotime($this->data_validade_cnh));
     }
 
 }

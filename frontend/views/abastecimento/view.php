@@ -36,6 +36,10 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ]) ?>
     </p>
+    <?php
+        $data_lancamento = $model->data_lancamento;
+        $data=date('d/m/Y h:i:s',strtotime($data_lancamento));
+    ?>
     <div class="box box-primary">
         <div class="box-header with-border">
             <?= DetailView::widget([
@@ -48,6 +52,12 @@ $this->params['breadcrumbs'][] = $this->title;
                     'id_veiculo',
                     'km',
                     'data_lancamento',
+                    /*[
+                        'attribute' => 'data_lancamento',
+                        'format' => 'raw',
+                        'value' => $data,
+                    ],*/
+
                     'id_motorista',
                     'data_abastecimento',
                 ],
