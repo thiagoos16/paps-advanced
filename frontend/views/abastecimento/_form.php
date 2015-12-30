@@ -44,13 +44,16 @@ use yii\widgets\ActiveForm;
                         document.getElementById("abastecimento-qty_litro").value = data;
 
                     });',
-            ]) ?>
+            ])->hint('Insira um número inteiro.')
+            ?>
 
             <?= $form->field($model, 'qty_litro')->textInput(['readonly' => 'true']) ?>
 
             <?= $form->field($model, 'id_veiculo')->dropDownList(ArrayHelper::map(Veiculo::find()->all(), 'renavam', 'placa_atual'), ['prompt'=>'Selecione uma opção']) ?>
 
-            <?= $form->field($model, 'km')->textInput() ?>
+            <?= $form->field($model, 'km')->textInput()
+                ->hint('Insira um número inteiro.')
+            ?>
 
             <?= $form->field($model, 'id_motorista')->dropDownList(ArrayHelper::map(Motorista::find()->all(), 'cnh', 'nome'), ['prompt'=>'Selecione uma opção']) ?>
 

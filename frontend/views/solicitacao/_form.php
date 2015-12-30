@@ -41,12 +41,14 @@ use yii\widgets\MaskedInput;
                 ]);?>
 
             <?= $form->field($model, 'hora_saida')->textInput(['maxlength' => true])
+                ->hint('Insira horas e minutos. Ex.: 18:35')
                 ->widget(MaskedInput::className(), [
                     'mask' => '99:99',
                 ])
             ?>
 
-            <?= $form->field($model, 'capacidade_passageiros')->textInput() ?>
+            <?= $form->field($model, 'capacidade_passageiros')->textInput()
+                ->hint('Insira um número inteiro.') ?>
 
             <?= $form->field($model, 'observacao')->textarea(['maxlength' => true]) ?>
 

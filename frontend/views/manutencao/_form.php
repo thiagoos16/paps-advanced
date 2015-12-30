@@ -20,7 +20,9 @@ use frontend\models\Motorista;
 
             <?= $form->field($model, 'servico')->textarea(['rows'=>'3'])?>
 
-            <?= $form->field($model, 'custo')->textInput() ?>
+            <?= $form->field($model, 'custo')->textInput()
+                ->hint('Insira um número inteiro.')
+            ?>
 
             <?= $form->field($model, 'tipo')->dropDownList($model->getTipo(), $model->getPrompt()) ?>
 
@@ -53,7 +55,9 @@ use frontend\models\Motorista;
 
             <?= $form->field($model, 'id_veiculo')->dropDownList(ArrayHelper::map(Veiculo::find()->all(), 'renavam', 'placa_atual'), ['prompt'=>'Selecione a placa do veículo']) ?>
 
-            <?= $form->field($model, 'km')->textInput() ?>
+            <?= $form->field($model, 'km')->textInput()
+                ->hint('Insira um número inteiro.')
+            ?>
 
             <?= $form->field($model, 'id_motorista')->dropDownList(ArrayHelper::map(Motorista::find()->all(), 'cnh', 'nome'), ['prompt'=>'Selecione o nome do motorista']) ?>
 

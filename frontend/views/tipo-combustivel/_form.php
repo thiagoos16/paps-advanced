@@ -17,7 +17,9 @@ use yii\widgets\ActiveForm;
 
             <?= $form->field($model, 'nome')->textInput() ?>
 
-            <?= $form->field($model, 'preco_litro')->textInput() ?>
+            <?= $form->field($model, 'preco_litro')->textInput()
+                ->hint('Insira um número inteiro.')
+            ?>
 
             <div class="form-group">
                 <?= Html::submitButton($model->isNewRecord ? 'Salvar' : 'Salvar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

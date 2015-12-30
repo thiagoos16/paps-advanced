@@ -20,7 +20,6 @@ use yii\widgets\MaskedInput;
             <?php $form = ActiveForm::begin(); ?>
 
             <?= $form->field($model, 'renavam')->textInput(['maxlength'=>10,'style'=>'width:200px'])
-                ->hint('Somente números')
                 ->widget(MaskedInput::className(), [
                     'mask' => '99999999999',
                 ])
@@ -29,13 +28,11 @@ use yii\widgets\MaskedInput;
             <?= $form->field($model, 'cidade')->textInput(['maxlength' => true]) ?>
 
             <?= $form->field($model, 'chassi')->textInput()
-                ->hint('Letras e números')
                 ->widget(MaskedInput::className(), [
                     'mask' => '*****************',
                 ]) ?>
 
             <?= $form->field($model, 'num_patrimonio')->textInput()
-                ->hint('Somente números')
                 ->widget(MaskedInput::className(), [
                     'mask' => '999999',
                 ]) ?>
@@ -44,19 +41,37 @@ use yii\widgets\MaskedInput;
 
             <?= $form->field($model, 'status')->dropDownList($model->getStatus(), ['prompt'=>'Selecione uma opção']) ?>
 
-            <?= $form->field($model, 'capacidade_passageiros')->textInput() ?>
+            <?= $form->field($model, 'capacidade_passageiros')->textInput()
+                ->hint('Insira um número inteiro.')
+            ?>
 
             <?= $form->field($model, 'observacao')->textarea(['rows'=>'10'])?>
 
             <?= $form->field($model, 'adquirido_de')->textInput(['maxlength' => true]) ?>
 
-            <?= $form->field($model, 'uf_atual')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'uf_atual')->textInput(['maxlength' => true])
+            ->widget(MaskedInput::className(), [
+                'mask' => 'aa',
+            ])
+            ?>
 
-            <?= $form->field($model, 'uf_anterior')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'uf_anterior')->textInput(['maxlength' => true])
+                ->widget(MaskedInput::className(), [
+                    'mask' => 'aa',
+                ])
+            ?>
 
-            <?= $form->field($model, 'placa_atual')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'placa_atual')->textInput(['maxlength' => true])
+                ->widget(MaskedInput::className(), [
+                    'mask' => 'aaa-9999',
+                ])
+            ?>
 
-            <?= $form->field($model, 'placa_anterior')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'placa_anterior')->textInput(['maxlength' => true])
+                ->widget(MaskedInput::className(), [
+                    'mask' => 'aaa-9999',
+                ])
+            ?>
 
             <?= $form->field($model, 'potencia')->textInput() ?>
 

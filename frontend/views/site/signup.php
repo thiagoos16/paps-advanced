@@ -31,7 +31,9 @@ $this->params['breadcrumbs'][] = $this->title;
                         </div>
 
                         <div class="form-group has-feedback">
-                            <?= $form->field($model, 'password')->passwordInput() ?>
+                            <?= $form->field($model, 'password')
+                                ->hint('Insira no mínimo 6 caracteres.')
+                                ->passwordInput() ?>
                         </div>
 
                     <?= $form->field($model, 'confirma_senha')->passwordInput() ?>
