@@ -110,14 +110,25 @@ class Solicitacao extends \yii\db\ActiveRecord
         return ['prompt'=>'Selecione uma opção'];
     }
 
-    public  function afterFind(){
+    public  function afterFind()
+    {
        // $this->id_usuario = Usuario::findOne($this->id_usuario)->nome;
         if($this->status == "Aceita") {
             $this->id_motorista = Motorista::findOne($this->id_motorista)->nome;
             $this->id_veiculo = Veiculo::findOne($this->id_veiculo)->placa_atual;
         }
-        $this->data_saida = date('d/m/Y', strtotime($this->data_saida));
-        $this->data_lancamento = date('d/m/Y h:i:s', strtotime($this->data_lancamento));
+        $this->data_saida = date('d-m-Y', strtotime($this->data_saida));
+        $this->data_lancamento = date('d-m-Y h:i:s', strtotime($this->data_lancamento));
+    }
+
+    public  function beforeSave($insert){
+        if (parent::beforeSave($insert)){
+            $this->data_saida = date('Y-m-d', strtotime($this->data_saida));
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     public  function beforeValidate()

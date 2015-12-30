@@ -135,7 +135,17 @@ class Motorista extends \yii\db\ActiveRecord
         }
 
         $this->categoria_cnh = "Categoria ".$this->categoria_cnh;
-        $this->data_validade_cnh = date('d/m/Y', strtotime($this->data_validade_cnh));
+        $this->data_validade_cnh = date('d-m-Y', strtotime($this->data_validade_cnh));
+    }
+
+    public  function beforeSave($insert){
+        if (parent::beforeSave($insert)){
+            $this->data_validade_cnh = date('Y-m-d', strtotime($this->data_validade_cnh));
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
 }

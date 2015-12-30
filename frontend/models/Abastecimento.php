@@ -100,6 +100,17 @@ class Abastecimento extends \yii\db\ActiveRecord
         $this->id_combustivel = TipoCombustivel::findOne($this->id_combustivel)->nome;
         $this->id_posto = PostoAbastecimento::findOne($this->id_posto)->nome;
         $this->id_veiculo = Veiculo::findOne($this->id_veiculo)->placa_atual;
-        $this->data_lancamento = date('d/m/Y h:i:s', strtotime($this->data_lancamento));
+        $this->data_lancamento = date('d-m-Y h:i:s', strtotime($this->data_lancamento));
+        $this->data_abastecimento = date('d-m-Y', strtotime($this->data_abastecimento));
+    }
+
+    public  function beforeSave($insert){
+        if (parent::beforeSave($insert)){
+            $this->data_abastecimento = date('Y-m-d', strtotime($this->data_abastecimento));
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 }

@@ -35,7 +35,7 @@ use yii\widgets\MaskedInput;
                         //'convertFormat'=> true,
                         //'value' => 'dd-mm-yyyy',
                         'autoclose' => true,
-                        'format' => 'yyyy-mm-dd'
+                        'format' => 'dd-mm-yyyy'
 
                     ]
                 ]);?>
