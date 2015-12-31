@@ -72,4 +72,20 @@ class Modelo extends \yii\db\ActiveRecord
     public  function afterFind(){
         $this->id_marca = Marca::findOne($this->id_marca)->nome;
     }
+
+    public function beforeDelete(){
+
+        $connection = \Yii::$app->db;
+        $m = $connection->createCommand("SELECT * FROM veiculo WHERE id_modelo='$this->id'");
+        $veiculos=$m->queryAll();
+        $count=0;
+
+        foreach ($veiculos as $reg):
+            $count++;
+        endforeach;
+
+        if ($count==0) {
+            return true;
+        }
+    }
 }
