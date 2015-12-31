@@ -139,7 +139,15 @@ class CorController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
+        if ($model->delete()) {
+            Yii::$app->session->setFlash('success', 'Cor excluída com sucesso.');
+        }
+        else {
+            Yii::$app->session->setFlash('error', 'A cor não pode ser excluída pois possui relação com um ou mais veículos.');
+        }
+
+        //$this->findModel($id)->delete();
 
         return $this->redirect(['index']);
     }

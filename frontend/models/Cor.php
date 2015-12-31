@@ -52,4 +52,24 @@ class Cor extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Veiculo::className(), ['id_cor' => 'id']);
     }
+
+    public function beforeDelete(){
+        /*
+        if ($this->isAttributeRequired(false)) {
+            return true;
+        }
+        return false;*/
+        $connection = \Yii::$app->db;
+        $m = $connection->createCommand("SELECT * FROM veiculo WHERE id_cor='$this->id'");
+        $veiculos=$m->queryAll();
+        $count=0;
+
+        foreach ($veiculos as $reg):
+            $count++;
+        endforeach;
+
+        if ($count==0) {
+            return true;
+        }
+    }
 }
