@@ -153,6 +153,23 @@ class Veiculo extends \yii\db\ActiveRecord
         $this->id_tipo_combustivel = TipoCombustivel::findOne($this->id_tipo_combustivel)->nome;
         $this->id_modelo = Modelo::findOne($this->id_modelo)->nome;
 
+        //SELECT * FROM solicitacao AS s WHERE s.id_veiculo=2147483647
+
+        $connection = \Yii::$app->db;
+        $model = $connection->createCommand("SELECT * FROM solicitacao WHERE id_veiculo='$this->renavam'");
+        $solicitacao = $model->queryAll();
+
+        foreach ($solicitacao as $reg):
+            $status_solicitacao = "{$reg['status']}";
+            $data_saida = "{$reg['data_saida']}";
+            $hoje = date("Y-m-d");
+
+            if ($hoje==$data_saida && $status_solicitacao=='Aceita') {
+                $this->status='3';
+            }
+
+        endforeach;
+
         switch ($this->status){
             case '1':
                 $this->status = 'Leiloado';
