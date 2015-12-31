@@ -100,7 +100,15 @@ class UsuarioController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
+
+        if ($model->delete()) {
+            Yii::$app->session->setFlash('success', 'Usuário excluído com sucesso.');
+        }
+        else {
+            Yii::$app->session->setFlash('error', 'O usuário não pode ser excluído pois possui relação com uma ou mais solicitações.');
+        }
+        //$this->findModel($id)->delete();
 
         return $this->redirect(['index']);
     }

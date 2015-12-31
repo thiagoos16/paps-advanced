@@ -87,4 +87,24 @@ class Usuario extends \yii\db\ActiveRecord
     {
 
     }
+
+    public function beforeDelete(){
+        /*
+        if ($this->isAttributeRequired(false)) {
+            return true;
+        }
+        return false;*/
+        $connection = \Yii::$app->db;
+        $m = $connection->createCommand("SELECT * FROM solicitacao WHERE id_usuario='$this->id'");
+        $solicitacoes=$m->queryAll();
+        $count=0;
+
+        foreach ($solicitacoes as $reg):
+            $count++;
+        endforeach;
+
+        if ($count==0) {
+            return true;
+        }
+    }
 }
