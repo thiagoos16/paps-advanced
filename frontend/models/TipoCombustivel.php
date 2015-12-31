@@ -55,4 +55,20 @@ class TipoCombustivel extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Veiculo::className(), ['id_tipo_combustivel' => 'id']);
     }
+
+    public function beforeDelete(){
+
+        $connection = \Yii::$app->db;
+        $m = $connection->createCommand("SELECT * FROM veiculo WHERE id_tipo_combustivel='$this->id'");
+        $veiculos=$m->queryAll();
+        $count=0;
+
+        foreach ($veiculos as $reg):
+            $count++;
+        endforeach;
+
+        if ($count==0) {
+            return true;
+        }
+    }
 }

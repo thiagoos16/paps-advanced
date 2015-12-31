@@ -55,4 +55,21 @@ class PostoAbastecimento extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Abastecimento::className(), ['id_posto' => 'id']);
     }
+
+    public function beforeDelete()
+    {
+
+        $connection = \Yii::$app->db;
+        $m = $connection->createCommand("SELECT * FROM abastecimento WHERE id_posto='$this->id'");
+        $abastecimentos = $m->queryAll();
+        $count = 0;
+
+        foreach ($abastecimentos as $reg):
+            $count++;
+        endforeach;
+
+        if ($count == 0) {
+            return true;
+        }
+    }
 }

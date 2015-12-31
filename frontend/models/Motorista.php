@@ -148,5 +148,21 @@ class Motorista extends \yii\db\ActiveRecord
         }
     }
 
+    public function beforeDelete(){
+
+        $connection = \Yii::$app->db;
+        $m = $connection->createCommand("SELECT * FROM solicitacao WHERE id_motorista='$this->cnh'");
+        $veiculos=$m->queryAll();
+        $count=0;
+
+        foreach ($veiculos as $reg):
+            $count++;
+        endforeach;
+
+        if ($count==0) {
+            return true;
+        }
+    }
+
 }
 

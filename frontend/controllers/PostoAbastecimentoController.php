@@ -118,7 +118,15 @@ class PostoAbastecimentoController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
+        if ($model->delete()) {
+            Yii::$app->session->setFlash('success', 'Posto de Abastecimento excluído(a) com sucesso.');
+        }
+        else {
+            Yii::$app->session->setFlash('error', 'O Posto de Abastecimento não pode ser excluído(a) pois possui relação com um ou mais abastecimentos.');
+        }
+
+        //$this->findModel($id)->delete();
 
         return $this->redirect(['index']);
     }

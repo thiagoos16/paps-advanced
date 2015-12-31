@@ -122,7 +122,15 @@ class MotoristaController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
+        if ($model->delete()) {
+            Yii::$app->session->setFlash('success', 'Motorista excluído(a) com sucesso.');
+        }
+        else {
+            Yii::$app->session->setFlash('error', 'O(A) motorista não pode ser excluído(a) pois possui relação com uma ou mais solicitações.');
+        }
+
+        //$this->findModel($id)->delete();
 
         return $this->redirect(['index']);
     }

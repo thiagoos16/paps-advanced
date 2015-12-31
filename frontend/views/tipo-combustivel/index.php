@@ -6,6 +6,20 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $searchModel frontend\models\TipoCombustivelSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
+if(Yii::$app->session->hasFlash('success')) {
+    echo '<br>';
+    echo "<div class='alert alert-success' data-dismiss='alert'>";
+    //echo "<div class='alert alert-success close' data-dismiss='alert' aria-hidden='true'>";
+    echo Yii::$app->session->getFlash('success');
+    echo "</div>";
+}
+if(Yii::$app->session->hasFlash('error')) {
+    echo '<br>';
+    echo "<div class='alert alert-error' data-dismiss='alert'>";
+    //echo "<div class='alert alert-success close' data-dismiss='alert' aria-hidden='true'>";
+    echo Yii::$app->session->getFlash('error');
+    echo "</div>";
+}
 
 $this->title = 'Tipo de Combustível';
 $this->params['breadcrumbs'][] = $this->title;

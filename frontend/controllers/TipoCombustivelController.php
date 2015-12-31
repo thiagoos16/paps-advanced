@@ -118,7 +118,15 @@ class TipoCombustivelController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
+        if ($model->delete()) {
+            Yii::$app->session->setFlash('success', 'Combustível excluído com sucesso.');
+        }
+        else {
+            Yii::$app->session->setFlash('error', 'O combustível não pode ser excluído pois possui relação com um ou mais veículos.');
+        }
+
+        //$this->findModel($id)->delete();
 
         return $this->redirect(['index']);
     }
