@@ -54,9 +54,22 @@ class Marca extends \yii\db\ActiveRecord
     }
 
     public function beforeDelete(){
-        if($this->is_required=='no'){
+        /*
+        if ($this->isAttributeRequired(false)) {
             return true;
         }
-        return false;
+        return false;*/
+        $connection = \Yii::$app->db;
+        $m = $connection->createCommand("SELECT * FROM modelo WHERE id_marca='$this->id'");
+        $modelos=$m->queryAll();
+        $count=0;
+
+        foreach ($modelos as $reg):
+            $count++;
+        endforeach;
+
+        if ($count==0) {
+            return true;
+        }
     }
 }

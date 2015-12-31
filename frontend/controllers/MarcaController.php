@@ -120,7 +120,7 @@ class MarcaController extends Controller
 
     public function actionDelete($id)
     {
-        if($this->request->isPostRequest){ //enforce use of POST
+        /*if($this->request->isPostRequest){ //enforce use of POST
             $model=$this->findModel($id); // loadModel throws an exception if the record doesn't exist
             if($model->delete()){
                 // do your redirects here
@@ -129,9 +129,16 @@ class MarcaController extends Controller
             }
         }else{
             throw new CHttpException(400,'Invalid Request');
+        }*/
+        $model = $this->findModel($id);
+        if ($model->delete()) {
+            Yii::$app->session->setFlash('success', 'Marca excluída com sucesso.');
         }
-       // $this->findModel($id)->delete();
-       // return $this->redirect(['index']);
+        else {
+            Yii::$app->session->setFlash('error', 'A marca não pode ser excluída pois possui um ou mais modelos vinculados a ela.');
+        }
+      // $this->findModel($id)->delete();
+       return $this->redirect(['index']);
     }
 
     /**

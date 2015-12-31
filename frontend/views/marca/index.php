@@ -6,6 +6,22 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $searchModel frontend\models\MarcaSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
+//<?php
+    if(Yii::$app->session->hasFlash('success')) {
+        echo '<br>';
+        echo "<div class='alert alert-success' data-dismiss='alert'>";
+        //echo "<div class='alert alert-success close' data-dismiss='alert' aria-hidden='true'>";
+        echo Yii::$app->session->getFlash('success');
+        echo "</div>";
+    }
+    if(Yii::$app->session->hasFlash('error')) {
+        echo '<br>';
+        echo "<div class='alert alert-error' data-dismiss='alert'>";
+        //echo "<div class='alert alert-success close' data-dismiss='alert' aria-hidden='true'>";
+        echo Yii::$app->session->getFlash('error');
+        echo "</div>";
+    }
+
 
 $this->title = 'Marcas';
 $this->params['breadcrumbs'][] = $this->title;
@@ -14,6 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+
 
     <p align="right">
         <?= Html::a('Nova Marca', ['create'], ['class' => 'btn btn-success']) ?>
