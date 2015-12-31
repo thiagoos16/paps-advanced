@@ -116,7 +116,15 @@ class AbastecimentoController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
+
+        if ($model->delete()) {
+            Yii::$app->session->setFlash('success', 'Abastecimento excluído com sucesso.');
+        }
+        else {
+            Yii::$app->session->setFlash('error', 'Não foi possível excluir o abastecimento.');
+        }
+        //$this->findModel($id)->delete();
 
         return $this->redirect(['index']);
     }

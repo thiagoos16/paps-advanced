@@ -18,8 +18,8 @@ class AbastecimentoSearch extends Abastecimento
     public function rules()
     {
         return [
-            [['id', 'id_posto', 'id_veiculo', 'km'], 'integer'],
-            [['data_lancamento', 'id_motorista', 'data_abastecimento', 'qty_litro', 'id_combustivel'], 'safe'],
+            [['id', 'id_veiculo', 'km'], 'integer'],
+            [['data_lancamento', 'id_posto','id_motorista', 'data_abastecimento', 'qty_litro', 'id_combustivel'], 'safe'],
         ];
     }
 

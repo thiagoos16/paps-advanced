@@ -26,13 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p align="right">
         <?= Html::a('Editar', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => 'Tem certeza de que deseja excluir este item?',
-                'method' => 'post',
-            ],
-        ]) ?>
+
     </p>
 
     <div class="box box-primary">

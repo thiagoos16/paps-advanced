@@ -8,6 +8,20 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $searchModel frontend\models\AbastecimentoSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
+if(Yii::$app->session->hasFlash('success')) {
+    echo '<br>';
+    echo "<div class='alert alert-success' data-dismiss='alert'>";
+    //echo "<div class='alert alert-success close' data-dismiss='alert' aria-hidden='true'>";
+    echo Yii::$app->session->getFlash('success');
+    echo "</div>";
+}
+if(Yii::$app->session->hasFlash('error')) {
+    echo '<br>';
+    echo "<div class='alert alert-error' data-dismiss='alert'>";
+    //echo "<div class='alert alert-success close' data-dismiss='alert' aria-hidden='true'>";
+    echo Yii::$app->session->getFlash('error');
+    echo "</div>";
+}
 
 $this->title = 'Abastecimentos';
 $this->params['breadcrumbs'][] = $this->title;

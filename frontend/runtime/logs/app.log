@@ -17883,3 +17883,165 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1451529628.568
     'REQUEST_TIME' => 1451529628
 ]
+2015-12-31 03:55:23 [::1][7][4tv3d23pu3iane3fipl0ge39i6][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Trying to get property of non-object' in C:\xampp\htdocs\paps\paps-advanced\frontend\models\AbastecimentoSearch.php:60
+Stack trace:
+#0 C:\xampp\htdocs\paps\paps-advanced\frontend\models\AbastecimentoSearch.php(60): yii\base\ErrorHandler->handleError(8, 'Trying to get p...', 'C:\\xampp\\htdocs...', 60, Array)
+#1 C:\xampp\htdocs\paps\paps-advanced\frontend\controllers\AbastecimentoController.php(52): frontend\models\AbastecimentoSearch->search(Array)
+#2 [internal function]: frontend\controllers\AbastecimentoController->actionIndex()
+#3 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('index', Array)
+#6 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('abastecimento/i...', Array)
+#7 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 C:\xampp\htdocs\paps\paps-advanced\frontend\web\index.php(18): yii\base\Application->run()
+#9 {main}
+2015-12-31 03:55:23 [::1][7][4tv3d23pu3iane3fipl0ge39i6][info][application] $_GET = [
+    'AbastecimentoSearch' => [
+        'id_posto' => 'Ipir'
+        'id_veiculo' => ''
+        'id_combustivel' => ''
+        'qty_litro' => ''
+    ]
+    'r' => 'abastecimento/index'
+]
+
+$_COOKIE = [
+    '_csrf' => '4da2286b5fa8a43f40cc5cd0f6838bcbe3e7a016b610dbb2da89b81bebcbc5f2a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"UWi30V-hjqneIw4LvfgSIWiGV0Wwr6Gv\";}'
+    'PHPSESSID' => '4tv3d23pu3iane3fipl0ge39i6'
+    '_identity' => '9057514c16b4c167df3479b3997e8c634480b4afab96f404ade9378c1a2ce91aa:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[7,\"9eCaKXNR-uvHq6fIUpU0n0G7ZF_36nwN\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 7
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36'
+    'HTTP_REFERER' => 'http://localhost/paps/paps-advanced/frontend/web/index.php?AbastecimentoSearch%5Bid_posto%5D=Ipiran&AbastecimentoSearch%5Bid_veiculo%5D=&AbastecimentoSearch%5Bid_combustivel%5D=&AbastecimentoSearch%5Bqty_litro%5D=&r=abastecimento%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=4da2286b5fa8a43f40cc5cd0f6838bcbe3e7a016b610dbb2da89b81bebcbc5f2a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22UWi30V-hjqneIw4LvfgSIWiGV0Wwr6Gv%22%3B%7D; PHPSESSID=4tv3d23pu3iane3fipl0ge39i6; _identity=9057514c16b4c167df3479b3997e8c634480b4afab96f404ade9378c1a2ce91aa%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B7%2C%229eCaKXNR-uvHq6fIUpU0n0G7ZF_36nwN%22%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x64;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SDKs\\TypeScript\\1.0\\;C:\\Program Files\\Microsoft SQL Server\\120\\Tools\\Binn\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Java\\jdk1.8.0_05;C:\\Program Files (x86)\\Common Files\\Acronis\\SnapAPI\\'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.12 (Win32) OpenSSL/1.0.1l PHP/5.6.8 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Win32) OpenSSL/1.0.1l PHP/5.6.8'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/paps/paps-advanced/frontend/web/index.php'
+    'REMOTE_PORT' => '56570'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'AbastecimentoSearch%5Bid_posto%5D=Ipir&AbastecimentoSearch%5Bid_veiculo%5D=&AbastecimentoSearch%5Bid_combustivel%5D=&AbastecimentoSearch%5Bqty_litro%5D=&r=abastecimento%2Findex'
+    'REQUEST_URI' => '/paps/paps-advanced/frontend/web/index.php?AbastecimentoSearch%5Bid_posto%5D=Ipir&AbastecimentoSearch%5Bid_veiculo%5D=&AbastecimentoSearch%5Bid_combustivel%5D=&AbastecimentoSearch%5Bqty_litro%5D=&r=abastecimento%2Findex'
+    'SCRIPT_NAME' => '/paps/paps-advanced/frontend/web/index.php'
+    'PHP_SELF' => '/paps/paps-advanced/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1451530523.434
+    'REQUEST_TIME' => 1451530523
+]
+2015-12-31 14:18:06 [::1][7][ci5cb0mf2kn7ens79fuc7b9ia2][error][yii\web\HttpException:404] exception 'yii\web\NotFoundHttpException' with message 'The requested page does not exist.' in C:\xampp\htdocs\paps\paps-advanced\frontend\controllers\AbastecimentoController.php:152
+Stack trace:
+#0 C:\xampp\htdocs\paps\paps-advanced\frontend\controllers\AbastecimentoController.php(119): frontend\controllers\AbastecimentoController->findModel('8')
+#1 [internal function]: frontend\controllers\AbastecimentoController->actionDelete('8')
+#2 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('delete', Array)
+#5 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('abastecimento/d...', Array)
+#6 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 C:\xampp\htdocs\paps\paps-advanced\frontend\web\index.php(18): yii\base\Application->run()
+#8 {main}
+2015-12-31 14:18:06 [::1][7][ci5cb0mf2kn7ens79fuc7b9ia2][info][application] $_GET = [
+    'r' => 'abastecimento/delete'
+    'id' => '8'
+]
+
+$_POST = [
+    '_csrf' => 'RDZoRTVJUkwRBTISdgI7fDV8PQ9YGx8jaXoEfAARGgt8BFAgBAALPA=='
+]
+
+$_COOKIE = [
+    '_csrf' => '6a627495ea41b1d8685fc1af6d2644a470618d29807358b55ebae4c85d7f74bea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"U3ZWCKi0qJUJmRMo-Ll95XHG828e1IYp\";}'
+    '_identity' => '9057514c16b4c167df3479b3997e8c634480b4afab96f404ade9378c1a2ce91aa:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[7,\"9eCaKXNR-uvHq6fIUpU0n0G7ZF_36nwN\",2592000]\";}'
+    'PHPSESSID' => 'ci5cb0mf2kn7ens79fuc7b9ia2'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'success' => -1
+    ]
+    '__id' => 7
+    'success' => 'Abastecimento excluído com sucesso.'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '66'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_REFERER' => 'http://localhost/paps/paps-advanced/frontend/web/index.php?r=abastecimento%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=6a627495ea41b1d8685fc1af6d2644a470618d29807358b55ebae4c85d7f74bea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22U3ZWCKi0qJUJmRMo-Ll95XHG828e1IYp%22%3B%7D; _identity=9057514c16b4c167df3479b3997e8c634480b4afab96f404ade9378c1a2ce91aa%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B7%2C%229eCaKXNR-uvHq6fIUpU0n0G7ZF_36nwN%22%2C2592000%5D%22%3B%7D; PHPSESSID=ci5cb0mf2kn7ens79fuc7b9ia2'
+    'PATH' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x64;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SDKs\\TypeScript\\1.0\\;C:\\Program Files\\Microsoft SQL Server\\120\\Tools\\Binn\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Java\\jdk1.8.0_05;C:\\Program Files (x86)\\Common Files\\Acronis\\SnapAPI\\'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.12 (Win32) OpenSSL/1.0.1l PHP/5.6.8 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Win32) OpenSSL/1.0.1l PHP/5.6.8'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/paps/paps-advanced/frontend/web/index.php'
+    'REMOTE_PORT' => '57041'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=abastecimento%2Fdelete&id=8'
+    'REQUEST_URI' => '/paps/paps-advanced/frontend/web/index.php?r=abastecimento%2Fdelete&id=8'
+    'SCRIPT_NAME' => '/paps/paps-advanced/frontend/web/index.php'
+    'PHP_SELF' => '/paps/paps-advanced/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1451567886.324
+    'REQUEST_TIME' => 1451567886
+]
