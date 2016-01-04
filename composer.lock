@@ -4,8 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "139f74d779ed6b65060cde3a40a257a1",
-    "content-hash": "70c883b3675bebe6f2ad74310b5f5140",
+    "hash": "d45f8137d143395c12654c7b48d9b375",
     "packages": [
         {
             "name": "2amigos/yii2-date-picker-widget",
@@ -150,16 +149,16 @@
         },
         {
             "name": "bower-asset/fullcalendar",
-            "version": "v2.4.0",
+            "version": "v2.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fullcalendar/fullcalendar.git",
-                "reference": "9aa9e4400ac72d53362706927ac3c902c8544032"
+                "reference": "3a464732a77eac8999875525549d19be0c423d5f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fullcalendar/fullcalendar/zipball/9aa9e4400ac72d53362706927ac3c902c8544032",
-                "reference": "9aa9e4400ac72d53362706927ac3c902c8544032",
+                "url": "https://api.github.com/repos/fullcalendar/fullcalendar/zipball/3a464732a77eac8999875525549d19be0c423d5f",
+                "reference": "3a464732a77eac8999875525549d19be0c423d5f",
                 "shasum": ""
             },
             "require": {
@@ -185,14 +184,15 @@
                     "*",
                     "**/.*",
                     "!/dist/**",
-                    "!/changelog.*",
-                    "!/license.*",
-                    "!/readme.*"
+                    "!/README.*",
+                    "!/LICENSE.*",
+                    "!/CHANGELOG.*",
+                    "!/CONTRIBUTING.*"
                 ]
             },
             "license": {
                 "type": "MIT",
-                "url": "https://github.com/arshaw/fullcalendar/blob/master/license.txt"
+                "url": "https://github.com/fullcalendar/fullcalendar/blob/master/LICENSE.txt"
             },
             "description": "Full-sized drag & drop event calendar",
             "keywords": [
@@ -325,16 +325,16 @@
         },
         {
             "name": "bower-asset/moment",
-            "version": "2.10.6",
+            "version": "2.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/moment/moment.git",
-                "reference": "f3fbef9d9875bbff340b527dbe3f1c447a942f69"
+                "reference": "0eb7101a36d189dee90dad6626c5f5fbabc3666f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/moment/moment/zipball/f3fbef9d9875bbff340b527dbe3f1c447a942f69",
-                "reference": "f3fbef9d9875bbff340b527dbe3f1c447a942f69",
+                "url": "https://api.github.com/repos/moment/moment/zipball/0eb7101a36d189dee90dad6626c5f5fbabc3666f",
+                "reference": "0eb7101a36d189dee90dad6626c5f5fbabc3666f",
                 "shasum": ""
             },
             "type": "bower-asset-library",
@@ -390,16 +390,16 @@
         },
         {
             "name": "bower-asset/yii2-pjax",
-            "version": "v2.0.4",
+            "version": "v2.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/jquery-pjax.git",
-                "reference": "3f20897307cca046fca5323b318475ae9dac0ca0"
+                "reference": "6818718408086db6bdcf33649cecb86b6b4f9b67"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/jquery-pjax/zipball/3f20897307cca046fca5323b318475ae9dac0ca0",
-                "reference": "3f20897307cca046fca5323b318475ae9dac0ca0",
+                "url": "https://api.github.com/repos/yiisoft/jquery-pjax/zipball/6818718408086db6bdcf33649cecb86b6b4f9b67",
+                "reference": "6818718408086db6bdcf33649cecb86b6b4f9b67",
                 "shasum": ""
             },
             "require": {
@@ -574,20 +574,20 @@
         },
         {
             "name": "philippfrenzel/yii2fullcalendar",
-            "version": "2.4.0",
+            "version": "2.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/philippfrenzel/yii2fullcalendar.git",
-                "reference": "0ef7c276b3a65326516d672c3c9339eb152714e1"
+                "reference": "7b6d4f94e0a050ef3dcb013270207b49c27a9e56"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/philippfrenzel/yii2fullcalendar/zipball/0ef7c276b3a65326516d672c3c9339eb152714e1",
-                "reference": "0ef7c276b3a65326516d672c3c9339eb152714e1",
+                "url": "https://api.github.com/repos/philippfrenzel/yii2fullcalendar/zipball/7b6d4f94e0a050ef3dcb013270207b49c27a9e56",
+                "reference": "7b6d4f94e0a050ef3dcb013270207b49c27a9e56",
                 "shasum": ""
             },
             "require": {
-                "bower-asset/fullcalendar": "2.4.* | 2.3.* | 2.2.*",
+                "bower-asset/fullcalendar": "2.*",
                 "php": ">=5.4.0",
                 "yiisoft/yii2": "*",
                 "yiisoft/yii2-jui": "*"
@@ -619,7 +619,7 @@
                 "fullcalendar",
                 "yii2"
             ],
-            "time": "2015-11-04 17:34:18"
+            "time": "2015-12-28 07:25:32"
         },
         {
             "name": "swiftmailer/swiftmailer",

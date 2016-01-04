@@ -19,7 +19,8 @@
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
         "2amigos/yii2-date-picker-widget": "~1.0",		
-        "mpdf/mpdf": "dev-master"
+        "mpdf/mpdf": "dev-master",
+        "philippfrenzel/yii2fullcalendar": "*"
     },
 	
     "require-dev": {

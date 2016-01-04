@@ -2,6 +2,7 @@
 namespace frontend\controllers;
 
 use common\models\LockscreenForm;
+use frontend\models\Motorista;
 use Yii;
 use common\models\LoginForm;
 use frontend\models\PasswordResetRequestForm;
@@ -72,7 +73,41 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $connection = \Yii::$app->db;
+        $model = $connection->createCommand("SELECT * FROM motorista");
+        $events = $model->queryAll();
+
+        $eve = [];
+
+        foreach($events as $even):
+            $event = new \yii2fullcalendar\models\Event();
+            $event->id = "{$even['cnh']}";
+            $cnh = "{$even['cnh']}";
+            $event->title =  "Vencimento de CNH";
+            $event->start = "{$even['data_validade_cnh']}";
+            $event->backgroundColor = "#FF6347";
+            $event->borderColor = "#FF6347";
+            $event->url = "index.php?r=motorista%2Fview&id=$cnh";
+            $eve[] = $event;
+        endforeach;
+
+        $model = $connection->createCommand("SELECT * FROM solicitacao WHERE status='Aceita'");
+        $solicitacoes = $model->queryAll();
+
+        foreach($solicitacoes as $s):
+            $solicitacao = new \yii2fullcalendar\models\Event();
+            $solicitacao->id = "{$s['id']}";
+            $id = "{$s['id']}";
+            $solicitacao->title = "Solicitação Aceita";
+            $solicitacao->start = "{$s['data_saida']}";
+            $solicitacao->backgroundColor = "#FFD700";
+            $solicitacao->borderColor = "#FFD700";
+            $solicitacao->url = "index.php?r=solicitacao%2Fview&id=$id";
+            $eve[] = $solicitacao;
+        endforeach;
+
+
+        return $this->render('index', ['events' => $eve]);
     }
 
     /**
