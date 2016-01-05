@@ -161,7 +161,7 @@ class VeiculoController extends Controller
             9,     // margin footer
 
             'L');
-        $stylesheet = file_get_contents("./../web/css/site.css");
+        $stylesheet = file_get_contents("./../web/css/relatorios.css");
 
         $mpdf->WriteHTML($stylesheet,1);
         $mpdf->WriteHTML($this->getTabela());

@@ -1,0 +1,61 @@
+html,
+body {
+    height: 100%;
+}
+
+/*-------------------Relatório--------------------*/
+/* Fonte para as tags table */
+table{
+    font-family: Serif;
+    width: 100%;
+}
+
+/* TABELA DO CABECALHO*/
+.cabecalho{
+    background-color: #ffffff;
+    color: #000000;
+}
+
+
+/* TABELA DE DADOS */
+.tableDados{
+    border: 1px solid black;
+}
+.thDados{
+    background-color: #005983;
+    color: #ffffff;
+}
+table, th, td {
+    text-align: center;
+    font-size: 12;
+}
+
+th{
+    color: #ffffff;
+}
+/* Estilização para tag h2 */
+h2{
+    color: #005983;
+    font-family: Serif;
+    font-size: 18;
+}
+p{
+    font-family: Serif;
+    color: #000000;
+}
+
+/* Classe coloca a cor de fundo para zebrar as linhas */
+.zebra{
+    background: #d0e3f0;
+}
+
+/* Classe para destacar o conteúdo da coluna */
+.destaque{
+    color: red;
+    font-weight: bold;
+}
+
+hr{
+    align: center;
+    color:#000000;
+}
