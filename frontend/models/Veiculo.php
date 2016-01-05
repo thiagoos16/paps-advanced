@@ -138,9 +138,6 @@ class Veiculo extends \yii\db\ActiveRecord
     public function getIdModelo()
     {
         return $this->hasOne(Modelo::className(), ['id' => 'id_modelo']);
-        /*return [
-            $this->id_modelo => Modelo::findOne($this->id_modelo)->nome
-        ];*/
     }
 
     /**
@@ -155,6 +152,8 @@ class Veiculo extends \yii\db\ActiveRecord
         $this->id_cor = Cor::findOne($this->id_cor)->nome;
         $this->id_tipo_combustivel = TipoCombustivel::findOne($this->id_tipo_combustivel)->nome;
         $this->id_modelo = Modelo::findOne($this->id_modelo)->nome;
+
+        //SELECT * FROM solicitacao AS s WHERE s.id_veiculo=2147483647
 
         $connection = \Yii::$app->db;
         $model = $connection->createCommand("SELECT * FROM solicitacao WHERE id_veiculo='$this->renavam'");

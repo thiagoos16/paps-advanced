@@ -43,7 +43,6 @@ $this->params['breadcrumbs'][] = $this->title;
                 'filterModel' => $searchModel,
                 'columns' => [
                     ['class' => 'yii\grid\SerialColumn'],
-
                     'renavam',
                     //'cidade',
                     //'chassi',
@@ -56,7 +55,12 @@ $this->params['breadcrumbs'][] = $this->title;
                     'placa_atual',
                     // 'placa_anterior',
                     // 'potencia',z
-                    'id_modelo',
+                    //'idModelo.id_modelo',
+                    //'id_modelo',
+                    [
+                        'attribute' => 'modelo',
+                        'value' => 'idModelo.nome',
+                    ],
                     [
                         'attribute' => 'status',
                         'filter' => Html::activeDropDownList($searchModel, 'status', Veiculo::getStatus(),['class'=>'form-control','prompt'=>'Filtrar']),

@@ -42,9 +42,14 @@ $this->params['breadcrumbs'][] = $this->title;
                 'filterModel' => $searchModel,
                 'columns' => [
                     ['class' => 'yii\grid\SerialColumn'],
-                    'id_posto',
-                    'id_veiculo',
-
+                    [
+                        'attribute' => 'posto',
+                        'value' => 'idPosto.nome',
+                    ],
+                    [
+                        'attribute' => 'id_veiculo',
+                        'value' => 'idVeiculo.placa_atual'
+                    ],
                     [
                         'attribute' => 'id_combustivel',
                         'filter' => Html::activeDropDownList(

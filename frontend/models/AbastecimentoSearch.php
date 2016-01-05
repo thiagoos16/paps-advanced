@@ -15,11 +15,12 @@ class AbastecimentoSearch extends Abastecimento
     /**
      * @inheritdoc
      */
+    public $posto;
     public function rules()
     {
         return [
             [['id', 'id_veiculo', 'km'], 'integer'],
-            [['data_lancamento', 'id_posto','id_motorista', 'data_abastecimento', 'qty_litro', 'id_combustivel'], 'safe'],
+            [['data_lancamento', 'id_posto', 'posto', 'id_motorista', 'data_abastecimento', 'qty_litro', 'id_combustivel'], 'safe'],
         ];
     }
 
@@ -43,30 +44,31 @@ class AbastecimentoSearch extends Abastecimento
     {
         $query = Abastecimento::find();
 
+        $query->joinWith('idPosto');
+        $query->joinWith('idVeiculo');
+
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
 
-        $this->load($params);
+        $dataProvider->sort->attributes['posto'] = [
+            'asc' => ['posto_abastecimento.nome' => SORT_ASC],
+            'desc' => ['posto_abastecimento.nome' => SORT_DESC],
+        ];
 
-        if (!$this->validate()) {
+        if (!($this->load($params) && $this->validate())) {
             // uncomment the following line if you do not want to return any records when validation fails
             // $query->where('0=1');
             return $dataProvider;
         }
 
         $query->andFilterWhere([
-            'id' => $this->id,
-            'id_posto' => $this->id_posto,
-            'id_veiculo' => $this->id_veiculo,
-            'km' => $this->km,
-            'data_lancamento' => $this->data_lancamento,
-            'data_abastecimento' => $this->data_abastecimento,
-            'id_combustivel' => $this->id_combustivel,
             'qty_litro' => $this->qty_litro,
         ]);
 
-        $query->andFilterWhere(['like', 'id_motorista', $this->id_motorista]);
+        $query->andFilterWhere(['like', 'id_motorista', $this->id_motorista])
+            ->andFilterWhere(['like','posto_abastecimento.nome', $this->posto])
+            ->andFilterWhere(['like','veiculo.placa_atual', $this->id_veiculo]);
 
         return $dataProvider;
     }

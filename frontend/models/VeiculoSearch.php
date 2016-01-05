@@ -15,12 +15,12 @@ class VeiculoSearch extends Veiculo
     /**
      * @inheritdoc
      */
+    public $modelo;
     public function rules()
     {
         return [
             [['renavam', 'num_patrimonio', 'potencia', 'id_cor', 'id_tipo_combustivel', 'ano_fabricacao', 'ano_modelo'], 'integer'],
-            ['id_modelo', 'string'],
-            [['cidade', 'chassi', 'lotacao', 'status', 'observacao', 'adquirido_de', 'uf_atual', 'uf_anterior', 'placa_atual', 'placa_anterior'], 'safe'],
+            [['cidade', 'modelo', 'chassi', 'id_modelo', 'lotacao', 'status', 'observacao', 'adquirido_de', 'uf_atual', 'uf_anterior', 'placa_atual', 'placa_anterior'], 'safe'],
         ];
     }
 
@@ -44,42 +44,32 @@ class VeiculoSearch extends Veiculo
     {
         $query = Veiculo::find();
 
+        $query->joinWith('idModelo');
+
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
 
-        $this->load($params);
+        $dataProvider->sort->attributes['modelo'] = [
+            'asc' => ['modelo.nome' => SORT_ASC],
+            'desc' => ['modelo.nome' => SORT_DESC],
+        ];
 
-        if (!$this->validate()) {
+        //$this->load($params);
+
+        if (!($this->load($params) && $this->validate())) {
             // uncomment the following line if you do not want to return any records when validation fails
             // $query->where('0=1');
             return $dataProvider;
         }
 
-        //$aux = (Modelo::findOne($this->id_modelo) == null)? "fdfd": 8;
-        //$this->id_modelo
         $query->andFilterWhere([
-            'renavam' => $this->renavam,
-            'num_patrimonio' => $this->num_patrimonio,
-            'potencia' => $this->potencia,
-            //'id_modelo' => $this->id_modelo,
-            'id_cor' => $this->id_cor,
-            'id_tipo_combustivel' => $this->id_tipo_combustivel,
-            'ano_fabricacao' => $this->ano_fabricacao,
-            'ano_modelo' => $this->ano_modelo,
         ]);
 
-        $query->andFilterWhere(['like', 'cidade', $this->cidade])
-            ->andFilterWhere(['like', 'chassi', $this->chassi])
-            ->andFilterWhere(['like', 'lotacao', $this->lotacao])
-            ->andFilterWhere(['like', 'status', $this->status])
-            ->andFilterWhere(['like', 'observacao', $this->observacao])
-            ->andFilterWhere(['like', 'adquirido_de', $this->adquirido_de])
-            ->andFilterWhere(['like', 'uf_atual', $this->uf_atual])
-            ->andFilterWhere(['like', 'uf_anterior', $this->uf_anterior])
+        $query->andFilterWhere(['like', 'status', $this->status])
+            ->andFilterWhere(['like', 'renavam', $this->renavam])
             ->andFilterWhere(['like', 'placa_atual', $this->placa_atual])
-            ->andFilterWhere(['like', 'placa_anterior', $this->placa_anterior])
-            ->andFilterWhere(['like', 'id_modelo', $this->id_modelo]);
+            ->andFilterWhere(['like', 'modelo.nome', $this->modelo]);
 
         return $dataProvider;
     }

@@ -69,24 +69,12 @@ class SolicitacaoSearch extends Solicitacao
         else {
             $query->andFilterWhere([
                 'id' => $this->id,
-                'data_saida' => $this->data_saida,
-                'data_lancamento' => $this->data_lancamento,
-                //'id_usuario' => $this->id_usuario,
-                'capacidade_passageiros' => $this->capacidade_passageiros,
-                'id_veiculo' => $this->id_veiculo,
             ]);
         }
 
-
-
         $query->andFilterWhere(['like', 'destino', $this->destino])
-            ->andFilterWhere(['like', 'hora_saida', $this->hora_saida])
-            ->andFilterWhere(['like', 'observacao', $this->observacao])
-            ->andFilterWhere(['like', 'status', $this->status])
-            ->andFilterWhere(['like', 'endeeco_destino', $this->endeeco_destino])
-            ->andFilterWhere(['like', 'hora_chegada', $this->hora_chegada])
-            ->andFilterWhere(['like', 'id_motorista', $this->id_motorista])
-            ->andFilterWhere(['like', 'seguro', $this->seguro]);
+            ->andFilterWhere(['like', 'data_saida', $this->data_saida])
+            ->andFilterWhere(['like', 'status', $this->status]);
 
         return $dataProvider;
     }
