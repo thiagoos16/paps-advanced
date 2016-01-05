@@ -53,7 +53,7 @@ class Abastecimento extends \yii\db\ActiveRecord
             'id' => 'ID',
             'id_posto' => 'Posto',
             'id_veiculo' => 'Veículo',
-            'km' => 'Quilometragem',
+            'km' => 'Quilometragem do Veículo',
             'data_lancamento' => 'Data de Lançamento',
             'id_motorista' => 'Motorista',
             'data_abastecimento' => 'Data de Abastecimento',
