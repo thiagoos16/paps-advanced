@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use mPDF;
 use Yii;
 use frontend\models\Veiculo;
 use frontend\models\VeiculoSearch;
@@ -144,5 +145,81 @@ class VeiculoController extends Controller
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
+    }
+
+    public function actionPdf() {
+
+        $mpdf = new mPDF('',    // mode - default ''
+            '',    // format - A4, for example, default ''
+            0,     // font size - default 0
+            '',    // default font family
+            15,    // margin_left
+            15,    // margin right
+            16,     // margin top
+            16,    // margin bottom
+            9,     // margin header
+            9,     // margin footer
+
+            'L');
+        $stylesheet = file_get_contents("./../web/css/site.css");
+
+        $mpdf->WriteHTML($stylesheet,1);
+        $mpdf->WriteHTML($this->getTabela());
+
+        $mpdf->Output();
+        exit;
+    }
+    //------------------------------------GErando PDF ----------------------
+    private function getTabela(){
+        $color  = false;
+        $retorno = "";
+        date_default_timezone_set('America/Manaus');
+        $data = date("d/m/Y");
+        $hora = date("H:i");
+        $relatorio = "RELATÓRIO DE VEÍCULOS";
+
+        $retorno .= "<hr><table class='cabecalho'>
+           <tr>
+             <td><img src='./../web/css/ufam.png' width='70px' height='70px'></td>
+             <td>
+                <p>
+                <b>UNIVERSIDADE FEDERAL DO AMAZONAS</b></p><br>
+			    <p>
+			        PREFEITURA DO CAMPUS UNIVERSITÁRIO<br>
+			        COORDENAÇÃO DE TRANSPORTE
+			    </p>
+             </td>
+             <td><b>
+             <p>Data:   $data</p>
+             <p>Hora:   $hora</p>
+             </b></td>
+           </tr>";
+        $retorno .= "</table><hr>";
+        $retorno .= "<h2 align='center'>$relatorio</h2>";
+        $retorno .= "<table class='tableDados'>
+           <tr class='thDados'>
+             <th>RENAVAM</th>
+             <th>Placa Atual</th>
+             <th>Modelo</th>
+             <th>Status</th>
+           </tr>";
+
+
+        $connection = \Yii::$app->db;
+        $model = $connection->createCommand('SELECT * FROM veiculo');
+        $users = $model->queryAll();
+
+        foreach ($users as $reg):
+            $retorno .= ($color) ? "<tr>" : "<tr class=\"zebra\">";
+            $retorno .= "<td>{$reg['renavam']}</td>";
+            $retorno .= "<td>{$reg['placa_atual']}</td>";
+            $retorno .= "<td>{$reg['id_modelo']}</td>";
+            $retorno .= "<td>{$reg['status']}</td>";
+            $retorno .= "<tr>";
+            $color = !$color;
+        endforeach;
+
+        $retorno .= "</table>";
+        return $retorno;
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use frontend\models\Modelo;
 use frontend\models\Veiculo;
 use yii\helpers\Html;
 use yii\grid\GridView;
@@ -32,6 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p align="right">
         <?= Html::a('Novo Veículo', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a ('Gerar PDF', ['pdf'], ['class' => 'btn btn-warning', 'target' => '_blank']) ?>
     </p>
 
     <div class="box">
@@ -53,7 +55,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     // 'uf_anterior',
                     'placa_atual',
                     // 'placa_anterior',
-                    // 'potencia',
+                    // 'potencia',z
                     'id_modelo',
                     [
                         'attribute' => 'status',
