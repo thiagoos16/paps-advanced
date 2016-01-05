@@ -165,7 +165,7 @@ class MotoristaController extends Controller
  9,     // margin footer
 
  'L');
-        $stylesheet = file_get_contents("./../web/css/site.css");
+        $stylesheet = file_get_contents("./../web/css/relatorios.css");
 
         $mpdf->WriteHTML($stylesheet,1);
         $mpdf->WriteHTML($this->getTabela());
@@ -173,22 +173,41 @@ class MotoristaController extends Controller
         $mpdf->Output();
         exit;
     }
-    public $titulo = "Relatório de Motoristas";
+
     //------------------------------------GErando PDF ----------------------
     private function getTabela(){
         $color  = false;
         $retorno = "";
+        date_default_timezone_set('America/Manaus');
+        $data = date("d/m/Y");
+        $hora = date("H:i");
+        $relatorio = "RELATÓRIO DE MOTORISTAS";
 
-        $retorno .= "<h2 style=\"text-align:center\">{$this->titulo}</h2>";
-        $retorno .= "<table border='1' width='1000' align='center'>
-           <tr class='header'>
-             <th>Nome</td>
-             <th>Categoria</td>
-             <th>Data de Validade</td>
-             <th>Tipo</td>
-             <th>Status</td>
-             <th>Telefone</td>
-             <th>CNH</td>
+        $retorno .= "<hr><table class='cabecalho'>
+           <tr>
+             <td><img src='./../web/css/ufam.png' width='70px' height='70px'></td>
+             <td>
+                <p>
+                <b>UNIVERSIDADE FEDERAL DO AMAZONAS</b></p><br>
+			    <p>
+			        PREFEITURA DO CAMPUS UNIVERSITÁRIO<br>
+			        COORDENAÇÃO DE TRANSPORTE
+			    </p>
+             </td>
+             <td><b>
+             <p>Data:   $data</p>
+             <p>Hora:   $hora</p>
+             </b></td>
+           </tr>";
+        $retorno .= "</table><hr>";
+        $retorno .= "<h2 align='center'>$relatorio</h2>";
+        $retorno .= "<table class='tableDados'>
+           <tr class='thDados'>
+             <th>Nome</th>
+             <th>Telefone</th>
+             <th>N° da CNH</th>
+             <th>Validade da CNH</th>
+             <th>Categoria da CNH</th>
            </tr>";
 
         $connection = \Yii::$app->db;
@@ -198,12 +217,10 @@ class MotoristaController extends Controller
         foreach ($users as $reg):
             $retorno .= ($color) ? "<tr>" : "<tr class=\"zebra\">";
             $retorno .= "<td>{$reg['nome']}</td>";
-            $retorno .= "<td>{$reg['categoria_cnh']}</td>";
-            $retorno .= "<td>{$reg['data_validade_cnh']}</td>";
-            $retorno .= "<td>{$reg['tipo']}</td>";
-            $retorno .= "<td>{$reg['status']}</td>";
             $retorno .= "<td>{$reg['telefone']}</td>";
             $retorno .= "<td>{$reg['cnh']}</td>";
+            $retorno .= "<td>{$reg['data_validade_cnh']}</td>";
+            $retorno .= "<td>{$reg['categoria_cnh']}</td>";
             $retorno .= "<tr>";
             $color = !$color;
         endforeach;
