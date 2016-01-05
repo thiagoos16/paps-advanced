@@ -18,7 +18,8 @@ class VeiculoSearch extends Veiculo
     public function rules()
     {
         return [
-            [['renavam', 'num_patrimonio', 'potencia', 'id_modelo', 'id_cor', 'id_tipo_combustivel', 'ano_fabricacao', 'ano_modelo'], 'integer'],
+            [['renavam', 'num_patrimonio', 'potencia', 'id_cor', 'id_tipo_combustivel', 'ano_fabricacao', 'ano_modelo'], 'integer'],
+            ['id_modelo', 'string'],
             [['cidade', 'chassi', 'lotacao', 'status', 'observacao', 'adquirido_de', 'uf_atual', 'uf_anterior', 'placa_atual', 'placa_anterior'], 'safe'],
         ];
     }
@@ -55,6 +56,8 @@ class VeiculoSearch extends Veiculo
             return $dataProvider;
         }
 
+        //$aux = (Modelo::findOne($this->id_modelo) == null)? "fdfd": 8;
+        //$this->id_modelo
         $query->andFilterWhere([
             'renavam' => $this->renavam,
             'num_patrimonio' => $this->num_patrimonio,

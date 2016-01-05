@@ -97,6 +97,7 @@ class SolicitacaoController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            Yii::$app->session->setFlash('success', 'Resposta salva com sucesso.');
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('updateResposta', [
@@ -126,7 +127,15 @@ class SolicitacaoController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
+
+        if ($model->delete()) {
+            Yii::$app->session->setFlash('success', 'Solicitação excluída com sucesso.');
+        }
+        else {
+            Yii::$app->session->setFlash('error', 'Não foi possível excluir a solicitação');
+        }
+        //$this->findModel($id)->delete();
 
         return $this->redirect(['index']);
     }

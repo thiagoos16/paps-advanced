@@ -102,6 +102,7 @@ class SiteController extends Controller
             $solicitacao->start = "{$s['data_saida']}";
             $solicitacao->backgroundColor = "#FFD700";
             $solicitacao->borderColor = "#FFD700";
+            //$solicitacao->
             $solicitacao->url = "index.php?r=solicitacao%2Fview&id=$id";
             $eve[] = $solicitacao;
         endforeach;
