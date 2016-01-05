@@ -62,7 +62,7 @@ class VeiculoSearch extends Veiculo
             'renavam' => $this->renavam,
             'num_patrimonio' => $this->num_patrimonio,
             'potencia' => $this->potencia,
-            'id_modelo' => $this->id_modelo,
+            //'id_modelo' => $this->id_modelo,
             'id_cor' => $this->id_cor,
             'id_tipo_combustivel' => $this->id_tipo_combustivel,
             'ano_fabricacao' => $this->ano_fabricacao,
@@ -78,7 +78,8 @@ class VeiculoSearch extends Veiculo
             ->andFilterWhere(['like', 'uf_atual', $this->uf_atual])
             ->andFilterWhere(['like', 'uf_anterior', $this->uf_anterior])
             ->andFilterWhere(['like', 'placa_atual', $this->placa_atual])
-            ->andFilterWhere(['like', 'placa_anterior', $this->placa_anterior]);
+            ->andFilterWhere(['like', 'placa_anterior', $this->placa_anterior])
+            ->andFilterWhere(['like', 'id_modelo', $this->id_modelo]);
 
         return $dataProvider;
     }
