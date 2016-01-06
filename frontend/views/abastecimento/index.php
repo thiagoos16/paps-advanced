@@ -59,10 +59,10 @@ $this->params['breadcrumbs'][] = $this->title;
                             ['class'=>'form-control','prompt'=>'Filtrar'  ]),
                     ],
 
-                    'qty_litro',
+                    //'qty_litro',
                     // 'data_lancamento',
                     // 'id_motorista',
-                    // 'data_abastecimento',
+                    'data_abastecimento',
 
                     ['class' => 'yii\grid\ActionColumn',
                         'template' => '{visualizar}  {editar}  {excluir}',

@@ -43,7 +43,7 @@ class Motorista extends \yii\db\ActiveRecord
             [['tipo', 'status'], 'string', 'max' => 15],
             [['cnh'], 'unique', "message"=>"CNH existente no sistema"],
             //['nome', 'match', 'pattern'=>'/^[a-z\s]{6,20}$/'],
-            ['categoria_cnh', 'match', 'pattern'=>'/^[a-zA_Z]/'],
+            ['categoria_cnh', 'match', 'pattern'=>'/^[a-eA-E]/'],
 
         ];
     }

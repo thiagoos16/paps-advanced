@@ -50,7 +50,10 @@ $this->params['breadcrumbs'][] = $this->title;
                     // 'observacao',
                     [
                         'attribute' => 'status',
-                        'filter' => Html::activeDropDownList($searchModel, 'status', Solicitacao::getStatus(),['class'=>'form-control','prompt'=>'Filtrar']),
+                        'filter' => Html::activeDropDownList(
+                            $searchModel,
+                            'status',
+                            Solicitacao::getStatus(),['class'=>'form-control','prompt'=>'Filtrar']),
                     ],
                     // 'id_usuario',
                     // 'capacidade_passageiros',

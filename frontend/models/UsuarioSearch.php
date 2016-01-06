@@ -64,13 +64,8 @@ class UsuarioSearch extends Usuario
         ]);
 
         $query->andFilterWhere(['like', 'username', $this->username])
-            ->andFilterWhere(['like', 'auth_key', $this->auth_key])
-            ->andFilterWhere(['like', 'password_hash', $this->password_hash])
-            ->andFilterWhere(['like', 'password_reset_token', $this->password_reset_token])
             ->andFilterWhere(['like', 'email', $this->email])
-            ->andFilterWhere(['like', 'nome', $this->nome])
-            ->andFilterWhere(['like', 'observacao', $this->observacao])
-            ->andFilterWhere(['like', 'confirma_senha', $this->confirma_senha]);
+            ->andFilterWhere(['like', 'nome', $this->nome]);
 
         return $dataProvider;
     }

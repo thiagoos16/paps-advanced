@@ -59,16 +59,18 @@ class ManutencaoSearch extends Manutencao
         $query->andFilterWhere([
             'id' => $this->id,
             'data_entrada' => $this->data_entrada,
-            'custo' => $this->custo,
+            //date('d-m-Y', strtotime($this->data_saida));
+            //'data_saida' => date('d-m-Y',strtotime($this->data_saida)),
             'data_saida' => $this->data_saida,
-            'data_lancamento' => $this->data_lancamento,
             'id_veiculo' => $this->id_veiculo,
             'km' => $this->km,
         ]);
 
         $query->andFilterWhere(['like', 'servico', $this->servico])
-            ->andFilterWhere(['like', 'tipo', $this->tipo])
-            ->andFilterWhere(['like', 'id_motorista', $this->id_motorista]);
+            ->andFilterWhere(['like', 'custo', $this->custo])
+            ->andFilterWhere(['like', 'id_motorista', $this->id_motorista])
+            //->andFilterWhere(['like', 'data_saida', date('d-m-Y', strtotime($this->data_saida))])
+        ;
 
         return $dataProvider;
     }

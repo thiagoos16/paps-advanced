@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\helpers\ArrayHelper;
 use frontend\models\Modelo;
+use frontend\models\Marca;
 
 /* @var $this yii\web\View */
 /* @var $searchModel frontend\models\ModeloSearch */
@@ -51,7 +52,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         'filter' => Html::activeDropDownList(
                             $searchModel,
                             'id_marca',
-                            ArrayHelper::map(Modelo::find()->asArray()->all(), 'id', 'nome'),
+                            ArrayHelper::map(Marca::find()->asArray()->all(), 'id', 'nome'),
                             ['class'=>'form-control','prompt'=>'Filtrar'  ]),
                     ],
                     //'id_marca',

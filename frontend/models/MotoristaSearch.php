@@ -56,14 +56,13 @@ class MotoristaSearch extends Motorista
         }
 
         $query->andFilterWhere([
-            'cnh' => $this->cnh,
-            'telefone' => $this->telefone,
         ]);
 
         $query->andFilterWhere(['like', 'nome', $this->nome])
             ->andFilterWhere(['like', 'categoria_cnh', $this->categoria_cnh])
             ->andFilterWhere(['like', 'tipo', $this->tipo])
-            ->andFilterWhere(['like', 'status', $this->status]);
+            ->andFilterWhere(['like', 'status', $this->status])
+            ->andFilterWhere(['like', 'cnh', $this->cnh]);
 
         return $dataProvider;
     }

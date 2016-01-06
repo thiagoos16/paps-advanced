@@ -86,6 +86,24 @@ use frontend\models\Motorista;
 
                       $hoje = date("d/m/Y");
 
+                      foreach ($aceitas as $reg):
+                          $id_aceita= "{$reg['id']}";
+                          echo "<li>";
+                          echo "<a href='index.php?r=solicitacao/visualiza&id=$id_aceita'>";
+                          echo " <i class='fa fa-user text-yellow'></i> ";
+                          echo "Sua solicitação foi aceita.";
+                          echo "</a>";
+                          echo " </li>";
+                      endforeach;
+                      foreach ($rejeitadas as $reg):
+                          $id_rejeitada= "{$reg['id']}";
+                          echo "<li>";
+                          echo "<a href='index.php?r=solicitacao/visualiza&id=$id_rejeitada'>";
+                          echo "Sua solicitação foi rejeitada.";
+                          echo "</a>";
+                          echo " </li>";
+                      endforeach;
+
                       foreach ($solicitacoes as $reg):
                           $id_usuario = "{$reg['id_usuario']}";
                           $data_lancamento = "{$reg['data_lancamento']}";
@@ -145,25 +163,27 @@ use frontend\models\Motorista;
                       echo "<li>";
                       // inner menu: contains the actual data
                       echo "<ul class='menu'>";
+
+                      foreach ($aceitas as $reg):
+                          $id_aceita= "{$reg['id']}";
+                          echo "<li>";
+                          echo "<a href='index.php?r=solicitacao/visualiza&id=$id_aceita'>";
+                          echo " <i class='fa fa-user text-yellow'></i> ";
+                          echo "Sua solicitação foi aceita.";
+                          echo "</a>";
+                          echo " </li>";
+                      endforeach;
+                      foreach ($rejeitadas as $reg):
+                          $id_rejeitada= "{$reg['id']}";
+                          echo "<li>";
+                          echo "<a href='index.php?r=solicitacao/visualiza&id=$id_rejeitada'>";
+                          echo "Sua solicitação foi rejeitada.";
+                          echo "</a>";
+                          echo " </li>";
+                      endforeach;
                   }
 
-                  foreach ($aceitas as $reg):
-                      $id_aceita= "{$reg['id']}";
-                      echo "<li>";
-                      echo "<a href='index.php?r=solicitacao/visualiza&id=$id_aceita'>";
-                      echo " <i class='fa fa-user text-yellow'></i> ";
-                      echo "Sua solicitação foi aceita.";
-                      echo "</a>";
-                      echo " </li>";
-                  endforeach;
-                  foreach ($rejeitadas as $reg):
-                      $id_rejeitada= "{$reg['id']}";
-                      echo "<li>";
-                      echo "<a href='index.php?r=solicitacao/visualiza&id=$id_rejeitada'>";
-                      echo "Sua solicitação foi rejeitada.";
-                      echo "</a>";
-                      echo " </li>";
-                  endforeach;
+
 
                     ?>
                         <!--<li>
