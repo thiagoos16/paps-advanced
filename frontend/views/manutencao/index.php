@@ -1,8 +1,8 @@
 <?php
 
+use dosamigos\datepicker\DatePicker;
 use yii\helpers\Html;
 use yii\grid\GridView;
-use dosamigos\datepicker\DatePicker;
 use yii\helpers\ArrayHelper;
 
 /* @var $this yii\web\View */
@@ -33,7 +33,40 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p align="right">
         <?= Html::a('Nova Manutenção', ['create'], ['class' => 'btn btn-success']) ?>
+        <button id="exibirfiltro" class="btn btn-warning" onclick="exibirfiltro()">PDF</button>
     </p>
+
+    <div class="box box-primary"  style = "display: none" id="formfiltro">
+        <div class="box-header with-border">
+            <b>Data de Entrada:</b>
+            <?= DatePicker::widget([
+                'id' => 'dataEntrada',
+                'name' => 'DataEntrada',
+                'template' => '{addon}{input}',
+                'language' => 'pt',
+                'clientOptions' => [
+                    'autoclose' => true,
+                    'format' => 'dd-mm-yyyy'
+                ]
+            ]);?>
+            <br>
+            <b>Data de Saída:</b>
+            <?= DatePicker::widget([
+                'id' => 'dataSaida',
+                'name' => 'DataSaida',
+                'template' => '{addon}{input}',
+                'language' => 'pt',
+                'clientOptions' => [
+                    'autoclose' => true,
+                    'format' => 'dd-mm-yyyy'
+                ]
+            ]);?>
+            <br>
+           <!-- <?= Html::a ('Gerar PDF', ['pdf'], ['class' => 'btn btn-warning', 'target' => '_blank', 'onclick' => 'pegardata()']) ?> -->
+            <button id="teste" class="btn btn-warning" onclick="pegardata()">PDF</button>
+
+        </div>
+    </div>
 
     <div class="box box-primary">
         <div class="box-header with-border">
@@ -121,3 +154,23 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
 </div>
+
+<script>
+
+    function exibirfiltro(){
+        var form = document.querySelector('#formfiltro');
+        if(form.style.display == "block"){
+            form.style.display = "none";
+        }else{
+            form.style.display = "block";
+        }
+    }
+
+    function pegardata(){
+        var entrada = document.querySelector('#dataEntrada');
+        var saida = document.querySelector('#dataSaida');
+        console.log(entrada.value);
+        console.log(saida.value);
+    }
+
+</script>

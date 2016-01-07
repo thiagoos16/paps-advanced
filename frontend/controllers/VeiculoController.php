@@ -163,6 +163,7 @@ class VeiculoController extends Controller
             'L');
         $stylesheet = file_get_contents("./../web/css/relatorios.css");
 
+        $mpdf->AddPage('L');
         $mpdf->WriteHTML($stylesheet,1);
         $mpdf->WriteHTML($this->getTabela());
 

@@ -4,6 +4,7 @@ namespace frontend\controllers;
 
 use frontend\models\TipoCombustivel;
 use frontend\models\Usuario;
+use mPDF;
 use Yii;
 use frontend\models\Abastecimento;
 use frontend\models\AbastecimentoSearch;
@@ -152,4 +153,86 @@ class AbastecimentoController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+    public function actionPdf() {
+
+        $mpdf = new mPDF('',    // mode - default ''
+            '',    // format - A4, for example, default ''
+            0,     // font size - default 0
+            '',    // default font family
+            15,    // margin_left
+            15,    // margin right
+            16,     // margin top
+            16,    // margin bottom
+            9,     // margin header
+            9,     // margin footer
+
+            'L');
+        $stylesheet = file_get_contents("./../web/css/relatorios.css");
+
+        $mpdf->AddPage('L');
+        $mpdf->WriteHTML($stylesheet,1);
+        $mpdf->WriteHTML($this->getTabela());
+
+        $mpdf->Output();
+        exit;
+    }
+
+    //------------------------------------GErando PDF ----------------------
+    private function getTabela(){
+        $color  = false;
+        $retorno = "";
+        date_default_timezone_set('America/Manaus');
+        $data = date("d/m/Y");
+        $hora = date("H:i");
+        $relatorio = "RELATÓRIO DE GASTOS COM ABASTECIMENTOS";
+
+        $retorno .= "<hr><table class='cabecalho'>
+           <tr>
+             <td><img src='./../web/css/ufam.png' width='70px' height='70px'></td>
+             <td>
+                <p>
+                <b>UNIVERSIDADE FEDERAL DO AMAZONAS</b></p><br>
+			    <p>
+			        PREFEITURA DO CAMPUS UNIVERSITÁRIO<br>
+			        COORDENAÇÃO DE TRANSPORTE
+			    </p>
+             </td>
+             <td><b>
+             <p>Data:   $data</p>
+             <p>Hora:   $hora</p>
+             </b></td>
+           </tr>";
+        $retorno .= "</table><hr>";
+        $retorno .= "<h2 align='center'>$relatorio</h2>";
+        $retorno .= "<table class='tableDados'>
+           <tr class='thDados'>
+             <th>Posto</th>
+             <th>Tipo do Combustível</th>
+             <th>Valor Abastecido</th>
+             <th>Veículo</th>
+             <th>Motorista</th>
+             <th>Data do Abastecimento</th>
+           </tr>";
+
+        $connection = \Yii::$app->db;
+        $model = $connection->createCommand('SELECT * FROM abastecimento');
+        $users = $model->queryAll();
+
+        foreach ($users as $reg):
+            $retorno .= ($color) ? "<tr>" : "<tr class=\"zebra\">";
+            $retorno .= "<td>{$reg['id_posto']}</td>";
+            $retorno .= "<td>{$reg['id_combustivel']}</td>";
+            $retorno .= "<td>{$reg['valor_abastecido']}</td>";
+            $retorno .= "<td>{$reg['id_veiculo']}</td>";
+            $retorno .= "<td>{$reg['id_motorista']}</td>";
+            $retorno .= "<td>{$reg['data_abastecimento']}</td>";
+            $retorno .= "<tr>";
+            $color = !$color;
+        endforeach;
+
+        $retorno .= "</table>";
+        return $retorno;
+    }
+
+
 }

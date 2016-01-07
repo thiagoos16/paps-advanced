@@ -1,5 +1,6 @@
 <?php
 
+use dosamigos\datepicker\DatePicker;
 use frontend\models\TipoCombustivel;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
@@ -26,6 +27,7 @@ if(Yii::$app->session->hasFlash('error')) {
 $this->title = 'Abastecimentos';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+
 <div class="abastecimento-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -33,7 +35,38 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p align="right">
         <?= Html::a('Novo Abastecimento', ['create'], ['class' => 'btn btn-success']) ?>
+        <button id="exibirfiltro" class="btn btn-warning" onclick="exibirfiltro()">PDF</button>
     </p>
+    <div class="box box-primary"  style = "display: none" id="formfiltro">
+        <div class="box-header with-border">
+            <b>Data Inicial:</b>
+            <?= DatePicker::widget([
+                'id' => 'DataEntrada',
+                'name' => 'DataEntrada',
+                'template' => '{addon}{input}',
+                'language' => 'pt',
+                'clientOptions' => [
+                    'autoclose' => true,
+                    'format' => 'dd-mm-yyyy'
+                ]
+            ]);?>
+            <br>
+            <b>Data Final:</b>
+            <?= DatePicker::widget([
+                'id' => 'DataSaida',
+                'name' => 'DataSaida',
+                'template' => '{addon}{input}',
+                'language' => 'pt',
+                'clientOptions' => [
+                    'autoclose' => true,
+                    'format' => 'dd-mm-yyyy'
+                ]
+            ]);?>
+            <br>
+            <?= Html::a ('Gerar PDF', ['pdf'], ['class' => 'btn btn-warning', 'target' => '_blank']) ?>
+
+        </div>
+    </div>
 
     <div class="box box-primary">
         <div class="box-header with-border">
@@ -110,3 +143,15 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
         </div>
 </div>
+<script>
+
+    function exibirfiltro(){
+        var form = document.querySelector('#formfiltro');
+        if(form.style.display == "block"){
+            form.style.display = "none";
+        }else{
+            form.style.display = "block";
+        }
+    }
+
+</script>
