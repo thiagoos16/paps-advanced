@@ -44,7 +44,10 @@ $this->params['breadcrumbs'][] = $this->title;
                     ['class' => 'yii\grid\SerialColumn'],
 
                     //'id',
-                    'data_entrada',
+                    [
+                        'attribute' => 'data_entrada',
+                        //'format' => ['date', 'dd-Y']
+                    ],
                     'servico',
                     'custo',
                     [

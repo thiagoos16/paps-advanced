@@ -55,8 +55,10 @@ class SolicitacaoSearch extends Solicitacao
             return $dataProvider;
         }
         $departamento = Yii::$app->user->identity->id_departamento;
+        //$this->data_saida = date('Y-m-d', strtotime($this->data_saida));
 
         if ($departamento!=1) {
+
             $query->andFilterWhere([
                 'id' => $this->id,
                 'data_saida' => $this->data_saida,
@@ -76,6 +78,7 @@ class SolicitacaoSearch extends Solicitacao
             ->andFilterWhere(['like', 'data_saida', $this->data_saida])
             ->andFilterWhere(['like', 'status', $this->status]);
 
+        //$this->data_saida = date('d-m-Y', strtotime($this->data_saida));
         return $dataProvider;
     }
 }

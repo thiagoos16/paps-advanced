@@ -62,6 +62,8 @@ class AbastecimentoSearch extends Abastecimento
             return $dataProvider;
         }
 
+        //$this->data_abastecimento = date('Y-m-d', strtotime($this->data_abastecimento));
+
         $query->andFilterWhere([
             'qty_litro' => $this->qty_litro,
         ]);
@@ -70,6 +72,7 @@ class AbastecimentoSearch extends Abastecimento
             ->andFilterWhere(['like','posto_abastecimento.nome', $this->posto])
             ->andFilterWhere(['like','veiculo.placa_atual', $this->id_veiculo]);
 
+        //$this->data_abastecimento = date('d-m-Y', strtotime($this->data_abastecimento));
         return $dataProvider;
     }
 }

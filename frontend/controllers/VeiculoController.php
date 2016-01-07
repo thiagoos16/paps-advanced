@@ -213,8 +213,24 @@ class VeiculoController extends Controller
             $retorno .= ($color) ? "<tr>" : "<tr class=\"zebra\">";
             $retorno .= "<td>{$reg['renavam']}</td>";
             $retorno .= "<td>{$reg['placa_atual']}</td>";
-            $retorno .= "<td>{$reg['id_modelo']}</td>";
-            $retorno .= "<td>{$reg['status']}</td>";
+            $id_modelo = "{$reg['id_modelo']}";
+            $model = $connection->createCommand("SELECT nome FROM modelo WHERE id='$id_modelo'");
+            $modelos = $model->queryAll();
+            foreach ($modelos as $mod):
+                $nome_modelo = "{$mod['nome']}";
+            endforeach;
+            $retorno .= "<td>$nome_modelo</td>";
+            $id_status = "{$reg['status']}";
+            if ($id_status==1)
+                $status = "Leiloado";
+            elseif ($id_status==2)
+                $status = "Disponível";
+            elseif ($id_status==3)
+                $status = "Alocado";
+            elseif ($id_status==4)
+                $status = "Manutenção";
+
+            $retorno .= "<td>$status</td>";
             $retorno .= "<tr>";
             $color = !$color;
         endforeach;
