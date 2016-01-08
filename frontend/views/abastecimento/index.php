@@ -37,6 +37,40 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Novo Abastecimento', ['create'], ['class' => 'btn btn-success']) ?>
         <button id="exibirfiltro" class="btn btn-warning" onclick="exibirfiltro()">PDF</button>
     </p>
+
+    <div class="box box-primary"  style = "display: none" id="formfiltro">
+        <div class="box-header with-border">
+            <b>Período da Data de Abastecimento:</b><br><br>
+            <b>De:</b>
+            <?= DatePicker::widget([
+                'id' => 'dataInicio',
+                'name' => 'DataEntrada',
+                'template' => '{addon}{input}',
+                'language' => 'pt',
+                'clientOptions' => [
+                    'autoclose' => true,
+                    'format' => 'yyyy-mm-dd'
+                ]
+            ]);?>
+            <br>
+            <b>Até:</b>
+            <?= DatePicker::widget([
+                'id' => 'dataFim',
+                'name' => 'DataSaida',
+                'template' => '{addon}{input}',
+                'language' => 'pt',
+                'clientOptions' => [
+                    'autoclose' => true,
+                    'format' => 'yyyy-mm-dd'
+                ]
+            ]);?>
+            <br>
+
+            <button class="btn btn-warning" onclick="pegardata()">Gerar PDF</button>
+
+        </div>
+    </div>
+
     <div class="box box-primary"  style = "display: none" id="formfiltro">
         <div class="box-header with-border">
             <b>Data Inicial:</b>
@@ -154,4 +188,11 @@ $this->params['breadcrumbs'][] = $this->title;
         }
     }
 
+    function pegardata(){
+        var inicio = document.querySelector('#dataInicio');
+        var fim = document.querySelector('#dataFim');
+        var url = "<?= Yii::$app->getHomeUrl()?>";
+
+        $(location).attr('href', url+"?r=abastecimento/pdf&data_inicio='"+ inicio.value+"'&data_fim='"+fim.value+"'");
+    }
 </script>

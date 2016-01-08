@@ -38,32 +38,33 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="box box-primary"  style = "display: none" id="formfiltro">
         <div class="box-header with-border">
-            <b>Data de Entrada:</b>
+            <b>Período em que o Veículo entrou em Manutenção:</b><br><br>
+            <b>De:</b>
             <?= DatePicker::widget([
-                'id' => 'dataEntrada',
+                'id' => 'dataInicio',
                 'name' => 'DataEntrada',
                 'template' => '{addon}{input}',
                 'language' => 'pt',
                 'clientOptions' => [
                     'autoclose' => true,
-                    'format' => 'dd-mm-yyyy'
+                    'format' => 'yyyy-mm-dd'
                 ]
             ]);?>
             <br>
-            <b>Data de Saída:</b>
+            <b>Até:</b>
             <?= DatePicker::widget([
-                'id' => 'dataSaida',
+                'id' => 'dataFim',
                 'name' => 'DataSaida',
                 'template' => '{addon}{input}',
                 'language' => 'pt',
                 'clientOptions' => [
                     'autoclose' => true,
-                    'format' => 'dd-mm-yyyy'
+                    'format' => 'yyyy-mm-dd'
                 ]
             ]);?>
             <br>
-           <!-- <?= Html::a ('Gerar PDF', ['pdf'], ['class' => 'btn btn-warning', 'target' => '_blank', 'onclick' => 'pegardata()']) ?> -->
-            <button id="teste" class="btn btn-warning" onclick="pegardata()">PDF</button>
+
+            <button class="btn btn-warning" onclick="pegardata()">Gerar PDF</button>
 
         </div>
     </div>
@@ -156,7 +157,6 @@ $this->params['breadcrumbs'][] = $this->title;
 </div>
 
 <script>
-
     function exibirfiltro(){
         var form = document.querySelector('#formfiltro');
         if(form.style.display == "block"){
@@ -167,10 +167,11 @@ $this->params['breadcrumbs'][] = $this->title;
     }
 
     function pegardata(){
-        var entrada = document.querySelector('#dataEntrada');
-        var saida = document.querySelector('#dataSaida');
-        console.log(entrada.value);
-        console.log(saida.value);
+        var inicio = document.querySelector('#dataInicio');
+        var fim = document.querySelector('#dataFim');
+        var url = "<?= Yii::$app->getHomeUrl()?>";
+
+        $(location).attr('href', url+"?r=manutencao/pdf&data_inicio='"+ inicio.value+"'&data_fim='"+fim.value+"'");
     }
 
 </script>

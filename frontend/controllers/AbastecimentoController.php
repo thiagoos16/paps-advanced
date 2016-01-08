@@ -153,7 +153,7 @@ class AbastecimentoController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
-    public function actionPdf() {
+    public function actionPdf($data_inicio, $data_fim) {
 
         $mpdf = new mPDF('',    // mode - default ''
             '',    // format - A4, for example, default ''
@@ -171,14 +171,14 @@ class AbastecimentoController extends Controller
 
         $mpdf->AddPage('L');
         $mpdf->WriteHTML($stylesheet,1);
-        $mpdf->WriteHTML($this->getTabela());
+        $mpdf->WriteHTML($this->getTabela($data_inicio, $data_fim));
 
         $mpdf->Output();
         exit;
     }
 
     //------------------------------------GErando PDF ----------------------
-    private function getTabela(){
+    private function getTabela($data_inicio, $data_fim){
         $color  = false;
         $retorno = "";
         date_default_timezone_set('America/Manaus');
@@ -215,7 +215,8 @@ class AbastecimentoController extends Controller
            </tr>";
 
         $connection = \Yii::$app->db;
-        $model = $connection->createCommand('SELECT * FROM abastecimento');
+        $sql = "SELECT * FROM abastecimento WHERE data_abastecimento BETWEEN $data_inicio AND $data_fim";
+        $model = $connection->createCommand($sql);
         $users = $model->queryAll();
 
         foreach ($users as $reg):
