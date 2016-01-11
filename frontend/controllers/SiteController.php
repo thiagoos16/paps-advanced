@@ -270,9 +270,243 @@ class SiteController extends Controller
 
     public function actionPdf() {
 
-        $mpdf = new mPDF;
-        $mpdf->WriteHTML('<p>Hallo World</p>');
+        $mpdf = new mPDF('',    // mode - default ''
+            '',    // format - A4, for example, default ''
+            0,     // font size - default 0
+            '',    // default font family
+            15,    // margin_left
+            15,    // margin right
+            16,     // margin top
+            16,    // margin bottom
+            9,     // margin header
+            9,     // margin footer
+
+            'L');
+        $stylesheet = file_get_contents("./../web/css/relatorios.css");
+
+        $mpdf->AddPage('L');
+        $mpdf->WriteHTML($stylesheet,1);
+        $mpdf->WriteHTML($this->getTabela());
+
         $mpdf->Output();
         exit;
+    }
+
+    //------------------------------------GErando PDF ----------------------
+    private function getTabela(){
+        $color  = false;
+        $retorno = "";
+        date_default_timezone_set('America/Manaus');
+        $data = date("d/m/Y");
+        $hora = date("H:i");
+        $relatorio = "RELATÓRIO ANUAL";
+
+        $retorno .= "<hr><table class='cabecalho'>
+           <tr>
+             <td><img src='./../web/css/ufam.png' width='70px' height='70px'></td>
+             <td>
+                <p>
+                <b>UNIVERSIDADE FEDERAL DO AMAZONAS</b></p><br>
+			    <p>
+			        PREFEITURA DO CAMPUS UNIVERSITÁRIO<br>
+			        COORDENAÇÃO DE TRANSPORTE
+			    </p>
+             </td>
+             <td><b>
+             <p>Data:   $data</p>
+             <p>Hora:   $hora</p>
+             </b></td>
+           </tr>";
+        $retorno .= "</table><hr>";
+        $retorno .= "<h2 align='center'>$relatorio</h2>";
+        $retorno .= "<table class='tableDados'>
+    <tr class='zebra'>
+        <td colspan='3'>SERVIÇO PÚBLICO FEDERAL</td>
+        <td colspan='3'>MINISTÉRIO / ÓRGÃO / ENTIDADE</td>
+        <td colspan='3'>ANO</td>
+    </tr>
+
+    <tr>
+        <td colspan='3'> MARCA / TIPO MODELO</td>
+        <td colspan='3'>COR</td>
+        <td colspan='3'>ANO DE FABRICAÇÃO</td>
+    </tr>
+
+    <tr class='zebra'>
+        <td colspan='3'>GRUPO</td>
+        <td colspan='3'>COMBUSTÍVEL</td>
+        <td colspan='3'>PATRIMONIO</td>
+    </tr>
+
+    <tr>
+        <td colspan='4'>PLACA ANTERIOR</td>
+        <td>UF</td>
+        <td colspan='3'>LOCALIZAÇÃO(MUNICÍPIO)</td>
+        <td>UF</td>
+    </tr>
+
+    <tr class='zebra'>
+        <td colspan='4'>PLACA ATUAL</td>
+        <td>UF</td>
+        <td colspan='3'>LOCALIZAÇÃO(MUNICÍPIO)</td>
+        <td>UF</td>
+    </tr>
+
+    <tr>
+        <td colspan='3'>CHASSI</td>
+        <td colspan='3'>HP</td>
+        <td colspan='3'>CÓDIGO RENAVAM</td>
+    </tr>
+
+    <tr class='zebra'>
+        <td rowspan='2'>MÊS</td>
+        <td rowspan='2'>KM RODADO NO MÊS</td>
+        <td rowspan='2'>CONSUMO DE COMBUSTÍVEL POR LITRO</td>
+        <td rowspan='2'>KM RODADO POR LITRO</td>
+        <td colspan='3'>VALOR DESPESA (R$)</td>
+        <td rowspan='2'>TOTAL (R$)</td>
+        <td rowspan='2'>MÉDIA POR KM RODADO (R$)</td>
+    </tr>
+    <tr class='zebra'>
+        <td>COMBUSTIVEL</td>
+        <td>MANUTENÇÃO/CONSERVAÇÃO</td>
+        <td>REPAROS</td>
+    </tr>
+
+    <tr>
+        <td>JAN</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr class='zebra'>
+        <td>FEV</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>MAR</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr class='zebra'>
+        <td>ABR</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>MAI</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr class='zebra'>
+        <td>JUN</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>JUL</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr class='zebra'>
+        <td>AGO</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>SET</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr class='zebra'>
+        <td>OUT</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>NOV</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr class='zebra'>
+        <td>DEZ</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>";
+
+        $retorno .= "</table>";
+        return $retorno;
     }
 }
