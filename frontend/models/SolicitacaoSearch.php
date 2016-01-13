@@ -19,7 +19,7 @@ class SolicitacaoSearch extends Solicitacao
     {
         return [
             [['id', 'id_usuario', 'capacidade_passageiros', 'id_veiculo'], 'integer'],
-            [['destino', 'data_saida', 'hora_saida', 'data_lancamento', 'observacao', 'status', 'endeeco_destino', 'hora_chegada', 'id_motorista', 'seguro'], 'safe'],
+            [[ 'id_usuario','destino', 'data_saida', 'hora_saida', 'data_lancamento', 'observacao', 'status', 'endeeco_destino', 'hora_chegada', 'id_motorista', 'seguro'], 'safe'],
         ];
     }
 
@@ -63,7 +63,7 @@ class SolicitacaoSearch extends Solicitacao
                 'id' => $this->id,
                 'data_saida' => $this->data_saida,
                 'data_lancamento' => $this->data_lancamento,
-                'id_usuario' => $this->id_usuario,
+                'id_usuario' => Yii::$app->getUser()->id,
                 'capacidade_passageiros' => $this->capacidade_passageiros,
                 'id_veiculo' => $this->id_veiculo,
             ]);
