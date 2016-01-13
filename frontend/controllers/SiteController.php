@@ -221,6 +221,7 @@ class SiteController extends Controller
      * Requests password reset.
      *
      * @return mixed
+
      */
     public function actionRequestPasswordReset()
     {
@@ -286,14 +287,37 @@ class SiteController extends Controller
 
         $mpdf->AddPage('L');
         $mpdf->WriteHTML($stylesheet,1);
-        $mpdf->WriteHTML($this->getTabela());
+
+
+        $sql = "SELECT veiculo.renavam, veiculo.cidade, veiculo.chassi, veiculo.potencia, veiculo.placa_anterior,
+veiculo.placa_atual, veiculo.cidade, veiculo.uf_anterior, veiculo.uf_atual,
+veiculo.num_patrimonio, veiculo.lotacao, veiculo.ano_modelo,
+
+modelo.nome as nome_modelo, marca.nome as nome_marca,
+cor.nome as nome_cor,
+tipo_combustivel.nome as nome_combustivel
+FROM veiculo
+INNER JOIN modelo ON veiculo.id_modelo = modelo.id
+INNER JOIN marca ON modelo.id = marca.id
+INNER JOIN cor on veiculo.id_cor = cor.id
+INNER join tipo_combustivel on veiculo.id_tipo_combustivel = tipo_combustivel.id
+";
+
+        $connection = \Yii::$app->db;
+        $model = $connection->createCommand($sql);
+        $veiculos_lista = $model->queryAll();
+
+        foreach ($veiculos_lista as $veiculo):
+            $mpdf->WriteHTML($this->getTabela($veiculo));
+        endforeach;
 
         $mpdf->Output();
         exit;
     }
 
     //------------------------------------GErando PDF ----------------------
-    private function getTabela(){
+    private function getTabela($veiculo){
+        $ano = date("Y");
         $color  = false;
         $retorno = "";
         date_default_timezone_set('America/Manaus');
@@ -327,9 +351,21 @@ class SiteController extends Controller
     </tr>
 
     <tr>
+        <td colspan='3'>SISTEMA DE SERVIÇOS GERAIS - SISG </td>
+        <td colspan='3'>FUNDAÇÃO UNIVERSIDADE DO AMAZONAS </td>
+        <td colspan='3'>$ano</td>
+    </tr>
+
+    <tr class='zebra'>
         <td colspan='3'> MARCA / TIPO MODELO</td>
         <td colspan='3'>COR</td>
         <td colspan='3'>ANO DE FABRICAÇÃO</td>
+    </tr>
+
+    <tr>
+        <td colspan='3'>".strtoupper($veiculo['nome_marca']." / ".$veiculo['nome_modelo'])."</td>
+        <td colspan='3'>".strtoupper($veiculo['nome_cor'])."</td>
+        <td colspan='3'>".$veiculo['ano_modelo']."</td>
     </tr>
 
     <tr class='zebra'>
@@ -339,10 +375,24 @@ class SiteController extends Controller
     </tr>
 
     <tr>
+        <td colspan='3'> - </td>
+        <td colspan='3'>".strtoupper($veiculo['nome_combustivel'])."</td>
+        <td colspan='3'>".$veiculo['num_patrimonio']."</td>
+    </tr>
+
+    <tr class='zebra'>
         <td colspan='4'>PLACA ANTERIOR</td>
         <td>UF</td>
         <td colspan='3'>LOCALIZAÇÃO(MUNICÍPIO)</td>
         <td>UF</td>
+    </tr>
+
+    <tr>
+        <td colspan='4'>".strtoupper($veiculo['placa_anterior']==""? " - ":$veiculo['placa_anterior'])." </td>
+        <td>".strtoupper($veiculo['uf_anterior']==""? " - ":$veiculo['uf_anterior'])."</td>
+
+        <td colspan='3'>".strtoupper($veiculo['cidade'])."</td>
+        <td>".strtoupper($veiculo['uf_anterior']==""? " - ":$veiculo['uf_anterior'])."</td>
     </tr>
 
     <tr class='zebra'>
@@ -353,9 +403,23 @@ class SiteController extends Controller
     </tr>
 
     <tr>
+        <td colspan='4'>".strtoupper($veiculo['placa_atual'])."</td>
+        <td>".strtoupper($veiculo['uf_atual'])."</td>
+
+        <td colspan='3'>".strtoupper($veiculo['cidade'])."</td>
+        <td>".strtoupper($veiculo['uf_atual'])."</td>
+    </tr>
+
+    <tr class='zebra'>
         <td colspan='3'>CHASSI</td>
         <td colspan='3'>HP</td>
         <td colspan='3'>CÓDIGO RENAVAM</td>
+    </tr>
+
+    <tr>
+        <td colspan='3'>".strtoupper($veiculo['chassi'])."</td>
+        <td colspan='3'>".strtoupper($veiculo['potencia'])."</td>
+        <td colspan='3'>".strtoupper($veiculo['renavam'])."</td>
     </tr>
 
     <tr class='zebra'>
