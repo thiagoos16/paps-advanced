@@ -317,6 +317,10 @@ INNER join tipo_combustivel on veiculo.id_tipo_combustivel = tipo_combustivel.id
     }
 
     //------------------------------------GErando PDF ----------------------
+    /**
+     * @param $veiculo
+     * @return string
+     */
     private function getTabela($veiculo){
         $ano = date("Y");
         $color  = false;
@@ -455,6 +459,7 @@ INNER join tipo_combustivel on veiculo.id_tipo_combustivel = tipo_combustivel.id
     </tr>";
     $i=0;
     $lista=[];
+    $km_litro = 0;
     foreach ($gastos_lista as $gasto):
         $lista[$i]["mes"] = $gasto['mes'];
         $lista[$i]["km_mes"] = $gasto['km_mes'];
@@ -462,11 +467,18 @@ INNER join tipo_combustivel on veiculo.id_tipo_combustivel = tipo_combustivel.id
     $i++;
     endforeach;
 
+    try {
+        $km_litro_jan = round($lista[0]['km_mes'] / $lista[0]['litro_mes'],2);
+        $km_litro_fev = round($lista[1]['km_mes'] / $lista[1]['litro_mes'],2);
+    }catch(ErrorException $e){
+        $km_litro_jan = 0.0;
+    }
+
     $retorno .= "<tr>
         <td>JAN</td>
         <td>".$lista[0]['km_mes']."</td>
-        <td>".round($lista[0]['litro_mes'])."</td>
-        <td></td>
+        <td>".round($lista[0]['litro_mes'],2)."</td>
+        <td>".$km_litro_jan."</td>
         <td>-</td>
         <td>-</td>
         <td>-</td>
@@ -476,8 +488,8 @@ INNER join tipo_combustivel on veiculo.id_tipo_combustivel = tipo_combustivel.id
     <tr class='zebra'>
         <td>FEV</td>
         <td>". $lista[1]['km_mes']."</td>
-        <td>". round($lista[1]['litro_mes'])."</td>
-        <td></td>
+        <td>". round($lista[1]['litro_mes'],2)."</td>
+        <td>".$km_litro_fev."</td>
         <td>-</td>
         <td>-</td>
         <td>-</td>

@@ -88,8 +88,10 @@ class Manutencao extends \yii\db\ActiveRecord
     }
 
     public static function getTipo(){
-        return ["Preventiva" => "Preventiva",
-            "Corretiva" => "Corretiva"];
+        return [
+            "Preventiva" => "Preventiva",
+            "Corretiva" => "Corretiva",
+            "Reparos" => "Reparos"];
     }
 
     public static function getPrompt(){
