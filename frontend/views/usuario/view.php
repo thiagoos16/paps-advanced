@@ -1,5 +1,6 @@
 <?php
 
+use frontend\models\Departamento;
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 
@@ -54,6 +55,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 'observacao',
                 //'confirma_senha',
+                [
+                    'attribute' => 'id_departamento',
+                    'value' => Departamento::findOne($model->id_departamento)->nome
+                ],
                 //'id_departamento',
             ],
         ]) ?>
