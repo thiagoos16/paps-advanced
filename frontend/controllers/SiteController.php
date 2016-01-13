@@ -392,7 +392,7 @@ INNER join tipo_combustivel on veiculo.id_tipo_combustivel = tipo_combustivel.id
     </tr>
 
     <tr>
-        <td colspan='3'> - </td>
+        <td colspan='3'> SERVIÇOS COMUNS </td>
         <td colspan='3'>".strtoupper($veiculo['nome_combustivel'])."</td>
         <td colspan='3'>".$veiculo['num_patrimonio']."</td>
     </tr>
