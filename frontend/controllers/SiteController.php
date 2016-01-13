@@ -9,6 +9,7 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use yii\base\ErrorException;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
@@ -325,6 +326,22 @@ INNER join tipo_combustivel on veiculo.id_tipo_combustivel = tipo_combustivel.id
         $hora = date("H:i");
         $relatorio = "RELATÓRIO ANUAL";
 
+        $sql2 = "SELECT abastecimento.data_abastecimento,
+                  Month(abastecimento.data_abastecimento) as mes,
+                  YEAR(abastecimento.data_lancamento) as ano,
+
+                  MAX(abastecimento.km) - MIN(abastecimento.km) as km_mes,
+                    SUM(abastecimento.qty_litro) as litro_mes,
+                    abastecimento.id_veiculo
+                    from abastecimento
+
+                    GROUP BY abastecimento.id_veiculo, mes
+                    HAVING ano = 2016 AND abastecimento.id_veiculo = ".$veiculo['renavam'];
+
+        $connection = \Yii::$app->db;
+        $model = $connection->createCommand($sql2);
+        $gastos_lista = $model->queryAll();
+
         $retorno .= "<hr><table class='cabecalho'>
            <tr>
              <td><img src='./../web/css/ufam.png' width='70px' height='70px'></td>
@@ -435,13 +452,21 @@ INNER join tipo_combustivel on veiculo.id_tipo_combustivel = tipo_combustivel.id
         <td>COMBUSTIVEL</td>
         <td>MANUTENÇÃO/CONSERVAÇÃO</td>
         <td>REPAROS</td>
-    </tr>
+    </tr>";
+    $i=0;
+    $lista=[];
+    foreach ($gastos_lista as $gasto):
+        $lista[$i]["mes"] = $gasto['mes'];
+        $lista[$i]["km_mes"] = $gasto['km_mes'];
+        $lista[$i]["litro_mes"] = $gasto['litro_mes'];
+    $i++;
+    endforeach;
 
-    <tr>
+    $retorno .= "<tr>
         <td>JAN</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
+        <td>".$lista[0]['km_mes']."</td>
+        <td>".round($lista[0]['litro_mes'])."</td>
+        <td></td>
         <td>-</td>
         <td>-</td>
         <td>-</td>
@@ -450,9 +475,9 @@ INNER join tipo_combustivel on veiculo.id_tipo_combustivel = tipo_combustivel.id
     </tr>
     <tr class='zebra'>
         <td>FEV</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
+        <td>". $lista[1]['km_mes']."</td>
+        <td>". round($lista[1]['litro_mes'])."</td>
+        <td></td>
         <td>-</td>
         <td>-</td>
         <td>-</td>
