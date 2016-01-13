@@ -135,7 +135,9 @@ class Solicitacao extends \yii\db\ActiveRecord
 
     public  function beforeValidate()
     {
-        $this->id_usuario = Yii::$app->user->identity->getId();
+        if($this->status == "Em análise") {
+            $this->id_usuario = Yii::$app->user->identity->getId();
+        }
         return parent::beforeValidate();
     }
 }
