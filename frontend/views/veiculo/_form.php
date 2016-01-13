@@ -19,11 +19,7 @@ use yii\widgets\MaskedInput;
 
             <?php $form = ActiveForm::begin(); ?>
 
-            <?= $form->field($model, 'renavam')->textInput(['maxlength'=>10,'style'=>'width:200px'])
-                ->widget(MaskedInput::className(), [
-                    'mask' => '99999999999',
-                ])
-            ?>
+            <?= $form->field($model, 'renavam')->textInput(['maxlength'=>10,'style'=>'width:200px']) ?>
 
             <?= $form->field($model, 'cidade')->textInput(['maxlength' => true]) ?>
 
@@ -32,10 +28,7 @@ use yii\widgets\MaskedInput;
                     'mask' => '*****************',
                 ]) ?>
 
-            <?= $form->field($model, 'num_patrimonio')->textInput()
-                ->widget(MaskedInput::className(), [
-                    'mask' => '999999',
-                ]) ?>
+            <?= $form->field($model, 'num_patrimonio')->textInput() ?>
 
             <?= $form->field($model, 'lotacao')->textInput(['maxlength' => true]) ?>
 
