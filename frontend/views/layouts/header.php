@@ -33,11 +33,11 @@ use frontend\models\Motorista;
                   $id_user = Yii::$app->user->identity->id;
 
                   $connection = \Yii::$app->db;
-                  $model = $connection->createCommand("SELECT * FROM solicitacao WHERE solicitacao.status='Em análise'");
+                  $model = $connection->createCommand("SELECT * FROM solicitacao WHERE solicitacao.status='Em análise' order by  solicitacao.id DESC");
                   $solicitacoes=$model->queryAll();
-                  $model = $connection->createCommand("SELECT * FROM solicitacao WHERE solicitacao.status='Aceita' AND solicitacao.id_usuario=$id_user AND solicitacao.notification IS NULL");
+                  $model = $connection->createCommand("SELECT * FROM solicitacao WHERE solicitacao.status='Aceita' AND solicitacao.id_usuario=$id_user AND solicitacao.notification IS NULL order by  solicitacao.id DESC");
                   $aceitas = $model->queryAll();
-                  $model = $connection->createCommand("SELECT * FROM solicitacao WHERE solicitacao.status='Rejeitada' AND solicitacao.id_usuario=$id_user AND solicitacao.notification IS NULL");
+                  $model = $connection->createCommand("SELECT * FROM solicitacao WHERE solicitacao.status='Rejeitada' AND solicitacao.id_usuario=$id_user AND solicitacao.notification IS NULL order by  solicitacao.id DESC");
                   $rejeitadas = $model->queryAll();
 
                   foreach ($solicitacoes as $reg):

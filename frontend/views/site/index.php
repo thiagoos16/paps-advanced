@@ -11,17 +11,17 @@ $this->title = 'Sistema de Transporte da PCU';
 <div class="site-index">
 
     <div class="jumbotron">
-       <!-- <h1>Sejam bem-vindos!</h1>
-
-        <p class="lead">Você está acessando o Sistema de Gerenciamento de Frotas da UFAM.</p>
-        -->
-        <?php
-        if (!Yii::$app->user->isGuest) {
-            if (Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1") {
-                echo yii2fullcalendar::widget(array('events' => $events,));
-            }
-        }
-        ?>
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <?php
+                    if (!Yii::$app->user->isGuest) {
+                        if (Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1") {
+                            echo yii2fullcalendar::widget(array('events' => $events,));
+                        }
+                    }
+                ?>
+            </div>
+        </div>
     </div>
 
 </div>

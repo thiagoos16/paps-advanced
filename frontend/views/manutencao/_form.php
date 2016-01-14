@@ -21,7 +21,7 @@ use frontend\models\Motorista;
             <?= $form->field($model, 'servico')->textarea(['rows'=>'3'])?>
 
             <?= $form->field($model, 'custo')->textInput()
-                ->hint('Insira um número inteiro.')
+                ->hint('O numero pode ser décimal .')
             ?>
 
             <?= $form->field($model, 'tipo')->dropDownList($model->getTipo(), $model->getPrompt()) ?>

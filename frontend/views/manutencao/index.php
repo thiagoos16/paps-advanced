@@ -82,6 +82,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         'attribute' => 'data_entrada',
                         //'format' => ['date', 'dd-Y']
                     ],
+                    //'id_veiculo',
                     'servico',
                     'custo',
                     [
@@ -104,7 +105,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     ],
                     // 'tipo',
                     // 'data_lancamento',
-                    // 'id_veiculo',
+
                     // 'km',
                     // 'id_motorista',
 

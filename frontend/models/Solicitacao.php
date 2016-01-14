@@ -50,7 +50,7 @@ class Solicitacao extends \yii\db\ActiveRecord
             [['observacao'], 'string', 'max' => 100],
             [['id_motorista'], 'string', 'max' => 11],
             [['seguro'], 'string', 'max' => 25],
-           // [['hora_saida','match', 'pattern'=>'/^[01][0-9]|2[0-3]:[0-5][0-9]/']],
+            // [['hora_saida','match', 'pattern'=>'/^[01][0-9]|2[0-3]:[0-5][0-9]/']],
             ['hora_saida','match','pattern'=>'/^[01][0-9]|2[0-3]:[0-5][0-9]/'],
         ];
     }
