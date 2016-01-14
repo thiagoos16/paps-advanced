@@ -53,7 +53,7 @@ use frontend\models\Motorista;
                     ]
                 ]);?>
 
-            <?= $form->field($model, 'id_veiculo')->dropDownList(ArrayHelper::map(Veiculo::find()->all(), 'renavam', 'placa_atual'), ['prompt'=>'Selecione a placa do veículo']) ?>
+            <?= $form->field($model, 'id_veiculo')->dropDownList(ArrayHelper::map(Veiculo::find()->where(['status' => '2'])->all(), 'renavam', 'placa_atual'), ['prompt'=>'Selecione a placa do veículo']) ?>
 
             <?= $form->field($model, 'km')->textInput()
                 ->hint('Insira um número inteiro.')
