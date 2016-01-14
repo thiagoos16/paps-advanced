@@ -100,6 +100,26 @@ class Veiculo extends \yii\db\ActiveRecord
         ];
     }
 
+    public function findStatus($id){
+        switch ($id) {
+            case '1':
+                return 'Leiloado';
+                break;
+
+            case '2':
+                return 'Disponível';
+                break;
+
+            case '3':
+                return 'Alocado';
+                break;
+
+            case '4':
+                return 'Manutenção';
+                break;
+        }
+    }
+
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -149,10 +169,9 @@ class Veiculo extends \yii\db\ActiveRecord
     }
 
     public  function afterFind(){
-        $this->id_cor = Cor::findOne($this->id_cor)->nome;
-        $this->id_tipo_combustivel = TipoCombustivel::findOne($this->id_tipo_combustivel)->nome;
-        $this->id_modelo = Modelo::findOne($this->id_modelo)->nome;
-
+        //$this->id_cor = Cor::findOne($this->id_cor)->nome;
+        //$this->id_tipo_combustivel = TipoCombustivel::findOne($this->id_tipo_combustivel)->nome;
+        //$this->id_modelo = Modelo::findOne($this->id_modelo)->nome;
         //SELECT * FROM solicitacao AS s WHERE s.id_veiculo=2147483647
 
         $connection = \Yii::$app->db;
@@ -171,7 +190,7 @@ class Veiculo extends \yii\db\ActiveRecord
 
         endforeach;
 
-        switch ($this->status){
+        /*switch ($this->status){
             case '1':
                 $this->status = 'Leiloado';
                 break;
@@ -188,7 +207,7 @@ class Veiculo extends \yii\db\ActiveRecord
                 $this->status = 'Manutenção';
                 break;
 
-        }
+        }*/
     }
 
     public function beforeDelete(){

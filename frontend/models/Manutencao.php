@@ -48,8 +48,6 @@ class Manutencao extends \yii\db\ActiveRecord
             [['tipo'], 'string', 'max' => 25],
             [['id_motorista'], 'string', 'max' => 11],
             ['data_saida','compare','compareAttribute'=>'data_entrada','operator'=>'>=',"message"=>'A data de entrada deve ser igual ou anterior à data de saída']
-
-
         ];
     }
 
@@ -101,13 +99,6 @@ class Manutencao extends \yii\db\ActiveRecord
     public function afterSave($insert)
     {
         Veiculo::updateAll(array('status' => 4), ['renavam' => $this->id_veiculo]);
-    }
-
-    public function afterFind()
-    {
-        $this->data_lancamento = date('d-m-Y h:i:s', strtotime($this->data_lancamento));
-        $this->data_saida = date('d-m-Y', strtotime($this->data_saida));
-        $this->data_entrada = date('d-m-Y', strtotime($this->data_entrada));
     }
 
     public  function beforeSave($insert){

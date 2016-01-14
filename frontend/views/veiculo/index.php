@@ -61,6 +61,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         'attribute' => 'modelo',
                         'value' => 'idModelo.nome',
                     ],
+                    'id_cor',
                     [
                         'attribute' => 'status',
                         'filter' => Html::activeDropDownList($searchModel, 'status', Veiculo::getStatus(),['class'=>'form-control','prompt'=>'Filtrar']),

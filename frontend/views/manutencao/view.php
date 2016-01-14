@@ -42,12 +42,25 @@ $this->params['breadcrumbs'][] = $this->title;
                 'model' => $model,
                 'attributes' => [
                     //'id',
-                    'data_entrada',
+                    [
+                        'attribute' => 'data_entrada',
+                        'value' => date('d-m-Y', strtotime($model->data_entrada))
+                    ],
+
                     'servico',
                     'custo',
-                    'data_saida',
+
+                    [
+                        'attribute' => 'data_saida',
+                        'value' => date('d-m-Y', strtotime($model->data_saida))
+                    ],
+
                     'tipo',
-                    'data_lancamento',
+                    [
+                        'attribute' => 'data_lancamento',
+                        'value' => date('d-m-Y h:i:s', strtotime($model->data_lancamento))
+                    ],
+
                     'id_veiculo',
                     'km',
                     'id_motorista',

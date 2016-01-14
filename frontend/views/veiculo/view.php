@@ -1,5 +1,8 @@
 <?php
 
+use frontend\models\Cor;
+use frontend\models\Modelo;
+use frontend\models\TipoCombustivel;
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 
@@ -45,7 +48,11 @@ $this->params['breadcrumbs'][] = $this->title;
                     'chassi',
                     'num_patrimonio',
                     'lotacao',
-                    'status',
+
+                    [
+                        'attribute' => 'status',
+                        'value' => $model->findStatus($model->status)
+                    ],
                     'capacidade_passageiros',
                     'observacao',
                     'adquirido_de',
@@ -54,9 +61,23 @@ $this->params['breadcrumbs'][] = $this->title;
                     'placa_atual',
                     'placa_anterior',
                     'potencia',
-                    'id_modelo',
-                    'id_cor',
-                    'id_tipo_combustivel',
+
+                    [
+                        'attribute' => 'id_modelo',
+                        'value' => Modelo::findOne($model->id_modelo)->nome
+                    ],
+
+                    //'id_cor',
+                    [
+                        'attribute' => 'id_cor',
+                        'value' => Cor::findOne($model->id_cor)->nome
+                    ],
+                    [
+                        'attribute' => 'id_tipo_combustivel',
+                        'value' => TipoCombustivel::findOne($model->id_tipo_combustivel)->nome
+                    ],
+
+
                     'ano_fabricacao',
                     'ano_modelo',
                 ],
