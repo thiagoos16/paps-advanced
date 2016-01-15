@@ -32,6 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
+
     <p align="right">
         <?= Html::a('Nova Manutenção', ['create'], ['class' => 'btn btn-success']) ?>
         <button id="exibirfiltro" class="btn btn-warning" onclick="exibirfiltro()">PDF</button>

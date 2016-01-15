@@ -1,5 +1,6 @@
 <?php
 
+use dosamigos\datepicker\DatePicker;
 use frontend\models\Solicitacao;
 use yii\helpers\Html;
 use yii\grid\GridView;
@@ -33,7 +34,28 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p align="right">
         <?= Html::a('Nova Solicitação', ['create'], ['class' => 'btn btn-success']) ?>
+        <button id="exibirfiltro" class="btn btn-warning" onclick="exibirfiltro()">Solicitações do dia</button>
     </p>
+
+    <div class="box box-primary"  style = "display: none" id="formfiltro">
+        <div class="box-header with-border">
+            <b>Resumo de Solicitações do dia:</b><br><br>
+            <?= DatePicker::widget([
+                'id' => 'dataInicio',
+                'name' => 'DataEntrada',
+                'template' => '{addon}{input}',
+                'language' => 'pt',
+                'clientOptions' => [
+                    'autoclose' => true,
+                    'format' => 'yyyy-mm-dd'
+                ]
+            ]);?>
+            <br>
+
+            <button class="btn btn-warning" onclick="pegardata()">Gerar PDF</button>
+
+        </div>
+    </div>
 
     <div class="box box-primary">
         <div class="box-header with-border">
@@ -110,3 +132,22 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
 </div>
+
+<script>
+
+    function exibirfiltro(){
+        var form = document.querySelector('#formfiltro');
+        if(form.style.display == "block"){
+            form.style.display = "none";
+        }else{
+            form.style.display = "block";
+        }
+    }
+
+    function pegardata(){
+        var inicio = document.querySelector('#dataInicio');
+        var url = "<?= Yii::$app->getHomeUrl()?>";
+
+        $(location).attr('href', url+"?r=solicitacao/pdf&data_inicio='"+ inicio.value+"'");
+    }
+</script>
