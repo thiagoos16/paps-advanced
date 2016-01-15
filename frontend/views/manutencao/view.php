@@ -12,7 +12,9 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="manutencao-view">
 
+    <?= date('Y-m-d', strtotime(""))?>
     <?php
+
     if(Yii::$app->session->hasFlash('success')) {
         echo '<br>';
         echo "<div class='alert alert-success' data-dismiss='alert'>";

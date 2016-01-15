@@ -71,7 +71,8 @@ class ManutencaoSearch extends Manutencao
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'data_entrada' => $this->data_entrada,
+            'data_entrada' => date('Y-m-d', strtotime($this->data_entrada)) == "1970-01-01"? $this->data_entrada:date('Y-m-d', strtotime($this->data_entrada)),
+            //'data_entrada' => $this->data_entrada ,
             //date('d-m-Y', strtotime($this->data_saida));
             //'data_saida' => date('d-m-Y',strtotime($this->data_saida)),
             'data_saida' => $this->data_saida,
@@ -85,7 +86,8 @@ class ManutencaoSearch extends Manutencao
             ->andFilterWhere(['like', 'id_motorista', $this->id_motorista])
             ->andFilterWhere(['like', 'veiculo.placa_atual', $this->veiculo])
             ->andFilterWhere(['like', 'veiculo.id_modelo', $this->modelo])
-            //->andFilterWhere(['like', 'data_saida', date('d-m-Y', strtotime($this->data_saida))])
+            //->andFilterWhere(['like', 'data_entrada', date('Y-m-d', strtotime($this->data_entrada))])
+
         ;
 
         return $dataProvider;
