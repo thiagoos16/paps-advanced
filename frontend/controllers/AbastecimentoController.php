@@ -154,8 +154,12 @@ class AbastecimentoController extends Controller
         }
     }
     public function actionPdf($data_inicio, $data_fim) {
+        $data_inicio = str_replace("'","",$data_inicio);
+        $data_fim = str_replace("'","",$data_fim);
+        $data_inicio = date("Y-m-d", strtotime($data_inicio));
+        $data_fim = date("Y-m-d", strtotime($data_fim));
 
-        $mpdf = new mPDF('',    // mode - default ''
+       $mpdf = new mPDF('',    // mode - default ''
             '',    // format - A4, for example, default ''
             0,     // font size - default 0
             '',    // default font family
@@ -173,12 +177,19 @@ class AbastecimentoController extends Controller
         $mpdf->WriteHTML($stylesheet,1);
         $mpdf->WriteHTML($this->getTabela($data_inicio, $data_fim));
 
+
         $mpdf->Output();
         exit;
     }
 
     //------------------------------------GErando PDF ----------------------
     private function getTabela($data_inicio, $data_fim){
+
+        $data_inicio = str_replace("'","",$data_inicio);
+        $data_fim = str_replace("'","",$data_fim);
+        date("Y-m-d", strtotime($data_inicio));
+        date("Y-m-d", strtotime($data_fim));
+
         $color  = false;
         $retorno = "";
         date_default_timezone_set('America/Manaus');
@@ -216,7 +227,7 @@ class AbastecimentoController extends Controller
            </tr>";
 
         $connection = \Yii::$app->db;
-        $sql = "SELECT * FROM abastecimento WHERE data_abastecimento BETWEEN $data_inicio AND $data_fim ORDER BY data_abastecimento ASC";
+        $sql = "SELECT * FROM abastecimento WHERE data_abastecimento BETWEEN '$data_inicio' AND '$data_fim' ORDER BY data_abastecimento ASC";
         $model = $connection->createCommand($sql);
         $users = $model->queryAll();
 
@@ -224,6 +235,7 @@ class AbastecimentoController extends Controller
             $retorno .= ($color) ? "<tr>" : "<tr class=\"zebra\">";
 
             //DATA DO ABASTECIMENTO
+            $reg['data_abastecimento'] = date("d-m-Y", strtotime($reg['data_abastecimento']));
             $retorno .= "<td>{$reg['data_abastecimento']}</td>";
 
 

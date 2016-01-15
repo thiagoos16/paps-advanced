@@ -49,7 +49,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'language' => 'pt',
                 'clientOptions' => [
                     'autoclose' => true,
-                    'format' => 'yyyy-mm-dd'
+                    'format' => 'dd-mm-yyyy'
                 ]
             ]);?>
             <br>
@@ -61,43 +61,12 @@ $this->params['breadcrumbs'][] = $this->title;
                 'language' => 'pt',
                 'clientOptions' => [
                     'autoclose' => true,
-                    'format' => 'yyyy-mm-dd'
+                    'format' => 'dd-mm-yyyy'
                 ]
             ]);?>
             <br>
 
             <button class="btn btn-warning" onclick="pegardata()">Gerar PDF</button>
-
-        </div>
-    </div>
-
-    <div class="box box-primary"  style = "display: none" id="formfiltro">
-        <div class="box-header with-border">
-            <b>Data Inicial:</b>
-            <?= DatePicker::widget([
-                'id' => 'DataEntrada',
-                'name' => 'DataEntrada',
-                'template' => '{addon}{input}',
-                'language' => 'pt',
-                'clientOptions' => [
-                    'autoclose' => true,
-                    'format' => 'dd-mm-yyyy'
-                ]
-            ]);?>
-            <br>
-            <b>Data Final:</b>
-            <?= DatePicker::widget([
-                'id' => 'DataSaida',
-                'name' => 'DataSaida',
-                'template' => '{addon}{input}',
-                'language' => 'pt',
-                'clientOptions' => [
-                    'autoclose' => true,
-                    'format' => 'dd-mm-yyyy'
-                ]
-            ]);?>
-            <br>
-            <?= Html::a ('Gerar PDF', ['pdf'], ['class' => 'btn btn-warning', 'target' => '_blank']) ?>
 
         </div>
     </div>
