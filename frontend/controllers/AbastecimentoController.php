@@ -206,27 +206,79 @@ class AbastecimentoController extends Controller
         $retorno .= "<h2 align='center'>$relatorio</h2>";
         $retorno .= "<table class='tableDados'>
            <tr class='thDados'>
+             <th>Data do Abastecimento</th>
              <th>Posto</th>
              <th>Tipo do Combustível</th>
-             <th>Valor Abastecido</th>
+             <th>Valor Abastecido (R$)</th>
              <th>Veículo</th>
+             <th>Placa Veículo</th>
              <th>Motorista</th>
-             <th>Data do Abastecimento</th>
            </tr>";
 
         $connection = \Yii::$app->db;
-        $sql = "SELECT * FROM abastecimento WHERE data_abastecimento BETWEEN $data_inicio AND $data_fim";
+        $sql = "SELECT * FROM abastecimento WHERE data_abastecimento BETWEEN $data_inicio AND $data_fim ORDER BY data_abastecimento ASC";
         $model = $connection->createCommand($sql);
         $users = $model->queryAll();
 
         foreach ($users as $reg):
             $retorno .= ($color) ? "<tr>" : "<tr class=\"zebra\">";
-            $retorno .= "<td>{$reg['id_posto']}</td>";
-            $retorno .= "<td>{$reg['id_combustivel']}</td>";
-            $retorno .= "<td>{$reg['valor_abastecido']}</td>";
-            $retorno .= "<td>{$reg['id_veiculo']}</td>";
-            $retorno .= "<td>{$reg['id_motorista']}</td>";
+
+            //DATA DO ABASTECIMENTO
             $retorno .= "<td>{$reg['data_abastecimento']}</td>";
+
+
+            //POSTO
+            $id_posto = "{$reg['id_posto']}";
+            $modelPosto = $connection->createCommand("SELECT nome FROM posto_abastecimento WHERE id = '$id_posto'");
+            $postos = $modelPosto->queryAll();
+            foreach ($postos as $posto):
+                $nome_posto = "{$posto['nome']}";
+            endforeach;
+            $retorno .= "<td>$nome_posto</td>";
+
+
+            //TIPO DO COMBUSTÍVEL
+            $id_combustivel = "{$reg['id_combustivel']}";
+            $modelCombustivel = $connection->createCommand("SELECT nome FROM tipo_combustivel WHERE id = '$id_combustivel'");
+            $combustiveis = $modelCombustivel->queryAll();
+            foreach ($combustiveis as $combustivel):
+                $nome_combustivel = "{$combustivel['nome']}";
+            endforeach;
+            $retorno .= "<td>$nome_combustivel</td>";
+
+
+            //VALOR ABASTECIDO
+            $retorno .= "<td>{$reg['valor_abastecido']}</td>";
+
+
+            //MODELO DO VEÍCULO
+            $id_veiculo = "{$reg['id_veiculo']}";
+            $modelVeiculoModelo = $connection->createCommand("SELECT nome FROM modelo WHERE modelo.id = (SELECT id_modelo FROM veiculo WHERE renavam = '$id_veiculo')");
+            $veiculosModelo = $modelVeiculoModelo->queryAll();
+            foreach ($veiculosModelo as $veiculoModelo):
+                $modelo_veiculo = "{$veiculoModelo['nome']}";
+            endforeach;
+            $retorno .= "<td>$modelo_veiculo</td>";
+
+
+            //PLACA DO VEÍCULO
+            $modelVeiculoPlaca = $connection->createCommand("SELECT placa_atual FROM veiculo WHERE renavam = '$id_veiculo'");
+            $veiculosPlaca = $modelVeiculoPlaca->queryAll();
+            foreach ($veiculosPlaca as $veiculoPlaca):
+                $placa_veiculo = "{$veiculoPlaca['placa_atual']}";
+            endforeach;
+            $retorno .= "<td>$placa_veiculo</td>";
+
+
+            //MOTORISTA
+            $id_motorista = "{$reg['id_motorista']}";
+            $modelMotorista = $connection->createCommand("SELECT nome FROM motorista WHERE cnh = '$id_motorista'");
+            $motoristas = $modelMotorista->queryAll();
+            foreach ($motoristas as $motorista):
+                $nome_motorista = "{$motorista['nome']}";
+            endforeach;
+            $retorno .= "<td>$nome_motorista</td>";
+
             $retorno .= "<tr>";
             $color = !$color;
         endforeach;
