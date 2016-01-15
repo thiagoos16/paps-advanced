@@ -1,6 +1,7 @@
 <?php
 
 use dosamigos\datepicker\DatePicker;
+use frontend\models\Modelo;
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\helpers\ArrayHelper;
@@ -82,27 +83,29 @@ $this->params['breadcrumbs'][] = $this->title;
                         'attribute' => 'data_entrada',
                         //'format' => ['date', 'dd-Y']
                     ],
-                    //'id_veiculo',
+                    [
+                        'attribute' => 'veiculo',
+                        'value' => 'idVeiculo.placa_atual',
+                    ],
+
+                    [
+                        'attribute' => 'modelo',
+                        'filter' => Html::activeDropDownList(
+                            $searchModel,
+                            'modelo',
+                            ArrayHelper::map(Modelo::find()->asArray()->all(), 'id', 'nome'),
+                            ['class'=>'form-control','prompt'=>'Filtrar'  ]),
+                        'value' => 'idVeiculo.idModelo.nome',
+                    ],
+
                     'servico',
                     'custo',
-                    [
-                       /* 'attribute'=>'data_saida',
-                        'format' => ['date', 'dd-MM-yyyy'],
-                        'value' => function($model,$index,$widget) {
-                            return Yii::$app->formatter->asDate($model->data_saida);
-                        },*/
+
+                    /*[
                         'attribute'=>'data_saida',
                         'value' => 'data_saida',
-                        //'format' => 'raw',
-                        /*'filter' => DatePicker::widget([
-                            'model' => $searchModel,
-                            'attribute' => 'data_saida',
-                            'clientOptions' => [
-                                'autoclose' => true,
-                                'format' => 'dd-mm-yyyy',
-                            ]
-                        ])*/
-                    ],
+                    ],*/
+
                     // 'tipo',
                     // 'data_lancamento',
 

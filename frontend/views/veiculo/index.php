@@ -57,16 +57,21 @@ $this->params['breadcrumbs'][] = $this->title;
                     // 'potencia',z
                     //'idModelo.id_modelo',
                     //'id_modelo',
+                    //'id_cor',
                     [
                         'attribute' => 'modelo',
                         'value' => 'idModelo.nome',
                     ],
-                    'id_cor',
+                    [
+                        'attribute' => 'cor',
+                        'value' => 'idCor.nome',
+                    ],
+
                     [
                         'attribute' => 'status',
                         'filter' => Html::activeDropDownList($searchModel, 'status', Veiculo::getStatus(),['class'=>'form-control','prompt'=>'Filtrar']),
                     ],
-                    // 'id_cor',
+
                     // 'id_tipo_combustivel',
                     // 'ano_fabricacao',
                     // 'ano_modelo',

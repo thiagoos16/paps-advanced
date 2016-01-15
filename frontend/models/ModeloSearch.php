@@ -15,6 +15,7 @@ class ModeloSearch extends Modelo
     /**
      * @inheritdoc
      */
+
     public function rules()
     {
         return [
@@ -43,10 +44,16 @@ class ModeloSearch extends Modelo
     public function search($params)
     {
         $query = Modelo::find();
+        $query->joinWith('idMarca');
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
+
+        $dataProvider->sort->attributes['marca'] = [
+            'asc' => ['marca.nome' => SORT_ASC],
+            'desc' => ['marca.nome' => SORT_DESC],
+        ];
 
         $this->load($params);
 
@@ -62,7 +69,6 @@ class ModeloSearch extends Modelo
         ]);
 
         $query->andFilterWhere(['like', 'nome', $this->nome]);
-
 
         return $dataProvider;
     }

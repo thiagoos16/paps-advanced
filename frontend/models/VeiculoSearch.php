@@ -16,11 +16,13 @@ class VeiculoSearch extends Veiculo
      * @inheritdoc
      */
     public $modelo;
+    public $cor;
+
     public function rules()
     {
         return [
             [['renavam', 'num_patrimonio', 'potencia', 'id_cor', 'id_tipo_combustivel', 'ano_fabricacao', 'ano_modelo'], 'integer'],
-            [['cidade', 'modelo', 'chassi', 'id_modelo', 'lotacao', 'status', 'observacao', 'adquirido_de', 'uf_atual', 'uf_anterior', 'placa_atual', 'placa_anterior'], 'safe'],
+            [['cidade', 'modelo','cor', 'chassi', 'id_modelo', 'lotacao', 'status', 'observacao', 'adquirido_de', 'uf_atual', 'uf_anterior', 'placa_atual', 'placa_anterior'], 'safe'],
         ];
     }
 
@@ -43,12 +45,17 @@ class VeiculoSearch extends Veiculo
     public function search($params)
     {
         $query = Veiculo::find();
-
-        $query->joinWith('idModelo');
+        $query->joinWith('idModelo')->joinWith("idCor");
+        //$query->joinWith('idModelo');
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
+
+        $dataProvider->sort->attributes['cor'] = [
+            'asc' => ['cor.nome' => SORT_ASC],
+            'desc' => ['cor.nome' => SORT_DESC],
+        ];
 
         $dataProvider->sort->attributes['modelo'] = [
             'asc' => ['modelo.nome' => SORT_ASC],
@@ -67,9 +74,10 @@ class VeiculoSearch extends Veiculo
         ]);
 
         $query->andFilterWhere(['like', 'status', $this->status])
-            ->andFilterWhere(['like', 'renavam', $this->renavam])
-            ->andFilterWhere(['like', 'placa_atual', $this->placa_atual])
-            ->andFilterWhere(['like', 'modelo.nome', $this->modelo]);
+              ->andFilterWhere(['like', 'renavam', $this->renavam])
+              ->andFilterWhere(['like', 'placa_atual', $this->placa_atual])
+              ->andFilterWhere(['like', 'modelo.nome', $this->modelo])
+              ->andFilterWhere(['like', 'cor.nome', $this->cor]);
 
         return $dataProvider;
     }

@@ -39,6 +39,9 @@ class Veiculo extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
+
+    public $id_status_bkp;
+
     public static function tableName()
     {
         return 'veiculo';
@@ -169,6 +172,10 @@ class Veiculo extends \yii\db\ActiveRecord
     }
 
     public  function afterFind(){
+
+        //$this->id_cor_bkp = $this->id_cor;
+        $this->id_status_bkp = $this->status;
+
         //$this->id_cor = Cor::findOne($this->id_cor)->nome;
         //$this->id_tipo_combustivel = TipoCombustivel::findOne($this->id_tipo_combustivel)->nome;
         //$this->id_modelo = Modelo::findOne($this->id_modelo)->nome;
@@ -190,7 +197,7 @@ class Veiculo extends \yii\db\ActiveRecord
 
         endforeach;
 
-        /*switch ($this->status){
+        switch ($this->status){
             case '1':
                 $this->status = 'Leiloado';
                 break;
@@ -207,7 +214,7 @@ class Veiculo extends \yii\db\ActiveRecord
                 $this->status = 'Manutenção';
                 break;
 
-        }*/
+        }
     }
 
     public function beforeDelete(){

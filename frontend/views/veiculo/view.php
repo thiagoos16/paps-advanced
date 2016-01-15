@@ -51,7 +51,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
                     [
                         'attribute' => 'status',
-                        'value' => $model->findStatus($model->status)
+                        'value' => $model->findStatus($model->id_status_bkp)
                     ],
                     'capacidade_passageiros',
                     'observacao',

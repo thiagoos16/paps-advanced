@@ -15,11 +15,14 @@ class ManutencaoSearch extends Manutencao
     /**
      * @inheritdoc
      */
+    public $veiculo;
+    public $modelo;
+
     public function rules()
     {
         return [
             [['id', 'id_veiculo', 'km'], 'integer'],
-            [['data_entrada', 'servico', 'data_saida', 'tipo', 'data_lancamento', 'id_motorista'], 'safe'],
+            [['data_entrada', 'servico', 'data_saida', 'tipo', 'data_lancamento', 'id_motorista','veiculo','modelo'], 'safe'],
             [['custo'], 'number'],
         ];
     }
@@ -43,10 +46,20 @@ class ManutencaoSearch extends Manutencao
     public function search($params)
     {
         $query = Manutencao::find();
+        $query->joinWith(['idVeiculo']);
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
+
+        $dataProvider->sort->attributes['veiculo'] = [
+            'asc' => ['veiculo.placa_atual' => SORT_ASC],
+            'desc' => ['veiculo.placa_atual' => SORT_DESC],
+        ];
+        $dataProvider->sort->attributes['modelo'] = [
+            'asc' => ['veiculo.id_modelo' => SORT_ASC],
+            'desc' => ['veiculo.id_modelo' => SORT_DESC],
+        ];
 
         $this->load($params);
 
@@ -63,12 +76,15 @@ class ManutencaoSearch extends Manutencao
             //'data_saida' => date('d-m-Y',strtotime($this->data_saida)),
             'data_saida' => $this->data_saida,
             'id_veiculo' => $this->id_veiculo,
+            'veiculo.id_modelo' => $this->modelo,
             'km' => $this->km,
         ]);
 
         $query->andFilterWhere(['like', 'servico', $this->servico])
             ->andFilterWhere(['like', 'custo', $this->custo])
             ->andFilterWhere(['like', 'id_motorista', $this->id_motorista])
+            ->andFilterWhere(['like', 'veiculo.placa_atual', $this->veiculo])
+            ->andFilterWhere(['like', 'veiculo.id_modelo', $this->modelo])
             //->andFilterWhere(['like', 'data_saida', date('d-m-Y', strtotime($this->data_saida))])
         ;
 
