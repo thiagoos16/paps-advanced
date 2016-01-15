@@ -19,14 +19,11 @@ use yii\widgets\MaskedInput;
 
             <?php $form = ActiveForm::begin(); ?>
 
-            <?= $form->field($model, 'renavam')->textInput(['maxlength'=>10,'style'=>'width:200px']) ?>
+            <?= $form->field($model, 'renavam')->textInput(['maxlength'=> true]) ?>
 
             <?= $form->field($model, 'cidade')->textInput(['maxlength' => true]) ?>
 
-            <?= $form->field($model, 'chassi')->textInput()
-                ->widget(MaskedInput::className(), [
-                    'mask' => '*****************',
-                ]) ?>
+            <?= $form->field($model, 'chassi')->textInput(['maxlength' => true]) ?>
 
             <?= $form->field($model, 'num_patrimonio')->textInput() ?>
 
