@@ -9,6 +9,7 @@ use frontend\models\Marca;
 /* @var $this yii\web\View */
 /* @var $searchModel frontend\models\ModeloSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
+/* @var $modelo frontend\models\Modelo */
 if(Yii::$app->session->hasFlash('success')) {
     echo '<br>';
     echo "<div class='alert alert-success' data-dismiss='alert'>";
@@ -61,6 +62,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         'template' => '{visualizar}  {editar}  {excluir}',
                         'buttons' => [
                             'visualizar' => function($url,$model) {
+                                $model->id_marca = Modelo::findOne($model->id)->idMarca;
                                 return Html::a(
                                     '<span class="fa fa-eye"></span>',
                                     ['view', 'id' => $model->id],

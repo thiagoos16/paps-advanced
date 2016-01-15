@@ -19,6 +19,8 @@ class Modelo extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
+    public $id_bkp;
+
     public static function tableName()
     {
         return 'modelo';
@@ -70,8 +72,11 @@ class Modelo extends \yii\db\ActiveRecord
     }
 
     public  function afterFind(){
+        $this->id_bkp = $this->id_marca;
         $this->id_marca = Marca::findOne($this->id_marca)->nome;
+
     }
+
 
     public function beforeDelete(){
 

@@ -1,5 +1,6 @@
 <?php
 
+use frontend\models\Marca;
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 
@@ -43,7 +44,11 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attributes' => [
                     //'id',
                     'nome',
-                    'id_marca',
+                    [
+                        'attribute' => 'id_marca',
+                        'value' => Marca::findOne($model->id_bkp)->nome
+                    ],
+
                 ],
             ]) ?>
         </div>

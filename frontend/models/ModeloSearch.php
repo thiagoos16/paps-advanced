@@ -26,6 +26,7 @@ class ModeloSearch extends Modelo
     /**
      * @inheritdoc
      */
+
     public function scenarios()
     {
         // bypass scenarios() implementation in the parent class
@@ -61,6 +62,7 @@ class ModeloSearch extends Modelo
         ]);
 
         $query->andFilterWhere(['like', 'nome', $this->nome]);
+
 
         return $dataProvider;
     }

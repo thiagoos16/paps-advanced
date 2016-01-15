@@ -14,8 +14,9 @@ $this->params['breadcrumbs'][] = 'Editar';
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <?= $this->render('_form', [
-        'model' => $model, 'marca_lista' => $marca_lista
+    <?php
+        $model->id_marca = $model->id_bkp;
+        echo $this->render('_form', ['model' => $model, 'marca_lista' => $marca_lista
     ]) ?>
 
 </div>
