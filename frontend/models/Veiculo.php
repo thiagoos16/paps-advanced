@@ -228,9 +228,21 @@ class Veiculo extends \yii\db\ActiveRecord
         $connection = \Yii::$app->db;
         $m = $connection->createCommand("SELECT * FROM solicitacao WHERE id_veiculo='$this->renavam'");
         $solicitacoes=$m->queryAll();
+        $m = $connection->createCommand("SELECT * FROM abastecimento WHERE id_veiculo='$this->renavam'");
+        $abastecimentos = $m->queryAll();
+        $m = $connection->createCommand("SELECT * FROM manutencao WHERE id_veiculo='$this->renavam'");
+        $manutencoes = $m->queryAll();
         $count=0;
 
         foreach ($solicitacoes as $reg):
+            $count++;
+        endforeach;
+
+        foreach ($abastecimentos as $ab):
+            $count++;
+        endforeach;
+
+        foreach ($manutencoes as $man):
             $count++;
         endforeach;
 

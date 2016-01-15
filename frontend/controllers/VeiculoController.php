@@ -124,7 +124,7 @@ class VeiculoController extends Controller
             Yii::$app->session->setFlash('success', 'Veículo excluído com sucesso.');
         }
         else {
-            Yii::$app->session->setFlash('error', 'O veículo não pode ser excluído pois possui relação com uma ou mais solicitações.');
+            Yii::$app->session->setFlash('error', 'O veículo não pode ser excluído pois possui relação com uma ou mais solicitações ou gastos.');
         }
         //$this->findModel($id)->delete();
 

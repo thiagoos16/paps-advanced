@@ -99,12 +99,6 @@ class Manutencao extends \yii\db\ActiveRecord
         return ['prompt'=>'Selecione uma opção'];
     }
 
-    public  function afterFind()
-    {
-        $this->data_entrada = date('d-m-Y', strtotime($this->data_entrada));
-    }
-
-
     public function afterSave($insert)
     {
 
