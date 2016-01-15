@@ -192,10 +192,10 @@ class AbastecimentoController extends Controller
              <td>
                 <p>
                 <b>UNIVERSIDADE FEDERAL DO AMAZONAS</b></p><br>
-			    <p>
-			        PREFEITURA DO CAMPUS UNIVERSITÁRIO<br>
-			        COORDENAÇÃO DE TRANSPORTE
-			    </p>
+                <p>
+                    PREFEITURA DO CAMPUS UNIVERSITÁRIO<br>
+                    COORDENAÇÃO DE TRANSPORTE
+                </p>
              </td>
              <td><b>
              <p>Data:   $data</p>

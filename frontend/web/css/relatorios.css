@@ -28,6 +28,8 @@ table{
 table, th, td {
     text-align: center;
     font-size: 12;
+    border-style: solid;
+    border-width: 1px;
 }
 
 th{

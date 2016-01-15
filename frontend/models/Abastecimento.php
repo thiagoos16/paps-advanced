@@ -112,6 +112,8 @@ class Abastecimento extends \yii\db\ActiveRecord
             if ($this->data_abastecimento!=null) {
                 $this->data_abastecimento = date('Y-m-d', strtotime($this->data_abastecimento));
             }
+            date_default_timezone_set('America/Manaus');
+            $this->data_lancamento = date('Y-m-d h:i:s');
             return true;
         }
         else {

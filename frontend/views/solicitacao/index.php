@@ -45,7 +45,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'id',
 
                     'destino',
-                    'data_saida',
+                    //'data_saida',
                     //'hora_saida',
                     //'data_lancamento',
                     // 'observacao',

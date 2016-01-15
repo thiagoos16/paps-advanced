@@ -15,12 +15,12 @@ class AbastecimentoSearch extends Abastecimento
     /**
      * @inheritdoc
      */
-    public $posto;
+    public $posto, $veiculo;
     public function rules()
     {
         return [
-            [['id', 'id_veiculo', 'km'], 'integer'],
-            [['data_lancamento', 'id_posto', 'posto', 'id_motorista', 'data_abastecimento', 'qty_litro', 'id_combustivel'], 'safe'],
+            [['id', 'km'], 'integer'],
+            [['data_lancamento', 'id_posto', 'posto', 'veiculo', 'id_motorista', 'data_abastecimento', 'qty_litro', 'id_combustivel'], 'safe'],
         ];
     }
 
@@ -56,6 +56,11 @@ class AbastecimentoSearch extends Abastecimento
             'desc' => ['posto_abastecimento.nome' => SORT_DESC],
         ];
 
+        $dataProvider->sort->attributes['veiculo'] = [
+            'asc' => ['veiculo.placa_atual' => SORT_ASC],
+            'desc' => ['veiculo.placa_atual' => SORT_DESC],
+        ];
+
         if (!($this->load($params) && $this->validate())) {
             // uncomment the following line if you do not want to return any records when validation fails
             // $query->where('0=1');
@@ -66,11 +71,12 @@ class AbastecimentoSearch extends Abastecimento
 
         $query->andFilterWhere([
             'qty_litro' => $this->qty_litro,
+            'id_combustivel' => $this->id_combustivel,
         ]);
 
         $query->andFilterWhere(['like', 'id_motorista', $this->id_motorista])
             ->andFilterWhere(['like','posto_abastecimento.nome', $this->posto])
-            ->andFilterWhere(['like','veiculo.placa_atual', $this->id_veiculo]);
+            ->andFilterWhere(['like','veiculo.placa_atual', $this->veiculo]);
 
         //$this->data_abastecimento = date('d-m-Y', strtotime($this->data_abastecimento));
         return $dataProvider;

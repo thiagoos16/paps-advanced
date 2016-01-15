@@ -20,7 +20,8 @@ class TipoCombustivelSearch extends TipoCombustivel
     {
         return [
 
-            [['nome', 'preco_litro'], 'safe'],
+            [['nome'], 'safe'],
+            [['preco_litro'], 'number'],
         ];
     }
 
@@ -59,8 +60,10 @@ class TipoCombustivelSearch extends TipoCombustivel
         $query->andFilterWhere([
             'id' => $this->id,
             'nome' => $this->nome,
-            'preco_litro' => $this->preco_litro,
+            //'preco_litro' => $this->preco_litro,
         ]);
+
+        $query->andFilterWhere(['like', 'preco_litro', $this->preco_litro]);
 
         return $dataProvider;
     }

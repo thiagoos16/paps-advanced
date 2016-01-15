@@ -84,9 +84,10 @@ class SignupForm extends Model
             'email' => 'Email',
             'password' => 'Senha',
             'confirma_senha' => 'Confirmar a Senha',
-            'nome_usuario' => 'Username',
+            'nome_usuario' => 'Nome de Usuário',
             'observacao' => 'Observação',
             'id_departamento' => 'Departamento',
+            'username' => 'Nome de Usuário',
         ];
     }
 

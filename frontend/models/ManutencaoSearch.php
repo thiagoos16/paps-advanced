@@ -46,7 +46,8 @@ class ManutencaoSearch extends Manutencao
     public function search($params)
     {
         $query = Manutencao::find();
-        $query->joinWith(['idVeiculo']);
+
+        $query->joinWith('idVeiculo');
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -63,7 +64,7 @@ class ManutencaoSearch extends Manutencao
 
         $this->load($params);
 
-        if (!$this->validate()) {
+        if (!($this->load($params) && $this->validate())) {
             // uncomment the following line if you do not want to return any records when validation fails
             // $query->where('0=1');
             return $dataProvider;

@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     </div><!-- /.login-logo -->
 
     <div class="login-box-body">
-        <p class="login-box-msg">Efetuar Login no Sistema</p>
+        <p class="login-box-msg">Entrar no Sistema</p>
         <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
 
             <div class="form-group has-feedback">

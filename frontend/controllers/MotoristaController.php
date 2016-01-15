@@ -220,7 +220,8 @@ class MotoristaController extends Controller
             $retorno .= "<td>{$reg['nome']}</td>";
             $retorno .= "<td>{$reg['telefone']}</td>";
             $retorno .= "<td>{$reg['cnh']}</td>";
-            $retorno .= "<td>{$reg['data_validade_cnh']}</td>";
+            $validade_cnh = date('d-m-Y', strtotime("{$reg['data_validade_cnh']}"));
+            $retorno .= "<td>$validade_cnh</td>";
             $retorno .= "<td>{$reg['categoria_cnh']}</td>";
             $retorno .= "<tr>";
             $color = !$color;

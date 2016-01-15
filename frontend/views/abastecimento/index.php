@@ -114,7 +114,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         'value' => 'idPosto.nome',
                     ],
                     [
-                        'attribute' => 'id_veiculo',
+                        'attribute' => 'veiculo',
                         'value' => 'idVeiculo.placa_atual'
                     ],
                     [
@@ -129,7 +129,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     //'qty_litro',
                     // 'data_lancamento',
                     // 'id_motorista',
-                    'data_abastecimento',
+                    //'data_abastecimento',
 
                     ['class' => 'yii\grid\ActionColumn',
                         'template' => '{visualizar}  {editar}  {excluir}',

@@ -126,6 +126,9 @@ class Solicitacao extends \yii\db\ActiveRecord
     public  function beforeSave($insert){
         if (parent::beforeSave($insert)){
             $this->data_saida = date('Y-m-d', strtotime($this->data_saida));
+            
+            date_default_timezone_set('America/Manaus');
+            $this->data_lancamento = date('Y-m-d h:i:s');
             return true;
         }
         else {

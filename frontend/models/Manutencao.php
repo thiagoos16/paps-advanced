@@ -40,7 +40,7 @@ class Manutencao extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['servico', 'custo', 'tipo', 'id_veiculo', 'km', 'id_motorista'], 'required'],
+            [['servico', 'custo', 'tipo', 'id_veiculo', 'data_entrada', 'km', 'id_motorista'], 'required'],
             [['id', 'id_veiculo', 'km'], 'integer'],
             [['data_entrada', 'data_saida', 'data_lancamento'], 'safe'],
             [['custo'], 'number'],
@@ -48,6 +48,8 @@ class Manutencao extends \yii\db\ActiveRecord
             [['tipo'], 'string', 'max' => 25],
             [['id_motorista'], 'string', 'max' => 11],
             ['data_saida','compare','compareAttribute'=>'data_entrada','operator'=>'>=',"message"=>'A data de entrada deve ser igual ou anterior à data de saída']
+
+
         ];
     }
 
@@ -67,6 +69,7 @@ class Manutencao extends \yii\db\ActiveRecord
             'id_veiculo' => 'Veículo',
             'km' => 'Quilometragem do Veículo',
             'id_motorista' => 'Motorista',
+            'veiculo' => 'Veículo',
         ];
     }
     /**
@@ -101,10 +104,33 @@ class Manutencao extends \yii\db\ActiveRecord
         Veiculo::updateAll(array('status' => 4), ['renavam' => $this->id_veiculo]);
     }
 
+    public function afterFind()
+    {
+        $this->data_lancamento = date('d-m-Y h:i:s', strtotime($this->data_lancamento));
+
+        if ($this->data_saida!=null) {
+            $this->data_saida = date('d-m-Y', strtotime($this->data_saida));
+        }
+
+        if ($this->data_entrada!=null) {
+            $this->data_entrada = date('d-m-Y', strtotime($this->data_entrada));
+        }
+        
+    }
+
     public  function beforeSave($insert){
         if (parent::beforeSave($insert)){
-            $this->data_saida = date('Y-m-d', strtotime($this->data_saida));
-            $this->data_entrada = date('Y-m-d', strtotime($this->data_entrada));
+
+            if ($this->data_saida!=null) {
+                $this->data_saida = date('Y-m-d', strtotime($this->data_saida));
+            }
+
+            if ($this->data_entrada!=null) {
+                $this->data_entrada = date('Y-m-d', strtotime($this->data_entrada));
+            }
+
+            date_default_timezone_set('America/Manaus');
+            $this->data_lancamento = date('Y-m-d h:i:s');
             return true;
         }
         else {
