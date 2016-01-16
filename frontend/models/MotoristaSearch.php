@@ -15,6 +15,8 @@ class MotoristaSearch extends Motorista
     /**
      * @inheritdoc
      */
+    public $tipo;
+
     public function rules()
     {
         return [

@@ -24,6 +24,10 @@ class Motorista extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
+
+    public $id_tipo_bkp;
+    public $id_status_bkp;
+
     public static function tableName()
     {
         return 'motorista';
@@ -117,6 +121,9 @@ class Motorista extends \yii\db\ActiveRecord
 
     public function afterFind()
     {
+        $this->id_tipo_bkp = $this->tipo;
+        $this->id_status_bkp= $this->status;
+
         if(strcmp($this->tipo,"S") == 0){
             $this->tipo = "Servidor";
         }
@@ -134,8 +141,8 @@ class Motorista extends \yii\db\ActiveRecord
             $this->status = "Não Disponível";
         }
 
-        $this->categoria_cnh = "Categoria ".$this->categoria_cnh;
-        $this->data_validade_cnh = date('d-m-Y', strtotime($this->data_validade_cnh));
+        //$this->categoria_cnh = "Categoria ".$this->categoria_cnh;
+        //$this->data_validade_cnh = date('d-m-Y', strtotime($this->data_validade_cnh));
     }
 
     public  function beforeSave($insert){
