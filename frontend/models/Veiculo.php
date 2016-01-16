@@ -191,8 +191,10 @@ class Veiculo extends \yii\db\ActiveRecord
             $hoje = date("Y-m-d");
 
             //exibe veículo alocado quando uma solicitacao aceita possui data de saida igual a data do sistema
-            if ($hoje==$data_saida && $status_solicitacao=='Aceita') {
+            if ($hoje == $data_saida && $status_solicitacao=='Aceita') {
                 $this->status='3';
+            }else if ($hoje > $data_saida && $status_solicitacao=='Aceita') {
+                $this->status='2';
             }
 
         endforeach;

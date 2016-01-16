@@ -57,7 +57,7 @@ use frontend\models\Usuario;
             <li class="header">MENU PRINCIPAL</li>
 
               <li>
-                  <a href="index.php?r=solicitacao/index">
+                  <a href="index.php?r=solicitacao/index&sort=-id">
                       <i class="fa fa-comment"></i> <span>Solicitações</span>
                   </a>
               </li>
