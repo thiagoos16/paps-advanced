@@ -35,7 +35,7 @@ class LoginForm extends Model
         return [
             'username' => 'Nome de Usuário',
             'password' => 'Senha',
-            'rememberMe' => 'Guardar Senha'
+            'rememberMe' => 'Salvar sua senha para este site'
         ];
     }
     /**
@@ -50,7 +50,7 @@ class LoginForm extends Model
         if (!$this->hasErrors()) {
             $user = $this->getUser();
             if (!$user || !$user->validatePassword($this->password)) {
-                $this->addError($attribute, 'Incorrect username or password.');
+                $this->addError($attribute, 'Nome de usuário ou senha incorretos.');
             }
         }
     }
