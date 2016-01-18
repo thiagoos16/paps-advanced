@@ -48,8 +48,6 @@ class Manutencao extends \yii\db\ActiveRecord
             [['tipo'], 'string', 'max' => 25],
             [['id_motorista'], 'string', 'max' => 11],
             ['data_saida','compare','compareAttribute'=>'data_entrada','operator'=>'>=',"message"=>'A data de entrada deve ser igual ou anterior à data de saída']
-
-
         ];
     }
 
@@ -103,6 +101,15 @@ class Manutencao extends \yii\db\ActiveRecord
     {
         $this->id_veiculo = Veiculo::findOne($this->id_veiculo)->placa_atual;
         $this->id_motorista = Motorista::findOne($this->id_motorista)->nome;
+        if ($this->data_saida!=null) {
+            $this->data_saida = date('d-m-Y', strtotime($this->data_saida));
+        }
+
+        if ($this->data_entrada!=null) {
+            $this->data_entrada = date('d-m-Y', strtotime($this->data_entrada));
+        }
+
+        $this->data_lancamento = date('d-m-Y h:i:s', strtotime($this->data_lancamento));
 
     }
 
