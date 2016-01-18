@@ -99,6 +99,13 @@ class Manutencao extends \yii\db\ActiveRecord
         return ['prompt'=>'Selecione uma opção'];
     }
 
+    public function afterFind()
+    {
+        $this->id_veiculo = Veiculo::findOne($this->id_veiculo)->placa_atual;
+        $this->id_motorista = Motorista::findOne($this->id_motorista)->nome;
+
+    }
+
     public function afterSave($insert)
     {
 

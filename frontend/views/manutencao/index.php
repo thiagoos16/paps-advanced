@@ -101,24 +101,25 @@ $this->params['breadcrumbs'][] = $this->title;
 
                     'servico',
                     'custo',
-                    [
-                       /* 'attribute'=>'data_saida',
+                   /* [
+                        'attribute'=>'data_saida',
                         'format' => ['date', 'dd-MM-yyyy'],
                         'value' => function($model,$index,$widget) {
                             return Yii::$app->formatter->asDate($model->data_saida);
-                        },*/
+                        },
                         'attribute'=>'data_saida',
                         'value' => 'data_saida',
                         //'format' => 'raw',
-                        /*'filter' => DatePicker::widget([
+                        'filter' => DatePicker::widget([
                             'model' => $searchModel,
                             'attribute' => 'data_saida',
                             'clientOptions' => [
                                 'autoclose' => true,
                                 'format' => 'dd-mm-yyyy',
                             ]
-                        ])*/
+                        ])
                     ],
+                */
                     // 'tipo',
                     // 'data_lancamento',
 
