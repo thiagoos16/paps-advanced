@@ -212,7 +212,7 @@ class ManutencaoController extends Controller
              <th>Custo R$</th>
              <th>Data de Saída</th>
              <th>Veículo</th>
-             <th>Veículo</th>
+             <th>Placa</th>
              <th>Motorista</th>
            </tr>";
 

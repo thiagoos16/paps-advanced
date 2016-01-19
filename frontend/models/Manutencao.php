@@ -47,10 +47,18 @@ class Manutencao extends \yii\db\ActiveRecord
             [['servico'], 'string', 'max' => 45],
             [['tipo'], 'string', 'max' => 25],
             [['id_motorista'], 'string', 'max' => 11],
-            ['data_saida','compare','compareAttribute'=>'data_entrada','operator'=>'<=',"message"=>'A data de entrada deve ser igual ou anterior à data de saída']
+           // ['data_saida','compare','compareAttribute'=>'data_entrada','operator'=>'<=',"message"=>'A data de entrada deve ser igual ou anterior à data de saída']
+            [['data_entrada','data_saida'], 'date', 'format' => 'php:d-m-Y'],
+            ['data_entrada','validateDates']
         ];
     }
 
+    public function validateDates(){
+        if(strtotime($this->data_saida) <= strtotime($this->data_entrada)){
+            $this->addError('data_entrada','A data de Entrada deve ser anterior à Data de Saída');
+            $this->addError('data_saida','A data de Saída deve ser posterior à Data de Entrada');
+        }
+    }
     /**
      * @inheritdoc
      */

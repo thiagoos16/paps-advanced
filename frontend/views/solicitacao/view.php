@@ -26,16 +26,15 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p align="right">
-        <?= Html::a('Editar', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Deletar', ['delete', 'id' => $model->id], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => 'Tem certeza de que deseja excluir este item?',
-                'method' => 'post',
-            ],
-        ]) ?>
-    </p>
+    <?php
+        $departamento = Usuario::findOne(Yii::$app->getUser()->id)->id_departamento;
+        if($departamento == 1){
+           echo "<p align='right'>";
+               echo Html::a('Editar', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']);
+               echo Html::a('Deletar', ['delete', 'id' => $model->id], ['class' => 'btn btn-danger','data' => ['confirm' => 'Tem certeza de que deseja excluir este item?','method' => 'post'],]);
+            echo "</p>";
+        }
+    ?>
 
     <div class="box box-primary">
         <div class="box-header with-border">
@@ -63,6 +62,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ]) ?>
 
     <?php
+
     $departamento = Usuario::findOne(Yii::$app->getUser()->id)->id_departamento;
     $status = $model->status;
     if($departamento == 1 && $status == 'Em análise') {

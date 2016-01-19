@@ -9,6 +9,8 @@ use frontend\models\SolicitacaoSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
+use frontend\models\Usuario;
 
 /**
  * SolicitacaoController implements the CRUD actions for Solicitacao model.
@@ -18,6 +20,30 @@ class SolicitacaoController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['create','index','update','view','delete'],
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'actions' => ['create','index','update','view'],
+                        'matchCallback' => function($rule,$action) {
+                            if (!Yii::$app->user->isGuest) {
+                                return Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1";
+                            }
+                        }
+                    ],
+                    [
+                        'allow' => true,
+                        'actions' => ['index','view'],
+                        'matchCallback' => function($rule,$action) {
+                            if (!Yii::$app->user->isGuest) {
+                                return Usuario::findOne(Yii::$app->getUser()->id)->id_departamento != "1";
+                            }
+                        }
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
