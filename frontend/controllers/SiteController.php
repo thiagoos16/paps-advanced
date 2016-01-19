@@ -346,7 +346,7 @@ INNER join tipo_combustivel on veiculo.id_tipo_combustivel = tipo_combustivel.id
         $model = $connection->createCommand($sql2);
         $gastos_lista = $model->queryAll();
 
-        $retorno .= "<hr><table class='cabecalho'>
+        $retorno .= "<table class='cabecalho'>
            <tr>
              <td><img src='./../web/css/ufam.png' width='70px' height='70px'></td>
              <td>
@@ -354,7 +354,8 @@ INNER join tipo_combustivel on veiculo.id_tipo_combustivel = tipo_combustivel.id
                 <b>UNIVERSIDADE FEDERAL DO AMAZONAS</b></p><br>
 			    <p>
 			        PREFEITURA DO CAMPUS UNIVERSITÁRIO<br>
-			        COORDENAÇÃO DE TRANSPORTE
+			        COORDENAÇÃO DE TRANSPORTE <br>
+			        MAPA DE CONTROLE ANUAL DE VEÍCULOS
 			    </p>
              </td>
              <td><b>
@@ -362,8 +363,8 @@ INNER join tipo_combustivel on veiculo.id_tipo_combustivel = tipo_combustivel.id
              <p>Hora:   $hora</p>
              </b></td>
            </tr>";
-        $retorno .= "</table><hr>";
-        $retorno .= "<h2 align='center'>$relatorio</h2>";
+        $retorno .= "</table><br>";
+        //$retorno .= "<h4 align='center'>$relatorio</h2>";
         $retorno .= "<table class='tableDados'>
     <tr class='zebra'>
         <td colspan='3'>SERVIÇO PÚBLICO FEDERAL</td>
