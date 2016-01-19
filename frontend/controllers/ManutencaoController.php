@@ -235,6 +235,7 @@ class ManutencaoController extends Controller
             $retorno .= "<td>{$reg['custo']}</td>";
 
             //DATA DE SAIDA
+            $reg['data_saida'] = date("d-m-Y", strtotime($reg['data_saida']));
             $retorno .= "<td>{$reg['data_saida']}</td>";
 
 
