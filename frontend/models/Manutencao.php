@@ -43,7 +43,7 @@ class Manutencao extends \yii\db\ActiveRecord
             [['servico', 'custo', 'tipo', 'id_veiculo', 'data_entrada', 'km', 'id_motorista'], 'required'],
             [['id', 'id_veiculo', 'km'], 'integer'],
             [['data_entrada', 'data_saida', 'data_lancamento'], 'safe'],
-            [['custo'], 'number'],
+            //[['custo'], 'number'],
             [['servico'], 'string', 'max' => 45],
             [['tipo'], 'string', 'max' => 25],
             [['id_motorista'], 'string', 'max' => 11],
@@ -130,7 +130,7 @@ class Manutencao extends \yii\db\ActiveRecord
             if ($this->data_entrada!=null) {
                 $this->data_entrada = date('Y-m-d', strtotime($this->data_entrada));
             }
-
+            $this->custo=str_replace(",",".",$this->custo);
             date_default_timezone_set('America/Manaus');
             $this->data_lancamento = date('Y-m-d h:i:s');
             return true;

@@ -55,7 +55,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
                     [
                         'attribute' => 'data_saida',
-                        'value' => date('d-m-Y', strtotime($model->data_saida))
+                        $model->data_saida==null? $data="" : $data=date('d-m-Y', strtotime($model->data_saida)),
+                        'value' => $data
                     ],
 
                     'tipo',
