@@ -19,12 +19,23 @@ use yii\widgets\MaskedInput;
     <div class="box box-primary">
         <div class="box-header with-border">
 
-            <?php $form = ActiveForm::begin(); ?>
+            <?php $form = ActiveForm::begin();
+            $data_saida = $model->data_saida;
+            $data_saida = date("Y-m-d", strtotime($data_saida));
+            ?>
 
 
             <?= $form->field($model, 'id_motorista')->dropDownList(ArrayHelper::map(Motorista::find()->all(), 'cnh', 'nome'), $model->getPrompt()) ?>
 
-            <?= $form->field($model, 'id_veiculo')->dropDownList(ArrayHelper::map(Veiculo::find()->all(), 'renavam', 'placa_atual'), $model->getPrompt()) ?>
+            <?= $form->field($model, 'id_veiculo')->dropDownList(ArrayHelper::map(Veiculo::findBySql(
+                "SELECT veiculo.renavam, veiculo.placa_atual
+                FROM veiculo WHERE veiculo.renavam !=(
+                SELECT veiculo.renavam
+                FROM veiculo INNER JOIN solicitacao
+                WHERE veiculo.renavam = solicitacao.id_veiculo
+                AND solicitacao.data_saida = '$data_saida')
+                ")->all(), 'renavam', 'placa_atual'), $model->getPrompt())
+            ?>
 
             <?= $form->field($model, 'seguro')->textInput(['maxlength' => true]) ?>
 
