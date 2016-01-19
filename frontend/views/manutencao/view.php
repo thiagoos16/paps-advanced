@@ -72,7 +72,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     [
                         'attribute'=>'id_motorista',
                         'value'=> Motorista::findOne($model->id_motorista)->nome
-                        ]
+                    ]
                 ],
             ]) ?>
         </div>
