@@ -1,5 +1,7 @@
 <?php
 
+use frontend\models\Motorista;
+use frontend\models\Veiculo;
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 
@@ -62,9 +64,15 @@ $this->params['breadcrumbs'][] = $this->title;
                         'value' => date('d-m-Y h:i:s', strtotime($model->data_lancamento))
                     ],
 
-                    'id_veiculo',
+                    [
+                        'attribute' => 'id_veiculo',
+                        'value' => Veiculo::findOne($model->id_veiculo)->placa_atual
+                    ],
                     'km',
-                    'id_motorista',
+                    [
+                        'attribute'=>'id_motorista',
+                        'value'=> Motorista::findOne($model->id_motorista)->nome
+                        ]
                 ],
             ]) ?>
         </div>

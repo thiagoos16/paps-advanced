@@ -84,7 +84,8 @@ use frontend\models\Usuario;
                       <li>
                           <?php
                           if (Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1")
-                              echo Html::a("Manutenções",['manutencao/index']);
+                              echo "<a href='index.php?r=manutencao/index&sort=-id'>Manutenções</a>";
+                              //echo Html::a("Manutenções",['manutencao/index']);
 
                           ?>
                       </li>
