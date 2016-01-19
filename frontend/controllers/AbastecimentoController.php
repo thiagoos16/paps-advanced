@@ -130,11 +130,8 @@ class AbastecimentoController extends Controller
         return $this->redirect(['index']);
     }
 
-    public function actionCalculo($id, $valor_abastecido){
-        //$this->id_combustivel = TipoCombustivel::findOne($this->id_combustivel)->nome;
-        echo $valor_abastecido /TipoCombustivel::findOne($id)->preco_litro;
-        //echo "Valor: $valor_abastecido ID: .$id";
-
+    public function actionCalculo($id, $quantidade_litros){
+        echo $quantidade_litros * TipoCombustivel::findOne($id)->preco_litro;
     }
 
 

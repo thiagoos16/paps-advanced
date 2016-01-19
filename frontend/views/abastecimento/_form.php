@@ -35,19 +35,25 @@ use yii\widgets\ActiveForm;
 
                 ]) ?>
 
-            <?= $form->field($model, 'valor_abastecido')->textInput([
-                'onkeyup' =>'
-                    var id_combustivel = document.getElementById("abastecimento-id_combustivel").value;
-
-                    $.get("index.php?r=abastecimento/calculo&valor_abastecido='.'" + $(this).val()+"&id="+id_combustivel, function(data){
-                        //console.log("res: "+data);
-                        document.getElementById("abastecimento-qty_litro").value = data;
-
-                    });',
-            ])->hint('Insira um número inteiro.')
+            <?= $form->field($model, 'valor_abastecido')->textInput(
+                [
+                    'readonly' => 'true',
+                ]
+            )
             ?>
 
-            <?= $form->field($model, 'qty_litro')->textInput(['readonly' => 'true']) ?>
+            <?= $form->field($model, 'qty_litro')->textInput(
+                [
+                    'onkeyup' =>'
+                    var id_combustivel = document.getElementById("abastecimento-id_combustivel").value;
+                    //console.log("res: "+$(this).val());
+                    $.get("index.php?r=abastecimento/calculo&quantidade_litros='.'" + $(this).val()+"&id="+id_combustivel, function(data){
+                        //console.log("res: "+data);
+                        document.getElementById("abastecimento-valor_abastecido").value = data;
+
+                    });'
+
+                ]) ?>
 
             <?= $form->field($model, 'id_veiculo')->dropDownList(ArrayHelper::map(Veiculo::find()->all(), 'renavam', 'placa_atual'), ['prompt'=>'Selecione uma opção']) ?>
 

@@ -35,7 +35,6 @@ use yii\widgets\ActiveForm;
                 ]);?>
 
             <?= $form->field($model, 'preco_litro')->textInput()
-                ->hint('Insira um número inteiro.')
             ?>
 
             <div class="form-group">

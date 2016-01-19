@@ -87,4 +87,9 @@ class TipoCombustivel extends \yii\db\ActiveRecord
         }
     }
 
+    public function afterSave($insert)
+    {
+
+    }
+
 }

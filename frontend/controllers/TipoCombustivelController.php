@@ -101,6 +101,12 @@ class TipoCombustivelController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+
+            $connection = \Yii::$app->db;
+            $sql = "UPDATE abastecimento set valor_abastecido = qty_litro * $model->preco_litro WHERE abastecimento.id_combustivel=$model->id";
+            $connection->createCommand($sql)->execute();
+            //echo "<script>alert('oi');</script>";
+
             Yii::$app->session->setFlash('success', 'Tipo de Combustível alterado com sucesso.');
             return $this->redirect(['view', 'id' => $model->id]);
         } else {

@@ -108,7 +108,6 @@ class Manutencao extends \yii\db\ActiveRecord
 
     public function afterSave($insert)
     {
-
         Veiculo::updateAll(array('status' => 4), ['renavam' => $this->id_veiculo]);
         $this->data_lancamento = date('d-m-Y h:i:s', strtotime($this->data_lancamento));
 
