@@ -512,152 +512,173 @@ HAVING ano = 2016 AND manutencao.tipo = 'Reparos' AND manutencao.id_veiculo = ".
     $i++;
     endforeach;
 
-    $total = $lista[0]['qtd_combustivel_mes']+$lista_manutencao[0]['custo_mes']+$lista_manutencao_reparos[0]['custo_mes'];
-    $km_rodado_jan = $lista[0]['km_mes'];
-    $manutencao_reparos = round($lista_manutencao_reparos[0]['custo_mes'],2);
-    try {
-        $km_litro_jan = round($lista[0]['km_mes'] / $lista[0]['litro_mes'],2);
-        $km_litro_fev = round($lista[1]['km_mes'] / $lista[1]['litro_mes'],2);
-        $media_por_km_rodado_jan = $total /$km_rodado_jan;
+    $km_rodado_jan = round($lista[0]['km_mes'],2);
 
-    }catch(ErrorException $e){
-        $km_litro_jan = 0.0;
-        $media_por_km_rodado_jan = 0.0;
+    $km_litro = [];
+    $km_rodado = [];
+    $combustivel_litro = [];
+    $combustivel = [];
+    $manutencao = [];
+    $reparos = [];
+    $total = [];
+    $media_por_km_rodado = [];
+    for($i=0;$i<12;$i++) {
+        try {
+            $km_rodado[$i]           = str_replace('.', ',',round($lista[$i]['km_mes'],2));
+            $km_litro[$i]            = str_replace('.', ',',round($lista[$i]['km_mes'] / $lista[$i]['litro_mes'], 2));
+            $combustivel_litro[$i]   = str_replace('.', ',',round($lista[$i]['litro_mes'],2));
+            $combustivel[$i]         = str_replace('.', ',',round($lista[$i]['qtd_combustivel_mes'],2));
+            $manutencao[$i]          = str_replace('.', ',',round($lista_manutencao[$i]['custo_mes'])/1);
+            $reparos[$i]             = str_replace('.', ',',round($lista_manutencao_reparos[$i]['custo_mes'],2));
+            $total[$i]               = str_replace('.', ',',round($lista[$i]['qtd_combustivel_mes']+$lista_manutencao[$i]['custo_mes']+$lista_manutencao_reparos[$i]['custo_mes'],2));
+            //$km_litro[1] = round($lista[1]['km_mes'] / $lista[1]['litro_mes'], 2);
+            $media_por_km_rodado[$i] = str_replace('.', ',',round($total[$i] / $km_rodado[$i],2));
+
+        } catch (ErrorException $e) {
+            $km_rodado[$i] = 0.0;
+            $km_litro[$i] = 0.0;
+            $combustivel_litro[$i] = 0.0;
+            $combustivel[$i] = 0.0;
+            $manutencao[$i] = 0.0;
+            $reparos[$i] = 0.0;
+            $total[$i] = 0.0;
+            $media_por_km_rodado[$i] = 0.0;
+
+        }
     }
 
     $retorno .= "<tr>
         <td>JAN</td>
-        <td>".round($km_rodado_jan,2)."</td>
-        <td>".round($lista[0]['litro_mes'],2)."</td>
-        <td>".$km_litro_jan."</td>
-        <td>".round($lista[0]['qtd_combustivel_mes'],2)."</td>
-        <td>".$lista_manutencao[0]['custo_mes']."</td>
-        <td>".$manutencao_reparos."</td>
-        <td>".round($total,2)."</td>
-        <td>".round($media_por_km_rodado_jan,2)."</td>
+        <td>".$km_rodado[0]."</td>
+        <td> $combustivel_litro[0]</td>
+        <td>".$km_litro[0]."</td>
+        <td> $combustivel[0] </td>
+        <td> $manutencao[0]</td>
+        <td> $reparos[0]</td>
+        <td> $total[0]</td>
+        <td> $media_por_km_rodado[0]</td>
     </tr>
     <tr class='zebra'>
         <td>FEV</td>
-        <td>". $lista[1]['km_mes']."</td>
-        <td>". round($lista[1]['litro_mes'],2)."</td>
-        <td>".$km_litro_fev."</td>
-        <td>".round($lista[1]['qtd_combustivel_mes'],2)."</td>
-        <td>".$lista_manutencao[1]['custo_mes']."</td>
-        <td>".$lista_manutencao_reparos[1]['custo_mes']."</td>
-        <td>-</td>
-        <td>-</td>
+        <td>". $km_rodado[1]."</td>
+        <td> $combustivel_litro[1]</td>
+        <td>".$km_litro[1]."</td>
+        <td> $combustivel[1] </td>
+        <td> $manutencao[1]</td>
+        <td> $reparos[1]</td>
+        <td> $total[1]</td>
+        <td> $media_por_km_rodado[1]</td>
     </tr>
     <tr>
         <td>MAR</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
+        <td>$km_rodado[2]</td>
+        <td> $combustivel_litro[2]</td>
+        <td>".$km_litro[2]."</td>
+        <td> $combustivel[2] </td>
+        <td> $manutencao[2]</td>
+        <td> $reparos[2]</td>
+        <td> $total[2]</td>
+        <td> $media_por_km_rodado[2]</td>
     </tr>
     <tr class='zebra'>
         <td>ABR</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
+        <td>$km_rodado[3]</td>
+        <td> $combustivel_litro[3]</td>
+        <td>".$km_litro[3]."</td>
+        <td> $combustivel[3] </td>
+        <td> $manutencao[3]</td>
+        <td> $reparos[3]</td>
+        <td> $total[3]</td>
+        <td> $media_por_km_rodado[3]</td>
     </tr>
     <tr>
         <td>MAI</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
+        <td>$km_rodado[4]</td>
+        <td> $combustivel_litro[4]</td>
+        <td>".$km_litro[4]."</td>
+        <td> $combustivel[4] </td>
+        <td> $manutencao[4]</td>
+        <td> $reparos[4]</td>
+        <td> $total[4]</td>
+        <td> $media_por_km_rodado[4]</td>
     </tr>
     <tr class='zebra'>
         <td>JUN</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
+        <td>$km_rodado[5]</td>
+        <td> $combustivel_litro[5]</td>
+        <td>".$km_litro[5]."</td>
+        <td> $combustivel[5] </td>
+        <td> $manutencao[5]</td>
+        <td> $reparos[5]</td>
+        <td> $total[5]</td>
+        <td> $media_por_km_rodado[5]</td>
     </tr>
     <tr>
         <td>JUL</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
+        <td>$km_rodado[6]</td>
+        <td> $combustivel_litro[6]</td>
+        <td>".$km_litro[6]."</td>
+        <td> $combustivel[6] </td>
+        <td> $manutencao[6]</td>
+        <td> $reparos[6]</td>
+        <td> $total[6]</td>
+        <td> $media_por_km_rodado[6]</td>
     </tr>
     <tr class='zebra'>
         <td>AGO</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
+        <td>$km_rodado[7]</td>
+        <td> $combustivel_litro[7]</td>
+        <td>".$km_litro[7]."</td>
+        <td> $combustivel[7] </td>
+        <td> $manutencao[7]</td>
+        <td> $reparos[7]</td>
+        <td> $total[7]</td>
+        <td> $media_por_km_rodado[7]</td>
     </tr>
     <tr>
         <td>SET</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
+        <td>$km_rodado[8]</td>
+        <td> $combustivel_litro[8]</td>
+        <td>".$km_litro[8]."</td>
+        <td> $combustivel[8] </td>
+        <td> $manutencao[8]</td>
+        <td> $reparos[8]</td>
+        <td> $total[8]</td>
+        <td> $media_por_km_rodado[8]</td>
     </tr>
     <tr class='zebra'>
         <td>OUT</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
+        <td>$km_rodado[9]</td>
+        <td> $combustivel_litro[9]</td>
+        <td>".$km_litro[9]."</td>
+        <td> $combustivel[9] </td>
+        <td> $manutencao[9]</td>
+        <td> $reparos[9]</td>
+        <td> $total[9]</td>
+        <td> $media_por_km_rodado[9]</td>
     </tr>
     <tr>
         <td>NOV</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
+        <td>$km_rodado[10]</td>
+        <td> $combustivel_litro[10]</td>
+        <td>".$km_litro[10]."</td>
+        <td> $combustivel[10] </td>
+        <td> $manutencao[10]</td>
+        <td> $reparos[10]</td>
+        <td> $total[10]</td>
+        <td> $media_por_km_rodado[10]</td>
     </tr>
     <tr class='zebra'>
         <td>DEZ</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
+        <td>$km_rodado[11]</td>
+        <td> $combustivel_litro[11]</td>
+        <td>".$km_litro[11]."</td>
+        <td> $combustivel[11] </td>
+        <td> $manutencao[11]</td>
+        <td> $reparos[11]</td>
+        <td> $total[11]</td>
+        <td> $media_por_km_rodado[11]</td>
     </tr>";
-
         $retorno .= "</table>";
         return $retorno;
     }
