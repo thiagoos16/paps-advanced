@@ -1,6 +1,8 @@
 <?php
 
 use frontend\models\PostoAbastecimento;
+use frontend\models\TipoCombustivel;
+use frontend\models\Veiculo;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\DetailView;
@@ -45,11 +47,24 @@ $this->params['breadcrumbs'][] = $this->title;
             <?= DetailView::widget([
                 'model' => $model,
                 'attributes' => [
-                    'id_posto',
-                    'id_combustivel',
+
+                    [
+                        'attribute'=> 'id_posto',
+                        'value'=>PostoAbastecimento::findOne($model->id_posto)->nome
+                    ],
+
+                    [
+                        'attribute' => 'id_combustivel',
+                        'value' => TipoCombustivel::findOne($model->id_combustivel)->nome
+                    ],
+
                     'valor_abastecido',
                     'qty_litro',
-                    'id_veiculo',
+
+                    [
+                        'attribute' =>'id_veiculo',
+                        'value' => Veiculo::findOne($model->id_veiculo)->placa_atual
+                    ],
                     'km',
                     'data_lancamento',
                     /*[

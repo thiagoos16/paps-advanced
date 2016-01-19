@@ -93,6 +93,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             'id_combustivel',
                             ArrayHelper::map(TipoCombustivel::find()->asArray()->all(), 'id', 'nome'),
                             ['class'=>'form-control','prompt'=>'Filtrar'  ]),
+                        'value' => 'idCombustivel.nome'
                     ],
 
                     //'qty_litro',

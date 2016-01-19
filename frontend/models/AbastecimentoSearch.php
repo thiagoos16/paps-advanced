@@ -46,6 +46,8 @@ class AbastecimentoSearch extends Abastecimento
 
         $query->joinWith('idPosto');
         $query->joinWith('idVeiculo');
+        $query->joinWith('idCombustivel');
+
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -59,6 +61,11 @@ class AbastecimentoSearch extends Abastecimento
         $dataProvider->sort->attributes['veiculo'] = [
             'asc' => ['veiculo.placa_atual' => SORT_ASC],
             'desc' => ['veiculo.placa_atual' => SORT_DESC],
+        ];
+
+        $dataProvider->sort->attributes['combustivel'] = [
+            'asc' => ['combustivel.nome' => SORT_ASC],
+            'desc' => ['combustivel.nome' => SORT_DESC],
         ];
 
         if (!($this->load($params) && $this->validate())) {

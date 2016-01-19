@@ -97,10 +97,11 @@ class Abastecimento extends \yii\db\ActiveRecord
 
     public function afterFind()
     {
-        $this->id_combustivel = TipoCombustivel::findOne($this->id_combustivel)->nome;
-        $this->id_posto = PostoAbastecimento::findOne($this->id_posto)->nome;
-        $this->id_veiculo = Veiculo::findOne($this->id_veiculo)->placa_atual;
+        //$this->id_combustivel = TipoCombustivel::findOne($this->id_combustivel)->nome;
+        //$this->id_posto = PostoAbastecimento::findOne($this->id_posto)->nome;
+        //$this->id_veiculo = Veiculo::findOne($this->id_veiculo)->placa_atual;
         //date_default_timezone_set('America/Manaus');
+
         $this->data_lancamento = date('d-m-Y h:i:s', strtotime($this->data_lancamento));
         if ($this->data_abastecimento!=null) {
             $this->data_abastecimento = date('d-m-Y', strtotime($this->data_abastecimento));
