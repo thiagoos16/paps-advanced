@@ -38,7 +38,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     </div>
                 </div><!-- /.col -->
                 <div class="col-xs-4">
-                    <?= Html::submitButton('Login', ['class' => 'btn btn-primary btn-block btn-flat', 'name' => 'login-button']) ?>
+                    <?= Html::submitButton('Entrar', ['class' => 'btn btn-primary btn-block btn-flat', 'name' => 'login-button']) ?>
                 </div><!-- /.col -->
             </div>
 

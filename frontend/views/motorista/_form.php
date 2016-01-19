@@ -18,10 +18,7 @@ use yii\widgets\MaskedInput;
 
             <?= $form->field($model, 'nome')->textInput(['maxlength' => true]) ?>
 
-            <?= $form->field($model, 'cnh') -> widget(\yii\widgets\MaskedInput::className(), [
-                'mask' => '99999999999',
-            ])
-            ?>
+            <?= $form->field($model, 'cnh')->textInput(['maxlength' => true]) ?>
 
             <?= $form->field($model, 'data_validade_cnh')->widget(
                 DatePicker::className(), [

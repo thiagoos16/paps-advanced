@@ -47,9 +47,7 @@ class Manutencao extends \yii\db\ActiveRecord
             [['servico'], 'string', 'max' => 45],
             [['tipo'], 'string', 'max' => 25],
             [['id_motorista'], 'string', 'max' => 11],
-            ['data_saida','compare','compareAttribute'=>'data_entrada','operator'=>'>=',"message"=>'A data de entrada deve ser igual ou anterior à data de saída']
-
-
+            ['data_saida','compare','compareAttribute'=>'data_entrada','operator'=>'<=',"message"=>'A data de entrada deve ser igual ou anterior à data de saída']
         ];
     }
 
@@ -97,6 +95,13 @@ class Manutencao extends \yii\db\ActiveRecord
 
     public static function getPrompt(){
         return ['prompt'=>'Selecione uma opção'];
+    }
+
+    public function afterFind()
+    {
+        $this->id_veiculo = Veiculo::findOne($this->id_veiculo)->placa_atual;
+        $this->id_motorista = Motorista::findOne($this->id_motorista)->nome;
+
     }
 
     public function afterSave($insert)
