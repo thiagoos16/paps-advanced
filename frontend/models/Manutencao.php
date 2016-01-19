@@ -105,6 +105,18 @@ class Manutencao extends \yii\db\ActiveRecord
         return ['prompt'=>'Selecione uma opção'];
     }
 
+    public  function afterFind() {
+        if ($this->data_saida!=null) {
+            $this->data_saida = date('d-m-Y', strtotime($this->data_saida));
+        }
+
+        if ($this->data_entrada!=null) {
+            $this->data_entrada = date('d-m-Y', strtotime($this->data_entrada));
+        }
+
+        $this->data_lancamento = date('d-m-Y', strtotime($this->data_lancamento));
+    }
+
     public function afterSave($insert)
     {
         Veiculo::updateAll(array('status' => 4), ['renavam' => $this->id_veiculo]);
