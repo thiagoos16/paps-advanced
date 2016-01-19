@@ -126,7 +126,7 @@ use frontend\models\Usuario;
                       <li>
                           <?php
                           if (Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1")
-                              echo Html::a("Tipos de Combustível",['tipo-combustivel/index']);
+                              echo Html::a("Combustível",['tipo-combustivel/index']);
 
                           ?>
                       </li>

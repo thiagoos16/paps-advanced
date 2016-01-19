@@ -43,7 +43,7 @@ class TipoCombustivelSearch extends TipoCombustivel
      */
     public function search($params)
     {
-        $query = TipoCombustivel::find();
+        $query = TipoCombustivel::findBySql("SELECT * FROM tipo_combustivel WHERE data != '2001-09-11'");
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -60,8 +60,9 @@ class TipoCombustivelSearch extends TipoCombustivel
         $query->andFilterWhere([
             'id' => $this->id,
             'nome' => $this->nome,
-            //'preco_litro' => $this->preco_litro,
+            'preco_litro' => $this->preco_litro,
         ]);
+
 
         $query->andFilterWhere(['like', 'preco_litro', $this->preco_litro]);
 

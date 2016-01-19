@@ -21,7 +21,7 @@ if(Yii::$app->session->hasFlash('error')) {
     echo "</div>";
 }
 
-$this->title = 'Tipo de Combustível';
+$this->title = 'Cotação Mensal do Combustível';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="tipo-combustivel-index">
