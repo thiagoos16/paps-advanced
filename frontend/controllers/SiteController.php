@@ -282,7 +282,6 @@ class SiteController extends Controller
             16,    // margin bottom
             9,     // margin header
             9,     // margin footer
-
             'L');
         $stylesheet = file_get_contents("./../web/css/relatorios.css");
 
@@ -336,7 +335,8 @@ INNER join tipo_combustivel on veiculo.id_tipo_combustivel = tipo_combustivel.id
 
                   MAX(abastecimento.km) - MIN(abastecimento.km) as km_mes,
                     SUM(abastecimento.qty_litro) as litro_mes,
-                    abastecimento.id_veiculo
+                    abastecimento.id_veiculo,
+                    SUM(abastecimento.valor_abastecido) as qtd_combustivel_mes
                     from abastecimento
 
                     GROUP BY abastecimento.id_veiculo, mes
@@ -458,6 +458,54 @@ INNER join tipo_combustivel on veiculo.id_tipo_combustivel = tipo_combustivel.id
         <td>MANUTENÇÃO/CONSERVAÇÃO</td>
         <td>REPAROS</td>
     </tr>";
+
+    $connection = \Yii::$app->db;
+    $model = $connection->createCommand("SELECT
+manutencao.data_entrada,
+Month(manutencao.data_entrada) as mes,
+YEAR(manutencao.data_entrada) as ano,
+
+MAX(manutencao.km) - MIN(manutencao.km) as km_mes,
+SUM(manutencao.custo) as custo_mes,
+manutencao.id_veiculo,
+manutencao.tipo
+from manutencao
+GROUP BY manutencao.id_veiculo, mes
+HAVING ano = 2016 AND manutencao.tipo != 'Reparos' AND manutencao.id_veiculo = ".$veiculo['renavam']);
+    $manutencao_lista = $model->queryAll();
+
+    $i=0;
+    $lista_manutencao=[];
+
+    foreach ($manutencao_lista as $manutencao):
+        $lista_manutencao[$i]["custo_mes"] = $manutencao['custo_mes'];
+        $i++;
+    endforeach;
+
+
+        $connection = \Yii::$app->db;
+        $model = $connection->createCommand("SELECT
+manutencao.data_entrada,
+Month(manutencao.data_entrada) as mes,
+YEAR(manutencao.data_entrada) as ano,
+
+MAX(manutencao.km) - MIN(manutencao.km) as km_mes,
+SUM(manutencao.custo) as custo_mes,
+manutencao.id_veiculo,
+manutencao.tipo
+from manutencao
+GROUP BY manutencao.id_veiculo, mes
+HAVING ano = 2016 AND manutencao.tipo = 'Reparos' AND manutencao.id_veiculo = ".$veiculo['renavam']);
+        $manutencao_lista_reparos = $model->queryAll();
+
+        $i=0;
+        $lista_manutencao_reparos=[];
+
+        foreach ($manutencao_lista_reparos as $manutencao_reparos):
+            $lista_manutencao_reparos[$i]["custo_mes"] = $manutencao_reparos['custo_mes'];
+            $i++;
+        endforeach;
+
     $i=0;
     $lista=[];
     $km_litro = 0;
@@ -465,35 +513,42 @@ INNER join tipo_combustivel on veiculo.id_tipo_combustivel = tipo_combustivel.id
         $lista[$i]["mes"] = $gasto['mes'];
         $lista[$i]["km_mes"] = $gasto['km_mes'];
         $lista[$i]["litro_mes"] = $gasto['litro_mes'];
+        $lista[$i]["qtd_combustivel_mes"] = $gasto['qtd_combustivel_mes'];
     $i++;
     endforeach;
 
+    $total = $lista[0]['qtd_combustivel_mes']+$lista_manutencao[0]['custo_mes']+$lista_manutencao_reparos[0]['custo_mes'];
+    $km_rodado_jan = $lista[0]['km_mes'];
+    $manutencao_reparos = round($lista_manutencao_reparos[0]['custo_mes'],2);
     try {
         $km_litro_jan = round($lista[0]['km_mes'] / $lista[0]['litro_mes'],2);
         $km_litro_fev = round($lista[1]['km_mes'] / $lista[1]['litro_mes'],2);
+        $media_por_km_rodado_jan = $total /$km_rodado_jan;
+
     }catch(ErrorException $e){
         $km_litro_jan = 0.0;
+        $media_por_km_rodado_jan = 0.0;
     }
 
     $retorno .= "<tr>
         <td>JAN</td>
-        <td>".$lista[0]['km_mes']."</td>
+        <td>".round($km_rodado_jan,2)."</td>
         <td>".round($lista[0]['litro_mes'],2)."</td>
         <td>".$km_litro_jan."</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
+        <td>".round($lista[0]['qtd_combustivel_mes'],2)."</td>
+        <td>".$lista_manutencao[0]['custo_mes']."</td>
+        <td>".$manutencao_reparos."</td>
+        <td>".round($total,2)."</td>
+        <td>".round($media_por_km_rodado_jan,2)."</td>
     </tr>
     <tr class='zebra'>
         <td>FEV</td>
         <td>". $lista[1]['km_mes']."</td>
         <td>". round($lista[1]['litro_mes'],2)."</td>
         <td>".$km_litro_fev."</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
+        <td>".round($lista[1]['qtd_combustivel_mes'],2)."</td>
+        <td>".$lista_manutencao[1]['custo_mes']."</td>
+        <td>".$lista_manutencao_reparos[1]['custo_mes']."</td>
         <td>-</td>
         <td>-</td>
     </tr>
