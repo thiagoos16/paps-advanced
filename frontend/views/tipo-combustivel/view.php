@@ -44,6 +44,11 @@ $this->params['breadcrumbs'][] = $this->title;
                    // 'id',
                     'nome',
                     'preco_litro',
+                    [
+                        'attribute'=>'data',
+                        'value' => date('d-m-Y', strtotime($model->data))
+                    ]
+
                 ],
             ]) ?>
         </div>

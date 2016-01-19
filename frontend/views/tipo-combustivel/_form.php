@@ -1,5 +1,6 @@
 <?php
 
+use dosamigos\datepicker\DatePicker;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -13,9 +14,25 @@ use yii\widgets\ActiveForm;
     <div class="box box-primary">
         <div class="box-header with-border">
 
-            <?php $form = ActiveForm::begin(); ?>
+            <?php
+                $form = ActiveForm::begin();
+                $model->data = date('d-m-Y', strtotime($model->data));
+            ?>
 
-            <?= $form->field($model, 'nome')->textInput() ?>
+            <?= $form->errorSummary($model) ?>
+
+            <?= $form->field($model, 'nome')->textInput()->hint('Insira o nome do combustivel acompanhado do nome do mês') ?>
+
+            <?= $form->field($model, 'data')->widget(
+                DatePicker::className(), [
+                    // inline too, not bad
+                    'inline' => false,
+                    'language' => 'pt',
+                    'clientOptions' => [
+                        'autoclose' => true,
+                        'format' => 'dd-mm-yyyy'
+                    ]
+                ]);?>
 
             <?= $form->field($model, 'preco_litro')->textInput()
                 ->hint('Insira um número inteiro.')

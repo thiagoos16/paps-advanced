@@ -10,6 +10,7 @@ use Yii;
  * @property integer $id
  * @property integer $nome
  * @property integer $preco_litro
+ * @property integer $data
  *
  * @property Veiculo[] $veiculos
  */
@@ -29,9 +30,10 @@ class TipoCombustivel extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['data'], 'safe'],
             [['preco_litro'], 'number'],
             [['nome'], 'unique', "message"=>"Combustível existente no sistema"],
-            [['nome', 'preco_litro'], 'required', "message"=>"Este campo é obrigatório"],
+            [['nome', 'data', 'preco_litro'], 'required', "message"=>"Este campo é obrigatório"],
             [['nome'], 'string', 'max' => 50]
         ];
     }
@@ -71,4 +73,18 @@ class TipoCombustivel extends \yii\db\ActiveRecord
             return true;
         }
     }
+
+    public  function beforeSave($insert){
+        if (parent::beforeSave($insert)){
+
+            if ($this->data!=null) {
+                $this->data = date('Y-m-d', strtotime($this->data));
+            }
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
 }
