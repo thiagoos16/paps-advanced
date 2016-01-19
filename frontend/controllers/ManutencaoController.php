@@ -149,6 +149,12 @@ class ManutencaoController extends Controller
     }
 
     public function actionPdf($data_inicio, $data_fim) {
+
+        $data_inicio = str_replace("'","",$data_inicio);
+        $data_fim = str_replace("'","",$data_fim);
+        $data_inicio = date("Y-m-d", strtotime($data_inicio));
+        $data_fim = date("Y-m-d", strtotime($data_fim));
+
         $mpdf = new mPDF('',    // mode - default ''
             '',    // format - A4, for example, default ''
             0,     // font size - default 0
@@ -173,6 +179,7 @@ class ManutencaoController extends Controller
 
     //------------------------------------GErando PDF ----------------------
     private function getTabela($data_inicio, $data_fim){
+
         $color  = false;
         $retorno = "";
         date_default_timezone_set('America/Manaus');
@@ -210,7 +217,7 @@ class ManutencaoController extends Controller
            </tr>";
 
         $connection = \Yii::$app->db;
-        $sql = "SELECT * FROM manutencao WHERE data_entrada BETWEEN $data_inicio AND $data_fim ORDER BY data_entrada ASC";
+        $sql = "SELECT * FROM manutencao WHERE data_entrada BETWEEN '$data_inicio' AND '$data_fim' ORDER BY data_entrada ASC";
         $model = $connection->createCommand($sql);
         $users = $model->queryAll();
 
@@ -218,6 +225,7 @@ class ManutencaoController extends Controller
             $retorno .= ($color) ? "<tr>" : "<tr class=\"zebra\">";
 
             //DATA DE ENTRADA
+            $reg['data_entrada'] = date("d-m-Y", strtotime($reg['data_entrada']));
             $retorno .= "<td>{$reg['data_entrada']}</td>";
 
             //SERVICO

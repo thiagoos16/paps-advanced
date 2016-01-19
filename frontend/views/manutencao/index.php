@@ -49,7 +49,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'language' => 'pt',
                 'clientOptions' => [
                     'autoclose' => true,
-                    'format' => 'yyyy-mm-dd'
+                    'format' => 'dd-mm-yyyy'
                 ]
             ]);?>
             <br>
@@ -61,7 +61,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'language' => 'pt',
                 'clientOptions' => [
                     'autoclose' => true,
-                    'format' => 'yyyy-mm-dd'
+                    'format' => 'dd-mm-yyyy'
                 ]
             ]);?>
             <br>

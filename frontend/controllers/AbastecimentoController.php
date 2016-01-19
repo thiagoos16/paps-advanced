@@ -185,11 +185,6 @@ class AbastecimentoController extends Controller
     //------------------------------------GErando PDF ----------------------
     private function getTabela($data_inicio, $data_fim){
 
-        $data_inicio = str_replace("'","",$data_inicio);
-        $data_fim = str_replace("'","",$data_fim);
-        date("Y-m-d", strtotime($data_inicio));
-        date("Y-m-d", strtotime($data_fim));
-
         $color  = false;
         $retorno = "";
         date_default_timezone_set('America/Manaus');
