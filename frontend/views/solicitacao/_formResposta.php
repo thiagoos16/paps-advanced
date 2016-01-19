@@ -29,7 +29,7 @@ use yii\widgets\MaskedInput;
 
             <?= $form->field($model, 'id_veiculo')->dropDownList(ArrayHelper::map(Veiculo::findBySql(
                 "SELECT veiculo.renavam, veiculo.placa_atual
-                FROM veiculo WHERE veiculo.renavam !=(
+                FROM veiculo WHERE veiculo.renavam NOT IN(
                 SELECT veiculo.renavam
                 FROM veiculo INNER JOIN solicitacao
                 WHERE veiculo.renavam = solicitacao.id_veiculo
