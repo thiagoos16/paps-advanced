@@ -3,6 +3,7 @@ namespace frontend\controllers;
 
 use common\models\LockscreenForm;
 use frontend\models\Motorista;
+use frontend\models\Usuario;
 use Yii;
 use common\models\LoginForm;
 use frontend\models\PasswordResetRequestForm;
@@ -264,6 +265,7 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
+
 
     public function actionPdf() {
 

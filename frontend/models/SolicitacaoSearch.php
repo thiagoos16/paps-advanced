@@ -17,11 +17,13 @@ class SolicitacaoSearch extends Solicitacao
      */
     public $veiculo;
     public $modelo;
+    public $usuario;
+
     public function rules()
     {
         return [
             [['id', 'id_usuario', 'capacidade_passageiros', 'id_veiculo'], 'integer'],
-            [[ 'id_usuario','veiculo','modelo','destino', 'data_saida', 'hora_saida', 'data_lancamento', 'observacao', 'status', 'endeeco_destino', 'hora_chegada', 'id_motorista', 'seguro'], 'safe'],
+            [[ 'id_usuario','veiculo','usuario','modelo','destino', 'data_saida', 'hora_saida', 'data_lancamento', 'observacao', 'status', 'endeeco_destino', 'hora_chegada', 'id_motorista', 'seguro'], 'safe'],
         ];
     }
 
@@ -45,6 +47,7 @@ class SolicitacaoSearch extends Solicitacao
     {
         $query = Solicitacao::find();
         $query->joinWith('idVeiculo');
+        $query->joinWith('idUsuario');
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -58,6 +61,11 @@ class SolicitacaoSearch extends Solicitacao
         $dataProvider->sort->attributes['modelo'] = [
             'asc' => ['veiculo.id_modelo' => SORT_ASC],
             'desc' => ['veiculo.id_modelo' => SORT_DESC],
+        ];
+
+        $dataProvider->sort->attributes['user'] = [
+            'asc' => ['usuario.id_departamento' => SORT_ASC],
+            'desc' => ['usuario.id_departamento' => SORT_DESC],
         ];
 
         $this->load($params);
@@ -79,6 +87,7 @@ class SolicitacaoSearch extends Solicitacao
                 'id_usuario' => Yii::$app->getUser()->id,
                 'capacidade_passageiros' => $this->capacidade_passageiros,
                 'id_veiculo' => $this->id_veiculo,
+
             ]);
         }
         else {

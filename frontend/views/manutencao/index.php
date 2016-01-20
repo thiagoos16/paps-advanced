@@ -101,6 +101,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
                     'servico',
                     'custo',
+
                    /* [
                         'attribute'=>'data_saida',
                         'format' => ['date', 'dd-MM-yyyy'],

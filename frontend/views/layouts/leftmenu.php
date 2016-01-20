@@ -76,7 +76,9 @@ use frontend\models\Usuario;
                       <li>
                           <?php
                           if (Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1")
-                              echo Html::a("Abastecimentos",['abastecimento/index']);
+                              //echo Html::a("Abastecimentos",['abastecimento/index']);
+                              echo "<a href='index.php?r=abastecimento/index&sort=-id'>Abastecimentos</a>";
+
 
                           ?>
                       </li>
