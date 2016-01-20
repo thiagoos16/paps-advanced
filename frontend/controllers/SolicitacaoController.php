@@ -9,6 +9,8 @@ use frontend\models\SolicitacaoSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
+use frontend\models\Usuario;
 
 /**
  * SolicitacaoController implements the CRUD actions for Solicitacao model.
@@ -18,6 +20,30 @@ class SolicitacaoController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['create','index','update','view','delete'],
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'actions' => ['create','index','update','view'],
+                        'matchCallback' => function($rule,$action) {
+                            if (!Yii::$app->user->isGuest) {
+                                return Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1";
+                            }
+                        }
+                    ],
+                    [
+                        'allow' => true,
+                        'actions' => ['index','view'],
+                        'matchCallback' => function($rule,$action) {
+                            if (!Yii::$app->user->isGuest) {
+                                return Usuario::findOne(Yii::$app->getUser()->id)->id_departamento != "1";
+                            }
+                        }
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -166,6 +192,9 @@ class SolicitacaoController extends Controller
 
     public function actionPdf($data_inicio) {
 
+        $data_inicio = str_replace("'","",$data_inicio);
+        $data_inicio = date("Y-m-d", strtotime($data_inicio));
+
         $mpdf = new mPDF('',    // mode - default ''
             '',    // format - A4, for example, default ''
             0,     // font size - default 0
@@ -227,7 +256,7 @@ class SolicitacaoController extends Controller
 
 
         $connection = \Yii::$app->db;
-        $model = $connection->createCommand("SELECT * FROM solicitacao WHERE status = 'Aceita' AND data_saida = $data_inicio");
+        $model = $connection->createCommand("SELECT * FROM solicitacao WHERE status = 'Aceita' AND data_saida = '$data_inicio'");
         $users = $model->queryAll();
 
         foreach ($users as $reg):

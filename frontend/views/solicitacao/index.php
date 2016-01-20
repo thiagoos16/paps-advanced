@@ -49,7 +49,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'language' => 'pt',
                 'clientOptions' => [
                     'autoclose' => true,
-                    'format' => 'yyyy-mm-dd'
+                    'format' => 'dd-mm-yyyy'
                 ]
             ]);?>
             <br>
@@ -58,6 +58,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
         </div>
     </div>
+
 
     <div class="box box-primary">
         <div class="box-header with-border">

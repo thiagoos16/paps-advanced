@@ -24,7 +24,7 @@ class DepartamentoController extends Controller
                 'class' => AccessControl::className(),
                 'only' => ['create','index','update','view','delete'],
                 'rules' => [
-                    array(
+                    [
                         'allow' => true,
                         'actions' => ['create','index','update','view'],
                         'matchCallback' => function($rule,$action) {
@@ -32,7 +32,7 @@ class DepartamentoController extends Controller
                                 return Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1";
                             }
                         }
-                    ),
+                    ],
                 ],
             ],
             'verbs' => [
