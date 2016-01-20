@@ -184,7 +184,7 @@ use frontend\models\Usuario;
               <li>
                   <?php
                   if (Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1") {
-                      echo "<a href='index.php?r=site/pdf'>";
+                      echo "<a href='index.php?r=relatorio/create'>";
                       echo "<i class='fa fa-newspaper-o''></i> <span>Relatório Anual</span>";
                       echo "</a>";
                   }

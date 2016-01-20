@@ -512,8 +512,6 @@ HAVING ano = 2016 AND manutencao.tipo = 'Reparos' AND manutencao.id_veiculo = ".
     $i++;
     endforeach;
 
-    $km_rodado_jan = round($lista[0]['km_mes'],2);
-
     $km_litro = [];
     $km_rodado = [];
     $combustivel_litro = [];
@@ -531,7 +529,6 @@ HAVING ano = 2016 AND manutencao.tipo = 'Reparos' AND manutencao.id_veiculo = ".
             $manutencao[$i]          = str_replace('.', ',',round($lista_manutencao[$i]['custo_mes'])/1);
             $reparos[$i]             = str_replace('.', ',',round($lista_manutencao_reparos[$i]['custo_mes'],2));
             $total[$i]               = str_replace('.', ',',round($lista[$i]['qtd_combustivel_mes']+$lista_manutencao[$i]['custo_mes']+$lista_manutencao_reparos[$i]['custo_mes'],2));
-            //$km_litro[1] = round($lista[1]['km_mes'] / $lista[1]['litro_mes'], 2);
             $media_por_km_rodado[$i] = str_replace('.', ',',round($total[$i] / $km_rodado[$i],2));
 
         } catch (ErrorException $e) {
