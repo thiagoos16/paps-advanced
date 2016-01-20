@@ -44,7 +44,11 @@ $this->params['breadcrumbs'][] = $this->title;
                     'nome',
                     'cnh',
                     'categoria_cnh',
-                    'data_validade_cnh',
+                    [
+                        'attribute' => 'data_validade_cnh',
+                        'value' => date('d-m-Y', strtotime($model->data_validade_cnh))
+                    ],
+
                     'tipo',
                     'status',
                     'telefone',
