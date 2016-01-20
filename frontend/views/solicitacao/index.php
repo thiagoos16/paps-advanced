@@ -1,7 +1,9 @@
 <?php
 
 use dosamigos\datepicker\DatePicker;
+use frontend\models\Modelo;
 use frontend\models\Solicitacao;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\grid\GridView;
 
@@ -65,8 +67,20 @@ $this->params['breadcrumbs'][] = $this->title;
                 'columns' => [
                     ['class' => 'yii\grid\SerialColumn'],
                     'id',
-
                     'destino',
+                    [
+                        'attribute' => 'veiculo',
+                        'value' => 'idVeiculo.placa_atual',
+                    ],
+                    [
+                        'attribute' => 'modelo',
+                        'filter' => Html::activeDropDownList(
+                            $searchModel,
+                            'modelo',
+                            ArrayHelper::map(Modelo::find()->asArray()->all(), 'id', 'nome'),
+                            ['class'=>'form-control','prompt'=>'Filtrar'  ]),
+                        'value' => 'idVeiculo.idModelo.nome',
+                    ],
                     //'data_saida',
                     //'hora_saida',
                     //'data_lancamento',

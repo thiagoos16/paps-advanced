@@ -37546,3 +37546,512 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1453246866.114
     'REQUEST_TIME' => 1453246866
 ]
+2016-01-20 01:24:47 [::1][-][-][error][yii\base\UnknownPropertyException] exception 'yii\base\UnknownPropertyException' with message 'Getting unknown property: frontend\models\SolicitacaoSearch::veiculo' in C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Component.php:143
+Stack trace:
+#0 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\db\BaseActiveRecord.php(247): yii\base\Component->__get('veiculo')
+#1 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\validators\Validator.php(237): yii\db\BaseActiveRecord->__get('veiculo')
+#2 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Model.php(352): yii\validators\Validator->validateAttributes(Object(frontend\models\SolicitacaoSearch), Array)
+#3 C:\xampp\htdocs\paps\paps-advanced\frontend\models\SolicitacaoSearch.php(58): yii\base\Model->validate()
+#4 C:\xampp\htdocs\paps\paps-advanced\frontend\controllers\SolicitacaoController.php(37): frontend\models\SolicitacaoSearch->search(Array)
+#5 [internal function]: frontend\controllers\SolicitacaoController->actionIndex()
+#6 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#7 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('index', Array)
+#9 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('solicitacao/ind...', Array)
+#10 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 C:\xampp\htdocs\paps\paps-advanced\frontend\web\index.php(18): yii\base\Application->run()
+#12 {main}
+2016-01-20 01:24:47 [::1][-][-][info][application] $_GET = [
+    'r' => 'solicitacao/index'
+    'sort' => '-id'
+]
+
+$_COOKIE = [
+    '_csrf' => '23c4da4874b7a8e6d7409f5772cb2dd4c5ef0477193b4eca1cd5979eda1beb5ba:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"0AbrSCw9XWuqotgsBM7XT1rGwftkQ_jx\";}'
+    'PHPSESSID' => 'ed6urc5066jbb11ru9uquh6ko2'
+    '_identity' => '9057514c16b4c167df3479b3997e8c634480b4afab96f404ade9378c1a2ce91aa:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[7,\"9eCaKXNR-uvHq6fIUpU0n0G7ZF_36nwN\",2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.111 Safari/537.36'
+    'HTTP_REFERER' => 'http://localhost/paps/paps-advanced/frontend/web/index.php?r=solicitacao/index&sort=-id'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=23c4da4874b7a8e6d7409f5772cb2dd4c5ef0477193b4eca1cd5979eda1beb5ba%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%220AbrSCw9XWuqotgsBM7XT1rGwftkQ_jx%22%3B%7D; PHPSESSID=ed6urc5066jbb11ru9uquh6ko2; _identity=9057514c16b4c167df3479b3997e8c634480b4afab96f404ade9378c1a2ce91aa%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B7%2C%229eCaKXNR-uvHq6fIUpU0n0G7ZF_36nwN%22%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Java\\jdk1.8.0_65\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.15 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.15'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/paps/paps-advanced/frontend/web/index.php'
+    'REMOTE_PORT' => '53215'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=solicitacao/index&sort=-id'
+    'REQUEST_URI' => '/paps/paps-advanced/frontend/web/index.php?r=solicitacao/index&sort=-id'
+    'SCRIPT_NAME' => '/paps/paps-advanced/frontend/web/index.php'
+    'PHP_SELF' => '/paps/paps-advanced/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1453249487.206
+    'REQUEST_TIME' => 1453249487
+]
+2016-01-20 01:25:36 [::1][-][-][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected '->' (T_OBJECT_OPERATOR)' in C:\xampp\htdocs\paps\paps-advanced\frontend\models\SolicitacaoSearch.php:88
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-01-20 01:25:36 [::1][-][-][info][application] $_GET = [
+    'r' => 'solicitacao/index'
+    'sort' => '-id'
+]
+
+$_COOKIE = [
+    '_csrf' => '23c4da4874b7a8e6d7409f5772cb2dd4c5ef0477193b4eca1cd5979eda1beb5ba:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"0AbrSCw9XWuqotgsBM7XT1rGwftkQ_jx\";}'
+    'PHPSESSID' => 'ed6urc5066jbb11ru9uquh6ko2'
+    '_identity' => '9057514c16b4c167df3479b3997e8c634480b4afab96f404ade9378c1a2ce91aa:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[7,\"9eCaKXNR-uvHq6fIUpU0n0G7ZF_36nwN\",2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.111 Safari/537.36'
+    'HTTP_REFERER' => 'http://localhost/paps/paps-advanced/frontend/web/index.php?r=solicitacao/index&sort=-id'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=23c4da4874b7a8e6d7409f5772cb2dd4c5ef0477193b4eca1cd5979eda1beb5ba%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%220AbrSCw9XWuqotgsBM7XT1rGwftkQ_jx%22%3B%7D; PHPSESSID=ed6urc5066jbb11ru9uquh6ko2; _identity=9057514c16b4c167df3479b3997e8c634480b4afab96f404ade9378c1a2ce91aa%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B7%2C%229eCaKXNR-uvHq6fIUpU0n0G7ZF_36nwN%22%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Java\\jdk1.8.0_65\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.15 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.15'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/paps/paps-advanced/frontend/web/index.php'
+    'REMOTE_PORT' => '53260'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=solicitacao/index&sort=-id'
+    'REQUEST_URI' => '/paps/paps-advanced/frontend/web/index.php?r=solicitacao/index&sort=-id'
+    'SCRIPT_NAME' => '/paps/paps-advanced/frontend/web/index.php'
+    'PHP_SELF' => '/paps/paps-advanced/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1453249536.655
+    'REQUEST_TIME' => 1453249536
+]
+2016-01-20 01:25:48 [::1][7][ed6urc5066jbb11ru9uquh6ko2][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'veiculo' in 'where clause'' in C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\db\Command.php:837
+Stack trace:
+#0 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\db\Command.php(837): PDOStatement->execute()
+#1 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\db\Command.php(385): yii\db\Command->queryInternal('<span class="st...', '<span class="nu...')
+#2 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\db\Query.php(389): yii\db\Command->queryScalar()
+#3 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\db\ActiveQuery.php(339): yii\db\Query->queryScalar('<span class="st...', '<span class="ke...')
+#4 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\db\Query.php(296): yii\db\ActiveQuery->queryScalar('<span class="st...', '<span class="ke...')
+#5 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\data\ActiveDataProvider.php(165): yii\db\Query->count('<span class="st...', '<span class="ke...')
+#6 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\data\BaseDataProvider.php(147): yii\data\ActiveDataProvider->prepareTotalCount()
+#7 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\data\ActiveDataProvider.php(105): yii\data\BaseDataProvider->getTotalCount()
+#8 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\data\BaseDataProvider.php(79): yii\data\ActiveDataProvider->prepareModels()
+#9 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\data\BaseDataProvider.php(92): yii\data\BaseDataProvider->prepare()
+#10 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\data\BaseDataProvider.php(133): yii\data\BaseDataProvider->getModels()
+#11 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\widgets\BaseListView.php(178): yii\data\BaseDataProvider->getCount()
+#12 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\widgets\BaseListView.php(149): yii\widgets\BaseListView->renderSummary()
+#13 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\grid\GridView.php(313): yii\widgets\BaseListView->renderSection('<span class="st...')
+#14 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\widgets\BaseListView.php(126): yii\grid\GridView->renderSection('<span class="st...')
+#15 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}('[<span class="s...')
+#16 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\widgets\BaseListView.php(129): preg_replace_callback('<span class="st...', Object(Closure), '<span class="st...')
+#17 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\grid\GridView.php(288): yii\widgets\BaseListView->run()
+#18 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Widget.php(98): yii\grid\GridView->run()
+#19 C:\xampp\htdocs\paps\paps-advanced\frontend\views\solicitacao\index.php(134): yii\base\Widget::widget('[<span class="s...')
+#20 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\View.php(325): require('C:\\xampp\\htdocs...')
+#21 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('<span class="st...', '[<span class="s...')
+#22 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('<span class="st...', '[<span class="s...', Object(frontend\controllers\SolicitacaoController))
+#23 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Controller.php(371): yii\base\View->render('<span class="st...', '[<span class="s...', Object(frontend\controllers\SolicitacaoController))
+#24 C:\xampp\htdocs\paps\paps-advanced\frontend\controllers\SolicitacaoController.php(42): yii\base\Controller->render('<span class="st...', '[<span class="s...')
+#25 [internal function]: frontend\controllers\SolicitacaoController->actionIndex()
+#26 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#27 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#28 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#29 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#30 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#31 C:\xampp\htdocs\paps\paps-advanced\frontend\web\index.php(18): yii\base\Application->run()
+#32 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'veiculo' in 'where clause'
+The SQL being executed was: SELECT COUNT(*) FROM `solicitacao` LEFT JOIN `veiculo` ON `solicitacao`.`id_veiculo` = `veiculo`.`renavam` WHERE `veiculo` LIKE '%ok%'' in C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\db\Schema.php:628
+Stack trace:
+#0 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\db\Command.php(852): yii\db\Schema->convertException(Object(PDOException), 'SELECT COUNT(*)...')
+#1 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\db\Command.php(385): yii\db\Command->queryInternal('<span class="st...', '<span class="nu...')
+#2 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\db\Query.php(389): yii\db\Command->queryScalar()
+#3 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\db\ActiveQuery.php(339): yii\db\Query->queryScalar('<span class="st...', '<span class="ke...')
+#4 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\db\Query.php(296): yii\db\ActiveQuery->queryScalar('<span class="st...', '<span class="ke...')
+#5 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\data\ActiveDataProvider.php(165): yii\db\Query->count('<span class="st...', '<span class="ke...')
+#6 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\data\BaseDataProvider.php(147): yii\data\ActiveDataProvider->prepareTotalCount()
+#7 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\data\ActiveDataProvider.php(105): yii\data\BaseDataProvider->getTotalCount()
+#8 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\data\BaseDataProvider.php(79): yii\data\ActiveDataProvider->prepareModels()
+#9 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\data\BaseDataProvider.php(92): yii\data\BaseDataProvider->prepare()
+#10 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\data\BaseDataProvider.php(133): yii\data\BaseDataProvider->getModels()
+#11 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\widgets\BaseListView.php(178): yii\data\BaseDataProvider->getCount()
+#12 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\widgets\BaseListView.php(149): yii\widgets\BaseListView->renderSummary()
+#13 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\grid\GridView.php(313): yii\widgets\BaseListView->renderSection('<span class="st...')
+#14 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\widgets\BaseListView.php(126): yii\grid\GridView->renderSection('<span class="st...')
+#15 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}('[<span class="s...')
+#16 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\widgets\BaseListView.php(129): preg_replace_callback('<span class="st...', Object(Closure), '<span class="st...')
+#17 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\grid\GridView.php(288): yii\widgets\BaseListView->run()
+#18 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Widget.php(98): yii\grid\GridView->run()
+#19 C:\xampp\htdocs\paps\paps-advanced\frontend\views\solicitacao\index.php(134): yii\base\Widget::widget('[<span class="s...')
+#20 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\View.php(325): require('C:\\xampp\\htdocs...')
+#21 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('<span class="st...', '[<span class="s...')
+#22 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('<span class="st...', '[<span class="s...', Object(frontend\controllers\SolicitacaoController))
+#23 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Controller.php(371): yii\base\View->render('<span class="st...', '[<span class="s...', Object(frontend\controllers\SolicitacaoController))
+#24 C:\xampp\htdocs\paps\paps-advanced\frontend\controllers\SolicitacaoController.php(42): yii\base\Controller->render('<span class="st...', '[<span class="s...')
+#25 [internal function]: frontend\controllers\SolicitacaoController->actionIndex()
+#26 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#27 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#28 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#29 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#30 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#31 C:\xampp\htdocs\paps\paps-advanced\frontend\web\index.php(18): yii\base\Application->run()
+#32 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'veiculo' in 'where clause'
+)
+
+2016-01-20 01:25:48 [::1][7][ed6urc5066jbb11ru9uquh6ko2][info][application] $_GET = [
+    'SolicitacaoSearch' => [
+        'id' => ''
+        'destino' => ''
+        'veiculo' => 'ok'
+        'status' => ''
+    ]
+    'r' => 'solicitacao/index'
+    'sort' => '-id'
+]
+
+$_COOKIE = [
+    '_csrf' => '23c4da4874b7a8e6d7409f5772cb2dd4c5ef0477193b4eca1cd5979eda1beb5ba:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"0AbrSCw9XWuqotgsBM7XT1rGwftkQ_jx\";}'
+    'PHPSESSID' => 'ed6urc5066jbb11ru9uquh6ko2'
+    '_identity' => '9057514c16b4c167df3479b3997e8c634480b4afab96f404ade9378c1a2ce91aa:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[7,\"9eCaKXNR-uvHq6fIUpU0n0G7ZF_36nwN\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 7
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.111 Safari/537.36'
+    'HTTP_REFERER' => 'http://localhost/paps/paps-advanced/frontend/web/index.php?r=solicitacao/index&sort=-id'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=23c4da4874b7a8e6d7409f5772cb2dd4c5ef0477193b4eca1cd5979eda1beb5ba%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%220AbrSCw9XWuqotgsBM7XT1rGwftkQ_jx%22%3B%7D; PHPSESSID=ed6urc5066jbb11ru9uquh6ko2; _identity=9057514c16b4c167df3479b3997e8c634480b4afab96f404ade9378c1a2ce91aa%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B7%2C%229eCaKXNR-uvHq6fIUpU0n0G7ZF_36nwN%22%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Java\\jdk1.8.0_65\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.15 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.15'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/paps/paps-advanced/frontend/web/index.php'
+    'REMOTE_PORT' => '53271'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'SolicitacaoSearch%5Bid%5D=&SolicitacaoSearch%5Bdestino%5D=&SolicitacaoSearch%5Bveiculo%5D=ok&SolicitacaoSearch%5Bstatus%5D=&r=solicitacao%2Findex&sort=-id'
+    'REQUEST_URI' => '/paps/paps-advanced/frontend/web/index.php?SolicitacaoSearch%5Bid%5D=&SolicitacaoSearch%5Bdestino%5D=&SolicitacaoSearch%5Bveiculo%5D=ok&SolicitacaoSearch%5Bstatus%5D=&r=solicitacao%2Findex&sort=-id'
+    'SCRIPT_NAME' => '/paps/paps-advanced/frontend/web/index.php'
+    'PHP_SELF' => '/paps/paps-advanced/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1453249548.389
+    'REQUEST_TIME' => 1453249548
+]
+2016-01-20 01:32:43 [::1][7][ed6urc5066jbb11ru9uquh6ko2][error][yii\base\UnknownPropertyException] exception 'yii\base\UnknownPropertyException' with message 'Getting unknown property: frontend\models\SolicitacaoSearch::modelo' in C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Component.php:143
+Stack trace:
+#0 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\db\BaseActiveRecord.php(247): yii\base\Component->__get('modelo')
+#1 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\helpers\BaseHtml.php(2029): yii\db\BaseActiveRecord->__get('modelo')
+#2 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\helpers\BaseHtml.php(1649): yii\helpers\BaseHtml::getAttributeValue(Object(frontend\models\SolicitacaoSearch), 'modelo')
+#3 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\helpers\BaseHtml.php(1495): yii\helpers\BaseHtml::activeListInput('dropDownList', Object(frontend\models\SolicitacaoSearch), 'modelo', Array, Array)
+#4 C:\xampp\htdocs\paps\paps-advanced\frontend\views\solicitacao\index.php(81): yii\helpers\BaseHtml::activeDropDownList(Object(frontend\models\SolicitacaoSearch), 'modelo', Array, Array)
+#5 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\View.php(325): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#7 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(frontend\controllers\SolicitacaoController))
+#8 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Controller.php(371): yii\base\View->render('index', Array, Object(frontend\controllers\SolicitacaoController))
+#9 C:\xampp\htdocs\paps\paps-advanced\frontend\controllers\SolicitacaoController.php(42): yii\base\Controller->render('index', Array)
+#10 [internal function]: frontend\controllers\SolicitacaoController->actionIndex()
+#11 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#12 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('index', Array)
+#14 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('solicitacao/ind...', Array)
+#15 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#16 C:\xampp\htdocs\paps\paps-advanced\frontend\web\index.php(18): yii\base\Application->run()
+#17 {main}
+2016-01-20 01:32:42 [::1][7][ed6urc5066jbb11ru9uquh6ko2][info][application] $_GET = [
+    'r' => 'solicitacao/index'
+    'sort' => '-id'
+]
+
+$_COOKIE = [
+    '_csrf' => '23c4da4874b7a8e6d7409f5772cb2dd4c5ef0477193b4eca1cd5979eda1beb5ba:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"0AbrSCw9XWuqotgsBM7XT1rGwftkQ_jx\";}'
+    'PHPSESSID' => 'ed6urc5066jbb11ru9uquh6ko2'
+    '_identity' => '9057514c16b4c167df3479b3997e8c634480b4afab96f404ade9378c1a2ce91aa:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[7,\"9eCaKXNR-uvHq6fIUpU0n0G7ZF_36nwN\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 7
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.111 Safari/537.36'
+    'HTTP_REFERER' => 'http://localhost/paps/paps-advanced/frontend/web/index.php?r=manutencao/index&sort=-id'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=23c4da4874b7a8e6d7409f5772cb2dd4c5ef0477193b4eca1cd5979eda1beb5ba%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%220AbrSCw9XWuqotgsBM7XT1rGwftkQ_jx%22%3B%7D; PHPSESSID=ed6urc5066jbb11ru9uquh6ko2; _identity=9057514c16b4c167df3479b3997e8c634480b4afab96f404ade9378c1a2ce91aa%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B7%2C%229eCaKXNR-uvHq6fIUpU0n0G7ZF_36nwN%22%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Java\\jdk1.8.0_65\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.15 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.15'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/paps/paps-advanced/frontend/web/index.php'
+    'REMOTE_PORT' => '53472'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=solicitacao/index&sort=-id'
+    'REQUEST_URI' => '/paps/paps-advanced/frontend/web/index.php?r=solicitacao/index&sort=-id'
+    'SCRIPT_NAME' => '/paps/paps-advanced/frontend/web/index.php'
+    'PHP_SELF' => '/paps/paps-advanced/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1453249962.72
+    'REQUEST_TIME' => 1453249962
+]
+2016-01-20 01:36:19 [::1][7][ed6urc5066jbb11ru9uquh6ko2][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'veiculo.modelo' in 'where clause'' in C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\db\Command.php:837
+Stack trace:
+#0 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\db\Command.php(837): PDOStatement->execute()
+#1 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\db\Command.php(385): yii\db\Command->queryInternal('<span class="st...', '<span class="nu...')
+#2 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\db\Query.php(389): yii\db\Command->queryScalar()
+#3 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\db\ActiveQuery.php(339): yii\db\Query->queryScalar('<span class="st...', '<span class="ke...')
+#4 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\db\Query.php(296): yii\db\ActiveQuery->queryScalar('<span class="st...', '<span class="ke...')
+#5 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\data\ActiveDataProvider.php(165): yii\db\Query->count('<span class="st...', '<span class="ke...')
+#6 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\data\BaseDataProvider.php(147): yii\data\ActiveDataProvider->prepareTotalCount()
+#7 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\data\ActiveDataProvider.php(105): yii\data\BaseDataProvider->getTotalCount()
+#8 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\data\BaseDataProvider.php(79): yii\data\ActiveDataProvider->prepareModels()
+#9 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\data\BaseDataProvider.php(92): yii\data\BaseDataProvider->prepare()
+#10 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\data\BaseDataProvider.php(133): yii\data\BaseDataProvider->getModels()
+#11 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\widgets\BaseListView.php(178): yii\data\BaseDataProvider->getCount()
+#12 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\widgets\BaseListView.php(149): yii\widgets\BaseListView->renderSummary()
+#13 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\grid\GridView.php(313): yii\widgets\BaseListView->renderSection('<span class="st...')
+#14 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\widgets\BaseListView.php(126): yii\grid\GridView->renderSection('<span class="st...')
+#15 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}('[<span class="s...')
+#16 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\widgets\BaseListView.php(129): preg_replace_callback('<span class="st...', Object(Closure), '<span class="st...')
+#17 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\grid\GridView.php(288): yii\widgets\BaseListView->run()
+#18 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Widget.php(98): yii\grid\GridView->run()
+#19 C:\xampp\htdocs\paps\paps-advanced\frontend\views\solicitacao\index.php(145): yii\base\Widget::widget('[<span class="s...')
+#20 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\View.php(325): require('C:\\xampp\\htdocs...')
+#21 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('<span class="st...', '[<span class="s...')
+#22 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('<span class="st...', '[<span class="s...', Object(frontend\controllers\SolicitacaoController))
+#23 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Controller.php(371): yii\base\View->render('<span class="st...', '[<span class="s...', Object(frontend\controllers\SolicitacaoController))
+#24 C:\xampp\htdocs\paps\paps-advanced\frontend\controllers\SolicitacaoController.php(42): yii\base\Controller->render('<span class="st...', '[<span class="s...')
+#25 [internal function]: frontend\controllers\SolicitacaoController->actionIndex()
+#26 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#27 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#28 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#29 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#30 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#31 C:\xampp\htdocs\paps\paps-advanced\frontend\web\index.php(18): yii\base\Application->run()
+#32 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'veiculo.modelo' in 'where clause'
+The SQL being executed was: SELECT COUNT(*) FROM `solicitacao` LEFT JOIN `veiculo` ON `solicitacao`.`id_veiculo` = `veiculo`.`renavam` WHERE `veiculo`.`modelo` LIKE '%1%'' in C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\db\Schema.php:628
+Stack trace:
+#0 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\db\Command.php(852): yii\db\Schema->convertException(Object(PDOException), 'SELECT COUNT(*)...')
+#1 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\db\Command.php(385): yii\db\Command->queryInternal('<span class="st...', '<span class="nu...')
+#2 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\db\Query.php(389): yii\db\Command->queryScalar()
+#3 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\db\ActiveQuery.php(339): yii\db\Query->queryScalar('<span class="st...', '<span class="ke...')
+#4 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\db\Query.php(296): yii\db\ActiveQuery->queryScalar('<span class="st...', '<span class="ke...')
+#5 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\data\ActiveDataProvider.php(165): yii\db\Query->count('<span class="st...', '<span class="ke...')
+#6 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\data\BaseDataProvider.php(147): yii\data\ActiveDataProvider->prepareTotalCount()
+#7 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\data\ActiveDataProvider.php(105): yii\data\BaseDataProvider->getTotalCount()
+#8 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\data\BaseDataProvider.php(79): yii\data\ActiveDataProvider->prepareModels()
+#9 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\data\BaseDataProvider.php(92): yii\data\BaseDataProvider->prepare()
+#10 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\data\BaseDataProvider.php(133): yii\data\BaseDataProvider->getModels()
+#11 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\widgets\BaseListView.php(178): yii\data\BaseDataProvider->getCount()
+#12 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\widgets\BaseListView.php(149): yii\widgets\BaseListView->renderSummary()
+#13 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\grid\GridView.php(313): yii\widgets\BaseListView->renderSection('<span class="st...')
+#14 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\widgets\BaseListView.php(126): yii\grid\GridView->renderSection('<span class="st...')
+#15 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}('[<span class="s...')
+#16 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\widgets\BaseListView.php(129): preg_replace_callback('<span class="st...', Object(Closure), '<span class="st...')
+#17 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\grid\GridView.php(288): yii\widgets\BaseListView->run()
+#18 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Widget.php(98): yii\grid\GridView->run()
+#19 C:\xampp\htdocs\paps\paps-advanced\frontend\views\solicitacao\index.php(145): yii\base\Widget::widget('[<span class="s...')
+#20 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\View.php(325): require('C:\\xampp\\htdocs...')
+#21 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('<span class="st...', '[<span class="s...')
+#22 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('<span class="st...', '[<span class="s...', Object(frontend\controllers\SolicitacaoController))
+#23 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Controller.php(371): yii\base\View->render('<span class="st...', '[<span class="s...', Object(frontend\controllers\SolicitacaoController))
+#24 C:\xampp\htdocs\paps\paps-advanced\frontend\controllers\SolicitacaoController.php(42): yii\base\Controller->render('<span class="st...', '[<span class="s...')
+#25 [internal function]: frontend\controllers\SolicitacaoController->actionIndex()
+#26 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#27 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#28 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#29 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#30 C:\xampp\htdocs\paps\paps-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#31 C:\xampp\htdocs\paps\paps-advanced\frontend\web\index.php(18): yii\base\Application->run()
+#32 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'veiculo.modelo' in 'where clause'
+)
+
+2016-01-20 01:36:19 [::1][7][ed6urc5066jbb11ru9uquh6ko2][info][application] $_GET = [
+    'SolicitacaoSearch' => [
+        'id' => ''
+        'destino' => ''
+        'veiculo' => ''
+        'modelo' => '1'
+        'status' => ''
+    ]
+    'r' => 'solicitacao/index'
+    'sort' => '-id'
+]
+
+$_COOKIE = [
+    '_csrf' => '23c4da4874b7a8e6d7409f5772cb2dd4c5ef0477193b4eca1cd5979eda1beb5ba:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"0AbrSCw9XWuqotgsBM7XT1rGwftkQ_jx\";}'
+    'PHPSESSID' => 'ed6urc5066jbb11ru9uquh6ko2'
+    '_identity' => '9057514c16b4c167df3479b3997e8c634480b4afab96f404ade9378c1a2ce91aa:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[7,\"9eCaKXNR-uvHq6fIUpU0n0G7ZF_36nwN\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 7
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.111 Safari/537.36'
+    'HTTP_REFERER' => 'http://localhost/paps/paps-advanced/frontend/web/index.php?r=solicitacao/index&sort=-id'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=23c4da4874b7a8e6d7409f5772cb2dd4c5ef0477193b4eca1cd5979eda1beb5ba%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%220AbrSCw9XWuqotgsBM7XT1rGwftkQ_jx%22%3B%7D; PHPSESSID=ed6urc5066jbb11ru9uquh6ko2; _identity=9057514c16b4c167df3479b3997e8c634480b4afab96f404ade9378c1a2ce91aa%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B7%2C%229eCaKXNR-uvHq6fIUpU0n0G7ZF_36nwN%22%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Java\\jdk1.8.0_65\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.15 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.15'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/paps/paps-advanced/frontend/web/index.php'
+    'REMOTE_PORT' => '53584'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'SolicitacaoSearch%5Bid%5D=&SolicitacaoSearch%5Bdestino%5D=&SolicitacaoSearch%5Bveiculo%5D=&SolicitacaoSearch%5Bmodelo%5D=1&SolicitacaoSearch%5Bstatus%5D=&r=solicitacao%2Findex&sort=-id'
+    'REQUEST_URI' => '/paps/paps-advanced/frontend/web/index.php?SolicitacaoSearch%5Bid%5D=&SolicitacaoSearch%5Bdestino%5D=&SolicitacaoSearch%5Bveiculo%5D=&SolicitacaoSearch%5Bmodelo%5D=1&SolicitacaoSearch%5Bstatus%5D=&r=solicitacao%2Findex&sort=-id'
+    'SCRIPT_NAME' => '/paps/paps-advanced/frontend/web/index.php'
+    'PHP_SELF' => '/paps/paps-advanced/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1453250179.574
+    'REQUEST_TIME' => 1453250179
+]

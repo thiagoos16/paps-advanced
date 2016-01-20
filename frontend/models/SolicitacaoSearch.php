@@ -15,11 +15,13 @@ class SolicitacaoSearch extends Solicitacao
     /**
      * @inheritdoc
      */
+    public $veiculo;
+    public $modelo;
     public function rules()
     {
         return [
             [['id', 'id_usuario', 'capacidade_passageiros', 'id_veiculo'], 'integer'],
-            [[ 'id_usuario','destino', 'data_saida', 'hora_saida', 'data_lancamento', 'observacao', 'status', 'endeeco_destino', 'hora_chegada', 'id_motorista', 'seguro'], 'safe'],
+            [[ 'id_usuario','veiculo','modelo','destino', 'data_saida', 'hora_saida', 'data_lancamento', 'observacao', 'status', 'endeeco_destino', 'hora_chegada', 'id_motorista', 'seguro'], 'safe'],
         ];
     }
 
@@ -42,10 +44,21 @@ class SolicitacaoSearch extends Solicitacao
     public function search($params)
     {
         $query = Solicitacao::find();
+        $query->joinWith('idVeiculo');
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
+
+        $dataProvider->sort->attributes['veiculo'] = [
+            'asc' => ['veiculo.placa_atual' => SORT_ASC],
+            'desc' => ['veiculo.placa_atual' => SORT_DESC],
+        ];
+
+        $dataProvider->sort->attributes['modelo'] = [
+            'asc' => ['veiculo.id_modelo' => SORT_ASC],
+            'desc' => ['veiculo.id_modelo' => SORT_DESC],
+        ];
 
         $this->load($params);
 
@@ -76,7 +89,9 @@ class SolicitacaoSearch extends Solicitacao
 
         $query->andFilterWhere(['like', 'destino', $this->destino])
             ->andFilterWhere(['like', 'data_saida', $this->data_saida])
-            ->andFilterWhere(['like', 'status', $this->status]);
+            ->andFilterWhere(['like', 'status', $this->status])
+            ->andFilterWhere(['like', 'veiculo.placa_atual', $this->veiculo])
+            ->andFilterWhere(['like', 'veiculo.id_modelo', $this->modelo]);
 
         //$this->data_saida = date('d-m-Y', strtotime($this->data_saida));
         return $dataProvider;
