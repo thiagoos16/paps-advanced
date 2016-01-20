@@ -92,7 +92,10 @@ $this->params['breadcrumbs'][] = $this->title;
                             'status',
                             Solicitacao::getStatus(),['class'=>'form-control','prompt'=>'Filtrar']),
                     ],
-                    // 'id_usuario',
+                    //[
+                        //'attribute' => 'user',
+                        'idUsuario.idDepartamento.nome',
+                    //],
                     // 'capacidade_passageiros',
                     // 'endeeco_destino',
                     // 'hora_chegada',
@@ -100,8 +103,8 @@ $this->params['breadcrumbs'][] = $this->title;
                     // 'id_veiculo',
                     // 'seguro',
 
-                    ['class' => 'yii\grid\ActionColumn',
-                        'template' => '{visualizar}  {editar}  {excluir}',
+                    ['class' => 'yii\grid\ActionColumn',                        
+						'template' => '{visualizar}  {excluir}',                        
                         'buttons' => [
                             'visualizar' => function($url,$model) {
                                 return Html::a(
@@ -115,6 +118,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 );
                             },
                             'editar' => function($url,$model) {
+								if($model->status == "Aceita"){
                                 return Html::a(
                                     '<span class="fa fa-pencil"></span>',
                                     ['update', 'id' => $model->id],
@@ -124,8 +128,10 @@ $this->params['breadcrumbs'][] = $this->title;
                                         'data-pjax' => '0',
                                     ]
                                 );
+								}
                             },
                             'excluir' => function($url,$model) {
+								if($model->status != "Aceita"){
                                 return Html::a(
                                     '<span class="fa fa-trash"></span>',
                                     ['delete', 'id' => $model->id], [
@@ -138,6 +144,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                         ],
                                     ]
                                 );
+								}
                             },
                         ],
                     ],
