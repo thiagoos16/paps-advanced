@@ -63,6 +63,7 @@ class AbastecimentoSearch extends Abastecimento
             'desc' => ['veiculo.placa_atual' => SORT_DESC],
         ];
 
+
         $dataProvider->sort->attributes['combustivel'] = [
             'asc' => ['combustivel.nome' => SORT_ASC],
             'desc' => ['combustivel.nome' => SORT_DESC],

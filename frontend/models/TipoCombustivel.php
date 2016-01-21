@@ -2,16 +2,17 @@
 
 namespace frontend\models;
 
+use frontend\models\Veiculo;
+use frontend\models\CombustivelMes;
 use Yii;
 
 /**
  * This is the model class for table "tipo_combustivel".
  *
  * @property integer $id
- * @property integer $nome
- * @property integer $preco_litro
- * @property integer $data
+ * @property string $nome
  *
+ * @property CombustivelMes[] $combustivelMes
  * @property Veiculo[] $veiculos
  */
 class TipoCombustivel extends \yii\db\ActiveRecord
@@ -30,11 +31,8 @@ class TipoCombustivel extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['data'], 'safe'],
-            [['preco_litro'], 'number'],
-            [['nome'], 'unique', "message"=>"Combustível existente no sistema"],
-            [['nome', 'data', 'preco_litro'], 'required', "message"=>"Este campo é obrigatório"],
-            [['nome'], 'string', 'max' => 50]
+            [['nome'], 'required'],
+            [['nome'], 'string', 'max' => 45]
         ];
     }
 
@@ -46,8 +44,15 @@ class TipoCombustivel extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'nome' => 'Nome',
-            'preco_litro' => 'Preço Por Litro',
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getCombustivelMes()
+    {
+        return $this->hasMany(CombustivelMes::className(), ['id_combustivel' => 'id']);
     }
 
     /**
@@ -57,39 +62,4 @@ class TipoCombustivel extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Veiculo::className(), ['id_tipo_combustivel' => 'id']);
     }
-
-    public function beforeDelete(){
-
-        $connection = \Yii::$app->db;
-        $m = $connection->createCommand("SELECT * FROM veiculo WHERE id_tipo_combustivel='$this->id'");
-        $veiculos=$m->queryAll();
-        $count=0;
-
-        foreach ($veiculos as $reg):
-            $count++;
-        endforeach;
-
-        if ($count==0) {
-            return true;
-        }
-    }
-
-    public  function beforeSave($insert){
-        if (parent::beforeSave($insert)){
-
-            if ($this->data!=null) {
-                $this->data = date('Y-m-d', strtotime($this->data));
-            }
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
-
-    public function afterSave($insert)
-    {
-
-    }
-
 }

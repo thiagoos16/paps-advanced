@@ -7,9 +7,8 @@ use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use frontend\models\TipoCombustivel;
 
-
 /**
- * TipoCombustivelSearch represents the model behind the search form about `app\models\TipoCombustivel`.
+ * TipoCombustivelSearch represents the model behind the search form about `frontend\models\TipoCombustivel`.
  */
 class TipoCombustivelSearch extends TipoCombustivel
 {
@@ -19,9 +18,8 @@ class TipoCombustivelSearch extends TipoCombustivel
     public function rules()
     {
         return [
-
+            [['id'], 'integer'],
             [['nome'], 'safe'],
-            [['preco_litro'], 'number'],
         ];
     }
 
@@ -43,7 +41,7 @@ class TipoCombustivelSearch extends TipoCombustivel
      */
     public function search($params)
     {
-        $query = TipoCombustivel::findBySql("SELECT * FROM tipo_combustivel WHERE data != '2001-09-11'");
+        $query = TipoCombustivel::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -59,12 +57,9 @@ class TipoCombustivelSearch extends TipoCombustivel
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'nome' => $this->nome,
-            'preco_litro' => $this->preco_litro,
         ]);
 
-
-        $query->andFilterWhere(['like', 'preco_litro', $this->preco_litro]);
+        $query->andFilterWhere(['like', 'nome', $this->nome]);
 
         return $dataProvider;
     }

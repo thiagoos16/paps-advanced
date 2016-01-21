@@ -2,15 +2,13 @@
 
 namespace frontend\controllers;
 
+use Yii;
 use frontend\models\TipoCombustivel;
 use frontend\models\TipoCombustivelSearch;
-use Yii;
-use yii\filters\VerbFilter;
+use yii\base\Exception;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\filters\AccessControl;
-use frontend\models\user;
-use frontend\models\Usuario;
+use yii\filters\VerbFilter;
 
 /**
  * TipoCombustivelController implements the CRUD actions for TipoCombustivel model.
@@ -20,21 +18,6 @@ class TipoCombustivelController extends Controller
     public function behaviors()
     {
         return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'only' => ['create','index','update','view','delete'],
-                'rules' => [
-                    array(
-                        'allow' => true,
-                        'actions' => ['create','index','update','view','delete'],
-                        'matchCallback' => function($rule,$action) {
-                            if (!Yii::$app->user->isGuest) {
-                                return Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == "1";
-                            }
-                        }
-                    ),
-                ],
-            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -101,13 +84,7 @@ class TipoCombustivelController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-
-            $connection = \Yii::$app->db;
-            $sql = "UPDATE abastecimento set valor_abastecido = qty_litro * $model->preco_litro WHERE abastecimento.id_combustivel=$model->id";
-            $connection->createCommand($sql)->execute();
-            //echo "<script>alert('oi');</script>";
-
-            Yii::$app->session->setFlash('success', 'Tipo de Combustível alterado com sucesso.');
+            Yii::$app->session->setFlash('success', 'Tipo de Combustível alterada com sucesso.');
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
@@ -124,15 +101,17 @@ class TipoCombustivelController extends Controller
      */
     public function actionDelete($id)
     {
-        $model = $this->findModel($id);
-        if ($model->delete()) {
-            Yii::$app->session->setFlash('success', 'Combustível excluído com sucesso.');
-        }
-        else {
-            Yii::$app->session->setFlash('error', 'O combustível não pode ser excluído pois possui relação com um ou mais veículos.');
-        }
 
         //$this->findModel($id)->delete();
+        $model = $this->findModel($id);
+        try
+        {
+            $model->delete();
+            Yii::$app->session->setFlash('success', 'Tipo de Combustível excluído com sucesso.');
+        }catch (Exception $e)
+        {
+            Yii::$app->session->setFlash('error', 'O Tipo de Combustível não pode ser excluído pois possui um ou mais valores vinculados a ele.');
+        }
 
         return $this->redirect(['index']);
     }

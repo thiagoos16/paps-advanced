@@ -1,14 +1,15 @@
 <?php
 
+use frontend\models\TipoCombustivel;
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $model frontend\models\TipoCombustivel */
 
-$this->title = 'Editar Tipo de Combustível';
-$this->params['breadcrumbs'][] = ['label' => 'Tipo de Combustível', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Editar';
+$this->title = 'Atualizar Tipo de Combustível: ' . ' ' . $model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Tipo de Combustívels', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => TipoCombustivel::findOne($model->id)->nome, 'url' => ['view', 'id' => $model->id]];
+$this->params['breadcrumbs'][] = 'Atualizar';
 ?>
 <div class="tipo-combustivel-update">
 

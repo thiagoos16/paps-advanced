@@ -1,17 +1,17 @@
 <?php
 
+use frontend\models\TipoCombustivel;
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
 /* @var $model frontend\models\TipoCombustivel */
 
-$this->title =  "Exibir Tipo de Combustível";
-$this->params['breadcrumbs'][] = ['label' => 'Tipo De Combustível', 'url' => ['index']];
+$this->title = TipoCombustivel::findOne($model->id)->nome;
+$this->params['breadcrumbs'][] = ['label' => 'Tipo Combustivel', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="tipo-combustivel-view">
-
     <?php
     if(Yii::$app->session->hasFlash('success')) {
         echo '<br>';
@@ -20,38 +20,32 @@ $this->params['breadcrumbs'][] = $this->title;
         echo Yii::$app->session->getFlash('success');
         echo "</div>";
     }
-
     ?>
-
     <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>
-        <?= Html::a('Atualizar', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Deletar', ['delete', 'id' => $model->id], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => 'Tem certeza de que deseja excluir este item?',
-                'method' => 'post',
-            ],
-        ]) ?>
-    </p>
 
     <div class="box box-primary">
         <div class="box-header with-border">
+
+
+            <p>
+                <?= Html::a('Atualizar', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+                <?= Html::a('Deletar', ['delete', 'id' => $model->id], [
+                    'class' => 'btn btn-danger',
+                    'data' => [
+                        'confirm' => 'Você tem certeza que deseja apagar esse item?',
+                        'method' => 'post',
+                    ],
+                ]) ?>
+            </p>
+
             <?= DetailView::widget([
                 'model' => $model,
                 'attributes' => [
-                   // 'id',
+                    //'id',
                     'nome',
-                    'preco_litro',
-                    [
-                        'attribute'=>'data',
-                        'value' => date('d-m-Y', strtotime($model->data))
-                    ]
-
                 ],
             ]) ?>
+            </div>
         </div>
-    </div>
 
 </div>
