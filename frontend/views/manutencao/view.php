@@ -51,7 +51,11 @@ $this->params['breadcrumbs'][] = $this->title;
                     ],
 
                     'servico',
-                    'custo',
+
+                    [
+                        'attribute' => 'custo',
+                        'value' => 'R$ '.str_replace('.', ',',sprintf("%.2f", $model->custo))
+                    ],
 
                     [
                         'attribute' => 'data_saida',
@@ -69,7 +73,10 @@ $this->params['breadcrumbs'][] = $this->title;
                         'attribute' => 'id_veiculo',
                         'value' => Veiculo::findOne($model->id_veiculo)->placa_atual
                     ],
-                    'km',
+                    [
+                        'attribute'=> 'km',
+                        'value' => $model->km." Km"
+                    ],
                     [
                         'attribute'=>'id_motorista',
                         'value'=> Motorista::findOne($model->id_motorista)->nome

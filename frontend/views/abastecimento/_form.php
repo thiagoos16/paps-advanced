@@ -19,6 +19,7 @@ use yii\widgets\ActiveForm;
     <div class="box box-primary">
         <div class="box-header with-border">
             <?php $form = ActiveForm::begin(); ?>
+            <?= $form->errorSummary($model) ?>
             <?= $form->field($model, 'id_posto')->dropDownList(ArrayHelper::map(PostoAbastecimento::find()->all(), 'id', 'nome'), ['prompt'=>'Selecione uma opção']) ?>
 
             <?= $form->field($model, 'id_combustivel')->dropDownList(

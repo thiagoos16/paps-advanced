@@ -393,7 +393,7 @@ use frontend\models\Motorista;
                       <a href="index.php?r=site%2Flockscreen" class="btn btn-primary">Bloquear Tela</a>
                     </div>
                     <div class="pull-right">
-                      <a href="index.php?r=site%2Flogout" class="btn btn-primary">Logout</a>
+                      <a href="index.php?r=site%2Flogout" class="btn btn-primary">Sair</a>
                     </div>
                   </li>
                 </ul>

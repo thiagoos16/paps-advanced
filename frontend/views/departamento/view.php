@@ -25,7 +25,13 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p align="right">
-        <?= Html::a('Editar', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+
+        <?php
+            if($model->id != 1) {
+                echo Html::a('Editar', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']);
+            }
+        ?>
+
 
     </p>
 

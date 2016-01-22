@@ -37,9 +37,9 @@ class Abastecimento extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id_posto', 'id_veiculo', 'km', 'id_motorista', 'id_combustivel', 'valor_abastecido', 'qty_litro'], 'required', 'message' => 'Este campo é obrigatório'],
+            [['id_posto', 'id_veiculo', 'km', 'id_motorista', 'id_combustivel', 'qty_litro'], 'required', 'message' => 'Este campo é obrigatório'],
             [['id_veiculo', 'km'], 'integer'],
-            [['data_lancamento', 'data_abastecimento', 'id_posto'], 'safe'],
+            [['data_lancamento', 'data_abastecimento', 'id_posto', 'valor_abastecido'], 'safe'],
             [['id_motorista'], 'string', 'max' => 11],
         ];
     }
@@ -121,6 +121,7 @@ class Abastecimento extends \yii\db\ActiveRecord
             return false;
         }
     }
+
 
     public function beforeDelete()
     {

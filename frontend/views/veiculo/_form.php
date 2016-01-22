@@ -69,7 +69,7 @@ use yii\widgets\MaskedInput;
 
             <?= $form->field($model, 'id_cor')->dropDownList(ArrayHelper::map(Cor::find()->all(), 'id', 'nome'), ['prompt'=>'Selecione uma opção']) ?>
 
-            <?= $form->field($model, 'id_tipo_combustivel')->dropDownList(ArrayHelper::map(TipoCombustivel::find()->where(['data' => '2001-09-11'])->all(),'id','nome'), ['prompt'=>'Selecione uma opção'] ) ?>
+            <?= $form->field($model, 'id_tipo_combustivel')->dropDownList(ArrayHelper::map(TipoCombustivel::find()->all(),'id','nome'), ['prompt'=>'Selecione uma opção'] ) ?>
 
             <?= $form->field($model, 'ano_fabricacao')->dropDownList(array_combine(range(date('Y')+1,1900,-1),range(date('Y')+1,1900,-1)), ['prompt'=>'Selecione uma opção']) ?>
 

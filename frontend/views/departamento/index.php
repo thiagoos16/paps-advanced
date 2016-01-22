@@ -46,15 +46,17 @@ $this->params['breadcrumbs'][] = $this->title;
                                 );
                             },
                             'editar' => function($url,$model) {
-                                return Html::a(
-                                    '<span class="fa fa-pencil"></span>',
-                                    ['update', 'id' => $model->id],
-                                    [
-                                        //'class' => 'btn btn-default',
-                                        'title' => 'Alterar',
-                                        'data-pjax' => '0',
-                                    ]
-                                );
+                                if($model->id != 1 ) {
+                                    return Html::a(
+                                        '<span class="fa fa-pencil"></span>',
+                                        ['update', 'id' => $model->id],
+                                        [
+                                            //'class' => 'btn btn-default',
+                                            'title' => 'Alterar',
+                                            'data-pjax' => '0',
+                                        ]
+                                    );
+                                }
                             },
                         ],
                     ],

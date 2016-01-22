@@ -100,7 +100,6 @@ $this->params['breadcrumbs'][] = $this->title;
                     ],
 
                     'servico',
-                    'custo',
 
                    /* [
                         'attribute'=>'data_saida',

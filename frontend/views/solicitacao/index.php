@@ -3,6 +3,7 @@
 use dosamigos\datepicker\DatePicker;
 use frontend\models\Modelo;
 use frontend\models\Solicitacao;
+use frontend\models\Usuario;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\grid\GridView;
@@ -36,7 +37,11 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p align="right">
         <?= Html::a('Nova Solicitação', ['create'], ['class' => 'btn btn-success']) ?>
-        <button id="exibirfiltro" class="btn btn-warning" onclick="exibirfiltro()">Solicitações do dia</button>
+        <?php
+            if(Usuario::findOne(Yii::$app->getUser()->id)->id_departamento == 1) {
+                echo "<button id = 'exibirfiltro' class='btn btn-warning' onclick = 'exibirfiltro()' > Solicitações do dia </button >";
+            }
+        ?>
     </p>
 
     <div class="box box-primary"  style = "display: none" id="formfiltro">

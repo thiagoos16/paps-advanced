@@ -35,7 +35,7 @@ class SolicitacaoController extends Controller
                     ],
                     [
                         'allow' => true,
-                        'actions' => ['index','view'],
+                        'actions' => ['index','view', 'create','delete'],
                         'matchCallback' => function($rule,$action) {
                             if (!Yii::$app->user->isGuest) {
                                 return Usuario::findOne(Yii::$app->getUser()->id)->id_departamento != "1";
